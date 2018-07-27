@@ -1,4 +1,4 @@
-# MOB-1.5 - Local Persistence in iOS
+# MOB-2.3 - Local Persistence in iOS
 
 ## Course Description
 
@@ -16,7 +16,7 @@ Class Sessions:  14 classes, 7 labs
 
 ## Prerequisites:  
 
-MOB 1.5 <br>
+MOB 2.1 <br>
 
 ## Learning Objectives or Competencies
 
