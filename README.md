@@ -1,8 +1,8 @@
-# MOB-2.3 - Local Persistence in iOS
+# MOB-2.2 - 2D Game Development
 
 ## Course Description
 
-Learn how and why we persist data for later you in mobile development. We will cover the various options for saving data locally in iOS.
+An introduction to gaming on mobile devices. Students will learn SpriteKit and important core concepts like Sprites, Sprite Sheets, physics, and software patterns important to games like State Machine.
 
 ## Course Specifics
 
@@ -31,32 +31,32 @@ Students by the end of the course will be able to ...
 
 Should be ~13 planned lessons (7 weeks x 2 meetings per week -~1 holiday)
 
-1. Introduction 
+1. Introduction
     - What is SpriteKit
         - Navigating a SpriteKit project
         - Nodes, Scenes, Sprites, Actions
     - **In Class Activities**
     - **After Class**
         - Tutorial - Sushi Neko
-    
+
 1. Actions and Motion
     - Making things move and interact with actions
         - Using SKAction
         - Using SKTexture
-    
+
 1. Physics
     - Working With Physics
     - Using physics to simulate real world collisions and gravity
         - Working With Physics
     - **After Class**
         - Tutorial - Hoppy Bunny
-    
+
 1. Game Mechanics
     - Balancing Game play, UX in games
     - Brainstorm mechanic
     - Define Custom Project
     - Pair & Exchange & Test
-    
+
 ## Tutorials & Projects
 
 Class will cover two (2) tutorials and one custom game project. Each of the two tutorials should be completed each week for the first two weeks of class.
