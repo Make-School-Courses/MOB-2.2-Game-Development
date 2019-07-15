@@ -41,16 +41,18 @@ Explain why students should care to learn the material presented in this class.
 
 ## In Class Activity I (30 min)
 
-<!-- Intro the game...how will it look...
+Intro to Astro Junk...
 
-Demo the finished product
+< Intro the game...explain how it will look, what it will be used for...
+Demo the finished game...
 
-TODO:
-- students to create all sprites, etc., talked about up to know -->
+>
+
+< TODO: students to create all sprites, etc., needed in game that have been covered in TTs up to now >
 
 
 
-## Overview/TT II (optional) (20 min)
+## Overview/TT II (20 min)
 
 ### Movement with 2D vectors
 
@@ -77,14 +79,14 @@ TODO:
 ## In Class Activity II (optional) (30 min)
 
 # After Class
-<!--
-Assignment:
+
+Assignments:
 1) Review lesson 05-Introduction-to-SpriteKit from MOB 1.1 course
 - be prepared to answer questions on key components outlined in Lesson 5
 
-Review:
+20 Review:
 - Game types:
-  - RPG, FPS -->
+  - RPG, FPS 
 
 
 ## Wrap Up (5 min)
