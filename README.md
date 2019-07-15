@@ -1,4 +1,4 @@
-# MOB-2.2 - 2D Game Development
+# MOB-2.2 - Game Development
 
 ## Course Description
 
