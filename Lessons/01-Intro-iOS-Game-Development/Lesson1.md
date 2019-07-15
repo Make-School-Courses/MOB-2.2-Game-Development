@@ -79,22 +79,77 @@ A scene is the root node in a tree of SpriteKit nodes. This tree of nodes provid
 You can display or present a scene &mdash; that is, a collection of sprites &mdash; from inside an `SKView`, `SKRenderer`, or `WKInterfaceSKScene` object.
 
 #### Positioning
-The position of the sprite is controlled by the sprite’s position property, which is a CGPoint.
+The position of a sprite is controlled by its `position` property, which is a CGPoint (a simple struct that has two properties of its own: x and y).
+
+```Swift  
+  public struct CGPoint {
+    public var x: CGFloat
+    public var y: CGFloat
+    // ...
+  }
+```
+
+By default, SpriteKit positions sprites so they are centered at `(0, 0)`, which in SpriteKit represents the bottom left.
+
+It is important to note that, unlike the coordinate systems in UIKit and AppKit &mdash; where `0` on the y-axis is at the __*top-left*__ &mdash; in SpriteKit, `0` on the y-axis is at the __*bottom-left*__ of the screen:
+
+![XandY_in_spritekit](assets/XandY_in_spritekit.png) </br>
+
+
+*Source:* </br>
+https://hackernoon.com/swift-spritekit-basics-94b1798ab639
+
+
+##### Simple Example:
+
+```Swift  
+  // create sprite
+  let myCoolSprite = SKSpriteNode(color: SKColor.red,
+                          size: CGSize(width: 64, height: 64))
+
+  // set sprite's position                        
+  myCoolSprite.position = CGPoint(x: 100, y: 100)
+```
+
+##### Notes on Positioning
+
+1. When you set the position of a sprite, by default you are positioning the center of the sprite (but this can be changed by setting the sprite's `anchorPoint`).
+
+2. A sprite’s position is within the coordinate space of its parent node. The position of any node is determined relative to the position of the `anchorPoint` of its parent.
+
+- This means that you can add sprites as children of other sprites.
+- If you do this, the child sprites will move with their parents.
 
 #### Creating A Sprite
+To create a sprite and display it to your users:
+1. create an instance of `SKSpriteNode`
+2. configure its `size` and `position` properties
+3. add it to an `SKScene` object
+- Sprites are not visible unless they are inside an `SKScene` object, which means you need to add them as children of the scene itself by calling the `addChild(_:)` method (which comes with any `SKNode` object) on the `SKScene` object in which you want your sprite to appear.
 
+<!-- For any nodes that you want in your scene, you need to add them as children of the scene itself using the `addChild(_:)` method which comes with any `SKNode` object. -->
 
-<!-- TODO: this is how you create a sprite...show code to create sprite -->
+##### Simple Example: Creating a Sprite
+Example illustrates creation of a simple, colored rectangle sprite. All you need to create it is to provide the desired size and color of the rectangle and then add it as a child to the scene you want:
 
+```Swift  
 
-<!--
-#### Creating a Sprite
+// create sprite
+  let myCoolSprite = SKSpriteNode(color: SKColor.red,
+                          size: CGSize(width: 64, height: 64))
 
-To show a sprite to the player, you create an SKSpriteNode, configure its size and position, and then add it to your SKScene object: -->
+  // set sprite's position                        
+  myCoolSprite.position = CGPoint(x: 100, y: 100)
 
+  // add sprite as a child of a scene
+  myScene.addChild(myCoolSprite)
+```
+
+> Note: Assume in this example that the `myScene` object is an instance of `SKScene` created outside of the code snippet shown.
 
 
 #### Game loop (timing & frames)
+
 
 
 ## In Class Activity I (30 min)
@@ -149,6 +204,8 @@ Assignments:
   SKEffectNode
   SKWarpable protocol
   SKTexture
+
+  `anchorPoint`
 
   `SKView`, `SKRenderer`, or `WKInterfaceSKScene`
 
