@@ -28,11 +28,47 @@ Explain why students should care to learn the material presented in this class.
 
 ### Intro
 
-### Review concepts
+#### What is SpriteKit
 
-#### Sprites
+
+### Review of key concepts & classes
 
 #### Nodes
+
+Nodes are the building blocks of SpriteKit. `SKNode` is the base class of all nodes.
+
+All of onscreen assets will be an `SKNode` or a subclass of it.
+
+Example subclasses of `SKNode`:
+- `SKShapeNode`  renders a shape defined by a Core Graphics path
+- `SKVideo` displays video content
+- `SKLabel` displays a text label
+- `SKScene` An object that organizes all of the active SpriteKit content.
+
+Nodes in SpriteKit are commonly referred to as __*sprites.*__
+
+**Properties**
+SpriteKit offers many different node types, but they all share a common set of key properties since they all inherit from `SKNode`.
+
+A few of the most important properties of `SKNode` and its subclasses that you can alter:
+- `position` (CGPoint)
+- `xScale` (CGFloat): representing the horizontal scale of a node
+- `yScale` (CGFloat): similar to xScale but it acts in the vertical direction instead
+- `alpha` (CGFloat): representing the node's transparency
+- `hidden` (Bool): value determining whether or not the node should be visible
+- `zRotation` (CGFloat): representing the angle, in radians, that the node should be rotated
+- `zPosition` (CGFloat): used to determine which nodes should be displayed on top of other nodes in the scene
+
+*Source:* </br>
+https://code.tutsplus.com/tutorials/spritekit-from-scratch-fundamentals--cms-26326
+
+#### SKScene
+An instance of the `SKScene` class represents an active scene of content in SpriteKit.
+
+A scene is the root node in a tree of SpriteKit nodes. This tree of nodes provides content that the scene animates and renders for display.
+
+You can display or present a scene &mdash; that is, a collection of sprites &mdash; from inside an `SKView`, `SKRenderer`, or `WKInterfaceSKScene` object.
+
 
 #### Positioning
 
@@ -86,7 +122,12 @@ Assignments:
 
 20 Review:
 - Game types:
-  - RPG, FPS 
+  - RPG, FPS
+
+  SKEffectNode
+  SKWarpable protocol
+
+  `SKView`, `SKRenderer`, or `WKInterfaceSKScene`
 
 
 ## Wrap Up (5 min)
@@ -98,3 +139,6 @@ Assignments:
 ## Additional Resources
 
 1. Links to additional readings and videos
+
+
+https://developer.apple.com/documentation/spritekit
