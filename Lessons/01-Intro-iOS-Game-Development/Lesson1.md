@@ -65,7 +65,7 @@ Playable area limitation
 ## In Class Activity II (optional) (30 min)
 
 # After Class
-<!-- 
+<!--
 Assignment:
 1) Review lesson 05-Introduction-to-SpriteKit from MOB 1.1 course
 - be prepared to answer questions on key components outlined in Lesson 5
