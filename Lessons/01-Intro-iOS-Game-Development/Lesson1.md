@@ -66,12 +66,13 @@ A few of the most important properties of `SKNode` and its subclasses that you c
 https://code.tutsplus.com/tutorials/spritekit-from-scratch-fundamentals--cms-26326
 
 
-SKSpriteNode
+#### SKSpriteNode
+The most common `SKNode` subclass that you will use is the `SKSpriteNode` class.
 
-The most common SKNode subclass is the SKSpriteNode class.
+An `SKSpriteNode` is a type of node that can display either a colored rectangle, or an image.
 
-SKSpriteNode is a type of node that can display either a colored rectangle, or an image. In
 
+<!-- TODO: this is how you create a sprite...show code to create sprite -->
 
 
 #### SKScene
@@ -89,6 +90,11 @@ To show a sprite to the player, you create an SKSpriteNode, configure its size a
 
 
 #### Positioning
+
+
+The position of the sprite is controlled by the sprite’s position property, which is a CGPoint.
+
+
 
 #### Game loop (timing & frames)
 
@@ -144,6 +150,7 @@ Assignments:
 
   SKEffectNode
   SKWarpable protocol
+  SKTexture
 
   `SKView`, `SKRenderer`, or `WKInterfaceSKScene`
 
