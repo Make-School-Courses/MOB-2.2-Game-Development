@@ -26,13 +26,17 @@ Explain why students should care to learn the material presented in this class.
 
 ## Overview/TT I (20 min)
 
-Intro
-Review concepts
-Sprites
-Nodes
-Positioning
+### Intro
 
-Game loop (timing & frames)
+### Review concepts
+
+#### Sprites
+
+#### Nodes
+
+#### Positioning
+
+#### Game loop (timing & frames)
 
 
 ## In Class Activity I (30 min)
@@ -48,17 +52,25 @@ TODO:
 
 ## Overview/TT II (optional) (20 min)
 
-Movement with 2D vectors
-Movement with actions
-Move action
-Sequence action
-Wait-for duration action
-Run-block
-Reversing actions
-Repeating actions
+### Movement with 2D vectors
 
-Touch events
-Playable area limitation
+#### Movement with actions
+
+#### Move action
+
+#### Sequence action
+
+#### Wait-for duration action
+
+#### Run-block
+
+#### Reversing actions
+
+#### Repeating actions
+
+## Touch events
+
+## Playable area limitation
 
 
 
