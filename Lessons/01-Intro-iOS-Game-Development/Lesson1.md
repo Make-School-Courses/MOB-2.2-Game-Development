@@ -71,10 +71,6 @@ The most common `SKNode` subclass that you will use is the `SKSpriteNode` class.
 
 An `SKSpriteNode` is a type of node that can display either a colored rectangle, or an image.
 
-
-<!-- TODO: this is how you create a sprite...show code to create sprite -->
-
-
 #### SKScene
 An instance of the `SKScene` class represents an active scene of content in SpriteKit.
 
@@ -82,17 +78,19 @@ A scene is the root node in a tree of SpriteKit nodes. This tree of nodes provid
 
 You can display or present a scene &mdash; that is, a collection of sprites &mdash; from inside an `SKView`, `SKRenderer`, or `WKInterfaceSKScene` object.
 
+#### Positioning
+The position of the sprite is controlled by the sprite’s position property, which is a CGPoint.
+
+#### Creating A Sprite
+
+
+<!-- TODO: this is how you create a sprite...show code to create sprite -->
+
+
 <!--
 #### Creating a Sprite
 
 To show a sprite to the player, you create an SKSpriteNode, configure its size and position, and then add it to your SKScene object: -->
-
-
-
-#### Positioning
-
-
-The position of the sprite is controlled by the sprite’s position property, which is a CGPoint.
 
 
 
