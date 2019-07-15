@@ -30,6 +30,8 @@ Explain why students should care to learn the material presented in this class.
 
 #### What is SpriteKit
 
+<!-- Briefly explain SpriteKit, show its historical antecedents: i.e., "before spritekit..." -->
+
 
 ### Review of key concepts & classes
 
