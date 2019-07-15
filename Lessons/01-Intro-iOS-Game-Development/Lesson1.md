@@ -33,11 +33,16 @@ Explain why students should care to learn the material presented in this class.
 
 ### Review of key concepts & classes
 
-#### Nodes
+#### Nodes (Sprites)
+Nodes are the building blocks of SpriteKit.
 
-Nodes are the building blocks of SpriteKit. `SKNode` is the base class of all nodes.
+A __*node*__ is an object that can be put inside a scene.
 
-All of onscreen assets will be an `SKNode` or a subclass of it.
+Nodes in SpriteKit are commonly referred to as __*sprites.*__
+
+`SKNode` is the base class of all nodes.
+
+All onscreen assets will be an `SKNode` or a subclass of it.
 
 Example subclasses of `SKNode`:
 - `SKShapeNode`  renders a shape defined by a Core Graphics path
@@ -45,9 +50,7 @@ Example subclasses of `SKNode`:
 - `SKLabel` displays a text label
 - `SKScene` An object that organizes all of the active SpriteKit content.
 
-Nodes in SpriteKit are commonly referred to as __*sprites.*__
-
-**Properties**
+**Node Properties** </br>
 SpriteKit offers many different node types, but they all share a common set of key properties since they all inherit from `SKNode`.
 
 A few of the most important properties of `SKNode` and its subclasses that you can alter:
@@ -62,12 +65,27 @@ A few of the most important properties of `SKNode` and its subclasses that you c
 *Source:* </br>
 https://code.tutsplus.com/tutorials/spritekit-from-scratch-fundamentals--cms-26326
 
+
+SKSpriteNode
+
+The most common SKNode subclass is the SKSpriteNode class.
+
+SKSpriteNode is a type of node that can display either a colored rectangle, or an image. In
+
+
+
 #### SKScene
 An instance of the `SKScene` class represents an active scene of content in SpriteKit.
 
 A scene is the root node in a tree of SpriteKit nodes. This tree of nodes provides content that the scene animates and renders for display.
 
 You can display or present a scene &mdash; that is, a collection of sprites &mdash; from inside an `SKView`, `SKRenderer`, or `WKInterfaceSKScene` object.
+
+<!--
+#### Creating a Sprite
+
+To show a sprite to the player, you create an SKSpriteNode, configure its size and position, and then add it to your SKScene object: -->
+
 
 
 #### Positioning
