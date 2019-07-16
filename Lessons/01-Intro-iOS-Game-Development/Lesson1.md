@@ -80,6 +80,24 @@ A scene is the root node in a tree of SpriteKit nodes. This tree of nodes provid
 
 You can display or present a scene &mdash; that is, a collection of sprites &mdash; from inside an `SKView`, `SKRenderer`, or `WKInterfaceSKScene` object.
 
+
+
+#### SKAction
+`SKAction` is a powerful class used to bring nodes to life.
+
+Instances of `SKAction` are used to change the structure or content of a node in some way. They represent an animation that is executed by a node in the scene.
+
+Examples:
+- change a node’s position (or other property) over time
+- change the behavior of the scene itself, such as doing a fadeout.
+
+You can have several actions together in:
+- A sequence action
+- A group action
+- A repeating action
+
+When the scene processes its nodes, the actions associated with those nodes are all processed.
+
 #### Positioning
 The position of a sprite is controlled by its `position` property, which is a CGPoint (a simple struct that has two properties of its own: x and y).
 
@@ -151,6 +169,22 @@ Example illustrates creation of a simple, colored rectangle sprite. All you need
 
 
 #### Game loop (timing & frames)
+Like most game engines, SpriteKit runs an endless rendering loop &mdash; often called a "game loop" &mdash; to render and update the screen.
+
+![game_loop_frame-cycle_functions](assets/game_loop_frame-cycle_functions.png) </br>
+
+*Source:* </br>
+https://developer.apple.com/documentation/spritekit/skscene/responding_to_frame-cycle_events
+
+Steps in rendering each scene typically include:
+1. Update the scene & its objects  
+2. Evaluate actions
+3. Simulate physics
+4. Apply constraints
+5. Render the scene
+
+
+<!-- TODO: add timing and frame info -->
 
 
 
@@ -224,3 +258,5 @@ Assignments:
 
 
 https://developer.apple.com/documentation/spritekit
+
+https://developer.apple.com/documentation/spritekit/skscene/responding_to_frame-cycle_events
