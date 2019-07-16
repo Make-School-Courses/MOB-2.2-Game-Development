@@ -80,8 +80,6 @@ A scene is the root node in a tree of SpriteKit nodes. This tree of nodes provid
 
 You can display or present a scene &mdash; that is, a collection of sprites &mdash; from inside an `SKView`, `SKRenderer`, or `WKInterfaceSKScene` object.
 
-
-
 #### SKAction
 `SKAction` is a powerful class used to bring nodes to life.
 
