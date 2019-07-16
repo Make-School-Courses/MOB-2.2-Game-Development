@@ -228,10 +228,12 @@ Demo the finished game...
 # After Class
 
 Assignments:
-1) Review lesson 05-Introduction-to-SpriteKit from MOB 1.1 course
+1. Review lesson 05-Introduction-to-SpriteKit from MOB 1.1 course
 - be prepared to answer questions on key components outlined in Lesson 5
 
-20 Review:
+2. Review:
+
+- Study the "Nodes that Draw" section in [Nodes for Scene Building - Apple docs](https://developer.apple.com/documentation/spritekit/nodes_for_scene_building)
 - Game types:
   - RPG, FPS
 
