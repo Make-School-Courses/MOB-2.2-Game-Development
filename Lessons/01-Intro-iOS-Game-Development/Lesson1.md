@@ -282,17 +282,24 @@ When the scene processes its nodes, the actions associated with those nodes are 
 
 #### Sequence action
 
-#### Wait-for duration action
+#### Wait action
 
 #### Run-block
 
-#### Reversing actions
+
 
 #### Repeating actions
 
 ## Touch events
 
 ## Playable area limitation
+
+
+
+<!-- Move these actions to next lesson:
+#### Wait-for duration action
+
+#### Reversing actions -->
 
 
 
