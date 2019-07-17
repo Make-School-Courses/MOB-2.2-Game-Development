@@ -22,25 +22,22 @@ By the end of the course, students will be able to ...
 3. Execute testing and debugging strategies specific to iOS games.
 4. Integrate native game engines into an iOS project.
 
-
+<!--
 ## Schedule
 
-**NOTE:** Due to the shorter summer sessions, for some class sessions you will see multiple topics covered. This schedule compression is to ensure that we cover the same material that we normally would in non-summer terms.
+**NOTE:** Due to the shorter summer sessions, for some class sessions you will see multiple topics covered. This schedule compression is to ensure that we cover the same material that we normally would in non-summer terms. -->
 
----
-### **[INSTRUCTOR NOTE: PLEASE REMOVE THIS BEFORE JULY 7]**
-If you teach **M/W** or **Tu/Th**, please pick from a template below and delete the other one
 
----
-### M/W Template **[PLEASE REMOVE THIS HEADER BEFORE JULY 7]**
-**Course Dates:** Wednesday, July 8 – Wednesday, August 14, 2019 (6 weeks)
+**Course Dates:** <TBD>
+<!-- Wednesday, July 8 – Wednesday, August 14, 2019 (6 weeks) -->
 
-**Class Times:** Monday and Wednesday at 3:30–5:20pm (12 class sessions)
+**Class Times:** <TBD>
+<!-- Monday and Wednesday at 3:30–5:20pm (12 class sessions) -->
 
 | Class |          Date          |                 Topics                  |
 |:-----:|:----------------------:|:---------------------------------------:|
-|  1 |   Mon, xxxxx                         | [Introduction to iOS Game Development] |
-|  2 |   Wed, xxx                           | [Lesson 2] |
+|  1 |  <DAY>, <DATE>                        | [Introduction to iOS Game Development] |
+|  2 |   Wed, xxx                           | [Actions] |
 |  3 |   Mon, July 15                        | [Lesson 3] <br/> **/** <br/> [Lesson 4] |
 |  4 |   Wed, July 17                            | [Lesson 5] |
 |  5 |   Mon, July 22                         | [Lesson 6] |

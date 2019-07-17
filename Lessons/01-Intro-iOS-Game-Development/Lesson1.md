@@ -150,17 +150,59 @@ Example illustrates creation of a simple, colored rectangle sprite. All you need
 > Note: For the example above, assume that the `myScene` object is an instance of `SKScene` previously declared outside of the code snippet shown.
 
 
-#### Game loop (timing & frames)
+#### Frame Rate & the Game Loop
 
-**Frame Rates**
+**Frame Rate**
+
+
+When we talk about “real-time” games, what comes to mind are objects like the player, vehicles, and other things moving around the screen, looking like they’re in continuous motion. This isn’t actually what happens, however — what’s really going on is that the screen is redrawing itself every 1/60 of a second, and every time it does this, the locations of some or all of the objects on the screen change slightly. If this is done fast enough, the human eye is fooled into thinking that everything’s moving continuously.
+
+
+<!-- Frame rate: Controls the rate of the animation in frames per second. Set this to 0 as this only applies when using an image that contains multiple frames. -->
+
+
 
 <!-- We want to optimize frame rates... -->
 
-
- <!-- Frame rate: Controls the rate of the animation in frames per second. Set this to 0 as this only applies when using an image that contains multiple frames. -->
-
+You’ll get the best results if you update your game at the same rate as the screen.
 
 
+Updating every frame is the least efficient option, but it lets you change state often, which makes the game look smooth.
+
+
+if the device you’re running on can support your game at 60 fps. But less-powerful devices, which includes the simulator, can’t support that frame rate.
+
+
+As the game runs, you’ll notice a rapid decrease in the frame rate. Not only does the graphics processor have to deal with increasing amounts of geometry, the physics engine has to deal with an increasing number of collisions, which also negatively affects your frame rate.
+
+
+
+
+
+ fps: Stands for frames per second. This a measurement of the total amount of consecutive frame redraws done in one-second. The lower this amount, the more poorly your game is performing. You typically want your game to run at 60fps, which will make your game look and feel smooth.
+
+
+
+
+
+
+
+
+
+
+ <!-- Notes on Frame Rates:
+  Also note that SceneKit performs much better on physical devices than it does in the simulator, so your frame rates will appear lower than expected when running your game in the simulator. -->
+
+
+
+  Frame time: This is the total amount of time it took to draw a single frame. A frame
+ time of 16.7ms is required to achieve a frame rate of 60fps.
+
+Delta Time -- the amount of time between frames becomes important....(see ref 1 bk for more details)
+
+
+
+**The Game Loop**
 Like most game engines, SpriteKit runs an endless rendering loop &mdash; often called a "game loop" &mdash; to render and update the screen.
 
 ![game_loop_frame-cycle_functions](assets/game_loop_frame-cycle_functions.png) </br>
@@ -169,7 +211,7 @@ Like most game engines, SpriteKit runs an endless rendering loop &mdash; often c
 https://developer.apple.com/documentation/spritekit/skscene/responding_to_frame-cycle_events
 
 Steps in rendering each scene typically include:
-1. Update the scene & its objects  
+1. Updating the scene & its objects - `func update(TimeInterval)` Tells your app to perform any app-specific logic to update your scene.
 2. Evaluate actions
 3. Simulate physics
 4. Apply constraints
@@ -177,23 +219,10 @@ Steps in rendering each scene typically include:
 
 
 
-<!-- SCNSceneRendererDelegate render loop protocol -->
+To run at an optimal performance level and frame rate, you’ll have to remove objects that fall out of sight. And what better place to do this than — that’s right, the render loop! Handy thing, isn’t it?
 
 
-<!-- TODO: add timing and frame info -->
-
-
-
-
-<!-- Notes on Frame Rates:
- Also note that SceneKit performs much better on physical devices than it does in the simulator, so your frame rates will appear lower than expected when running your game in the simulator. -->
-
-
- Frame time: This is the total amount of time it took to draw a single frame. A frame
-time of 16.7ms is required to achieve a frame rate of 60fps.
-
-
-
+Subclassing Scenes Versus Assigning a Delegate
 
 
 ## In Class Activity I (30 min)
@@ -271,6 +300,19 @@ Assignments:
 
   `SKView`, `SKRenderer`, or `WKInterfaceSKScene`
 
+- SKSceneDelegate, etc..
+  https://developer.apple.com/documentation/spritekit/skscene/responding_to_frame-cycle_events
+
+  SKSceneDelegate
+
+
+https://developer.apple.com/documentation/spritekit/skscenedelegate
+
+Subclassing Scenes Versus Assigning a Delegate
+
+https://developer.apple.com/documentation/spritekit/skscene/subclassing_scenes_versus_assigning_a_delegate
+
+
 
 ## Wrap Up (5 min)
 
@@ -286,3 +328,10 @@ Assignments:
 https://developer.apple.com/documentation/spritekit
 
 https://developer.apple.com/documentation/spritekit/skscene/responding_to_frame-cycle_events
+
+
+
+http://gameprogrammingpatterns.com
+
+
+https://gameprogrammingpatterns.com/state.html
