@@ -80,21 +80,7 @@ A scene is the root node in a tree of SpriteKit nodes. This tree of nodes provid
 
 You can display or present a scene &mdash; that is, a collection of sprites &mdash; from inside an `SKView`, `SKRenderer`, or `WKInterfaceSKScene` object.
 
-#### SKAction
-`SKAction` is a powerful class used to bring nodes to life.
 
-Instances of `SKAction` are used to change the structure or content of a node in some way. They represent an animation that is executed by a node in the scene.
-
-Examples:
-- change a node’s position (or other property) over time
-- change the behavior of the scene itself, such as doing a fadeout.
-
-You can have several actions together in:
-- A sequence action
-- A group action
-- A repeating action
-
-When the scene processes its nodes, the actions associated with those nodes are all processed.
 
 #### Positioning
 The position of a sprite is controlled by its `position` property, which is a CGPoint (a simple struct that has two properties of its own: x and y).
@@ -163,7 +149,7 @@ Example illustrates creation of a simple, colored rectangle sprite. All you need
   myScene.addChild(myCoolSprite)
 ```
 
-> Note: Assume in this example that the `myScene` object is an instance of `SKScene` created outside of the code snippet shown.
+> Note: For the example above, assume that the `myScene` object is an instance of `SKScene` previously declared outside of the code snippet shown.
 
 
 #### Game loop (timing & frames)
@@ -200,6 +186,22 @@ Demo the finished game...
 
 
 ## Overview/TT II (20 min)
+
+### SKAction
+`SKAction` is a powerful class used to bring nodes to life.
+
+Instances of `SKAction` are used to change the structure or content of a node in some way. They represent an animation that is executed by a node in the scene.
+
+Examples:
+- change a node’s position (or other property) over time
+- change the behavior of the scene itself, such as doing a fadeout.
+
+You can have several actions together in:
+- A sequence action
+- A group action
+- A repeating action
+
+When the scene processes its nodes, the actions associated with those nodes are all processed.
 
 ### Movement with 2D vectors
 
