@@ -15,15 +15,13 @@ Explain why students should care to learn the material presented in this class.
 
 ## Learning Outcomes
 
-**[INSTRUCTOR NOTE: PLEASE LIST (3-5) LEARNING OUTCOMES]**
+By the end of the course, students will be able to ...
 
-By the end of the course, you will be able to ...
+1. Build game projects using Xcode, Swift, SpriteKit, and SceneKit.
+2. Identify trade offs of different gaming architectures and select the best fit for a game.
+3. Execute testing and debugging strategies specific to iOS games.
+4. Integrate native game engines into an iOS project.
 
-1. Identify & Describe
-1. Explain
-1. Compare & Contrast
-1. Design & Implement
-1. Practice
 
 ## Schedule
 
@@ -41,8 +39,8 @@ If you teach **M/W** or **Tu/Th**, please pick from a template below and delete 
 
 | Class |          Date          |                 Topics                  |
 |:-----:|:----------------------:|:---------------------------------------:|
-|  1 |   Mon, July 8                          | [Lesson 1] |
-|  2 |   Wed, July 10                            | [Lesson 2] |
+|  1 |   Mon, xxxxx                         | [Lesson 1] |
+|  2 |   Wed, xxx                           | [Lesson 2] |
 |  3 |   Mon, July 15                        | [Lesson 3] <br/> **/** <br/> [Lesson 4] |
 |  4 |   Wed, July 17                            | [Lesson 5] |
 |  5 |   Mon, July 22                         | [Lesson 6] |
@@ -53,7 +51,7 @@ If you teach **M/W** or **Tu/Th**, please pick from a template below and delete 
 | 10 |   Wed, August 7                             | [Lesson 12] |  
 | 11 |   Mon, August 12                         | [Lesson 13]|
 | 12 |   Wed, August 14                         | Final Exam/Presentations  |
-
+<!--
 
 ### Tu/Th Template **[PLEASE REMOVE THIS HEADER BEFORE JULY 7]**
 **Course Dates:** Tuesday, July 9 – Thursday, August 15, 2019 (6 weeks)
@@ -73,10 +71,10 @@ If you teach **M/W** or **Tu/Th**, please pick from a template below and delete 
 | 9 |   Tue, August 6                       | [Lesson 11] |
 | 10 |   Thu, August 8                         | [Lesson 12] |  
 | 11 |   Tue, August 13                     | [Lesson 13]|
-| 12 |   Thu, August 15                     | Final Exam/Presentations  |
+| 12 |   Thu, August 15                     | Final Exam/Presentations  | -->
 
 
-[Lesson 1]: Lessons/Lesson1.md
+[Introduction to Concurrency & Parallelism]: Lessons/01-Intro-Concurrency-&-Parallelism/Lesson1.md
 [Lesson 2]: Lessons/Lesson2.md
 [Lesson 3]: Lessons/Lesson3.md
 [Lesson 4]: Lessons/Lesson4.md
