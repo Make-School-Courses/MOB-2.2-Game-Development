@@ -39,7 +39,7 @@ If you teach **M/W** or **Tu/Th**, please pick from a template below and delete 
 
 | Class |          Date          |                 Topics                  |
 |:-----:|:----------------------:|:---------------------------------------:|
-|  1 |   Mon, xxxxx                         | [Lesson 1] |
+|  1 |   Mon, xxxxx                         | [Introduction to iOS Game Development] |
 |  2 |   Wed, xxx                           | [Lesson 2] |
 |  3 |   Mon, July 15                        | [Lesson 3] <br/> **/** <br/> [Lesson 4] |
 |  4 |   Wed, July 17                            | [Lesson 5] |
@@ -74,7 +74,7 @@ If you teach **M/W** or **Tu/Th**, please pick from a template below and delete 
 | 12 |   Thu, August 15                     | Final Exam/Presentations  | -->
 
 
-[Introduction to Concurrency & Parallelism]: Lessons/01-Intro-Concurrency-&-Parallelism/Lesson1.md
+[Introduction to iOS Game Development]: Lessons/01-Intro-iOS-Game-Development/Lesson1.md
 [Lesson 2]: Lessons/Lesson2.md
 [Lesson 3]: Lessons/Lesson3.md
 [Lesson 4]: Lessons/Lesson4.md
