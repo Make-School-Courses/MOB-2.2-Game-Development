@@ -154,7 +154,7 @@ Example illustrates creation of a simple, colored rectangle sprite. All you need
 
 **Frame Rate**
 
-<DATE>  test
+<DATE>  <test>
 
 When we talk about “real-time” games, what comes to mind are objects like the player, vehicles, and other things moving around the screen, looking like they’re in continuous motion. This isn’t actually what happens, however — what’s really going on is that the screen is redrawing itself every 1/60 of a second, and every time it does this, the locations of some or all of the objects on the screen change slightly. If this is done fast enough, the human eye is fooled into thinking that everything’s moving continuously.
 
