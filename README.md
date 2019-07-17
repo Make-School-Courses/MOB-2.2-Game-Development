@@ -31,7 +31,7 @@ By the end of the course, students will be able to ...
 **Course Dates:** < TBD >
 <!-- Wednesday, July 8 – Wednesday, August 14, 2019 (6 weeks) -->
 
-**Class Times:** <T BD >
+**Class Times:** < TBD >
 <!-- Monday and Wednesday at 3:30–5:20pm (12 class sessions) -->
 
 | Class |          Date          |                 Topics                  |
