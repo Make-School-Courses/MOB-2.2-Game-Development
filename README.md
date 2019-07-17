@@ -28,15 +28,15 @@ By the end of the course, students will be able to ...
 **NOTE:** Due to the shorter summer sessions, for some class sessions you will see multiple topics covered. This schedule compression is to ensure that we cover the same material that we normally would in non-summer terms. -->
 
 
-**Course Dates:** <TBD>
+**Course Dates:** < TBD >
 <!-- Wednesday, July 8 – Wednesday, August 14, 2019 (6 weeks) -->
 
-**Class Times:** <TBD>
+**Class Times:** <T BD >
 <!-- Monday and Wednesday at 3:30–5:20pm (12 class sessions) -->
 
 | Class |          Date          |                 Topics                  |
 |:-----:|:----------------------:|:---------------------------------------:|
-|  1 |  <DAY>, <DATE>                        | [Introduction to iOS Game Development] |
+|  1 |  < DAY >, < DATE >                        | [Introduction to iOS Game Development] |
 |  2 |   Wed, xxx                           | [Actions] |
 |  3 |   Mon, July 15                        | [Lesson 3] <br/> **/** <br/> [Lesson 4] |
 |  4 |   Wed, July 17                            | [Lesson 5] |
