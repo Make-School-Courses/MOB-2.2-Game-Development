@@ -33,7 +33,7 @@ Explain why students should care to learn the material presented in this class.
 <!-- Briefly explain SpriteKit, show its historical antecedents: i.e., "before spritekit..." -->
 
 
-### Review of key concepts & classes
+### Quick Review: Key Classes & Concepts
 
 #### Nodes (Sprites)
 Nodes are the building blocks of SpriteKit.
@@ -80,8 +80,6 @@ A scene is the root node in a tree of SpriteKit nodes. This tree of nodes provid
 
 You can display or present a scene &mdash; that is, a collection of sprites &mdash; from inside an `SKView`, `SKRenderer`, or `WKInterfaceSKScene` object.
 
-
-
 #### Positioning
 The position of a sprite is controlled by its `position` property, which is a CGPoint (a simple struct that has two properties of its own: x and y).
 
@@ -115,7 +113,7 @@ https://hackernoon.com/swift-spritekit-basics-94b1798ab639
   myCoolSprite.position = CGPoint(x: 100, y: 100)
 ```
 
-##### Notes on Positioning
+##### Positioning Notes
 
 1. When you set the position of a sprite, by default you are positioning the center of the sprite (but this can be changed by setting the sprite's `anchorPoint`).
 
@@ -153,6 +151,16 @@ Example illustrates creation of a simple, colored rectangle sprite. All you need
 
 
 #### Game loop (timing & frames)
+
+**Frame Rates**
+
+<!-- We want to optimize frame rates... -->
+
+
+ <!-- Frame rate: Controls the rate of the animation in frames per second. Set this to 0 as this only applies when using an image that contains multiple frames. -->
+
+
+
 Like most game engines, SpriteKit runs an endless rendering loop &mdash; often called a "game loop" &mdash; to render and update the screen.
 
 ![game_loop_frame-cycle_functions](assets/game_loop_frame-cycle_functions.png) </br>
@@ -168,7 +176,23 @@ Steps in rendering each scene typically include:
 5. Render the scene
 
 
+
+<!-- SCNSceneRendererDelegate render loop protocol -->
+
+
 <!-- TODO: add timing and frame info -->
+
+
+
+
+<!-- Notes on Frame Rates:
+ Also note that SceneKit performs much better on physical devices than it does in the simulator, so your frame rates will appear lower than expected when running your game in the simulator. -->
+
+
+ Frame time: This is the total amount of time it took to draw a single frame. A frame
+time of 16.7ms is required to achieve a frame rate of 60fps.
+
+
 
 
 
