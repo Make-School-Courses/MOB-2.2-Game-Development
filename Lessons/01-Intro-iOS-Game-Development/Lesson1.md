@@ -151,15 +151,32 @@ Example illustrates creation of a simple, colored rectangle sprite. All you need
 
 
 #### Frame Rate & the Game Loop
+When we think about "real-time" game behaviors, you might imaging objects such as players (avatars), vehicles, and other things which move around the screen in what appears to be continuous motion.
+
+What is really happening is that the screen is redrawing itself every 1/60th of a second. And every time the screen redraws, the locations on screen of some or all of the objects change slightly.
+
+If done quickly enough, it can fool the human eye into believing that everything is continuously moving.
+
+<!-- TODO: describe what a frame is -->
+
 
 **Frame Rate**
+The __*Frame Rate*__ &mdash; measured in __*frames-per-second (FPS) &mdash*__; is the measurement of the total number of consecutive frame redraws done in one-second.
 
-<DATE>  <test>
+The lower this number, the more poorly your game is performing.
 
-When we talk about “real-time” games, what comes to mind are objects like the player, vehicles, and other things moving around the screen, looking like they’re in continuous motion. This isn’t actually what happens, however — what’s really going on is that the screen is redrawing itself every 1/60 of a second, and every time it does this, the locations of some or all of the objects on the screen change slightly. If this is done fast enough, the human eye is fooled into thinking that everything’s moving continuously.
+
+You typically want your game to run at 60fps, which will make your game look and feel smooth.
+
+
+
+<!--
+
+When we talk about “real-time” games, what comes to mind are objects like the player, vehicles, and other things moving around the screen, looking like they’re in continuous motion. This isn’t actually what happens, however — what’s really going on is that the screen is redrawing itself every 1/60 of a second, and every time it does this, the locations of some or all of the objects on the screen change slightly. If this is done fast enough, the human eye is fooled into thinking that everything’s moving continuously. -->
 
 
 <!-- Frame rate: Controls the rate of the animation in frames per second. Set this to 0 as this only applies when using an image that contains multiple frames. -->
+
 
 
 
@@ -167,9 +184,7 @@ When we talk about “real-time” games, what comes to mind are objects like th
 
 You’ll get the best results if you update your game at the same rate as the screen.
 
-
 Updating every frame is the least efficient option, but it lets you change state often, which makes the game look smooth.
-
 
 if the device you’re running on can support your game at 60 fps. But less-powerful devices, which includes the simulator, can’t support that frame rate.
 
@@ -180,7 +195,6 @@ As the game runs, you’ll notice a rapid decrease in the frame rate. Not only d
 
 
 
- fps: Stands for frames per second. This a measurement of the total amount of consecutive frame redraws done in one-second. The lower this amount, the more poorly your game is performing. You typically want your game to run at 60fps, which will make your game look and feel smooth.
 
 
 
@@ -221,6 +235,9 @@ Steps in rendering each scene typically include:
 
 
 To run at an optimal performance level and frame rate, you’ll have to remove objects that fall out of sight. And what better place to do this than — that’s right, the render loop! Handy thing, isn’t it?
+
+
+
 
 
 Subclassing Scenes Versus Assigning a Delegate
