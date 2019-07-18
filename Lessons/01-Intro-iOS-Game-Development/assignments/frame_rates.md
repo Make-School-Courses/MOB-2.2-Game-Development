@@ -97,3 +97,12 @@ Note that even if your game runs at a smooth 60 FPS, there will always be some s
  time of 16.7ms is required to achieve a frame rate of 60fps.
 
 Delta Time -- the amount of time between frames becomes important....(see ref 1 bk for more details)
+
+
+
+<!-- This rate of drawing is called the frame rate, or specifically frames per second (FPS).
+
+By default, SpriteKit displays this in the bottom-right corner of your game:
+
+
+<!-- TODO: show image of FPS in game app  -->

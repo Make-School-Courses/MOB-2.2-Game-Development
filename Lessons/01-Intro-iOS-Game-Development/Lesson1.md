@@ -182,23 +182,8 @@ In an iOS game app, each individual picture drawn on screen is called a __*frame
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![horse_in_motion_frames](assets/horse_in_motion_frames.png) </br>
 
-
-
-
-
- <!-- This rate of drawing is called the frame rate, or specifically frames per second (FPS).
-
- By default, SpriteKit displays this in the bottom-right corner of your game:
- -->
-
-
-
-
-<!-- TODO:  insert graphic showing progression of frames, maybe the famous Kodak horse graphic? -->
-
-<!-- > Disambiguation Notes:
-  <sup>2</sup> frame not to be confused with the frame property on a window or UIView objects
-  <sup>3</sup> -->
+> Disambiguation:
+  <sup>2</sup> The term *frame* in game development should not to be confused with the `frame` property on UIKit objects such as the `window` and `UIView` objects.
 
 **Frame Rate** </br>
 Games typically try to draw frames at either 30 or 60 times per second and aim to keep that rate consistent so that animations feel smooth.
@@ -206,6 +191,15 @@ Games typically try to draw frames at either 30 or 60 times per second and aim t
 This rate at which the screen is redrawn is called the __*frame rate.*__ Measured in __*frames-per-second (FPS),*__ frame rate is the measure of the total number of consecutive frame redraws done in one second.
 
 If the frame rate is low, your game is likely performing poorly for your user.
+
+> __*Important Note:*__ Understanding frame rates in iOS game development is a critical factor in optimizing your game app's performance. This is a topic of considerable depth and complexity, of which only some small concepts might be relevant to your specific game. We recommend that you research this topic on your own.
+
+> To get you started, we've provided some [Notes on Frame Rates](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/blob/master/Lessons/01-Intro-iOS-Game-Development/assignments/frame_rates.md) to give you some introductory background.
+
+> At the very least, you should be aware that SpriteKit performs better on physical devices than it does in the Simulator, so your frame rates will appear lower than expected when running your game in the Simulator.
+
+
+
 
 **The Game Loop** </br>
 Like most game engines, SpriteKit runs an endless rendering loop &mdash; often called a "game loop" &mdash; to update and render (redraw) the screen.
@@ -240,14 +234,6 @@ Because it is called each frame, it provides an excellent opportunity to interac
 
       }
 ```
-
-
-> __*Important:*__ Understanding frame rates in iOS game development is a critical factor in optimizing your game app's performance. This is a topic of considerable depth and complexity, of which only some small concepts might be relevant to your specific game. We recommend that you research this topic on your own.
-
-> To get you started, we've provided some [Notes on Frame Rates](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/blob/master/Lessons/01-Intro-iOS-Game-Development/assignments/frame_rates.md) to give you some introductory background.
-
-At the very least, you should be aware that SpriteKit performs better on physical devices than it does in the Simulator, so your frame rates will appear lower than expected when running your game in the Simulator.
-
 
 
 
