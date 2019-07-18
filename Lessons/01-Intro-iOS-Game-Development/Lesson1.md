@@ -103,7 +103,8 @@ The position of a sprite is controlled by its `position` property, which is a CG
 
 By default, SpriteKit positions sprites so they are centered at `(0, 0)`, which in SpriteKit represents the bottom left.
 
-__*Important Note*__ &mdash; Unlike the coordinate systems in UIKit and AppKit &mdash; where `0` on the y-axis is at the __*top-left*__ &mdash; in SpriteKit, `0` on the y-axis is at the __*bottom-left*__ of the screen:
+__*Important Note*__</br>
+Unlike the coordinate systems in UIKit and AppKit &mdash; where `0` on the y-axis is at the __*top-left*__ &mdash; in SpriteKit, `0` on the y-axis is at the __*bottom-left*__ of the screen:
 
 ![XandY_in_spritekit](assets/XandY_in_spritekit.png) </br>
 
