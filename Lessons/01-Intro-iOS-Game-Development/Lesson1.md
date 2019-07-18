@@ -114,7 +114,7 @@ https://hackernoon.com/swift-spritekit-basics-94b1798ab639
 
 
 __*Simple Example:*__ </br>
-Basic example of how to code for creating a sprite and setting its `position` property:
+Basic example of how to write code to create a sprite and set its `position` property:
 
 ```Swift  
   // create sprite
@@ -167,13 +167,15 @@ Example illustrates creation of a simple, colored rectangle sprite. All you need
 
 
 #### Frame Rate & the Game Loop
-When we think about "real-time" game behaviors, you might imaging objects such as players (avatars), vehicles, and other things which move around the screen in what appears to be continuous motion.
+When we think about "real-time" game behaviors, you might imagine objects such as players (avatars), vehicles, and other things which move around the screen in what appears to be continuous motion.
 
 What is really happening is that the screen is redrawing itself every 1/60th of a second. And every time the screen redraws, the locations on screen of some or all of the objects change slightly.
 
 If done quickly enough, it can fool the human eye<sup>1</sup> into believing that everything is continuously moving.
 
-> <sup>1</sup> See "Persistence of Vision" link below...
+> <sup>1</sup> *See "Persistence of Vision" link below...*
+
+</br>
 
 **Frames** </br>
 Game app development borrows concepts and terminology from movie and video production, as well as from traditional and digital animation.
@@ -186,8 +188,11 @@ In an iOS game app, each individual picture drawn on screen is called a __*frame
 
 >  <sup>2</sup>  *Disambiguation: The term "frame" used in game development should not to be confused with the `frame` property on UIKit objects such as the `window` and `UIView` objects.*
 
+</br>
+</br>
+
 **Frame Rate** </br>
-Games typically try to draw frames at either 30 or 60 times per second and aim to keep that rate consistent so that animations feel smooth.
+Games typically try to draw frames at either 30 or 60 times per second and aim to keep that rate consistent so animations appear smooth.
 
 This rate at which the screen is redrawn is called the __*frame rate.*__ Measured in __*frames-per-second (FPS),*__ frame rate is the measure of the total number of consecutive frame redraws done in one second.
 
@@ -199,7 +204,7 @@ If the frame rate is low, your game is likely performing poorly for your user.
 >
 > We recommend that you take every opportunity to become familiar with this topic.
 >
-> To get you started, we've provided some [Notes on Frame Rates](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/blob/master/Lessons/01-Intro-iOS-Game-Development/assignments/frame_rates.md) to give you some introductory background.
+> To get you started, we've provided some [Notes on Frame Rates](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/blob/master/Lessons/01-Intro-iOS-Game-Development/assignments/frame_rates.md) as introductory background.
 
 > At the very least, be aware that SpriteKit performs better on a physical device than it does in the Simulator; your frame rates will appear lower than expected when running your game in the Simulator.
 
@@ -240,11 +245,7 @@ Because it is called each frame, it provides an excellent opportunity to interac
 ```
 
 
-
-
 ## In Class Activity I (30 min)
-
-
 
 [Space Junk](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/blob/master/Lessons/01-Intro-iOS-Game-Development/assignments/activity_1_space_junk.md)
 
