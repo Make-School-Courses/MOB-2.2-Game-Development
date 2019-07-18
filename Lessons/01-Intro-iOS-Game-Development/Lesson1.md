@@ -157,7 +157,24 @@ What is really happening is that the screen is redrawing itself every 1/60th of 
 
 If done quickly enough, it can fool the human eye into believing that everything is continuously moving.
 
+
+
+Each individual picture that you draw is called a frame.
+
+
+
+ Games typically try to draw frames at either 30 or 60 times per second and try to keep that rate consistent so the animations feel smooth.
+
+ <!-- This rate of drawing is called the frame rate, or specifically frames per second (FPS).
+
+ By default, SpriteKit displays this in the bottom-right corner of your game:
+ -->
+
 <!-- TODO: describe what a frame is -->
+
+
+<!-- TODO:  insert graphic showing progression of frames, maybe the famous Kodak horse graphic? -->
+
 
 
 **Frame Rate**
@@ -189,6 +206,9 @@ Updating every frame is the least efficient option, but it lets you change state
 if the device you’re running on can support your game at 60 fps. But less-powerful devices, which includes the simulator, can’t support that frame rate.
 
 
+SpriteKit tries to draw frames as fast as possible, up to 60 FPS. However, if `update(_:)` takes too long, or if SpriteKit has to draw more sprites than the hardware can handle at one time, the frame rate might decrease.
+
+
 As the game runs, you’ll notice a rapid decrease in the frame rate. Not only does the graphics processor have to deal with increasing amounts of geometry, the physics engine has to deal with an increasing number of collisions, which also negatively affects your frame rate.
 
 
@@ -196,10 +216,18 @@ As the game runs, you’ll notice a rapid decrease in the frame rate. Not only d
 
 
 
+Note: It’s handy of SpriteKit to show your frames per second onscreen by default because you want to keep an eye on the FPS as you develop your game to make sure your game is performing well. Ideally, you want at least 30 FPS.
+You should only pay attention to the FPS display on an actual device, though, as you’ll get very different performance on the simulator.
+In particular, your Mac has a faster CPU and way more memory than an iPhone or iPad, but abysmally slow simulated rendering, so you can’t count on any accurate performance measurements from your Mac — again, always test performance on a device!
 
 
 
 
+Note: By default, SpriteKit tries to call your update method 60 times per second (roughly every 16 milliseconds).
+However, if it takes too long to update and render a frame of your game, SpriteKit may call your update method less frequently, and the FPS will drop.
+You can see that here — some frames are taking over 30 milliseconds. You’re seeing such a low FPS because you’re running on the simulator.
+As mentioned earlier, you can’t count on the simulator for accurate performance measurements. If you try running this code on a device, you should see a much higher FPS.
+Note that even if your game runs at a smooth 60 FPS, there will always be some small variance in how often SpriteKit calls your update method. Therefore, you need to take the delta time into account in your calculations — and you’ll learn how to do that next!
 
 
 
@@ -208,7 +236,7 @@ As the game runs, you’ll notice a rapid decrease in the frame rate. Not only d
  <!-- Notes on Frame Rates:
   Also note that SceneKit performs much better on physical devices than it does in the simulator, so your frame rates will appear lower than expected when running your game in the simulator. -->
 
-
+SpriteKit performs better on physical devices than it does in the Simulator, so your frame rates will appear lower than expected when running your game in the Simulator.
 
   Frame time: This is the total amount of time it took to draw a single frame. A frame
  time of 16.7ms is required to achieve a frame rate of 60fps.
@@ -233,10 +261,14 @@ Steps in rendering each scene typically include:
 5. Render the scene
 
 
+<!-- TODO:  show a code snippet of the update() method -->
+
+
 
 To run at an optimal performance level and frame rate, you’ll have to remove objects that fall out of sight. And what better place to do this than — that’s right, the render loop! Handy thing, isn’t it?
 
 
+<!-- Now you know that update(_:) is called each frame and is a good spot to update the positions of your sprites — so it’s time to make this zombie move! -->
 
 
 
@@ -276,6 +308,16 @@ When the scene processes its nodes, the actions associated with those nodes are 
 
 ### Movement with 2D vectors
 
+A 2D vector represents a direction and a length:
+
+<!-- TODO:  find and show a diagram -->
+
+
+In the simplest terms, a vector is a value that contains two or more values. In games, vectors are most useful for describing two things: positions (i.e., coordinates) and velocities. An empty 2D vector — that is, one with just zeros — is written like this: [0, 0]. When you’re working in iOS, you can use the CGPoint structure as a 2D vector, as illustrated in Figure 6-1: let myPosition = CGPoint(x: 2, y: 2) You can also use vectors to store velocities. A velocity represents how far a location changes over time;
+
+
+
+
 #### Movement with actions
 
 #### Move action
@@ -285,8 +327,6 @@ When the scene processes its nodes, the actions associated with those nodes are 
 #### Wait action
 
 #### Run-block
-
-
 
 #### Repeating actions
 
@@ -337,6 +377,8 @@ Subclassing Scenes Versus Assigning a Delegate
 
 https://developer.apple.com/documentation/spritekit/skscene/subclassing_scenes_versus_assigning_a_delegate
 
+
+3. Delta Time
 
 
 ## Wrap Up (5 min)
