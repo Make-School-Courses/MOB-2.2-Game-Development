@@ -200,14 +200,14 @@ In an iOS game app, each individual picture drawn on screen is called a __*frame
   <sup>2</sup> frame not to be confused with the frame property on a window or UIView objects
   <sup>3</sup> -->
 
-**Frame Rate**
+**Frame Rate** </br>
 Games typically try to draw frames at either 30 or 60 times per second and aim to keep that rate consistent so that animations feel smooth.
 
 This rate at which the screen is redrawn is called the __*frame rate.*__ Measured in __*frames-per-second (FPS),*__ frame rate is the measure of the total number of consecutive frame redraws done in one second.
 
 If the frame rate is low, your game is likely performing poorly for your user.
 
-**The Game Loop**
+**The Game Loop** </br>
 Like most game engines, SpriteKit runs an endless rendering loop &mdash; often called a "game loop" &mdash; to update and render (redraw) the screen.
 
 ![game_loop_frame-cycle_functions](assets/game_loop_frame-cycle_functions.png) </br>
