@@ -207,6 +207,41 @@ This rate at which the screen is redrawn is called the __*frame rate.*__ Measure
 
 If the frame rate is low, your game is likely performing poorly for your user.
 
+**The Game Loop**
+Like most game engines, SpriteKit runs an endless rendering loop &mdash; often called a "game loop" &mdash; to update and render (redraw) the screen.
+
+![game_loop_frame-cycle_functions](assets/game_loop_frame-cycle_functions.png) </br>
+
+*Source:* </br>
+https://developer.apple.com/documentation/spritekit/skscene/responding_to_frame-cycle_events
+
+Steps in rendering each scene typically include:
+1. Updating the scene & its objects
+2. Evaluate actions
+3. Simulate physics
+4. Apply constraints
+5. Render the scene
+
+To optimize game performance factors, including frame rate, you'll want to interact with the game loop to manage node behavior within a scene.
+
+Example: Objects that move out of sight still consume memory, which impacts performance. The game loop offers an excellent point to evaluate status and remove them if they are no longer needed.
+
+__*the `update(_:)` function*__ </br>
+The `update(_:)` function tells your app to perform any app-specific logic to update your scene. You override it to perform per-frame game logic.
+
+It is called exactly once per frame &mdash; before any actions are evaluated and any physics are simulated.
+
+Because it is called each frame, it provides an excellent opportunity to interact with the game loop and update the positions of your nodes (sprites).
+
+```Swift  
+  override func update(_ currentTime: TimeInterval) {
+
+          //TODO: Update nodes in this scene
+
+      }
+```
+
+
 
 
 Notes on Frame Rate:
@@ -261,6 +296,14 @@ As the game runs, you’ll notice a rapid decrease in the frame rate. Not only d
 
 
 
+Updating every frame is the least efficient option, but it lets you change state often, which makes the game look smooth.
+
+SpriteKit tries to draw frames as fast as possible, up to 60 FPS. However, if `update(_:)` takes too long, or if SpriteKit has to draw more sprites than the hardware can handle at one time, the frame rate might decrease.
+
+
+
+
+
 
 
 
@@ -290,53 +333,6 @@ SpriteKit performs better on physical devices than it does in the Simulator, so 
  time of 16.7ms is required to achieve a frame rate of 60fps.
 
 Delta Time -- the amount of time between frames becomes important....(see ref 1 bk for more details)
-
-
-
-**The Game Loop**
-Like most game engines, SpriteKit runs an endless rendering loop &mdash; often called a "game loop" &mdash; to update and render (redraw) the screen.
-
-![game_loop_frame-cycle_functions](assets/game_loop_frame-cycle_functions.png) </br>
-
-*Source:* </br>
-https://developer.apple.com/documentation/spritekit/skscene/responding_to_frame-cycle_events
-
-Steps in rendering each scene typically include:
-1. Updating the scene & its objects
-2. Evaluate actions
-3. Simulate physics
-4. Apply constraints
-5. Render the scene
-
-To optimize game performance factors, including frame rate, you'll want to interact with the game loop to manage node behavior within a scene.
-
-For example: Objects that move out of sight still consume memory, which impacts performance. The game loop offers an excellent point to evaluate status and remove them if they are no longer needed.
-
-
-__*the `update(_:)` function*__ </br>
-The `update(_:)` function tells your app to perform any app-specific logic to update your scene. You override it to perform per-frame game logic.
-
-It is called exactly once per frame &mdash; before any actions are evaluated and any physics are simulated.
-
-Because it is called each frame, it provides an excellent opportunity to interact with the game loop and update the positions of your nodes (sprites).
-
-```Swift  
-  override func update(_ currentTime: TimeInterval) {
-
-          //TODO: Update nodes in this scene
-
-      }
-```
-
-
-
-Updating every frame is the least efficient option, but it lets you change state often, which makes the game look smooth.
-
-SpriteKit tries to draw frames as fast as possible, up to 60 FPS. However, if `update(_:)` takes too long, or if SpriteKit has to draw more sprites than the hardware can handle at one time, the frame rate might decrease.
-
-
-
-
 
 
 
