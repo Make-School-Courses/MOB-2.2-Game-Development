@@ -1,6 +1,10 @@
 # Notes on Frame Rates
 
 
+By no means complete, it illustr
+
+
+Understanding frame rates in iOS game development
 
 
 
@@ -87,7 +91,7 @@ Note that even if your game runs at a smooth 60 FPS, there will always be some s
  <!-- Notes on Frame Rates:
   Also note that SceneKit performs much better on physical devices than it does in the simulator, so your frame rates will appear lower than expected when running your game in the simulator. -->
 
-SpriteKit performs better on physical devices than it does in the Simulator, so your frame rates will appear lower than expected when running your game in the Simulator.
+<!-- SpriteKit performs better on physical devices than it does in the Simulator, so your frame rates will appear lower than expected when running your game in the Simulator. -->
 
   Frame time: This is the total amount of time it took to draw a single frame. A frame
  time of 16.7ms is required to achieve a frame rate of 60fps.

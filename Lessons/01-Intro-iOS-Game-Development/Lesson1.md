@@ -242,9 +242,12 @@ Because it is called each frame, it provides an excellent opportunity to interac
 ```
 
 
-> Important Notes:
+> __*Important:*__ Understanding frame rates in iOS game development is a critical factor in optimizing your game app's performance. This is a topic of considerable depth and complexity, of which only some small concepts might be relevant to your specific game. We recommend that you research this topic on your own.
 
-[]()
+> To get you started, we've provided some [Notes on Frame Rates](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/blob/master/Lessons/01-Intro-iOS-Game-Development/assignments/frame_rates.md) to give you some introductory background.
+
+At the very least, you should be aware that SpriteKit performs better on physical devices than it does in the Simulator, so your frame rates will appear lower than expected when running your game in the Simulator.
+
 
 
 
