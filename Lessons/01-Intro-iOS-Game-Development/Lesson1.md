@@ -171,24 +171,20 @@ When we think about "real-time" game behaviors, you might imaging objects such a
 
 What is really happening is that the screen is redrawing itself every 1/60th of a second. And every time the screen redraws, the locations on screen of some or all of the objects change slightly.
 
-If done quickly enough, it can fool the human eye<sup>x</sup> into believing that everything is continuously moving.
+If done quickly enough, it can fool the human eye<sup>1</sup> into believing that everything is continuously moving.
 
-> <sup>x</sup> See "Persistence of Vision" link below...
+> <sup>1</sup> See "Persistence of Vision" link below...
 
-**Frames**
+**Frames** </br>
 Game app development borrows concepts and terminology from movie and video production, as well as from traditional and digital animation.
 
-In an iOS game app, each individual picture drawn on screen is called a __*frame*__<sup>y</sup> &mdash; just as each individual still image in a movie, animation or video is called a frame.<sup>y</sup>
+In an iOS game app, each individual picture drawn on screen is called a __*frame*__<sup>2</sup> &mdash; just as each individual still image in a movie, animation or video is called a frame.<sup>2</sup>
 
-![horse_in_motion_frames](assets/horse_in_motion_frames.png) </br>
-
-
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![horse_in_motion_frames](assets/horse_in_motion_frames.png) </br>
 
 
 
 
-
-Games typically try to draw frames at either 30 or 60 times per second and try to keep that rate consistent so the animations feel smooth.
 
  <!-- This rate of drawing is called the frame rate, or specifically frames per second (FPS).
 
@@ -201,18 +197,45 @@ Games typically try to draw frames at either 30 or 60 times per second and try t
 <!-- TODO:  insert graphic showing progression of frames, maybe the famous Kodak horse graphic? -->
 
 <!-- > Disambiguation Notes:
-  <sup>y</sup> frame not to be confused with the frame property on a window or UIView objects
-  <sup>2</sup> -->
+  <sup>2</sup> frame not to be confused with the frame property on a window or UIView objects
+  <sup>3</sup> -->
 
 **Frame Rate**
-The __*Frame Rate*__ &mdash; measured in __*frames-per-second (FPS) &mdash*__; is the measurement of the total number of consecutive frame redraws done in one-second.
+Games typically try to draw frames at either 30 or 60 times per second and aim to keep that rate consistent so that animations feel smooth.
 
-The lower this number, the more poorly your game is performing.
+This rate at which the screen is redrawn is called the __*frame rate.*__ Measured in __*frames-per-second (FPS),*__ frame rate is the measure of the total number of consecutive frame redraws done in one second.
 
+If the frame rate is low, your game is likely performing poorly for your user.
+
+
+
+Notes on Frame Rate:
+
+Your application should choose a frame rate that it can consistently maintain.
+The default value is 60 frames per second.
+
+ equivalent to 16.67 ms per frame.
+
+
+ Most apps target a frame rate of 60 FPS,
+
+
+ However, apps that are consistently unable to complete a frame’s work within this time should target a lower frame rate to avoid jitter.
+
+
+
+
+
+Notes on Frame Rate:
 
 You typically want your game to run at 60fps, which will make your game look and feel smooth.
 
+However, there are conditions in which...
 
+<!-- This rate of drawing is called the frame rate, or specifically frames per second (FPS).
+
+By default, SpriteKit displays this in the bottom-right corner of your game:
+-->
 
 <!--
 
@@ -222,18 +245,16 @@ When we talk about “real-time” games, what comes to mind are objects like th
 <!-- Frame rate: Controls the rate of the animation in frames per second. Set this to 0 as this only applies when using an image that contains multiple frames. -->
 
 
-
+888
 
 <!-- We want to optimize frame rates... -->
 
 You’ll get the best results if you update your game at the same rate as the screen.
 
-Updating every frame is the least efficient option, but it lets you change state often, which makes the game look smooth.
 
 if the device you’re running on can support your game at 60 fps. But less-powerful devices, which includes the simulator, can’t support that frame rate.
 
 
-SpriteKit tries to draw frames as fast as possible, up to 60 FPS. However, if `update(_:)` takes too long, or if SpriteKit has to draw more sprites than the hardware can handle at one time, the frame rate might decrease.
 
 
 As the game runs, you’ll notice a rapid decrease in the frame rate. Not only does the graphics processor have to deal with increasing amounts of geometry, the physics engine has to deal with an increasing number of collisions, which also negatively affects your frame rate.
@@ -273,7 +294,7 @@ Delta Time -- the amount of time between frames becomes important....(see ref 1 
 
 
 **The Game Loop**
-Like most game engines, SpriteKit runs an endless rendering loop &mdash; often called a "game loop" &mdash; to render and update the screen.
+Like most game engines, SpriteKit runs an endless rendering loop &mdash; often called a "game loop" &mdash; to update and render (redraw) the screen.
 
 ![game_loop_frame-cycle_functions](assets/game_loop_frame-cycle_functions.png) </br>
 
@@ -281,25 +302,42 @@ Like most game engines, SpriteKit runs an endless rendering loop &mdash; often c
 https://developer.apple.com/documentation/spritekit/skscene/responding_to_frame-cycle_events
 
 Steps in rendering each scene typically include:
-1. Updating the scene & its objects - `func update(TimeInterval)` Tells your app to perform any app-specific logic to update your scene.
+1. Updating the scene & its objects
 2. Evaluate actions
 3. Simulate physics
 4. Apply constraints
 5. Render the scene
 
+To optimize game performance factors, including frame rate, you'll want to interact with the game loop to manage node behavior within a scene.
 
-<!-- TODO:  show a code snippet of the update() method -->
-
-
-
-To run at an optimal performance level and frame rate, you’ll have to remove objects that fall out of sight. And what better place to do this than — that’s right, the render loop! Handy thing, isn’t it?
+For example: Objects that move out of sight still consume memory, which impacts performance. The game loop offers an excellent point to evaluate status and remove them if they are no longer needed.
 
 
-<!-- Now you know that update(_:) is called each frame and is a good spot to update the positions of your sprites — so it’s time to make this zombie move! -->
+__*the `update(_:)` function*__ </br>
+The `update(_:)` function tells your app to perform any app-specific logic to update your scene. You override it to perform per-frame game logic.
+
+It is called exactly once per frame &mdash; before any actions are evaluated and any physics are simulated.
+
+Because it is called each frame, it provides an excellent opportunity to interact with the game loop and update the positions of your nodes (sprites).
+
+```Swift  
+  override func update(_ currentTime: TimeInterval) {
+
+          //TODO: Update nodes in this scene
+
+      }
+```
 
 
 
-Subclassing Scenes Versus Assigning a Delegate
+Updating every frame is the least efficient option, but it lets you change state often, which makes the game look smooth.
+
+SpriteKit tries to draw frames as fast as possible, up to 60 FPS. However, if `update(_:)` takes too long, or if SpriteKit has to draw more sprites than the hardware can handle at one time, the frame rate might decrease.
+
+
+
+
+
 
 
 ## In Class Activity I (30 min)
@@ -425,7 +463,13 @@ Subclassing Scenes Versus Assigning a Delegate
 https://developer.apple.com/documentation/spritekit/skscene/subclassing_scenes_versus_assigning_a_delegate
 
 
+
+
+
 3. Delta Time
+
+4. How do you set frame rate in SpriteKit?
+
 
 
 ## Wrap Up (5 min)
@@ -440,13 +484,18 @@ https://developer.apple.com/documentation/spritekit/skscene/subclassing_scenes_v
 
 https://developer.apple.com/documentation/spritekit/skscene/responding_to_frame-cycle_events
 
+https://en.wikipedia.org/wiki/Key_frame
 
-
-http://gameprogrammingpatterns.com
 
 
 https://gameprogrammingpatterns.com/state.html
 
-https://en.wikipedia.org/wiki/Key_frame
 
-[Persistence of vision: how does animation work? - an article](https://www.futurelearn.com/courses/explore-animation/0/steps/12222) <sup>x</sup>
+
+[Persistence of vision: how does animation work? - an article](https://www.futurelearn.com/courses/explore-animation/0/steps/12222) <sup>1</sup>
+
+
+https://developer.apple.com/documentation/spritekit/skview/1642773-preferredframespersecond
+
+
+https://developer.apple.com/library/archive/documentation/3DDrawing/Conceptual/MTLBestPracticesGuide/FrameRate.html
