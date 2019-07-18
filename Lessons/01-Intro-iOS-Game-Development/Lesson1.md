@@ -23,6 +23,16 @@ Explain why students should care to learn the material presented in this class.
 1. Design
 1. Implement
 
+<!-- TOPICS:
+SpriteKit, Sprites, Nodes (SKNode), scenes (SKScene), key node properties,
+creating a sprite, Frames, Frame Rate and Game Loop
+
+1.Implement:
+- a simple FPS game? using SpriteKit, adding nodes and simple actions...
+
+ -->
+
+
 
 ## Overview/TT I (20 min)
 
@@ -47,15 +57,15 @@ Nodes in SpriteKit are commonly referred to as __*sprites.*__
 All onscreen assets will be an `SKNode` or a subclass of it.
 
 Example subclasses of `SKNode`:
-- `SKShapeNode`  renders a shape defined by a Core Graphics path
-- `SKVideo` displays video content
-- `SKLabel` displays a text label
-- `SKScene` An object that organizes all of the active SpriteKit content.
+- `SKScene` &mdash; an object that organizes all of the active SpriteKit content.
+- `SKShapeNode` &mdash; renders a shape defined by a Core Graphics path
+- `SKVideo` &mdash; displays video content
+- `SKLabel` &mdash; displays a text label
 
 **Node Properties** </br>
-SpriteKit offers many different node types, but they all share a common set of key properties since they all inherit from `SKNode`.
+SpriteKit offers many different node types, but they all share a common set of key properties inherited from `SKNode`.
 
-A few of the most important properties of `SKNode` and its subclasses that you can alter:
+A few of the most important properties of `SKNode` and its subclasses that you can manipulate:
 - `position` (CGPoint)
 - `xScale` (CGFloat): representing the horizontal scale of a node
 - `yScale` (CGFloat): similar to xScale but it acts in the vertical direction instead
@@ -76,7 +86,7 @@ An `SKSpriteNode` is a type of node that can display either a colored rectangle,
 #### SKScene
 An instance of the `SKScene` class represents an active scene of content in SpriteKit.
 
-A scene is the root node in a tree of SpriteKit nodes. This tree of nodes provides content that the scene animates and renders for display.
+A scene is the __*root node*__ in a tree of SpriteKit nodes. This tree of nodes provides content that the scene animates and renders for display.
 
 You can display or present a scene &mdash; that is, a collection of sprites &mdash; from inside an `SKView`, `SKRenderer`, or `WKInterfaceSKScene` object.
 
@@ -93,7 +103,7 @@ The position of a sprite is controlled by its `position` property, which is a CG
 
 By default, SpriteKit positions sprites so they are centered at `(0, 0)`, which in SpriteKit represents the bottom left.
 
-It is important to note that, unlike the coordinate systems in UIKit and AppKit &mdash; where `0` on the y-axis is at the __*top-left*__ &mdash; in SpriteKit, `0` on the y-axis is at the __*bottom-left*__ of the screen:
+__*Important Note*__ &mdash; Unlike the coordinate systems in UIKit and AppKit &mdash; where `0` on the y-axis is at the __*top-left*__ &mdash; in SpriteKit, `0` on the y-axis is at the __*bottom-left*__ of the screen:
 
 ![XandY_in_spritekit](assets/XandY_in_spritekit.png) </br>
 
@@ -102,7 +112,8 @@ It is important to note that, unlike the coordinate systems in UIKit and AppKit 
 https://hackernoon.com/swift-spritekit-basics-94b1798ab639
 
 
-##### Simple Example:
+__*Simple Example:*__ </br>
+Basic example of how to code for creating a sprite and setting its `position` property:
 
 ```Swift  
   // create sprite
@@ -124,9 +135,13 @@ https://hackernoon.com/swift-spritekit-basics-94b1798ab639
 
 #### Creating A Sprite
 To create a sprite and display it to your users:
+
 1. create an instance of `SKSpriteNode`
+
 2. configure its `size` and `position` properties
+
 3. add it to an `SKScene` object
+
 - Sprites are not visible unless they are inside an `SKScene` object, which means you need to add them as children of the scene itself by calling the `addChild(_:)` method (which comes with any `SKNode` object) on the `SKScene` object in which you want your sprite to appear.
 
 <!-- For any nodes that you want in your scene, you need to add them as children of the scene itself using the `addChild(_:)` method which comes with any `SKNode` object. -->
@@ -155,27 +170,38 @@ When we think about "real-time" game behaviors, you might imaging objects such a
 
 What is really happening is that the screen is redrawing itself every 1/60th of a second. And every time the screen redraws, the locations on screen of some or all of the objects change slightly.
 
-If done quickly enough, it can fool the human eye into believing that everything is continuously moving.
+If done quickly enough, it can fool the human eye<sup>x</sup> into believing that everything is continuously moving.
+
+> <sup>x</sup> See "Persistence of Vision" link below...
+
+**Frames**
+Game app development borrows concepts and terminology from movie and video production, as well as from traditional and digital animation.
+
+In an iOS game app, each individual picture drawn on screen is called a __*frame*__<sup>y</sup> &mdash; just as each individual still image in a movie, animation or video is called a frame.<sup>y</sup>
+
+![horse_in_motion_frames](assets/horse_in_motion_frames.png) </br>
 
 
 
-Each individual picture that you draw is called a frame.
 
 
 
- Games typically try to draw frames at either 30 or 60 times per second and try to keep that rate consistent so the animations feel smooth.
+
+Games typically try to draw frames at either 30 or 60 times per second and try to keep that rate consistent so the animations feel smooth.
 
  <!-- This rate of drawing is called the frame rate, or specifically frames per second (FPS).
 
  By default, SpriteKit displays this in the bottom-right corner of your game:
  -->
 
-<!-- TODO: describe what a frame is -->
+
 
 
 <!-- TODO:  insert graphic showing progression of frames, maybe the famous Kodak horse graphic? -->
 
-
+<!-- > Disambiguation Notes:
+  <sup>y</sup> frame not to be confused with the frame property on a window or UIView objects
+  <sup>2</sup> -->
 
 **Frame Rate**
 The __*Frame Rate*__ &mdash; measured in __*frames-per-second (FPS) &mdash*__; is the measurement of the total number of consecutive frame redraws done in one-second.
@@ -290,7 +316,19 @@ Demo the finished game...
 
 ## Overview/TT II (20 min)
 
+
+### The 2D Coordinate system
+
+<!-- TODO: first describe the 2D coordinate system? see ref book 1 -->
+
+<!-- TODO: get graphics for this -->
+
+
 ### SKAction
+
+<!-- TODO: Does SKAction belong in Lesson 2? -->
+
+
 `SKAction` is a powerful class used to bring nodes to life.
 
 Instances of `SKAction` are used to change the structure or content of a node in some way. They represent an animation that is executed by a node in the scene.
@@ -306,7 +344,14 @@ You can have several actions together in:
 
 When the scene processes its nodes, the actions associated with those nodes are all processed.
 
+<!-- TODO: discuss creating and running an action. Then add a code snippet -->
+
+
+
+
 ### Movement with 2D vectors
+
+
 
 A 2D vector represents a direction and a length:
 
@@ -314,6 +359,7 @@ A 2D vector represents a direction and a length:
 
 
 In the simplest terms, a vector is a value that contains two or more values. In games, vectors are most useful for describing two things: positions (i.e., coordinates) and velocities. An empty 2D vector — that is, one with just zeros — is written like this: [0, 0]. When you’re working in iOS, you can use the CGPoint structure as a 2D vector, as illustrated in Figure 6-1: let myPosition = CGPoint(x: 2, y: 2) You can also use vectors to store velocities. A velocity represents how far a location changes over time;
+
 
 
 
@@ -389,10 +435,7 @@ https://developer.apple.com/documentation/spritekit/skscene/subclassing_scenes_v
 
 ## Additional Resources
 
-1. Links to additional readings and videos
-
-
-https://developer.apple.com/documentation/spritekit
+1. https://developer.apple.com/documentation/spritekit
 
 https://developer.apple.com/documentation/spritekit/skscene/responding_to_frame-cycle_events
 
@@ -402,3 +445,7 @@ http://gameprogrammingpatterns.com
 
 
 https://gameprogrammingpatterns.com/state.html
+
+https://en.wikipedia.org/wiki/Key_frame
+
+[Persistence of vision: how does animation work? - an article](https://www.futurelearn.com/courses/explore-animation/0/steps/12222) <sup>x</sup>
