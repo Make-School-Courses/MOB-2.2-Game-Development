@@ -260,14 +260,44 @@ Demo the finished game...
 
 
 
-## Overview/TT II (20 min)
-
+## < Movement > - Overview/TT II (20 min)
 
 ### The 2D Coordinate system
+In 2D graphics, we deal with space that only has two dimensions: x and y.
 
-<!-- TODO: first describe the 2D coordinate system? see ref book 1 -->
+- The x-axis &mdash; the horizontal axis. goes from left to right,
+
+whereas the y-axis is the vertical axis and runs from top to bottom.
+
+We call this kind of space a coordinate system.
+
+The central point of the coordinate system used in graphics is called the origin.
+
+To describe a specific location in a coordinate space, you just need to provide two numbers: how far away from the origin the location is on the horizontal axis (also known as the x coordinate), and how far away it is on the vertical axis (also known as the y coordinate).
+
+These coordinates are usually written in parentheses, like this: (x coordinate, y coordinate).
+
+ The coordinates for a location 5 units to the right of the origin and 2 units above it would be written as (5,2). The location of the origin itself is written as (0,0) — that is, zero units away from the origin on both the x- and y-axes.
+
+
+
 
 <!-- TODO: get graphics for this -->
+
+
+
+### Movement with 2D vectors
+
+
+
+A 2D vector represents a direction and a length:
+
+<!-- TODO:  find and show a diagram -->
+
+
+In the simplest terms, a vector is a value that contains two or more values. In games, vectors are most useful for describing two things: positions (i.e., coordinates) and velocities. An empty 2D vector — that is, one with just zeros — is written like this: [0, 0]. When you’re working in iOS, you can use the CGPoint structure as a 2D vector, as illustrated in Figure 6-1: let myPosition = CGPoint(x: 2, y: 2) You can also use vectors to store velocities. A velocity represents how far a location changes over time;
+
+
 
 
 ### SKAction
@@ -293,18 +323,6 @@ When the scene processes its nodes, the actions associated with those nodes are 
 <!-- TODO: discuss creating and running an action. Then add a code snippet -->
 
 
-
-
-### Movement with 2D vectors
-
-
-
-A 2D vector represents a direction and a length:
-
-<!-- TODO:  find and show a diagram -->
-
-
-In the simplest terms, a vector is a value that contains two or more values. In games, vectors are most useful for describing two things: positions (i.e., coordinates) and velocities. An empty 2D vector — that is, one with just zeros — is written like this: [0, 0]. When you’re working in iOS, you can use the CGPoint structure as a 2D vector, as illustrated in Figure 6-1: let myPosition = CGPoint(x: 2, y: 2) You can also use vectors to store velocities. A velocity represents how far a location changes over time;
 
 
 
@@ -406,3 +424,6 @@ https://developer.apple.com/documentation/spritekit/skview/1642773-preferredfram
 
 
 https://developer.apple.com/library/archive/documentation/3DDrawing/Conceptual/MTLBestPracticesGuide/FrameRate.html
+
+
+https://en.wikipedia.org/wiki/Vector_(mathematics_and_physics)
