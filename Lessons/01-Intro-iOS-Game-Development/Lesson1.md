@@ -342,6 +342,10 @@ SpriteKit tries to draw frames as fast as possible, up to 60 FPS. However, if `u
 
 ## In Class Activity I (30 min)
 
+
+
+[Space Junk](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/blob/master/Lessons/01-Intro-iOS-Game-Development/assignments/activity_1_space_junk.md)
+
 Intro to Astro Junk...
 
 < Intro the game...explain how it will look, what it will be used for...
