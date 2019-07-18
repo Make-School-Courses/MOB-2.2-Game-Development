@@ -189,7 +189,7 @@ In an iOS game app, each individual picture drawn on screen is called a __*frame
 >  <sup>2</sup>  *Disambiguation: The term "frame" used in game development should not to be confused with the `frame` property on UIKit objects such as the `window` and `UIView` objects.*
 
 </br>
-</br>
+
 
 **Frame Rate** </br>
 Games typically try to draw frames at either 30 or 60 times per second and aim to keep that rate consistent so animations appear smooth.
@@ -244,7 +244,6 @@ Because it is called each frame, it provides an excellent opportunity to interac
       }
 ```
 
-
 ## In Class Activity I (30 min)
 
 [Space Junk](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/blob/master/Lessons/01-Intro-iOS-Game-Development/assignments/activity_1_space_junk.md)
@@ -262,29 +261,28 @@ Demo the finished game...
 
 ## < Movement > - Overview/TT II (20 min)
 
-### The 2D Coordinate system
-In 2D graphics, we deal with space that only has two dimensions: x and y.
+### The 2D Coordinate System
+In 2D graphics, we deal with space that only has two dimensions: the X and Y axes.
 
-- The x-axis &mdash; the horizontal axis. goes from left to right,
+- X axis &mdash; Horizontal, left-to-right axis.
+- Y axis &mdash; Vertical axis. Runs from botton to top.
 
-whereas the y-axis is the vertical axis and runs from top to bottom.
+We call this the "2D Coordinate System."
 
-We call this kind of space a coordinate system.
+![2D_coordinate_system](assets/2D_coordinate_system.png) </br>
 
-The central point of the coordinate system used in graphics is called the origin.
+The central point of a coordinate system used in graphics is called the *origin.*
 
-To describe a specific location in a coordinate space, you just need to provide two numbers: how far away from the origin the location is on the horizontal axis (also known as the x coordinate), and how far away it is on the vertical axis (also known as the y coordinate).
+To describe a specific location in a 2D coordinate space, you only need to provide two numbers:
 
-These coordinates are usually written in parentheses, like this: (x coordinate, y coordinate).
+- X coordinate &mdash; the distance the location point is from the origin on the horizontal axis
+- Y coordinate &mdash; how far away it is from the origin on the vertical axis
 
- The coordinates for a location 5 units to the right of the origin and 2 units above it would be written as (5,2). The location of the origin itself is written as (0,0) — that is, zero units away from the origin on both the x- and y-axes.
+We typically write coordinates in parentheses: `(x coordinate, y coordinate)`
 
+A point 7 units to the right of the origin and 4 units above it is written: `(7,4)`
 
-
-
-<!-- TODO: get graphics for this -->
-
-
+The coordinates for the origin point itself is written `(0,0)` &mdash; which is the same as saying that it is zero units away from the origin point on both the the x and y axes.
 
 ### Movement with 2D vectors
 
@@ -425,5 +423,7 @@ https://developer.apple.com/documentation/spritekit/skview/1642773-preferredfram
 
 https://developer.apple.com/library/archive/documentation/3DDrawing/Conceptual/MTLBestPracticesGuide/FrameRate.html
 
+
+https://en.wikipedia.org/wiki/Coordinate_system
 
 https://en.wikipedia.org/wiki/Vector_(mathematics_and_physics)
