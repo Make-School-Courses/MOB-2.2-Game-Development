@@ -184,7 +184,7 @@ In an iOS game app, each individual picture drawn on screen is called a __*frame
 
 </br>
 
->  <sup>2</sup>  Disambiguation: The term *frame* used in game development should not to be confused with the `frame` property on UIKit objects such as the `window` and `UIView` objects.
+>  <sup>2</sup>  *Disambiguation: The term "frame" used in game development should not to be confused with the `frame` property on UIKit objects such as the `window` and `UIView` objects.*
 
 **Frame Rate** </br>
 Games typically try to draw frames at either 30 or 60 times per second and aim to keep that rate consistent so that animations feel smooth.
@@ -195,14 +195,15 @@ If the frame rate is low, your game is likely performing poorly for your user.
 
 </br>
 
-> __*Important Note:*__ Understanding frame rates in iOS game development is a critical factor in optimizing your game app's performance. This is a topic of considerable depth and complexity, of which only some small concepts might be relevant to your specific game. We recommend that you research this topic on your own.
-
+> __*Important Note:*__ Understanding frame rates in iOS game development is a critical factor in optimizing your game app's performance. This is a topic of considerable depth and complexity, of which only some small concepts might be relevant to your specific game.
+>
+> We recommend that you take every opportunity to become familiar with this topic.
+>
 > To get you started, we've provided some [Notes on Frame Rates](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/blob/master/Lessons/01-Intro-iOS-Game-Development/assignments/frame_rates.md) to give you some introductory background.
 
-> At the very least, you should be aware that SpriteKit performs better on physical devices than it does in the Simulator, so your frame rates will appear lower than expected when running your game in the Simulator.
+> At the very least, be aware that SpriteKit performs better on a physical device than it does in the Simulator; your frame rates will appear lower than expected when running your game in the Simulator.
 
-
-
+</br>
 
 **The Game Loop** </br>
 Like most game engines, SpriteKit runs an endless rendering loop &mdash; often called a "game loop" &mdash; to update and render (redraw) the screen.
