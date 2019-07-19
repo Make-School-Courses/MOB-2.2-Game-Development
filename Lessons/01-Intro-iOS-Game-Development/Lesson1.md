@@ -319,6 +319,12 @@ An empty 2D vector — one with only zeros for each coordinate — can be writte
   var velocity = CGPoint.zero
 ```
 
+
+<!-- TODO: 1) Explain vectors -- simp;e
+2) then show a playground that illustrates mathematics_and_physics
+ -->
+
+
 Vectors can also be used to store __*velocities.*__
 
 
