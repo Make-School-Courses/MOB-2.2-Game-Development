@@ -5,9 +5,10 @@
 | **Elapsed** | **Time**  | **Activity**              |
 | ----------- | --------- | ------------------------- |
 | 0:00        | 0:05      | Objectives                |
-| 0:05        | 0:15      | Overview                  |
+| 0:05        | 0:15      | Overview/TT1                  |
 | 0:20        | 0:30      | In Class Activity I       |
 | 0:50        | 0:10      | BREAK                     |
+| 0:05        | 0:20      | TT2 - Movement                |
 | 1:00        | 0:45      | In Class Activity II      |
 | 1:45        | 0:05      | Wrap up review objectives |
 | TOTAL       | 1:50      | -                         |
@@ -32,6 +33,14 @@ creating a sprite, Frames, Frame Rate and Game Loop
 
  -->
 
+ <!-- Supports/Includes:
+ Textured sprites
+ Physics engine (collisions, events, forces & gravity, simulations)
+ Scene editor
+ Particles editor (fire, smoke…)
+ Camera
+ Tilesets  -->
+
 
 
 ## Overview/TT I (20 min)
@@ -41,6 +50,13 @@ creating a sprite, Frames, Frame Rate and Game Loop
 #### What is SpriteKit
 
 <!-- Briefly explain SpriteKit, show its historical antecedents: i.e., "before spritekit..." -->
+
+
+<!-- SpriteKit is a 2D game engine.
+Developed by Apple.
+Build on top of openGL.
+
+Let’s you create high-performance, battery-efficient 2D games. -->
 
 
 ### Quick Review: Key Classes & Concepts
@@ -246,26 +262,20 @@ Because it is called each frame, it provides an excellent opportunity to interac
 
 ## In Class Activity I (30 min)
 
+
 [Space Junk](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/blob/master/Lessons/01-Intro-iOS-Game-Development/assignments/activity_1_space_junk.md)
 
-Intro to Astro Junk...
-
-< Intro the game...explain how it will look, what it will be used for...
-Demo the finished game...
-
->
-
-< TODO: students to create all sprites, etc., needed in game that have been covered in TTs up to now >
+Intro to AstroJunk...
 
 
 
-## < Movement > - Overview/TT II (20 min)
+## Movement (20 min)
 
 ### The 2D Coordinate System
 In 2D graphics, we deal with space that only has two dimensions: the X and Y axes.
 
 - X axis &mdash; Horizontal, left-to-right axis.
-- Y axis &mdash; Vertical axis. Runs from botton to top.
+- Y axis &mdash; Vertical axis. Runs from bottom to top.
 
 We call this the "2D Coordinate System."
 
@@ -285,15 +295,64 @@ A point 7 units to the right of the origin and 4 units above it is written: `(7,
 The coordinates for the origin point itself is written `(0,0)` &mdash; which is the same as saying that it is zero units away from the origin point on both the the x and y axes.
 
 ### Movement with 2D vectors
+In its most simplified definition, a __*vector*__ is a value that contains two or more values.
+
+In game apps, we use commonly use vectors to describe two things:
+- on-screen positions (i.e., coordinates)
+- velocities
+
+In iOS, it is useful and quite common to represent 2D vectors as `CGPoints`.
+
+```Swift  
+  let spritePosition = CGPoint(x: 3, y: 5)
+```
+
+An empty 2D vector — one with only zeros for each coordinate — can be written in two ways:
+
+```Swift  
+  var velocity = CGPoint(x: 0, y: 0)
+```
+
+...or...
+
+```Swift  
+  var velocity = CGPoint.zero
+```
+
+Vectors can also be used to store __*velocities.*__
 
 
 
-A 2D vector represents a direction and a length:
+
+
+A velocity represents how far a location changes over time; for example, if an object is moving 2 units right and 3 units down every second, you could write its velocity as [2, 3].
+
+Then, every second, you would add the object’s velocity to its current position.
+
+
+
+A 2D vector represents a *direction* and a *length* (aka, its *magnitude*):
+
+
+
 
 <!-- TODO:  find and show a diagram -->
 
 
-In the simplest terms, a vector is a value that contains two or more values. In games, vectors are most useful for describing two things: positions (i.e., coordinates) and velocities. An empty 2D vector — that is, one with just zeros — is written like this: [0, 0]. When you’re working in iOS, you can use the CGPoint structure as a 2D vector, as illustrated in Figure 6-1: let myPosition = CGPoint(x: 2, y: 2) You can also use vectors to store velocities. A velocity represents how far a location changes over time;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -386,7 +445,7 @@ Subclassing Scenes Versus Assigning a Delegate
 https://developer.apple.com/documentation/spritekit/skscene/subclassing_scenes_versus_assigning_a_delegate
 
 
-
+3. GCVector
 
 
 3. Delta Time
@@ -403,7 +462,9 @@ https://developer.apple.com/documentation/spritekit/skscene/subclassing_scenes_v
 
 ## Additional Resources
 
-1. https://developer.apple.com/documentation/spritekit
+1. [Slides]()
+2.
+https://developer.apple.com/documentation/spritekit
 
 https://developer.apple.com/documentation/spritekit/skscene/responding_to_frame-cycle_events
 
@@ -427,3 +488,6 @@ https://developer.apple.com/library/archive/documentation/3DDrawing/Conceptual/M
 https://en.wikipedia.org/wiki/Coordinate_system
 
 https://en.wikipedia.org/wiki/Vector_(mathematics_and_physics)
+
+
+https://www.mathsisfun.com/algebra/vectors.html
