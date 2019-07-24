@@ -401,8 +401,7 @@ This results in a new position for your object.
 ```
 
 
-
-• test
+&nbsp;&nbsp;&nbsp; • test
 
 
 <!-- TODO: 1) Explain vectors -- simply
