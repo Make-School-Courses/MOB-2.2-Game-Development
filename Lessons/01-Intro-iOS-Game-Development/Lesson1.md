@@ -356,7 +356,7 @@ For example:
 - if an object is moving 4 units to the right and 6 units upward every second, you could write its velocity as `[4, 6]`.
 - Then, every second, you could add the object’s velocity to its current position.
 
-![velocity_vector](assets/velocity_vector.png) </br>
+!&nbsp;&nbsp;&nbsp;&nbsp; [velocity_vector](assets/velocity_vector.png) </br>
 
 
 
