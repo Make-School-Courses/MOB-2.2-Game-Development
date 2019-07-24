@@ -402,6 +402,12 @@ This results in a new position for your object.
 
 
 
+• test
+
+
+<!-- TODO: 1) Explain vectors -- simply
+2) then show a playground that illustrates mathematics_and_physics ...getting the length...and/or adding them together...
+ -->
 
 
 
@@ -410,9 +416,6 @@ This results in a new position for your object.
 
 
 
-<!-- TODO: 1) Explain vectors -- simply
-2) then show a playground that illustrates mathematics_and_physics ...getting the length...and/or adding them together...
- -->
 
 
 
