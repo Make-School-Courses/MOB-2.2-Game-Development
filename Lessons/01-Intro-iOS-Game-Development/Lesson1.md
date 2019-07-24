@@ -358,7 +358,7 @@ To calculate the *length* (aka, *magnitude*) of a vector, you must:
 - add up the squares of each component,
 - and take the square root of the result
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![calculate_vector_length_formula](assets/calculate_vector_length_formula.png) </br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![calculate_vector_length_formula](assets/calculate_vector_length_formula.png) </br>
 
 *Source:* <sup>5</sup>
 
