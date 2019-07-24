@@ -277,13 +277,11 @@ In 2D graphics, we deal with space that only has two dimensions: the X and Y axe
 - X axis &mdash; Horizontal, left-to-right axis.
 - Y axis &mdash; Vertical axis. Runs from bottom to top.
 
-We call this the "2D Coordinate System."
+We call this the "2D Coordinate System":
 
 ![2D_coordinate_system](assets/2D_coordinate_system.png) </br>
 
-The central point of a coordinate system used in graphics is called the *origin.*
-
-To describe a specific location in a 2D coordinate space, you only need to provide two numbers:
+To describe a specific location &mdash; known as a *point* &mdash; in a 2D coordinate space, you only need to provide two numbers:
 
 - X coordinate &mdash; the distance the location point is from the origin on the horizontal axis
 - Y coordinate &mdash; how far away it is from the origin on the vertical axis
@@ -292,16 +290,34 @@ We typically write coordinates in parentheses: `(x coordinate, y coordinate)`
 
 A point 7 units to the right of the origin and 4 units above it is written: `(7,4)`
 
-The coordinates for the origin point itself is written `(0,0)` &mdash; which is the same as saying that it is zero units away from the origin point on both the the x and y axes.
+The central point of a coordinate system used in graphics is called the *origin.*
 
-### Movement with 2D vectors
-In its most simplified definition, a __*vector*__ is a value that contains two or more values.
+The coordinates for the origin point itself are written `(0,0)` &mdash; which is the same as saying that it is zero units away from the origin point on both the the x and y axes.
 
-In game apps, we use commonly use vectors to describe two things:
+### Movement with 2D Vectors
+
+**In Mathematics and Physics** &mdash; A __*vector*__ is a geometric object that has *magnitude* (or *length*) and *direction.*
+
+Vectors are frequently represented by a line segment with a definite direction, or graphically as an arrow, connecting an initial point `A` with a terminal point, `B`:
+
+![vector](assets/vector.png) </br>
+
+*Source:* <sup>3</sup>
+
+Vectors play an important role in physics: the velocity and acceleration of a moving object and the forces acting on it can all be described with vectors.
+
+**In Computer Programming** &mdash; In its most simplified definition, a __*vector*__ is a complex value that is composed of two or more simple values (components).
+
+In game apps, we commonly use vectors to describe two things:
 - on-screen positions (i.e., coordinates)
 - velocities
 
-In iOS, it is useful and quite common to represent 2D vectors as `CGPoints`.
+In iOS, it is useful and very common to represent a 2D vector as a `CGPoint`. <sup>4</sup>
+
+> <sup>4</sup> `CGPoint` is used so frequently to describe vectors in iOS that Apple created a special version of `CGPoint` called `CGVector` which, under the hood, is nearly identical to `CGPoint`, and which allows you to extend it to suit your app's particular needs.
+
+**Position (or Point) Vectors**
+In a 2D system such as UIKit or SpriteKit, you use a coordinate point to describe the position of a view or a sprite on the x and y axes:
 
 ```Swift  
   let spritePosition = CGPoint(x: 3, y: 5)
@@ -319,26 +335,28 @@ An empty 2D vector — one with only zeros for each coordinate — can be writte
   var velocity = CGPoint.zero
 ```
 
-
-<!-- TODO: 1) Explain vectors -- simp;e
-2) then show a playground that illustrates mathematics_and_physics
- -->
-
-
+**Velocity Vectors**
 Vectors can also be used to store __*velocities.*__
 
+A velocity represents how far a location changes over time. A 2D velocity vector represents a *direction* and a *length* (aka, its *magnitude*).
+
+For example: if an object is moving 4 units to the right and 6 units down every second, you could write its velocity as `[4, 6]`. Then, every second, you would add the object’s velocity to its current position.
 
 
 
 
-A velocity represents how far a location changes over time; for example, if an object is moving 2 units right and 3 units down every second, you could write its velocity as [2, 3].
-
-Then, every second, you would add the object’s velocity to its current position.
 
 
 
-A 2D vector represents a *direction* and a *length* (aka, its *magnitude*):
 
+<!-- TODO: discuss moving right as positive? left as negative? -->
+
+
+
+
+ADDING THEM TOGETHER
+
+<!-- TODO: discuss components -->
 
 
 
@@ -347,6 +365,11 @@ A 2D vector represents a *direction* and a *length* (aka, its *magnitude*):
 
 
 
+
+
+<!-- TODO: 1) Explain vectors -- simp;e
+2) then show a playground that illustrates mathematics_and_physics
+ -->
 
 
 
@@ -372,16 +395,17 @@ A 2D vector represents a *direction* and a *length* (aka, its *magnitude*):
 
 Instances of `SKAction` are used to change the structure or content of a node in some way. They represent an animation that is executed by a node in the scene.
 
-Examples:
+Example uses:
 - change a node’s position (or other property) over time
 - change the behavior of the scene itself, such as doing a fadeout.
 
-You can have several actions together in:
+You can also combine several actions together in:
 - A sequence action
 - A group action
 - A repeating action
 
 When the scene processes its nodes, the actions associated with those nodes are all processed.
+
 
 <!-- TODO: discuss creating and running an action. Then add a code snippet -->
 
@@ -403,13 +427,18 @@ When the scene processes its nodes, the actions associated with those nodes are 
 
 #### Repeating actions
 
-## Touch events
 
-## Playable area limitation
+
+
+
 
 
 
 <!-- Move these actions to next lesson:
+
+## Touch events
+
+## Playable area limitation
 #### Wait-for duration action
 
 #### Reversing actions -->
@@ -438,10 +467,11 @@ Assignments:
 
   `SKView`, `SKRenderer`, or `WKInterfaceSKScene`
 
-- SKSceneDelegate, etc..
+- `SKSceneDelegate`, etc..
   https://developer.apple.com/documentation/spritekit/skscene/responding_to_frame-cycle_events
 
-  SKSceneDelegate
+
+
 
 
 https://developer.apple.com/documentation/spritekit/skscenedelegate
@@ -451,7 +481,7 @@ Subclassing Scenes Versus Assigning a Delegate
 https://developer.apple.com/documentation/spritekit/skscene/subclassing_scenes_versus_assigning_a_delegate
 
 
-3. GCVector
+3. `GCVector`
 
 
 3. Delta Time
@@ -493,7 +523,13 @@ https://developer.apple.com/library/archive/documentation/3DDrawing/Conceptual/M
 
 https://en.wikipedia.org/wiki/Coordinate_system
 
-https://en.wikipedia.org/wiki/Vector_(mathematics_and_physics)
+1. [Vector_(mathematics_and_physics) - wikipedia](https://en.wikipedia.org/wiki/Vector_(mathematics_and_physics)) [Vector_space - wikipedia](https://en.wikipedia.org/wiki/Vector_space) [Euclidean_vector - wikipedia](https://en.wikipedia.org/wiki/Euclidean_vector) <sup>3</sup>
+
+
+
 
 
 https://www.mathsisfun.com/algebra/vectors.html
+
+
+https://www.mathsisfun.com/pythagoras.html

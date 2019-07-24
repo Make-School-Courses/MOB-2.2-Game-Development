@@ -106,3 +106,7 @@ By default, SpriteKit displays this in the bottom-right corner of your game:
 
 
 <!-- TODO: show image of FPS in game app  -->
+
+
+
+<!-- TODO:  best practices: See bk 2 on 2D for " tips to keep your game running fast:" -->
