@@ -300,9 +300,9 @@ The coordinates for the origin point itself are written `(0,0)` &mdash; which is
 
 Vectors are frequently represented by a line segment with a definite direction, or graphically as an arrow, connecting an initial point `A` with a terminal point, `B`:
 
-![vector](assets/vector.png) </br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![vector](assets/vector.png) </br>
 
-*Source:* <sup>3</sup>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *Source:* <sup>3</sup>
 
 Vectors play an important role in physics: the velocity and acceleration of a moving object and the forces acting on that object can all be described with vectors.
 
@@ -367,9 +367,9 @@ To calculate the *length* (aka, *magnitude*) of a vector, you must:
 - add up the squares of each component,
 - and take the square root of the result
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![calculate_vector_length_formula](assets/calculate_vector_length_formula.png)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![calculate_vector_length_formula](assets/calculate_vector_length_formula.png)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *Source:* <sup>5</sup>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *Source:* <sup>5</sup>
 
 ```Swift
   let vector = CGPoint(x: 5, y: 7)
@@ -377,6 +377,7 @@ To calculate the *length* (aka, *magnitude*) of a vector, you must:
 
   // 8.602325267042627
  ```
+
 
 __*Translating Vectors*__ </br>
 When you want to move an object closer to or farther away from its origin point, you add its position and velocity vectors together.
