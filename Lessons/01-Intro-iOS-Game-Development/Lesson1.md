@@ -314,7 +314,7 @@ In game apps, we commonly use vectors to describe two things:
 
 In iOS, it is useful and very common to represent a 2D vector as a `CGPoint`. <sup>4</sup>
 
-> <sup>4</sup> *`CGPoint` is used so frequently to describe vectors in iOS that Apple created a special version of `CGPoint` called `CGVector` which, under the hood, is nearly identical to `CGPoint`; this allows you to extend `CGVector` to suit your app's particular needs without extending `CGPoint`.*
+> <sup>4</sup> *`CGPoint` is used so frequently to describe vectors in iOS that Apple created `CGVector` which, under the hood, is nearly identical to `CGPoint`. This allows you to extend `CGVector` to suit your app's particular vector requirements without altering `CGPoint`.*
 
 **Position (or Point) Vectors**
 In a 2D system such as UIKit or SpriteKit, you use a coordinate point to describe the position of a view or a sprite on the x and y axes:
