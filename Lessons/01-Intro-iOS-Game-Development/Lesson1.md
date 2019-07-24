@@ -343,17 +343,17 @@ A velocity represents how far a location changes over time.
 A 2D velocity vector represents a *direction* and a *length* (aka, its *magnitude*).
 
 For example:
-- if an object is moving 4 units to the right and 6 units upward every second, you could write its velocity as `[4,6]`.
+- if an object is moving 4 units to the right and 6 units upward every second, you could write its velocity as `[4, 6]`.
 - Then, every second, you could add the object’s velocity to its current position.
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![velocity_vector](assets/velocity_vector.png) </br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *Graph depicts a velocity vector from point `[0,0]` to point `[4,6]`*
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *Graph depicts a velocity vector from point `[0, 0]` to point `[4, 6]`*
 
 </br>
 
 __*Direction*__ </br>
-Note that in the graph above, we drew a straight line from the origin point `[0,0]` to a second point at `[4,6]`.
+Note that in the graph above, we drew a straight line from the origin point `[0, 0]` to a second point at `[4, 6]`.
 
 The line from the origin point to the second point gives us the __*direction*__ of the vector.
 
@@ -367,27 +367,34 @@ To calculate the *length* (aka, *magnitude*) of a vector, you must:
 - add up the squares of each component,
 - and take the square root of the result
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![calculate_vector_length_formula](assets/calculate_vector_length_formula.png) </br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![calculate_vector_length_formula](assets/calculate_vector_length_formula.png)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *Source:* <sup>5</sup>
 
 
+__*Translating Vectors*__ </br>
+When you want to move an object closer to or farther away from its origin point, you add its position and velocity vectors together.
 
-<!-- TODO: flesh these out ...add diagrams, etc.-->
+To add two vectors together &mdash; which is known as __*vector translation*__ &mdash; you simply add the respective components of each vector.
 
-<!-- TODO: illustrate this better -- diagram? code snippet -->
+In other words:
+- you sum the `x` coordinates of both vectors
+- then the `y` coordinates
+
+This results in a new position for your object.
+
+``Swift  
+  let startingPosition = CGPoint(x: 1, y: 4)
+  let velocity = CGPoint(x: 2, y: 3)
+
+  let newPosition = CGPoint(x: startingPosition.x + velocity.x,
+                            y: startingPosition.y + velocity.y)
+
+  // newPosition = [3, 7]
+```
 
 
-__* Moving with Vectors*__ </br>
-ADDING THEM TOGETHER
 
-
-But you can also see that the first point (3,3) can be moved (or translated) closer to or farther away from the origin.
-
-
-When you want to move a point by a given velocity, you need to add the two vectors together. To add two vectors together (also known as translating a vector), you just add the respective components of each vector — that is, you sum the x coordinates, then the y coordinates
-
-888
 
 
 
