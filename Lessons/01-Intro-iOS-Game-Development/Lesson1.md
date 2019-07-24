@@ -343,12 +343,21 @@ A velocity represents how far a location changes over time.
 A 2D velocity vector represents a *direction* and a *length* (aka, its *magnitude*).
 
 For example:
-- if an object is moving 4 units to the right and 6 units upward every second, you could write its velocity as `[4, 6]`.
+- if an object is moving 4 units to the right and 6 units upward every second, you could write its velocity as `[4,6]`.
 - Then, every second, you could add the object’s velocity to its current position.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![velocity_vector](assets/velocity_vector.png) </br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![velocity_vector](assets/velocity_vector.png) </br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *Graph depicts a velocity vector from point `[0,0]` to point `[4,6]`*
 
 </br>
+
+__*Direction*__ </br>
+Note that in the graph above, we drew a straight line from the origin point `[0,0]` to a second point at `[4,6]`.
+
+The line from the origin point to the second point gives us the __*direction*__ of the vector.
+
+<!-- TODO: question for class: Where would the line be (i.e., what would the vector's direction be) if the vector were `[-4,6]` -->
 
 __*Calculating Vector Length*__ </br>
 For the object above with the velocity vector of `[4, 6]`, what distance will it have travelled in any given second?
@@ -360,7 +369,8 @@ To calculate the *length* (aka, *magnitude*) of a vector, you must:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![calculate_vector_length_formula](assets/calculate_vector_length_formula.png) </br>
 
-*Source:* <sup>5</sup>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *Source:* <sup>5</sup>
+
 
 
 <!-- TODO: flesh these out ...add diagrams, etc.-->
@@ -368,11 +378,16 @@ To calculate the *length* (aka, *magnitude*) of a vector, you must:
 <!-- TODO: illustrate this better -- diagram? code snippet -->
 
 
+__* Moving with Vectors*__ </br>
 ADDING THEM TOGETHER
+
+
+But you can also see that the first point (3,3) can be moved (or translated) closer to or farther away from the origin.
+
 
 When you want to move a point by a given velocity, you need to add the two vectors together. To add two vectors together (also known as translating a vector), you just add the respective components of each vector — that is, you sum the x coordinates, then the y coordinates
 
-
+888
 
 
 
@@ -441,14 +456,8 @@ When the scene processes its nodes, the actions associated with those nodes are 
 
 
 
-#### Wait action
 
 
-
-#### Run-block
-
-
-#### Repeating actions
 
 
 
@@ -459,10 +468,23 @@ When the scene processes its nodes, the actions associated with those nodes are 
 
 <!-- Move these actions to next lesson:
 
+
+#### Wait action
+
+
+
+#### Run-block
+
+
+#### Repeating actions
+
+
 ## Touch events
 
 ## Playable area limitation
+
 #### Wait-for duration action
+
 
 #### Reversing actions -->
 
@@ -512,6 +534,8 @@ https://developer.apple.com/documentation/spritekit/skscene/subclassing_scenes_v
 4. How do you set frame rate in SpriteKit?
 
 
+normalize a vector
+
 
 ## Wrap Up (5 min)
 
@@ -556,3 +580,6 @@ https://en.wikipedia.org/wiki/Coordinate_system
 
 
 https://www.mathsisfun.com/pythagoras.html
+
+
+https://www.gamedev.net/articles/programming/math-and-physics/practical-use-of-vector-math-in-games-r2968/
