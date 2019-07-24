@@ -316,7 +316,7 @@ In iOS, it is useful and very common to represent a 2D vector as a `CGPoint`. <s
 
 > <sup>4</sup> *`CGPoint` is used so frequently to describe vectors in iOS that Apple created `CGVector` which, under the hood, is nearly identical to `CGPoint`. This allows you to extend `CGVector` to suit your app's particular vector requirements without altering `CGPoint`.*
 
-**Position (or Point) Vectors**
+**Position (or Point) Vectors** </br>
 In a 2D system such as UIKit or SpriteKit, you use a coordinate point to describe the position of a view or a sprite on the x and y axes:
 
 ```Swift  
@@ -335,7 +335,7 @@ An empty 2D vector — one with only zeros for each coordinate — can be writte
   var velocity = CGPoint.zero
 ```
 
-**Velocity Vectors**
+**Velocity Vectors** </br>
 Vectors can also be used to store __*velocities.*__
 
 A velocity represents how far a location changes over time. A 2D velocity vector represents a *direction* and a *length* (aka, its *magnitude*).
