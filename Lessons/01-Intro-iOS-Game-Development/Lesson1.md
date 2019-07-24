@@ -371,10 +371,12 @@ To calculate the *length* (aka, *magnitude*) of a vector, you must:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *Source:* <sup>5</sup>
 
+```Swift
+  let vector = CGPoint(x: 5, y: 7)
+  let length = sqrt(vector.x * vector.x + vector.y * vector.y)
 
-<!-- TODO: this needs a code sample -->
-
-
+  // 8.602325267042627
+ ```
 
 __*Translating Vectors*__ </br>
 When you want to move an object closer to or farther away from its origin point, you add its position and velocity vectors together.
@@ -457,6 +459,12 @@ When the scene processes its nodes, the actions associated with those nodes are 
 
 
 <!-- TODO: discuss creating and running an action. Then add a code snippet -->
+
+<!-- TODO: needs code snippets -->
+
+<!-- TODO: needs mention of its methods, properties -->
+
+
 
 
 
