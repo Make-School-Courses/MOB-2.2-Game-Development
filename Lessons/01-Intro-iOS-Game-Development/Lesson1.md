@@ -342,34 +342,24 @@ A velocity represents how far a location changes over time.
 
 A 2D velocity vector represents a *direction* and a *length* (aka, its *magnitude*).
 
-
-
-
-<!-- TODO: illustrate this better -- CREATE diagram? -->
-
-
-<!-- TODO:  find and show a diagram -->
-
-
-
 For example:
 - if an object is moving 4 units to the right and 6 units upward every second, you could write its velocity as `[4, 6]`.
 - Then, every second, you could add the object’s velocity to its current position.
 
-&nbsp;&nbsp;&nbsp;&nbsp; ![velocity_vector](assets/velocity_vector.png) </br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![velocity_vector](assets/velocity_vector.png) </br>
 
 
-
-<!-- TODO: illustrate this better -- diagram? -->
 
 
 <!-- TODO: flesh these out ...add diagrams, etc.-->
 
+GETTING LENGTH...
+
+To get the length of a vector (also sometimes referred to as the magnitude), you square each component of the vector, add them all up, and take the square root of the result:
 
 
-<!-- TODO: discuss moving right as positive? left as negative? -->
 
-
+<!-- TODO: illustrate this better -- diagram? code snippet -->
 
 
 ADDING THEM TOGETHER
@@ -378,18 +368,15 @@ When you want to move a point by a given velocity, you need to add the two vecto
 
 
 
-GETTING LENGTH...
-
-To get the length of a vector (also sometimes referred to as the magnitude), you square each component of the vector, add them all up, and take the square root of the result:
 
 
+<!-- TODO: discuss moving right as positive? left as negative? -->
 
 
 
 
-
-<!-- TODO: 1) Explain vectors -- simp;e
-2) then show a playground that illustrates mathematics_and_physics
+<!-- TODO: 1) Explain vectors -- simply
+2) then show a playground that illustrates mathematics_and_physics ...getting the length...and/or adding them together...
  -->
 
 
