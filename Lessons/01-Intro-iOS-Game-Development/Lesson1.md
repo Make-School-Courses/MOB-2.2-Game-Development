@@ -292,7 +292,7 @@ A point 7 units to the right of the origin and 4 units above it is written: `(7,
 
 The central point of a coordinate system used in graphics is called the *origin.*
 
-The coordinates for the origin point itself are written `(0,0)` &mdash; which is the same as saying that it is zero units away from the origin point on both the the x and y axes.
+The coordinates for the origin point itself are written `(0,0)` &mdash; which is the same as saying that it is "zero units away from the origin point on both the the x and y axes.""
 
 ### Movement with 2D Vectors
 
@@ -314,7 +314,7 @@ In game apps, we commonly use vectors to describe two things:
 
 Some programming languages represent 2D vectors as simple arrays. But in iOS, it is useful and very common to represent a 2D vector as a `CGPoint`. <sup>4</sup>
 
-> <sup>4</sup> *Because the `x` and `y` coordinates behind a `CGPoint` are both of type `CGFloat`, `CGPoint` lends itself readily to calculations with other `CGFloats`. `CGPoint` is used so frequently to describe vectors in iOS that Apple created `CGVector` which, under the hood, is nearly identical to `CGPoint`. This allows you to extend `CGVector` to suit your app's particular vector requirements without altering `CGPoint`.*
+> <sup>4</sup> *Because the `x` and `y` coordinates behind a `CGPoint` are both of type `CGFloat`, `CGPoint` lends itself readily to calculations with other `CGFloats`. `CGPoint` is used so frequently to describe vectors in iOS that Apple created `CGVector` which, under the hood, is nearly identical to `CGPoint`. This allows you to extend `CGVector` to suit your app's particular vector-related requirements.*
 
 **Position (or Point) Vectors** </br>
 In a 2D system such as UIKit or SpriteKit, you use a coordinate point to describe the position of a view or a sprite on the x and y axes:
@@ -348,7 +348,7 @@ For example:
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![velocity_vector](assets/velocity_vector.png) </br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *Graph depicts a velocity vector from point `[0, 0]` to point `[4, 6]`*
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *Graph depicting a velocity vector from point `[0, 0]` to point `[4, 6]`*
 
 </br>
 
@@ -379,7 +379,7 @@ To calculate the *length* (aka, *magnitude*) of a vector, you must:
  ```
 
 
-__*Translating Vectors*__ </br>
+__*Vector Translation*__ </br>
 When you want to move an object closer to or farther away from its origin point, you add its position and velocity vectors together.
 
 To add two vectors together &mdash; which is known as __*vector translation*__ &mdash; you simply add the respective components of each vector.
