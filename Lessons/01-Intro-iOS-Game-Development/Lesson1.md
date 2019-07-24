@@ -372,6 +372,10 @@ To calculate the *length* (aka, *magnitude*) of a vector, you must:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *Source:* <sup>5</sup>
 
 
+<!-- TODO: this needs a code sample -->
+
+
+
 __*Translating Vectors*__ </br>
 When you want to move an object closer to or farther away from its origin point, you add its position and velocity vectors together.
 
@@ -383,7 +387,7 @@ In other words:
 
 This results in a new position for your object.
 
-``Swift  
+```Swift  
   let startingPosition = CGPoint(x: 1, y: 4)
   let velocity = CGPoint(x: 2, y: 3)
 
