@@ -348,16 +348,22 @@ For example:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![velocity_vector](assets/velocity_vector.png) </br>
 
+</br>
 
+__*Calculating Vector Length*__ </br>
+For the object above with the velocity vector of `[4, 6]`, what distance will it have travelled in any given second?
+
+To calculate the *length* (aka, *magnitude*) of a vector, you must:
+- square each component of the vector,
+- add up the squares of each component,
+- and take the square root of the result
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![calculate_vector_length_formula](assets/calculate_vector_length_formula.png) </br>
+
+*Source:* <sup>5</sup>
 
 
 <!-- TODO: flesh these out ...add diagrams, etc.-->
-
-GETTING LENGTH...
-
-To get the length of a vector (also sometimes referred to as the magnitude), you square each component of the vector, add them all up, and take the square root of the result:
-
-
 
 <!-- TODO: illustrate this better -- diagram? code snippet -->
 
@@ -546,7 +552,7 @@ https://en.wikipedia.org/wiki/Coordinate_system
 
 
 
-https://www.mathsisfun.com/algebra/vectors.html
+1. [Vector Algebra - an article](https://www.mathsisfun.com/algebra/vectors.html) <sup>5</sup>
 
 
 https://www.mathsisfun.com/pythagoras.html
