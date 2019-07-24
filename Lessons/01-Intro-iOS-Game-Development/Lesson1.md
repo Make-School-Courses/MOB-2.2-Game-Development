@@ -304,17 +304,17 @@ Vectors are frequently represented by a line segment with a definite direction, 
 
 *Source:* <sup>3</sup>
 
-Vectors play an important role in physics: the velocity and acceleration of a moving object and the forces acting on it can all be described with vectors.
+Vectors play an important role in physics: the velocity and acceleration of a moving object and the forces acting on that object can all be described with vectors.
 
-**In Computer Programming** &mdash; In its most simplified definition, a __*vector*__ is a complex value that is composed of two or more simple values (components).
+**In Computer Programming** &mdash; In its most simplified definition, a __*vector*__ is a complex value (or data structure) that is composed of two or more simple values (components).
 
 In game apps, we commonly use vectors to describe two things:
 - on-screen positions (i.e., coordinates)
 - velocities
 
-In iOS, it is useful and very common to represent a 2D vector as a `CGPoint`. <sup>4</sup>
+Some programming languages represent 2D vectors as simple arrays. But in iOS, it is useful and very common to represent a 2D vector as a `CGPoint`. <sup>4</sup>
 
-> <sup>4</sup> *`CGPoint` is used so frequently to describe vectors in iOS that Apple created `CGVector` which, under the hood, is nearly identical to `CGPoint`. This allows you to extend `CGVector` to suit your app's particular vector requirements without altering `CGPoint`.*
+> <sup>4</sup> *Because the `x` and `y` coordinates behind a `CGPoint` are both of type `CGFloat`, `CGPoint` lends itself readily to calculations with other `CGFloats`. `CGPoint` is used so frequently to describe vectors in iOS that Apple created `CGVector` which, under the hood, is nearly identical to `CGPoint`. This allows you to extend `CGVector` to suit your app's particular vector requirements without altering `CGPoint`.*
 
 **Position (or Point) Vectors** </br>
 In a 2D system such as UIKit or SpriteKit, you use a coordinate point to describe the position of a view or a sprite on the x and y axes:
@@ -338,14 +338,32 @@ An empty 2D vector — one with only zeros for each coordinate — can be writte
 **Velocity Vectors** </br>
 Vectors can also be used to store __*velocities.*__
 
-A velocity represents how far a location changes over time. A 2D velocity vector represents a *direction* and a *length* (aka, its *magnitude*).
+A velocity represents how far a location changes over time.
 
-For example: if an object is moving 4 units to the right and 6 units down every second, you could write its velocity as `[4, 6]`. Then, every second, you would add the object’s velocity to its current position.
-
-
+A 2D velocity vector represents a *direction* and a *length* (aka, its *magnitude*).
 
 
 
+
+<!-- TODO: illustrate this better -- CREATE diagram? -->
+
+
+<!-- TODO:  find and show a diagram -->
+
+
+
+For example:
+- if an object is moving 4 units to the right and 6 units upward every second, you could write its velocity as `[4, 6]`.
+- Then, every second, you could add the object’s velocity to its current position.
+
+![velocity_vector](assets/velocity_vector.png) </br>
+
+
+
+<!-- TODO: illustrate this better -- diagram? -->
+
+
+<!-- TODO: flesh these out ...add diagrams, etc.-->
 
 
 
@@ -356,11 +374,14 @@ For example: if an object is moving 4 units to the right and 6 units down every 
 
 ADDING THEM TOGETHER
 
-<!-- TODO: discuss components -->
+When you want to move a point by a given velocity, you need to add the two vectors together. To add two vectors together (also known as translating a vector), you just add the respective components of each vector — that is, you sum the x coordinates, then the y coordinates
 
 
 
-<!-- TODO:  find and show a diagram -->
+GETTING LENGTH...
+
+To get the length of a vector (also sometimes referred to as the magnitude), you square each component of the vector, add them all up, and take the square root of the result:
+
 
 
 
@@ -386,7 +407,16 @@ ADDING THEM TOGETHER
 
 
 
-### SKAction
+
+
+
+
+
+
+
+### Movement with actions
+
+#### SKAction
 
 <!-- TODO: Does SKAction belong in Lesson 2? -->
 
@@ -411,19 +441,19 @@ When the scene processes its nodes, the actions associated with those nodes are 
 
 
 
-
-
-
-
-#### Movement with actions
-
 #### Move action
+
 
 #### Sequence action
 
+
+
 #### Wait action
 
+
+
 #### Run-block
+
 
 #### Repeating actions
 
