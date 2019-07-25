@@ -460,99 +460,68 @@ To apply an action to a node, you simply need to:
 2. Run it by calling one of the built-in `run(_:)` functions found on the node itself, passing in the action instance just created
 
 ##### __*Creating Actions*__
-To create a SpriteKit action, call one of the many built-in static constructors (factory methods) of the `SKAction` class.
+To create a SpriteKit action, call one of the many built-in static constructors (factory methods)<sup>8</sup> of the `SKAction` class.
 
-In this example, we use the `moveBy(x:y:duration:)` function built-in to `SKAction` to create an action which will make a sprite move 2 units along the x-axis and 3 units along the y axis in 1 second:
+In this example, we use the `moveBy(x:y:duration:)` function built-in to `SKAction` to create an action which will make a sprite move `2` units along the x-axis and `3` units along the y axis in `1` second:
 
 ```Swift  
-  let action = SKAction.moveByX(2, y: 3, duration: 1)
+  let simpleTwoByThreeAction = SKAction.moveByX(2, y: 3, duration: 1)
 ```
 
-Notice that this is essentially the same motion that we applied above when we created position and velocity vectors and added them together.
+Notice that this is essentially the same motion that we applied above when we created position and velocity vectors, then added them together.
 
-*But in only 1 line of code...*
+But in only 1 line of code...
 
-> *See [Action Initializers](https://developer.apple.com/documentation/spritekit/skaction/action_initializers) for a detailed list of factory methods on `SKAction` and how to use them.*
+> <sup>8</sup> *See [Action Initializers](https://developer.apple.com/documentation/spritekit/skaction/action_initializers) for a detailed list of factory methods on `SKAction` and how to use them.*
 
 __*Running Actions*__
+Once you've created your desired action, you can run it on *any* `SKNode` object by invoking one of the node object's various `run(_:)` functions:
 
+```Swift  
+  myNode.run(simpleTwoByThreeAction)
+```
 
-Once you’ve created an action, you need to run it. You can run an action on any SKNode
-by calling` run(_:)`, as you did in the above code.
-
-
-
-Then, you call runAction on the SKNode that you’d like to have perform that action. You can add an action to multiple nodes — if you want several nodes to all do the
-
-
-same thing, just create the SKAction once and then call runAction: on each of the SKNodes that you want to perform the action.
-
-
-
-
-<!-- TODO: discuss creating and running an action. Then add a code snippet -->
-
-<!-- TODO: needs code snippets -->
-
-<!-- TODO: needs mention of its methods, properties -->
-
-
-
-
+And, if you want to apply the same action to multiple nodes, you can create your `SKAction` once, then call a `run(_:)` method on each of the several nodes for which you would like to perform the same action.
 
 #### Move actions
+There are several methods on `SKAction` that allow you to easily create an action that moves a node relative to its current position.
 
+The simplest is [`move(to:duration:)`](https://developer.apple.com/documentation/spritekit/skaction/1417768-move):
 
+```Swift  
+  class func move(to location: CGPoint,
+         duration: TimeInterval) -> SKAction
+```
 
+`move(to:duration:)` &mdash; Creates an action that moves a node to a new position
 
+Example:
 
- <!-- TODO: 1) describe Move actions
-   2) illustrate how to create and run it -- using code snippets
+```Swift  
+  let newPosition = CGPoint(x: 100, y: 100)
+  let moveBottomLeftAction = SKAction.move(to: newPosition, duration:3.0)
+  node.run(moveBottomLeftAction)
+```
 
-     3) mention the related methods
+But there are a few variations of this basic move action worth noting:
 
-       ...and how MoveBy pattern allows you to reverse the action...which we will see later...
-  -->
+1. `moveTo(x:duration:)` &mdash; Creates an action that moves a node horizontally.
+2. `moveTo(y:duration:)` &mdash; Creates an action that moves a node vertically.
 
+These let you specify a change in *only one* axis &mdash; either the x- or the y-position &mdash; but not both. This can save you keystrokes.
 
-/** Creates an action that moves a node relative to its current position
- @param delta A vector that describes the change to apply to the node’s position
- @param duration The duration of the animation, in seconds
+3. `moveBy(x:y:duration:)` &mdash; Creates an action that moves a node relative to its current position.
 
- <!-- */ -->
+Instead of moving a node to particular point, `moveBy(x:y:duration:)` lets you move it by an offset from its current position, wherever it is at any given time. For example, the offset could be some multiple of the size of the object allowing you to move different sized objects by different amounts depending on their size.
 
+__*Important Note:*__ </br>
+This pattern of having `<action>To` and `<action>By` function variations is present in many other of the [Action Initializers](https://developer.apple.com/documentation/spritekit/skaction/action_initializers) on `SKAction`.
+Feel free to use whichever variation works best and most easily for you, but remember that `<action>By` functions are preferred because the are __*reversible*__ (more on reversible actions later).
 
-open class func move(by delta: CGVector, duration: TimeInterval) -> SKAction
-
-open class func moveBy(x deltaX: CGFloat, y deltaY: CGFloat, duration: TimeInterval) -> SKAction
-
-
-/** Creates an action that moves a node to a new position
- @param location The coordinates for the node’s new position
- @param duration The duration of the animation, in seconds
- **/
-open class func move(to location: CGPoint, duration: TimeInterval) -> SKAction
-
-open class func moveTo(x: CGFloat, duration: TimeInterval) -> SKAction
-
-open class func moveTo(y: CGFloat, duration: TimeInterval) -> SKAction
-
-
-
-< variants of Move to >
-
-
-You’ll see this pattern of “[action] to” and “[action] by” variants for other action types, as well. In general, you can use whichever of these is more convenient for you — but keep in mind, if either works, the “[action] by” actions are preferable because they’re reversible. For more on this topic, keep reading.
-
-
-
-
-
-<!-- TODO: needs code snippets -->
 
 #### Sequence action
 
-
+<!--
 
 /** Creates an action that runs a collection of actions sequentially
  @param sequence An array of SKAction objects
@@ -569,7 +538,7 @@ You’ll see this pattern of “[action] to” and “[action] by” variants fo
  sequence would be {3R,2R,1R}.
  */
 
-open class func sequence(_ actions: [SKAction]) -> SKAction
+open class func sequence(_ actions: [SKAction]) -> SKAction -->
 
 
 
@@ -581,7 +550,7 @@ open class func sequence(_ actions: [SKAction]) -> SKAction
 
 <!-- TODO: needs Group Action?  -->
 
-
+<!--
 /** Creates an action that runs a collection of actions concurrently
  @param actions An array of SKAction objects
 
@@ -593,7 +562,7 @@ open class func sequence(_ actions: [SKAction]) -> SKAction
  actions. This matters most when creating a repeating action that repeats
  a group.
  */
-open class func group(_ actions: [SKAction]) -> SKAction
+open class func group(_ actions: [SKAction]) -> SKAction -->
 
 
 
