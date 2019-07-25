@@ -34,21 +34,102 @@ To help you reinforce your learning and to confirm your understanding of the con
 Quiz...
 
 
-## Overview/TT I (20 min)
+## Collision Detection (20 min)
 
+So far we know how to get sprite nodes on screen. We also know how to make them move. But nothing works as a playable game yet. And this is in greater part because we are not handling how objects interact with each other. This can be done using collision detection. We detect when objects collide with each other to then assess what action should follow. An explosion? Adding points to the score? Collecting power ups or lives? It’s our job to handle all these possibilities.
+How it works
 
+There are several ways to handle collision detection. One of them is using the built-in physics engine and this one we’ll learn later in the course. Today we’ll use the easiest approach which is bounding-box collision detection.
+
+### The main idea
+
+We need a way to get all the elements in the scene into a collection or list so we can then check for collisions on each one. This is easy when we give every node a name at the moment of creation. Then we can use the method `enumerateChildNodes(withName:using:)` to find all the nodes matching a name.
+Once we have the lists, we can loop on them to check for collisions. Each node has a frame property representing the node’s location on screen. This frame is a rectangle so keep in mind that even when you ave round sprites, the bounding box of all elements is a rectangle.
+When you can have access to the frames, you can now use CGRect’s `intersects(_ :)` method to check for collisions.
+
+### Trying it out
+
+Playground demo + explanation
+
+**Debugging**
+
+- The problem with the update method.
+- Bounding box bigger than sprite. Shrink the box using `insetBy(dx:dy:)`
 
 ## In Class Activity I (30 min)
 
+Next steps for the Space Junk game:
+
+- Include collision detection using the frame bounding box technique.
+- Detect when the ship collides with either meteors or debris.
+- (If `removefromparent` has been covered) once the ship collides with objects, make the object disappear from the scene.
+Debug the frame of the objects to make the collision as realistic as possible.
+
+## Touch Events
+We need a way to interact with the game. A way to control how elements move in the scene. We can achieve this control using touch events. There are several methods we use for this.
+
+```Swift   
+override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {}
+
+override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {}
+
+override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {}
+
+override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {}
+
+```
+All of them handle different stages in the lifetime of a touch: Begins, Moves, Ends and Canceled. Inside the body of these methods you can access a set of touches. This is due to the fact that we can have multiple touches at the same time in a scene.
+
+We can access the first touch in the set.
+
+`guard let touch = touches.first else{return}`
+
+Or we can iterate through all of them.
+
+```Swift
+for touch in touches {
+}
+```
+
+Every touch has a property called location which we can use to see where that touch happened in the scene.
+
+`let location = touch.location(in: self)`
+
+There’s a lot we can do with touches. Have a sprite follow our touches, activate special powers, shoot enemies, etc.
+
+## In Class Activity II (20 min)
+
+Next steps for the Space Junk game:
+
+- Using touches, handle how the spaceship moves. We need it to move either left or right. What’s the best approach we can take? Think about it and implement a solution.
+
+## Playable area
+
+The ship now moves across the screen. Depending on how you implemented the movement it might happen to you that the ship goes off the scene. But we need it to be visible all the time. You can fix this in many ways. You can have it bounce back or stay at the edge of the screen. It’s up to you.
+
+Create a method to check the bounds of the game.
+
+```Swift
+func boundsCheckSpaceship() {
+}
+```
+
+Then grab the value of the limit that corresponds to the bottom left and bottom right of the screen.
+
+ ```Swift
+ let bottomLeft = CGPoint(x: ship.size.width/2, y: 0)
+ let bottomRight = CGPoint(x: size.width - ship.size.width/2, y: 0)
+ ```
+
+Use these values to compare them with the ship’s position to know what to do depending on what you want the game to behave.
+
+**Q: Where should we call the method?**
+
+## Stretch challenge
+
+For the Space Junk game, debug the playable area (make it visible with a rectangle) and see if it works the same for multiple screen sizes.
 
 
-## Overview/TT II (20 min)
-
-
-
-
-
-## In Class Activity II (optional) (30 min)
 
 # After Class
 
