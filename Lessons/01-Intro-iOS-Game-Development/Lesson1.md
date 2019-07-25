@@ -424,20 +424,27 @@ This results in a new position for your object.
 <!-- TODO: discuss moving right as positive? left as negative? -->
 
 
-### Movement with actions
+### Movement with Actions
+The above manual approach to moving a node by setting its position over time gives you power and control over movement.
+
+But you can move, change, rotate or scale a sprite's position over time incrementally &mdash; and much more easily &mdash; using SpriteKit __*actions__.*
+
+And usually with only a single line of code.
+
+SpriteKit __actions*__ also let you easily create combinations of movements by chaining actions together.
 
 #### SKAction
-
-<!-- TODO: Does SKAction belong in Lesson 2? -->
-
-
 `SKAction` is a powerful class used to bring nodes to life.
 
 Instances of `SKAction` are used to change the structure or content of a node in some way. They represent an animation that is executed by a node in the scene.
 
+You can use `SKAction` objects to make any node in the scene perform an action. An action is something that changes one or more properties &mdash; like position, size, transparency, color, etc. &mdash; of *any* node in your scene &mdash; including the scene node itself. <sup>6</sup>
+
+Actions can also change the node tree, play sounds, or even execute custom code.
+
 Example uses:
-- change a node’s position (or other property) over time
-- change the behavior of the scene itself, such as doing a fadeout.
+- to change a node’s position (or other property) over time
+- to change the behavior of the scene itself, such as performing a fadeout
 
 You can also combine several actions together in:
 - A sequence action
@@ -445,6 +452,42 @@ You can also combine several actions together in:
 - A repeating action
 
 When the scene processes its nodes, the actions associated with those nodes are all processed.
+
+**How to Implement**
+To apply an action to a node, you simply need to:
+
+1. Create an instance of `SKAction`
+2. Run it by calling one of the built-in `run(_:)` functions found on the node itself, passing in action instance just created
+
+__*Creating Actions*__
+To create a SpriteKit action, call one of the many built-in static constructors (factory methods) of the `SKAction` class.
+
+In this example, we use the `moveBy(x:y:duration:)` function built-in to `SKAction` to create an action which will make a sprite move 2 units along the x-axis and 3 units along the y axis in 1 second:
+
+```Swift  
+  let action = SKAction.moveByX(2, y: 3, duration: 1)
+```
+
+Notice that this is essentially the same motion that we applied above when we created position and velocity vectors and added them together.
+
+*But in only 1 line of code...*
+
+> *See [Action Initializers](https://developer.apple.com/documentation/spritekit/skaction/action_initializers) for a detailed list of factory methods on `SKAction` and how to use them.*
+
+__*Running Actions*__
+
+
+Once you’ve created an action, you need to run it. You can run an action on any SKNode
+by calling` run(_:)`, as you did in the above code.
+
+
+
+Then, you call runAction on the SKNode that you’d like to have perform that action. You can add an action to multiple nodes — if you want several nodes to all do the
+
+
+same thing, just create the SKAction once and then call runAction: on each of the SKNodes that you want to perform the action.
+
+
 
 
 <!-- TODO: discuss creating and running an action. Then add a code snippet -->
@@ -457,9 +500,19 @@ When the scene processes its nodes, the actions associated with those nodes are 
 
 
 
-#### Move action
+#### Move actions
 
 
+
+
+
+ <!-- TODO: 1) describe Move actions
+   2) illustrate how to create and run it -- using code snippets
+
+     3) mention the related methods
+
+       ...and how MoveBy pattern allows you to reverse the action...which we will see later...
+  -->
 
 
 /** Creates an action that moves a node relative to its current position
@@ -483,6 +536,15 @@ open class func move(to location: CGPoint, duration: TimeInterval) -> SKAction
 open class func moveTo(x: CGFloat, duration: TimeInterval) -> SKAction
 
 open class func moveTo(y: CGFloat, duration: TimeInterval) -> SKAction
+
+
+
+< variants of Move to >
+
+
+You’ll see this pattern of “[action] to” and “[action] by” variants for other action types, as well. In general, you can use whichever of these is more convenient for you — but keep in mind, if either works, the “[action] by” actions are preferable because they’re reversible. For more on this topic, keep reading.
+
+
 
 
 
@@ -585,6 +647,7 @@ At end of this activity, the state of your game should be described as:
 > __*If you get stuck*__ &mdash; Review key material above, especially the [Vector playground](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/tree/master/Lessons/01-Intro-iOS-Game-Development/playgrounds/Vector.playground), if Understanding how to work with vectors is an obstacle to your progress.
 
 
+
 # After Class
 
 Assignments:
@@ -630,6 +693,10 @@ https://developer.apple.com/documentation/spritekit/skscene/subclassing_scenes_v
 normalize a vector
 
 
+https://developer.apple.com/documentation/spritekit/getting_started_with_actions#2982305
+
+
+
 ## Wrap Up (5 min)
 
 - Continue working on your current tutorial
@@ -641,6 +708,8 @@ normalize a vector
 1. [Slides]()
 2.
 https://developer.apple.com/documentation/spritekit
+
+https://developer.apple.com/documentation/spritekit/sknode
 
 https://developer.apple.com/documentation/spritekit/skscene/responding_to_frame-cycle_events
 
@@ -676,3 +745,10 @@ https://www.mathsisfun.com/pythagoras.html
 
 
 https://www.gamedev.net/articles/programming/math-and-physics/practical-use-of-vector-math-in-games-r2968/
+
+
+https://developer.apple.com/documentation/spritekit/skaction
+
+https://developer.apple.com/documentation/spritekit/skaction/action_initializers
+
+1. [Getting Started with Actions](https://developer.apple.com/documentation/spritekit/getting_started_with_actions#2982305 <sup>6</sup>
