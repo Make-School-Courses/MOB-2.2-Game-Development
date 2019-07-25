@@ -483,17 +483,15 @@ Once you've created your desired action, you can run it on *any* `SKNode` object
 
 And, if you want to apply the same action to multiple nodes, you can create your `SKAction` once, then call a `run(_:)` method on each of the several nodes for which you would like to perform the same action.
 
-#### Move actions
+#### Move Actions
 There are several methods on `SKAction` that allow you to easily create an action that moves a node relative to its current position.
 
-The simplest is [`move(to:duration:)`](https://developer.apple.com/documentation/spritekit/skaction/1417768-move):
+The simplest is [`move(to:duration:)`](https://developer.apple.com/documentation/spritekit/skaction/1417768-move), which Creates an action that moves a node to a new position:
 
 ```Swift  
   class func move(to location: CGPoint,
          duration: TimeInterval) -> SKAction
 ```
-
-`move(to:duration:)` &mdash; Creates an action that moves a node to a new position
 
 Example:
 
@@ -503,7 +501,7 @@ Example:
   node.run(moveBottomLeftAction)
 ```
 
-But there are a few variations of this basic move action worth noting:
+And there are a few noteworthy variations of this basic move action:
 
 1. `moveTo(x:duration:)` &mdash; Creates an action that moves a node horizontally.
 2. `moveTo(y:duration:)` &mdash; Creates an action that moves a node vertically.
@@ -512,58 +510,70 @@ These let you specify a change in *only one* axis &mdash; either the x- or the y
 
 3. `moveBy(x:y:duration:)` &mdash; Creates an action that moves a node relative to its current position.
 
-Instead of moving a node to particular point, `moveBy(x:y:duration:)` lets you move it by an offset from its current position, wherever it is at any given time. For example, the offset could be some multiple of the size of the object allowing you to move different sized objects by different amounts depending on their size.
+Instead of moving a node to particular point, `moveBy(x:y:duration:)` lets you move it by an offset from its current position, wherever it is at any given time. For example, the offset could be some multiple of the size of the object allowing you to move different size objects by amounts relative to their respective sizes.
 
 __*Important Note:*__ </br>
 This pattern of having `<action>To` and `<action>By` function variations is present in many other of the [Action Initializers](https://developer.apple.com/documentation/spritekit/skaction/action_initializers) on `SKAction`.
-Feel free to use whichever variation works best and most easily for you, but remember that `<action>By` functions are preferred because the are __*reversible*__ (more on reversible actions later).
+Feel free to use whichever variation works best and most easily for you, but remember that `<action>By` functions are preferred because they are __*reversible*__ (more on reversible actions later).
 
 
-#### Sequence action
+#### Sequence Actions
+Many actions are designed to take place over time and to be executed by themselves.
 
-<!--
+But what if you wanted some actions to occur immediately or in combination with one or more other actions? What if you wanted to run your own custom code or to remove a node from a scene on completion of some other action?
 
-/** Creates an action that runs a collection of actions sequentially
- @param sequence An array of SKAction objects
+The real power of `SKActions` lies in how easily you can combine actions together with `sequence(_:)` or `group(_:)`.
 
- @discussion When the action executes, the first action in the sequence starts
- and runs to completion. Subsequent actions in the sequence run in a
- similar fashion until all of the actions in the sequence have executed.
- The duration of the sequence action is the sum of the durations of the
- actions in the sequence.
+A `sequence` is an `SKAction` that runs other actions, one after another.
 
- This action is reversible; it creates a new sequence action that reverses
- the order of the actions. Each action in the reversed sequence is itself
- reversed. For example, if an action sequence is {1,2,3}, the reversed
- sequence would be {3R,2R,1R}.
- */
+`SKAction.sequence(_:)` creates an action that runs a collection of actions sequentially. It takes an array of `SKActions`, each separated by commas, and it runs them one after another.
 
-open class func sequence(_ actions: [SKAction]) -> SKAction -->
+When the `sequence` action executes, the first action in the sequence starts and runs to completion. Subsequent actions in the sequence run in a similar fashion until all of the actions in the sequence have executed.
 
+To create a sequence action, you use the `SKAction.sequence(_:)` method, which takes an array of SKAction objects:
 
+```Swift  
+  let sequenceAction = SKAction.sequence([action1, action2, action3])
+```
 
+In this example, the node is moved up the x-axis by `30` points, then down the y-axis by `30`, the removed from the scene:
 
-<!-- TODO: needs code snippets -->
+```Swift  
+  let moveUpAction = SKAction.moveBy(x: 0, y: 30, duration: 2)
+  let moveDownAction = SKAction.moveBy(x: 0, y: -30, duration: 2)
+  let removeAction = SKAction.removeFromParent()
+  let sequenceAction = SKAction.sequence([moveUpAction, moveDownAction, removeAction])
+  node.run(sequenceAction)
+```
 
+The sequence action is one of the most useful and commonly used actions in iOS game development.
 
+It is also reversible &mdash; it creates a new sequence action that reverses the order of the actions.
 
+#### Group Actions
+Sequence actions run other actions one after another. But what if you want to run two or more actions at exactly the same time?
 
-<!-- TODO: needs Group Action?  -->
+`group(_:)` creates an action that runs a collection of actions in parallel.
 
-<!--
-/** Creates an action that runs a collection of actions concurrently
- @param actions An array of SKAction objects
+Creating groups is very similar to creating sequences.
 
- @discussion When the action executes, the actions that comprise the group
- all start immediately and run in parallel. The duration of the group
- action is the longest duration among the collection of actions. If an
- action in the group has a duration less than the group’s duration, the
- action completes, then idles until the group completes the remaining
- actions. This matters most when creating a repeating action that repeats
- a group.
- */
-open class func group(_ actions: [SKAction]) -> SKAction -->
+To create a group, you pass in a collection of `SKAction` objects to the `group(_:)` method:
 
+```Swift  
+  let groupAction = SKAction.group([action1, action2, action3])
+```
+
+However, instead of running them one after the other, a group action runs them all at once.
+
+When the group action executes, the collection of actions that comprise the group all start immediately and run in parallel.
+
+The duration of the group action is the longest duration among the collection of actions. Thus, a group action does not complete until the longest-running action in its colletion has completed.
+
+If an action in the group has a duration less than the group’s duration, the action completes, then idles until the group completes the remaining actions. *(This matters most when creating a repeating action that repeats a group; will cover repeating actions in next lesson)*
+
+Note that you can also combine groups and sequences.
+- You can run two sequences at the same time by combining them into a group action
+- You can also create sequences that contain group actions.
 
 
 <!-- Move these actions to next lesson:
@@ -571,25 +581,10 @@ open class func group(_ actions: [SKAction]) -> SKAction -->
 
 #### Wait action
 
-
-
 #### Run-block
 
 
 #### Repeating actions
-
-/** Creates an action that repeats another action a specified number of times
- @param action The action to execute
- @param count The number of times to execute the action
- */
-open class func `repeat`(_ action: SKAction, count: Int) -> SKAction
-
-
-/** Creates an action that repeats forever
- @param action The action to execute
- */
-open class func repeatForever(_ action: SKAction) -> SKAction
-
 
 
 ## Touch events
@@ -721,3 +716,6 @@ https://developer.apple.com/documentation/spritekit/skaction
 https://developer.apple.com/documentation/spritekit/skaction/action_initializers
 
 1. [Getting Started with Actions](https://developer.apple.com/documentation/spritekit/getting_started_with_actions#2982305 <sup>6</sup>
+
+
+https://developer.apple.com/documentation/spritekit/skaction/1417817-sequence
