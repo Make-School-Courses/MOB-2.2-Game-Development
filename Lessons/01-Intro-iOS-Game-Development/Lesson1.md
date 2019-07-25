@@ -427,18 +427,18 @@ This results in a new position for your object.
 ### Movement with Actions
 The above manual approach to moving a node by setting its position over time gives you power and control over movement.
 
-But you can move, change, rotate or scale a sprite's position over time incrementally &mdash; and much more easily &mdash; using SpriteKit __*actions__.*
+But you can move, change, rotate or scale a sprite's position over time incrementally &mdash; and much more easily &mdash; using SpriteKit __*actions*__.
 
-And usually with only a single line of code.
+Usually, with only a single line of code.
 
-SpriteKit __actions*__ also let you easily create combinations of movements by chaining actions together.
+SpriteKit __*actions*__ also let you easily create combinations of movements by chaining actions together.
 
 #### SKAction
 `SKAction` is a powerful class used to bring nodes to life.
 
 Instances of `SKAction` are used to change the structure or content of a node in some way. They represent an animation that is executed by a node in the scene.
 
-You can use `SKAction` objects to make any node in the scene perform an action. An action is something that changes one or more properties &mdash; like position, size, transparency, color, etc. &mdash; of *any* node in your scene &mdash; including the scene node itself. <sup>6</sup>
+You can use `SKAction` objects to make *any* node in the scene perform an action. An action is something that changes one or more properties &mdash; like position, size, transparency, color, etc. &mdash; of *any* node in your scene &mdash; including the scene node itself. <sup>6</sup>
 
 Actions can also change the node tree, play sounds, or even execute custom code.
 
@@ -453,7 +453,7 @@ You can also combine several actions together in:
 
 When the scene processes its nodes, the actions associated with those nodes are all processed.
 
-**How to Implement**
+##### How to Implement
 To apply an action to a node, you simply need to:
 
 1. Create an instance of `SKAction`
