@@ -658,15 +658,15 @@ Assignments:
 ## Additional Resources
 
 1. [Slides]()
-2.
+2. []()
 https://developer.apple.com/documentation/spritekit
-
+2. []()
 https://developer.apple.com/documentation/spritekit/sknode
-
+2. []()
 https://developer.apple.com/documentation/spritekit/skscene/responding_to_frame-cycle_events
-
+2. []()
 https://en.wikipedia.org/wiki/Key_frame
-
+2. []()
 
 
 https://gameprogrammingpatterns.com/state.html
@@ -674,39 +674,34 @@ https://gameprogrammingpatterns.com/state.html
 
 
 [Persistence of vision: how does animation work? - an article](https://www.futurelearn.com/courses/explore-animation/0/steps/12222) <sup>1</sup>
-
+2. []()
 
 https://developer.apple.com/documentation/spritekit/skview/1642773-preferredframespersecond
 
-
+2. []()
 https://developer.apple.com/library/archive/documentation/3DDrawing/Conceptual/MTLBestPracticesGuide/FrameRate.html
 
-
+2. []()
 https://en.wikipedia.org/wiki/Coordinate_system
 
 1. [Vector_(mathematics_and_physics) - wikipedia](https://en.wikipedia.org/wiki/Vector_(mathematics_and_physics)) [Vector_space - wikipedia](https://en.wikipedia.org/wiki/Vector_space) [Euclidean_vector - wikipedia](https://en.wikipedia.org/wiki/Euclidean_vector) <sup>3</sup>
 
 
-
-
-
 1. [Vector Algebra - an article](https://www.mathsisfun.com/algebra/vectors.html) <sup>5</sup>
 
-
+2. []()
 https://www.mathsisfun.com/pythagoras.html
 
-
+2. []()
 https://www.gamedev.net/articles/programming/math-and-physics/practical-use-of-vector-math-in-games-r2968/
 
-
+2. []()
 https://developer.apple.com/documentation/spritekit/skaction
 
+2. []()
 https://developer.apple.com/documentation/spritekit/skaction/action_initializers
 
 1. [Getting Started with Actions](https://developer.apple.com/documentation/spritekit/getting_started_with_actions#2982305 <sup>6</sup>
 
-
+2. []()
 https://developer.apple.com/documentation/spritekit/skaction/1417817-sequence
-
-
-https://developer.apple.com/documentation/spritekit/getting_started_with_actions#2982305
