@@ -20,15 +20,15 @@ Explain why students should care to learn the material presented in this class.
 ## Learning Objectives (5 min)
 
 1. Identify and describe:
-- What SpriteKit is
+- SpriteKit's role in iOS game development
 - SpriteKit nodes and their chief properties
 - How instances of `SKNode`, `SKSpriteNode`, and `SKScene` are used in game development
 - Sprite creation and positioning
 - What Frame Rate and the Game Loop are, and how they relate to each other
 - The 2D Coordinate System
-- Game movement:
+- Game movement: </br>
 &nbsp;&nbsp;&nbsp; • with 2D Vectors </br>
-&nbsp;&nbsp;&nbsp; • with simple actions (`SKAction`) </br>
+&nbsp;&nbsp;&nbsp; • with simple actions (`SKAction`) 
 2. Implement a simple FPS game app:
 - using SpriteKit
 - adding nodes and simple actions
