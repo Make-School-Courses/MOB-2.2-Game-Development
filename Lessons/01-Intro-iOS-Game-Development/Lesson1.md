@@ -506,15 +506,14 @@ When the scene processes its nodes, the actions associated with those nodes are 
 ## In Class Activity II (optional) (30 min)
 
 **TODO:**
-1. Continue working on your AstroJunk app:
-- Add movement to all nodes created so far
-- At end of activity, the state of your game should be described as: </br>
-&nbsp;&nbsp;&nbsp; • ship should be moving along the X axis. But when it moves, it will not stop when it hits the screen edge &mdash; it will go off screen if moved too far to the left or right </br>
-&nbsp;&nbsp;&nbsp; • all sprites/nodes should have their intended motions implemented
-&nbsp;&nbsp;&nbsp; • but no collision detection will be implemented (when they collide, nothing will happen, at this point)
+1. Continue working on your AstroJunk app, adding movement to all nodes created so far
 
-__*For Clues*__
-If you get stuck, review key material above, especially the [Vector playground](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/tree/master/Lessons/01-Intro-iOS-Game-Development/playgrounds/Vector.playground), if Understanding how to work with vectors is an obstacle to your progress.
+At end of this activity, the state of your game should be described as:
+- the ship should be moving along the X axis. But when it moves, it will not stop when it hits the screen edge &mdash; it will go off screen if moved too far to the left or right
+- all sprites/nodes should have their intended motions implemented
+- but no collision detection will be implemented (at this point in development, when they collide, nothing will happen)
+
+> __*If you get stuck*__ &mdash; Review key material above, especially the [Vector playground](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/tree/master/Lessons/01-Intro-iOS-Game-Development/playgrounds/Vector.playground), if Understanding how to work with vectors is an obstacle to your progress.
 
 
 # After Class
