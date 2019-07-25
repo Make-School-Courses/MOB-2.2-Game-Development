@@ -573,7 +573,7 @@ When the group action executes, the collection of actions that comprise the grou
 
 The `duration` of the group action is the longest duration among the collection of actions. Thus, a group action does not complete until the longest-running action in its colletion has completed.
 
-If an action in the group has a duration less than the group’s duration, the action completes, then idles until the group completes the remaining actions. *(This matters most when creating a repeating action that repeats a group; will cover repeating actions in next lesson)*
+If an action in the group has a duration less than the group’s duration, the action completes, then idles until the group completes the remaining actions. *(This matters most when creating a repeating action that repeats a group; we will cover repeating actions in next lesson)*
 
 Note that you can also combine groups and sequences.
 - You can run two sequences at the same time by combining them into a group action
@@ -625,47 +625,24 @@ Assignments:
 1. Review lesson 05-Introduction-to-SpriteKit from MOB 1.1 course
 - be prepared to answer questions on key components outlined in Lesson 5
 
-2. Review:
+2. Continue working on your AstroJunk app (if not caught up with today's 2 in-class activities)
 
-- Study the "Nodes that Draw" section in [Nodes for Scene Building - Apple docs](https://developer.apple.com/documentation/spritekit/nodes_for_scene_building)
+3. Review/study:
+- The "Nodes that Draw" section in [Nodes for Scene Building - Apple docs](https://developer.apple.com/documentation/spritekit/nodes_for_scene_building)
+- The "Use a Scene Delegate Instead of Subclassing a Scene" section in [Responding to Frame-Cycle Events](https://developer.apple.com/documentation/spritekit/skscene/responding_to_frame-cycle_events) and [SKSceneDelegate](https://developer.apple.com/documentation/spritekit/skscenedelegate) and [Subclassing Scenes Versus Assigning a Delegate](https://developer.apple.com/documentation/spritekit/skscene/subclassing_scenes_versus_assigning_a_delegate)
+- Delta Time
+- `SKEffectNode`
+-  The `SKWarpable` Protocol
+-  `SKTexture`
+- `anchorPoint`
+-  `SKView`
+- `SKRenderer`
+- `WKInterfaceSKScene`
+`GCVector`
+- How do you set frame rate in SpriteKit?
+-  How do you normalize a vector?
 - Game types:
-  - RPG, FPS
-
-  SKEffectNode
-  SKWarpable protocol
-  SKTexture
-
-  `anchorPoint`
-
-  `SKView`, `SKRenderer`, or `WKInterfaceSKScene`
-
-- `SKSceneDelegate`, etc..
-  https://developer.apple.com/documentation/spritekit/skscene/responding_to_frame-cycle_events
-
-
-
-
-
-https://developer.apple.com/documentation/spritekit/skscenedelegate
-
-Subclassing Scenes Versus Assigning a Delegate
-
-https://developer.apple.com/documentation/spritekit/skscene/subclassing_scenes_versus_assigning_a_delegate
-
-
-3. `GCVector`
-
-
-3. Delta Time
-
-4. How do you set frame rate in SpriteKit?
-
-
-normalize a vector
-
-
-https://developer.apple.com/documentation/spritekit/getting_started_with_actions#2982305
-
+  - RPG, FPS, Open World Games
 
 
 ## Wrap Up (5 min)
@@ -726,3 +703,6 @@ https://developer.apple.com/documentation/spritekit/skaction/action_initializers
 
 
 https://developer.apple.com/documentation/spritekit/skaction/1417817-sequence
+
+
+https://developer.apple.com/documentation/spritekit/getting_started_with_actions#2982305
