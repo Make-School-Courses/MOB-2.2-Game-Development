@@ -5,17 +5,21 @@
 | **Elapsed** | **Time**  | **Activity**              |
 | ----------- | --------- | ------------------------- |
 | 0:00        | 0:05      | Objectives                |
-| 0:05        | 0:15      | Overview/TT1                  |
-| 0:20        | 0:30      | In Class Activity I       |
-| 0:50        | 0:10      | BREAK                     |
-| 0:05        | 0:20      | TT2 - Movement                |
-| 1:00        | 0:45      | In Class Activity II      |
-| 1:45        | 0:05      | Wrap up review objectives |
-| TOTAL       | 1:50      | -                         |
+| 0:05        | 0:20     | Overview/TT1                  |
+| 0:25        | 0:30      | In Class Activity I       |
+| 0:55        | 0:10      | BREAK                     |
+| 1:05        | 0:20      | TT2 - Movement                |
+| 1:25        | 0:25      | In Class Activity II      |
+| 1:50       | 0:05      | Wrap up review objectives |
+| TOTAL       | 1:55      | -                         |
 
-## Why you should know this or industry application (optional) (5 min)
+## Why you should know this or industry application (5 min)
 
 Explain why students should care to learn the material presented in this class.
+
+<!-- TODO: explain why? -->
+
+
 
 ## Learning Objectives (5 min)
 
@@ -647,9 +651,9 @@ Assignments:
 
 ## Wrap Up (5 min)
 
-- Continue working on your current tutorial
-- Complete reading
-- Complete challenges
+- Continue working on your AstroJunk app assignments from today's class
+- Complete reading and review assignments
+
 
 ## Additional Resources
 
