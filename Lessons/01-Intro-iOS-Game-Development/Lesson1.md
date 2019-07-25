@@ -19,10 +19,19 @@ Explain why students should care to learn the material presented in this class.
 
 ## Learning Objectives (5 min)
 
-1. Identify and describe
-1. Define
-1. Design
-1. Implement
+1. Identify and describe:
+- What SpriteKit is
+- SpriteKit nodes and their chief properties
+- How instances of `SKNode`, `SKSpriteNode`, and `SKScene` are used in game development
+- Sprite creation and positioning
+- What Frame Rate and the Game Loop are, and how they relate to each other
+- The 2D Coordinate System
+- Game movement:
+&nbsp;&nbsp;&nbsp; • with 2D Vectors </br>
+&nbsp;&nbsp;&nbsp; • with simple actions (`SKAction`) </br>
+2. Implement a simple FPS game app:
+- using SpriteKit
+- adding nodes and simple actions
 
 <!-- TOPICS:
 SpriteKit, Sprites, Nodes (SKNode), scenes (SKScene), key node properties,
@@ -32,14 +41,6 @@ creating a sprite, Frames, Frame Rate and Game Loop
 - a simple FPS game? using SpriteKit, adding nodes and simple actions...
 
  -->
-
- <!-- Supports/Includes:
- Textured sprites
- Physics engine (collisions, events, forces & gravity, simulations)
- Scene editor
- Particles editor (fire, smoke…)
- Camera
- Tilesets  -->
 
 
 
@@ -57,6 +58,17 @@ Developed by Apple.
 Build on top of openGL.
 
 Let’s you create high-performance, battery-efficient 2D games. -->
+
+
+
+ <!-- Supports/Includes:
+ Textured sprites
+ Physics engine (collisions, events, forces & gravity, simulations)
+ Scene editor
+ Particles editor (fire, smoke…)
+ Camera
+ Tilesets  -->
+
 
 
 ### Quick Review: Key Classes & Concepts
