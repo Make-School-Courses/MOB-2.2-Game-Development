@@ -397,45 +397,19 @@ This results in a new position for your object.
   let newPosition = CGPoint(x: startingPosition.x + velocity.x,
                             y: startingPosition.y + velocity.y)
 
-  // newPosition = [3, 7]
+  // newPosition coordinates: [3, 7]
 ```
 
 
-&nbsp;&nbsp;&nbsp; • test
+</br>
 
-
-<!-- TODO: 1) Explain vectors -- simply
-2) then show a playground that illustrates mathematics_and_physics ...getting the length...and/or adding them together...
- -->
+> For a good start in learning more about how to work with vectors in your game apps:
+> • Experiment with the code in the [Vector playground](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/tree/master/Lessons/01-Intro-iOS-Game-Development/playgrounds/Vector.playground)
+> • Study the resources listed in Additional Resources below
 
 
 
 <!-- TODO: discuss moving right as positive? left as negative? -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ### Movement with actions
@@ -513,6 +487,11 @@ When the scene processes its nodes, the actions associated with those nodes are 
 
 
 ## In Class Activity II (optional) (30 min)
+
+
+the code in the [Vector playground]()
+
+
 
 # After Class
 
