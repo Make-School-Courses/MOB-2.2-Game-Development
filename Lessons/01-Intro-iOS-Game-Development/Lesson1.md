@@ -278,10 +278,12 @@ Because it is called each frame, it provides an excellent opportunity to interac
 
 ## In Class Activity I (30 min)
 
+### As Individuals
 
-[Space Junk](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/blob/master/Lessons/01-Intro-iOS-Game-Development/assignments/activity_1_space_junk.md)
+#### Creating the AstroJunk app
+Read and follow the [Space Junk](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/blob/master/Lessons/01-Intro-iOS-Game-Development/assignments/activity_1_space_junk.md) instructions for creating your first app, AstroJunk...
 
-Intro to AstroJunk...
+
 
 
 
