@@ -461,9 +461,53 @@ When the scene processes its nodes, the actions associated with those nodes are 
 
 
 
+
+/** Creates an action that moves a node relative to its current position
+ @param delta A vector that describes the change to apply to the node’s position
+ @param duration The duration of the animation, in seconds
+
+ <!-- */ -->
+
+
+open class func move(by delta: CGVector, duration: TimeInterval) -> SKAction
+
+open class func moveBy(x deltaX: CGFloat, y deltaY: CGFloat, duration: TimeInterval) -> SKAction
+
+
+/** Creates an action that moves a node to a new position
+ @param location The coordinates for the node’s new position
+ @param duration The duration of the animation, in seconds
+ **/
+open class func move(to location: CGPoint, duration: TimeInterval) -> SKAction
+
+open class func moveTo(x: CGFloat, duration: TimeInterval) -> SKAction
+
+open class func moveTo(y: CGFloat, duration: TimeInterval) -> SKAction
+
+
+
 <!-- TODO: needs code snippets -->
 
 #### Sequence action
+
+
+
+/** Creates an action that runs a collection of actions sequentially
+ @param sequence An array of SKAction objects
+
+ @discussion When the action executes, the first action in the sequence starts
+ and runs to completion. Subsequent actions in the sequence run in a
+ similar fashion until all of the actions in the sequence have executed.
+ The duration of the sequence action is the sum of the durations of the
+ actions in the sequence.
+
+ This action is reversible; it creates a new sequence action that reverses
+ the order of the actions. Each action in the reversed sequence is itself
+ reversed. For example, if an action sequence is {1,2,3}, the reversed
+ sequence would be {3R,2R,1R}.
+ */
+
+open class func sequence(_ actions: [SKAction]) -> SKAction
 
 
 
@@ -476,6 +520,18 @@ When the scene processes its nodes, the actions associated with those nodes are 
 <!-- TODO: needs Group Action?  -->
 
 
+/** Creates an action that runs a collection of actions concurrently
+ @param actions An array of SKAction objects
+
+ @discussion When the action executes, the actions that comprise the group
+ all start immediately and run in parallel. The duration of the group
+ action is the longest duration among the collection of actions. If an
+ action in the group has a duration less than the group’s duration, the
+ action completes, then idles until the group completes the remaining
+ actions. This matters most when creating a repeating action that repeats
+ a group.
+ */
+open class func group(_ actions: [SKAction]) -> SKAction
 
 
 
@@ -491,6 +547,19 @@ When the scene processes its nodes, the actions associated with those nodes are 
 
 #### Repeating actions
 
+/** Creates an action that repeats another action a specified number of times
+ @param action The action to execute
+ @param count The number of times to execute the action
+ */
+open class func `repeat`(_ action: SKAction, count: Int) -> SKAction
+
+
+/** Creates an action that repeats forever
+ @param action The action to execute
+ */
+open class func repeatForever(_ action: SKAction) -> SKAction
+
+
 
 ## Touch events
 
@@ -505,7 +574,7 @@ When the scene processes its nodes, the actions associated with those nodes are 
 
 ## In Class Activity II (optional) (30 min)
 
-**TODO:**
+**Individually:**
 1. Continue working on your AstroJunk app, adding movement to all nodes created so far
 
 At end of this activity, the state of your game should be described as:
