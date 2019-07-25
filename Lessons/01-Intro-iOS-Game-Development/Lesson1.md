@@ -520,23 +520,27 @@ Feel free to use whichever variation works best and most easily for you, but rem
 #### Sequence Actions
 Many actions are designed to take place over time and to be executed by themselves.
 
-But what if you wanted some actions to occur immediately or in combination with one or more other actions? What if you wanted to run your own custom code or to remove a node from a scene on completion of some other action?
+But what if you wanted some actions to occur immediately or in combination with one or more other actions?
 
-The real power of `SKActions` lies in how easily you can combine actions together with `sequence(_:)` or `group(_:)`.
+What if you wanted to run your own custom code or to remove a node from a scene on completion of some other action?
+
+The real power of `SKAction` lies in how easily you can combine actions together with `sequence(_:)` or `group(_:)`.
 
 A `sequence` is an `SKAction` that runs other actions, one after another.
 
-`SKAction.sequence(_:)` creates an action that runs a collection of actions sequentially. It takes an array of `SKActions`, each separated by commas, and it runs them one after another.
+`SKAction.sequence(_:)` creates an action that runs a collection of actions sequentially.
+
+It takes an array of `SKActions`, each separated by commas, and it runs them one after the other in listed order.
 
 When the `sequence` action executes, the first action in the sequence starts and runs to completion. Subsequent actions in the sequence run in a similar fashion until all of the actions in the sequence have executed.
 
-To create a sequence action, you use the `SKAction.sequence(_:)` method, which takes an array of SKAction objects:
+To create a sequence action, use `SKAction.sequence(_:)`, which takes an array of `SKAction` objects:
 
 ```Swift  
   let sequenceAction = SKAction.sequence([action1, action2, action3])
 ```
 
-In this example, the node is moved up the x-axis by `30` points, then down the y-axis by `30`, the removed from the scene:
+In the example below, the node is moved up the x-axis by `30` points, then down the y-axis by `30`, then removed from the scene:
 
 ```Swift  
   let moveUpAction = SKAction.moveBy(x: 0, y: 30, duration: 2)
@@ -567,13 +571,16 @@ However, instead of running them one after the other, a group action runs them a
 
 When the group action executes, the collection of actions that comprise the group all start immediately and run in parallel.
 
-The duration of the group action is the longest duration among the collection of actions. Thus, a group action does not complete until the longest-running action in its colletion has completed.
+The `duration` of the group action is the longest duration among the collection of actions. Thus, a group action does not complete until the longest-running action in its colletion has completed.
 
 If an action in the group has a duration less than the group’s duration, the action completes, then idles until the group completes the remaining actions. *(This matters most when creating a repeating action that repeats a group; will cover repeating actions in next lesson)*
 
 Note that you can also combine groups and sequences.
 - You can run two sequences at the same time by combining them into a group action
 - You can also create sequences that contain group actions.
+
+
+`group(_:)` action is also reversible; it creates a new group action that contains the reverse of each action specified in the group.
 
 
 <!-- Move these actions to next lesson:
