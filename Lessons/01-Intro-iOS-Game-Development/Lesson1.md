@@ -609,7 +609,7 @@ Note that you can also combine groups and sequences.
 
 
 
-## In Class Activity II (optional) (30 min)
+## In Class Activity II (optional) (25 min)
 
 **Individually:**
 1. Continue working on your AstroJunk app, adding movement to all nodes created so far
