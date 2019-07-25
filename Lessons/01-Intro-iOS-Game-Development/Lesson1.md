@@ -403,8 +403,8 @@ This results in a new position for your object.
 
 </br>
 
-> For a good start in learning more about how to work with vectors in your game apps:
-> • Experiment with the code in the [Vector playground](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/tree/master/Lessons/01-Intro-iOS-Game-Development/playgrounds/Vector.playground)
+> For a good start in learning more about how to work with vectors in your game apps: </br>
+> • Experiment with the code in the [Vector playground](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/tree/master/Lessons/01-Intro-iOS-Game-Development/playgrounds/Vector.playground) </br>
 > • Study the resources listed in Additional Resources below
 
 
@@ -489,9 +489,7 @@ When the scene processes its nodes, the actions associated with those nodes are 
 ## In Class Activity II (optional) (30 min)
 
 
-the code in the [Vector playground]()
-
-
+the [Vector playground](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/tree/master/Lessons/01-Intro-iOS-Game-Development/playgrounds/Vector.playground) </br>
 
 # After Class
 
