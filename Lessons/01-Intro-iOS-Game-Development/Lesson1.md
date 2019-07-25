@@ -457,9 +457,9 @@ When the scene processes its nodes, the actions associated with those nodes are 
 To apply an action to a node, you simply need to:
 
 1. Create an instance of `SKAction`
-2. Run it by calling one of the built-in `run(_:)` functions found on the node itself, passing in action instance just created
+2. Run it by calling one of the built-in `run(_:)` functions found on the node itself, passing in the action instance just created
 
-__*Creating Actions*__
+##### __*Creating Actions*__
 To create a SpriteKit action, call one of the many built-in static constructors (factory methods) of the `SKAction` class.
 
 In this example, we use the `moveBy(x:y:duration:)` function built-in to `SKAction` to create an action which will make a sprite move 2 units along the x-axis and 3 units along the y axis in 1 second:
