@@ -526,7 +526,7 @@ But what if you wanted some actions to occur immediately or in combination with 
 
 What if you wanted to run your own custom code or to remove a node from a scene on completion of some other action?
 
-The real power of `SKAction` lies in how easily you can combine actions together with `sequence(_:)` or `group(_:)`.
+The real power of `SKAction` lies in how easily you can combine actions together with `sequence(_:)` or `group(_:)`.<sup>9</br>
 
 A `sequence` is an `SKAction` that runs other actions, one after another.
 
@@ -556,6 +556,7 @@ The sequence action is one of the most useful and commonly used actions in iOS g
 
 It is also reversible &mdash; it creates a new sequence action that reverses the order of the actions.
 
+> <sup>9</br> *We'll cover `group(_:)` actions in next lesson.*
 
 ## In Class Activity II (optional) (25 min)
 
