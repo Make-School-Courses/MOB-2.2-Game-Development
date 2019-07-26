@@ -9,10 +9,11 @@
 | **Elapsed** | **Time**  | **Activity**              |
 | ----------- | --------- | ------------------------- |
 | 0:00        | 0:05      | Objectives                |
-| 0:05        | 0:15      | Overview                  |
-| 0:20        | 0:30      | In Class Activity I       |
-| 0:50        | 0:10      | BREAK                     |
-| 1:00        | 0:45      | In Class Activity II      |
+| 0:05        | 0:20      | Overview I: More Actions   |
+| 0:25        | 0:30      | In Class Activity I       |
+| 0:55        | 0:10      | BREAK                     |
+| 1:05       | 0:20      | Overview II: Collision Detection   |
+| 1:25        | 0:30      | In Class Activity II      |
 | 1:45        | 0:05      | Wrap up review objectives |
 | TOTAL       | 1:50      | -                         |
 
@@ -32,6 +33,77 @@ Explain why students should care to learn the material presented in this class.
 To help you reinforce your learning and to confirm your understanding of the concepts presented so far...
 
 Quiz...
+
+
+## More Actions (20 min)
+
+### Group Actions
+In our last lesson we learned that sequence actions run other actions one after another.
+
+But what if you want to run two or more actions at exactly the same time?
+
+`group(_:)` creates an action that runs a collection of actions in parallel.
+
+Creating groups is very similar to creating sequences.
+
+To create a group, you pass in a collection of `SKAction` objects to the `group(_:)` method:
+
+```Swift  
+  let groupAction = SKAction.group([action1, action2, action3])
+```
+
+However, instead of running them one after the other, a group action runs them all at once.
+
+When the group action executes, the collection of actions that comprise the group all start immediately and run in parallel.
+
+The `duration` of the group action is the longest duration among the collection of actions. Thus, a group action does not complete until the longest-running action in its colletion has completed.
+
+If an action in the group has a duration less than the group’s duration, the action completes, then idles until the group completes the remaining actions. *(This matters most when creating a repeating action that repeats a group; we will cover repeating actions in next lesson)*
+
+Note that you can also combine groups and sequences.
+- You can run two sequences at the same time by combining them into a group action
+- You can also create sequences that contain group actions.
+
+
+`group(_:)` action is also reversible; it creates a new group action that contains the reverse of each action specified in the group.
+
+
+<!-- Moved these actions from prior lesson:
+
+
+#### Wait action
+
+#### Run-block
+
+
+#### Repeating actions
+
+
+## Touch events
+
+## Playable area limitation
+
+#### Wait-for duration action
+
+
+#### Reversing actions -->
+
+
+<!-- List from Syllabus outline 7/25/19:
+AG Wait action
+AG Run-block
+Reversing actions
+TV Repeating actions
+TV Remove from parent action
+Animation action
+Stopping action
+Scale action
+Space game - aliens or bombs could grow and shrink
+Rotate action
+Space game - and meteorites could rotate
+Group action
+Combine any actions into groups -->
+
 
 
 ## Collision Detection (20 min)
