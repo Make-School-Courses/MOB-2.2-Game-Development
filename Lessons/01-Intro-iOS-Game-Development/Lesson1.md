@@ -281,10 +281,7 @@ Because it is called each frame, it provides an excellent opportunity to interac
 ### As Individuals
 
 #### Creating the AstroJunk app
-Read and follow the [Space Junk](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/blob/master/Lessons/01-Intro-iOS-Game-Development/assignments/activity_1_space_junk.md) instructions for creating your first app, AstroJunk...
-
-
-
+1. Read and follow the [Space Junk](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/blob/master/Lessons/01-Intro-iOS-Game-Development/assignments/activity_1_space_junk.md) instructions for creating your first app, AstroJunk...
 
 
 ## Movement (20 min)
@@ -426,7 +423,6 @@ This results in a new position for your object.
 > • Study the resources listed in Additional Resources below
 
 
-
 <!-- TODO: discuss moving right as positive? left as negative? -->
 
 
@@ -519,8 +515,8 @@ These let you specify a change in *only one* axis &mdash; either the x- or the y
 Instead of moving a node to particular point, `moveBy(x:y:duration:)` lets you move it by an offset from its current position, wherever it is at any given time. For example, the offset could be some multiple of the size of the object allowing you to move different size objects by amounts relative to their respective sizes.
 
 __*Important Note:*__ </br>
-This pattern of having `<action>To` and `<action>By` function variations is present in many other of the [Action Initializers](https://developer.apple.com/documentation/spritekit/skaction/action_initializers) on `SKAction`.
-Feel free to use whichever variation works best and most easily for you, but remember that `<action>By` functions are preferred because they are __*reversible*__ (more on reversible actions later).
+This pattern of having `<action>To` and `<action>By` function variations appears in many of the [Action Initializers](https://developer.apple.com/documentation/spritekit/skaction/action_initializers) on `SKAction`.
+Feel free to use whichever variation works best and most conveniently for you, but remember that `<action>By` functions are preferred because they are __*reversible*__ (more on reversible actions later).
 
 
 #### Sequence Actions
