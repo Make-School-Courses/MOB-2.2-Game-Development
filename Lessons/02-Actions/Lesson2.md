@@ -206,6 +206,25 @@ Group action
 Combine any actions into groups -->
 
 
+### Wait action
+
+The wait-for-duration action makes the sprite wait for a period of time before continue doing anything else. These actions will be the most useful when combined with a sequence action. We will simulate pauses in the game with this combo.
+
+```Swift
+let waitAction = SKAction.wait(forDuration:0.5)
+```
+
+After declaring the action we can include it in any sequence to create a delay.
+
+### Run-block action
+What if there is a piece of code you wrote that you want executed in the game? You can call it inside the run-block action and treat it as any other action. This means you can include it in a sequence too.
+
+```Swift
+let updateScores = SKAction.run(){
+  //update some variables here
+}
+let sequence = SKAction.sequence([actionMove, updateScores, waitAction, actionMove])
+```
 
 ## Collision Detection (20 min)
 
