@@ -83,11 +83,93 @@ Note that you can also combine groups and sequences.
 - You can run two sequences at the same time by combining them into a group action
 - You can also create sequences that contain group actions.
 
-
 `group(_:)` action is also reversible; it creates a new group action that contains the reverse of each action specified in the group.
+
+### Repeating Actions
+In addition to the ability to chain actions together with `sequence(_:)` and `group(_:)`, you can create one action and have it execute some other action multiple times.
+
+`SKAction` provides two built-in functions for repeating targeted (aka, *associated*) actions:
+
+1. `repeat(_:count:)` &mdash; Creates an action that repeats another action a specified number of times.
+
+2. `repeatForever(_:)` &mdash; Creates an action that repeats another action forever.<sup>1</sup>
+
+
+`repeat(_:count:)` example:
+
+```Swift  
+  let moveUp = SKAction.move(to: CGPoint(x: 50.0, y: 0.0), duration: 5.0)
+  let moveDown = SKAction.move(to: CGPoint(x: -50.0, y: 0.0), duration: 5.0)
+
+  // Execute move actions in sequence
+  let moveUpAndDown = SKAction.sequence([moveUp, moveDown])
+
+  // Repeat execution of sequence every 7 seconds
+  let repeatUpDownMovement = SKAction.repeatForever(moveUpAndDown, count: 7)
+
+  mySprite.run(repeatUpDownMovement)
+```
+
+`repeat(_:count:)` example:
+
+```Swift  
+  let moveUp = SKAction.move(to: CGPoint(x: 50.0, y: 0.0), duration: 5.0)
+  let moveDown = SKAction.move(to: CGPoint(x: -50.0, y: 0.0), duration: 5.0)
+
+  // Execute move actions in sequence
+  let moveUpAndDown = SKAction.sequence([moveUp, moveDown])
+
+  // Repeat execution of sequence FOREVER...
+  let repeatUpDownMovement = SKAction.repeatForever(moveUpAndDown)
+
+  mySprite.run(repeatUpDownMovement)
+```
+
+
+Both of these repeating actions are reversible; reversing either one creates a new action that is the reverse of the specified action and then repeats it the same number of times or forever, respectively.
+
+
+> <sup>1</sup> Repeating an action forever invites the obvious question: When will the repeated action stop? While there are several ways this can be achieved, stopping a `repeatForever(_:)` action can depend on your app's component makeup and specific behavioral needs. We will cover the two built-in functions most commonly used for stopping actions soon...
+
+
+### removeFromParent() Action
+
+
+
+ Remove from parent action
+
+
+<!-- From Syllabus doc on 7/29/19:
+
+More actions
+AG Wait action
+AG Run-block
+Reversing actions
+TV Repeating actions
+TV Remove from parent action
+Animation action
+
+- Stopping action -- ???
+
+
+Scale action
+Space game - aliens or bombs could grow and shrink
+Rotate action
+Space game - and meteorites could rotate
+Group action
+Combine any actions into groups -->
+
+
 
 
 <!-- Moved these actions from prior lesson:
+
+TV Repeating actions
+TV Remove from parent action
+
+
+#### Reversing actions
+
 
 
 #### Wait action
@@ -105,7 +187,7 @@ Note that you can also combine groups and sequences.
 #### Wait-for duration action
 
 
-#### Reversing actions -->
+ -->
 
 
 <!-- List from Syllabus outline 7/25/19:
@@ -237,8 +319,22 @@ Assignments:
 
 ## Additional Resources
 
+1. [Slides]()
 1. []()
 1. []()
 1. []()
 1. []()
-1. []()
+
+https://developer.apple.com/documentation/spritekit/skaction/action_initializers
+
+
+
+https://developer.apple.com/documentation/spritekit/skaction/1417688-group
+
+
+
+https://developer.apple.com/documentation/spritekit/skaction/1417788-wait
+
+https://developer.apple.com/documentation/spritekit/skaction/1417750-repeat
+
+https://developer.apple.com/documentation/spritekit/skaction/1417676-repeatforever
