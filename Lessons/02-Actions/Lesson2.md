@@ -1,7 +1,12 @@
 # Actions
 
 <!-- INSTRUCTOR NOTES:
-1) Quiz for Initial Exercise is located: -->
+1) Quiz for Initial Exercise is located:
+https://docs.google.com/document/d/1Qo3Llmfjttfu-LPMCjeuR4iRy2WWS_mG_Pt8Xa8nPh4/edit
+
+...answers for quiz are inline below...
+
+-->
 
 
 ## Minute-by-Minute
@@ -33,6 +38,19 @@ Explain why students should care to learn the material presented in this class.
 To help you reinforce your learning and to confirm your understanding of the concepts presented so far...
 
 Quiz...
+
+<!-- 
+Answers to quiz:
+
+- H
+- E
+- A
+- B (Frames Per Second)
+- D, I (either is correct)
+- G
+- B (First Person Shooter)
+- F
+- C -->
 
 
 ## More Actions (20 min)
