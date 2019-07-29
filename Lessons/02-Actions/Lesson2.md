@@ -14,13 +14,14 @@ https://docs.google.com/document/d/1Qo3Llmfjttfu-LPMCjeuR4iRy2WWS_mG_Pt8Xa8nPh4/
 | **Elapsed** | **Time**  | **Activity**              |
 | ----------- | --------- | ------------------------- |
 | 0:00        | 0:05      | Objectives                |
-| 0:05        | 0:20      | Overview I: More Actions   |
-| 0:25        | 0:30      | In Class Activity I       |
-| 0:55        | 0:10      | BREAK                     |
-| 1:05       | 0:20      | Overview II: Collision Detection   |
-| 1:25        | 0:30      | In Class Activity II      |
-| 1:45        | 0:05      | Wrap up review objectives |
-| TOTAL       | 1:50      | -                         |
+| 0:05        | 0:15      | Initial Exercise                |
+| 0:20        | 0:15      | Overview I: More Actions   |
+| 0:35        | 0:25      | In Class Activity I       |
+| 1:00        | 0:10      | BREAK                     |
+| 1:10       | 0:15      | Overview II: Collision Detection   |
+| 1:25        | 0:25      | In Class Activity II      |
+| 1:50        | 0:05      | Wrap up review objectives |
+| TOTAL       | 1:55      | -                         |
 
 ## Why you should know this or industry application (optional) (5 min)
 
@@ -33,13 +34,13 @@ Explain why students should care to learn the material presented in this class.
 1. Design
 1. Implement
 
-## Initial Exercise (20 min)
+## Initial Exercise (15 min)
 
 To help you reinforce your learning and to confirm your understanding of the concepts presented so far...
 
 Quiz...
 
-<!-- 
+<!--
 Answers to quiz:
 
 - H
