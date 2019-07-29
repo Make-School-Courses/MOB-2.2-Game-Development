@@ -42,7 +42,7 @@ In our last lesson we learned that sequence actions run other actions one after 
 
 But what if you want to run two or more actions at exactly the same time?
 
-`group(_:)` creates an action that runs a collection of actions in parallel.
+`group(_:)` creates an action that runs a collection of actions __*in parallel.__*
 
 Creating groups is very similar to creating sequences.
 
@@ -56,7 +56,7 @@ However, instead of running them one after the other, a group action runs them a
 
 When the group action executes, the collection of actions that comprise the group all start immediately and run in parallel.
 
-The `duration` of the group action is the longest duration among the collection of actions. Thus, a group action does not complete until the longest-running action in its colletion has completed.
+The `duration` of the group action is the longest duration among the collection of actions. Thus, a group action does not complete until the longest-running action in its collection has completed.
 
 If an action in the group has a duration less than the group’s duration, the action completes, then idles until the group completes the remaining actions. *(This matters most when creating a repeating action that repeats a group; we will cover repeating actions in next lesson)*
 
