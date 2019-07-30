@@ -127,13 +127,35 @@ Example of a `repeatForever(_:)` action:
 Both of these repeating actions are reversible; reversing either one creates a new action that is the reverse of the specified action and then repeats it the same number of times or forever, respectively.
 
 
-> <sup>1</sup> *Repeating an action forever invites the obvious question: When will the repeated action stop? While there are several ways this can be achieved, stopping a `repeatForever(_:)` action can depend on your app's component makeup and specific behavioral needs. To start, we will go over the two built-in functions most commonly used for stopping actions in an upcoming topic...*
-
-<!--
-
-### Stopping Actions -->
+> <sup>1</sup> *Repeating an action forever invites the obvious question: When will the repeated action stop? While there are several ways this can be achieved, stopping a `repeatForever(_:)` action can depend on your app's component makeup and specific behavioral needs. To start, we will go over the two built-in functions most commonly used for stopping actions...*
 
 
+
+### Stopping Actions
+Oftentimes you'll need to stop a node from running its actions.
+
+There are two basic ways to stop actions while they are running:
+
+1. By calling `removeAllActions()` &mdash; Stops __*all*__ actions currently running on the node.
+
+2. Or by calling `removeAction(forKey:)` &mdash; Removes an action based on a unique key given to the action when the `run(_:withKey:)` is called. If an action is found that matches the key, it is removed from the node.
+
+`run(_:withKey:)` &mdash; Adds an identifiable action to the list of actions executed by the node. This method is identical to `run(_:)`, but the action is stored so that it can be retrieved later.
+
+Example of using `removeAction(forKey:)` &mdash; Here, we create an action with a key as a unique identifier so that we can remove only the action that matches that identifier. (Note that we first use `action(forKey:) `to ensure that there is not an action with the "flying" identifier already running.)
+
+```Swift  
+  func startPenguinFlying() {
+    if penguin.action(forKey: "flying") == nil {
+      penguin.run(
+        SKAction.repeatForever(penguinAnimation),
+        withKey: "flying")
+  } }
+  func stopPenguinFlying() {
+    penguin.removeAction(forKey: "flying")
+  }
+
+```
 
 ### removeFromParent() Action
 
