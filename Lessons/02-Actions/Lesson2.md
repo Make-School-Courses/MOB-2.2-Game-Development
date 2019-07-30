@@ -183,7 +183,7 @@ And, over extended playing time, inactive nodes can build up, eventually consumi
 To keep your game running smoothly, remove nodes from the scene graph when they are no longer needed. Removing them will delete them from the scene, but you can always recreate them easily when needed.
 
 **Two Removal Functions** </br>
-When you no longer need a node and want to remove it from a scene, you have two options:
+When you no longer need a node and want to remove it from a scene, you have two `removeFromParent()` options:
 
 __*Option 1:*__ Call the built-in `removeFromParent()` function on the `SKNode` object directly.
 
@@ -195,9 +195,9 @@ func removeFromParent()
 
 Calling this function on the node itself will remove itself from its parent.
 
-__*Option 2:*__ Create a `removeFromParent()` action &mdash;
+__*Option 2:*__ Create a `removeFromParent()` action.
 
-This creates and returns an `SKAction` object that removes the node from its parent:
+This `removeFromParent()` function creates and returns an `SKAction` object that removes the node from its parent:
 
 ```Swift  
 class func removeFromParent() -> SKAction
@@ -206,7 +206,6 @@ class func removeFromParent() -> SKAction
 When the action executes, the node is immediately removed from its parent.
 
 This action is not reversible; the reverse of this action is the same action.
-
 
 __*Example of Option 1:*__ Calling `removeFromParent()` on the `SKNode` object directly:
 
@@ -224,11 +223,14 @@ __*Examples of Option 1:*__ Creating and using a `removeFromParent()` action:
   // Create remove action
   let actionRemove = SKAction.removeFromParent()
 
-  // Run move action, then remove sprite
+  // Run move action, then apply the removal action to dragon sprite
   dragon.run(SKAction.sequence([actionMove, actionRemove]))
 ```
 
-...and we've already seen in Lesson 1 how this can be used efficiently with the `sequence` actions:
+...and, as we can see above &mdash; and had seen previously in Lesson 1 &mdash; both `removeFromParent()` options can be used efficiently with `sequence` actions...
+
+
+<!-- ...and we've already seen in Lesson 1 how this can be used efficiently with `sequence` actions:
 
 ```Swift  
   let moveUpAction = SKAction.moveBy(x: 0, y: 30, duration: 2)
@@ -236,7 +238,7 @@ __*Examples of Option 1:*__ Creating and using a `removeFromParent()` action:
   let removeAction = SKAction.removeFromParent()
   let sequenceAction = SKAction.sequence([moveUpAction, moveDownAction, removeAction])
   node.run(sequenceAction)
-```
+``` -->
 
 ### Wait action
 
