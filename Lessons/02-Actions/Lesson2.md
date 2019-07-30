@@ -175,22 +175,22 @@ When you no longer need a node and want to remove it from a scene, you have two 
 
   `removeFromParent()` &mdash; Removes the receiving node from its parent.
 
-    ```Swift  
-      func removeFromParent()
-    ```
+```Swift  
+  func removeFromParent()
+```
 
 2. Create a `removeFromParent()` action:
 
   `removeFromParent()` &mdash; Creates an action that removes the node from its parent. When the action executes, the node is immediately removed from its parent. This action is not reversible; the reverse of this action is the same action.
 
-    ```Swift  
-      class func removeFromParent() -> SKAction
-    ```
+```Swift  
+    class func removeFromParent() -> SKAction
+```
 
 Example &mdash; Calling `removeFromParent()` on the `SKNode` object directly:
 
 ```Swift  
-  let removeAction = spriteNode.removeFromParent()
+    let removeAction = spriteNode.removeFromParent()
 ```
 
 ...and we've already seen in Lesson 1 how this can be used efficiently with the `sequence` actions:
