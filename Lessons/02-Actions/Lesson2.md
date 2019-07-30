@@ -178,7 +178,9 @@ Example of using `removeAction(forKey:)` &mdash; Here, we create an action with 
 
 When nodes are no longer needed &mdash; when they finish moving, move offscreen or are otherwise no longer visible &mdash; they still get factored into physics calculations and might still require SpriteKit to check if they need to be redrawn.
 
-And, over extended playing time, inactive nodes can build up, eventually consuming all available device memory, prompting iOS to automatically terminate your app. From the user perspective, this will look as if your app crashed.
+And, over extended playing time, inactive nodes can build up, eventually consuming all available device memory, prompting iOS to automatically terminate your app.
+
+From the user perspective, this will look as if your app crashed.
 
 To keep your game running smoothly, remove nodes from the scene graph when they are no longer needed. Removing them will delete them from the scene, but you can always recreate them easily when needed.
 
@@ -195,6 +197,12 @@ func removeFromParent()
 
 Calling this function on the node itself will remove itself from its parent.
 
+*Example of Option 1:* Calling `removeFromParent()` on the `SKNode` object directly:
+
+```Swift  
+  let removeNode = spriteNode.removeFromParent()
+```
+
 __*Option 2:*__ Create a `removeFromParent()` action.
 
 This `removeFromParent()` function creates and returns an `SKAction` object that removes the node from its parent:
@@ -206,12 +214,6 @@ class func removeFromParent() -> SKAction
 When the action executes, the node is immediately removed from its parent.
 
 This action is not reversible; the reverse of this action is the same action.
-
-__*Example of Option 1:*__ Calling `removeFromParent()` on the `SKNode` object directly:
-
-```Swift  
-  let removeNode = spriteNode.removeFromParent()
-```
 
 __*Examples of Option 1:*__ Creating and using a `removeFromParent()` action:
 
