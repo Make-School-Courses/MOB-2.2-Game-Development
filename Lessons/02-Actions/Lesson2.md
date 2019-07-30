@@ -215,7 +215,7 @@ When the action executes, the node is immediately removed from its parent.
 
 This action is not reversible; the reverse of this action is the same action.
 
-__*Examples of Option 1:*__ Creating and using a `removeFromParent()` action:
+_*Example &mdash; Option 2:*__ Creating and using a `removeFromParent()` action:
 
 ```Swift  
   // Create move action
@@ -229,7 +229,7 @@ __*Examples of Option 1:*__ Creating and using a `removeFromParent()` action:
   dragon.run(SKAction.sequence([actionMove, actionRemove]))
 ```
 
-...and, as we can see above &mdash; and had seen previously in Lesson 1 &mdash; both `removeFromParent()` options can be used efficiently with `sequence` actions...
+As you can see above &mdash; and have already seen in Lesson 1 &mdash; either of the two optinal `removeFromParent()` functions can be used efficiently with `sequence` actions...
 
 
 <!-- ...and we've already seen in Lesson 1 how this can be used efficiently with `sequence` actions:
