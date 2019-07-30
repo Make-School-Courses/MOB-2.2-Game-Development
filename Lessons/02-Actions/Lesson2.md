@@ -185,7 +185,9 @@ To keep your game running smoothly, remove nodes from the scene graph when they 
 **Two Removal Functions** </br>
 When you no longer need a node and want to remove it from a scene, you have two options:
 
-__*Option 1:*__ Call `removeFromParent()` on the `SKNode` object directly.
+__*Option 1:*__ Call the built-in `removeFromParent()` function on the `SKNode` object directly.
+
+Note that in this function's declaration it returns nothing:
 
 ```Swift  
 func removeFromParent()
@@ -195,11 +197,13 @@ Calling this function on the node itself will remove itself from its parent.
 
 __*Option 2:*__ Create a `removeFromParent()` action &mdash;
 
+This creates and returns an `SKAction` object that removes the node from its parent:
+
 ```Swift  
 class func removeFromParent() -> SKAction
 ```
 
-This creates and returns an `SKAction` object that removes the node from its parent. When the action executes, the node is immediately removed from its parent.
+When the action executes, the node is immediately removed from its parent.
 
 This action is not reversible; the reverse of this action is the same action.
 
