@@ -185,35 +185,32 @@ To keep your game running smoothly, remove nodes from the scene graph when they 
 **Two Removal Functions** </br>
 When you no longer need a node and want to remove it from a scene, you have two options:
 
-__*Option 1:*__ Call `removeFromParent()` on the `SKNode` object directly &mdash;  Will remove the receiving node from its parent.
+__*Option 1:*__ Call `removeFromParent()` on the `SKNode` object directly.
 
 ```Swift  
-  func removeFromParent()
+func removeFromParent()
 ```
 
-__*Option 2:*__ Create a `removeFromParent()` action &mdash; This creates an action that removes the node from its parent. When the action executes, the node is immediately removed from its parent. This action is not reversible; the reverse of this action is the same action.
+Calling this function on the node itself will remove itself from its parent.
+
+__*Option 2:*__ Create a `removeFromParent()` action &mdash;
 
 ```Swift  
-    class func removeFromParent() -> SKAction
+class func removeFromParent() -> SKAction
 ```
 
-Example of Option 1: Calling `removeFromParent()` on the `SKNode` object directly:
+This creates and returns an `SKAction` object that removes the node from its parent. When the action executes, the node is immediately removed from its parent.
+
+This action is not reversible; the reverse of this action is the same action.
+
+
+__*Example of Option 1:*__ Calling `removeFromParent()` on the `SKNode` object directly:
 
 ```Swift  
-    let removeAction = spriteNode.removeFromParent()
+  let removeNode = spriteNode.removeFromParent()
 ```
 
-...and we've already seen in Lesson 1 how this can be used efficiently with the `sequence` actions:
-
-```Swift  
-  let moveUpAction = SKAction.moveBy(x: 0, y: 30, duration: 2)
-  let moveDownAction = SKAction.moveBy(x: 0, y: -30, duration: 2)
-  let removeAction = SKAction.removeFromParent()
-  let sequenceAction = SKAction.sequence([moveUpAction, moveDownAction, removeAction])
-  node.run(sequenceAction)
-```
-
-Example &mdash; Creating and using a `removeFromParent()` SKAction:
+__*Examples of Option 1:*__ Creating and using a `removeFromParent()` action:
 
 ```Swift  
   // Create move action
@@ -225,6 +222,16 @@ Example &mdash; Creating and using a `removeFromParent()` SKAction:
 
   // Run move action, then remove sprite
   dragon.run(SKAction.sequence([actionMove, actionRemove]))
+```
+
+...and we've already seen in Lesson 1 how this can be used efficiently with the `sequence` actions:
+
+```Swift  
+  let moveUpAction = SKAction.moveBy(x: 0, y: 30, duration: 2)
+  let moveDownAction = SKAction.moveBy(x: 0, y: -30, duration: 2)
+  let removeAction = SKAction.removeFromParent()
+  let sequenceAction = SKAction.sequence([moveUpAction, moveDownAction, removeAction])
+  node.run(sequenceAction)
 ```
 
 ### Wait action
