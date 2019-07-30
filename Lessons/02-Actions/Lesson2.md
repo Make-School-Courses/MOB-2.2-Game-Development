@@ -31,9 +31,20 @@ To give your game life, you'll want your nodes to move in various ways, to respo
 
 ## Learning Objectives (5 min)
 
-1. Identify and describe
--
-1. Implement:
+1. Identify and describe the behavioral results and implementation steps of these `SKAction` types:
+- group
+- repeating (two variations)
+- removeFromParent()
+- wait
+- Run-block
+2. Identify and describe:
+- the two built-in functions used to stop running actions
+- the main idea behind Collision Detection
+- how users can interact with game elements using Touch Events
+3. Design strategies for debugging:
+- Collision Detection behavior
+- A game's Playable Area
+4. Implement:
 - various actions (Scaling, rotation, etc.), collision detection, and touch events in a simple game app
 
 ## Initial Exercise (15 min)
