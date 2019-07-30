@@ -146,6 +146,7 @@ And, over extended playing time, inactive nodes can build up, which will eventua
 
 To keep your game running smoothly, remove nodes from the scene graph when they are no longer needed. Removing them will delete them from the scene, but you can always recreate them easily when needed.
 
+**Two Removal Functions**
 When you no longer need a node and want to remove it from a scene, you have two options:
 
 1. Call `removeFromParent()` on the `SKNode` object directly:
