@@ -15,15 +15,15 @@ https://docs.google.com/document/d/1Qo3Llmfjttfu-LPMCjeuR4iRy2WWS_mG_Pt8Xa8nPh4/
 | ----------- | --------- | ------------------------- |
 | 0:00        | 0:05      | Objectives                |
 | 0:05        | 0:15      | Initial Exercise                |
-| 0:20        | 0:15      | Overview I: More Actions   |
-| 0:35        | 0:25      | In Class Activity I       |
-| 1:00        | 0:10      | BREAK                     |
-| 1:10       | 0:15      | Overview II: Collision Detection   |
-| 1:25        | 0:25      | In Class Activity II      |
-| 1:10       | 0:15      | Overview III: Touch Events   |
-| 1:xx        | 0:20      | In Class Activity III      |
+| 0:20        | 0:10      | Overview I: More Actions   |
+| 0:30        | 0:20      | In Class Activity I       |
+| 0:50        | 0:10      | BREAK                     |
+| 1:00       | 0:15      | Overview II: Collision Detection   |
+| 1:15        | 0:20      | In Class Activity II      |
+| 1:35       | 0:10      | Overview III: Touch Events   |
+| 1:45        | 0:10      | In Class Activity III      |
 | 1:50        | 0:05      | Wrap up review objectives |
-| TOTAL       | 1:xx      | -                         |
+| TOTAL       | 1:55      | -                         |
 
 ## Why you should know this or industry application (5 min)
 
