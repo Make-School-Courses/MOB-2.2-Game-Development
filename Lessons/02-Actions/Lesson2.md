@@ -25,16 +25,16 @@ https://docs.google.com/document/d/1Qo3Llmfjttfu-LPMCjeuR4iRy2WWS_mG_Pt8Xa8nPh4/
 | 1:50        | 0:05      | Wrap up review objectives |
 | TOTAL       | 1:xx      | -                         |
 
-## Why you should know this or industry application (optional) (5 min)
+## Why you should know this or industry application (5 min)
 
-Explain why students should care to learn the material presented in this class.
+To give your game life, you'll want your nodes to move in various ways, to respond to touch events, and to emulate real-world reactions when two or more game elements bump into each other...
 
 ## Learning Objectives (5 min)
 
 1. Identify and describe
-1. Define
-1. Design
-1. Implement
+-
+1. Implement:
+- various actions (Scaling, rotation, etc.), collision detection, and touch events in a simple game app
 
 ## Initial Exercise (15 min)
 
@@ -353,7 +353,11 @@ For the Space Junk game, debug the playable area (make it visible with a rectang
 # After Class
 
 Assignments:
-1. Review:
+1. For you AstroJunk app: If you have not done so already, make sure that the active elements (SpriteKit nodes) in your app are each in their own separate classes.
+
+i.e., you should have class files for Spaceship, Meteor, and Debris
+
+2. Review:
 - [Accessing and Modifying the Node Tree - from Apple](https://developer.apple.com/documentation/spritekit/sknode/accessing_and_modifying_the_node_tree)
 - [Controlling Actions Precisely by Using Names - from Apple](https://developer.apple.com/documentation/spritekit/skaction/controlling_actions_precisely_by_using_names)
 - `removeChildren(in:)`
