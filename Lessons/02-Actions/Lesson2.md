@@ -20,8 +20,10 @@ https://docs.google.com/document/d/1Qo3Llmfjttfu-LPMCjeuR4iRy2WWS_mG_Pt8Xa8nPh4/
 | 1:00        | 0:10      | BREAK                     |
 | 1:10       | 0:15      | Overview II: Collision Detection   |
 | 1:25        | 0:25      | In Class Activity II      |
+| 1:10       | 0:15      | Overview III: Touch Events   |
+| 1:xx        | 0:20      | In Class Activity III      |
 | 1:50        | 0:05      | Wrap up review objectives |
-| TOTAL       | 1:55      | -                         |
+| TOTAL       | 1:xx      | -                         |
 
 ## Why you should know this or industry application (optional) (5 min)
 
@@ -51,7 +53,9 @@ Answers to quiz:
 - G
 - B (First Person Shooter)
 - F
-- C -->
+- C
+
+-->
 
 
 ## More Actions (20 min)
@@ -130,7 +134,6 @@ Both of these repeating actions are reversible; reversing either one creates a n
 > <sup>1</sup> *Repeating an action forever invites the obvious question: When will the repeated action stop? While there are several ways this can be achieved, stopping a `repeatForever(_:)` action can depend on your app's component makeup and specific behavioral needs. To start, we will go over the two built-in functions most commonly used for stopping actions...*
 
 
-
 ### Stopping Actions
 Oftentimes you'll need to stop a node from running its actions.
 
@@ -164,7 +167,7 @@ Example of using `removeAction(forKey:)` &mdash; Here, we create an action with 
 
 When nodes are no longer needed &mdash; when they finish moving, move offscreen or are otherwise no longer visible &mdash; they still get factored into physics calculations and might still require SpriteKit to check if they need to be redrawn.
 
-And, over extended playing time, inactive nodes can build up, which will eventually consume all available device memory, prompting iOS to automatically terminate your app. From the user perspective, this will likely look as if your app crashed.
+And, over extended playing time, inactive nodes can build up, eventually consuming all available device memory, prompting iOS to automatically terminate your app. From the user perspective, this will look as if your app crashed.
 
 To keep your game running smoothly, remove nodes from the scene graph when they are no longer needed. Removing them will delete them from the scene, but you can always recreate them easily when needed.
 
@@ -213,77 +216,6 @@ Example &mdash; Creating and using a `removeFromParent()` SKAction:
   dragon.run(SKAction.sequence([actionMove, actionRemove]))
 ```
 
-
-
-
-
-<!-- From Syllabus doc on 7/29/19:
-
-More actions:
-AG Wait action (done)
-AG Run-block (done)
-
-TV Repeating actions (done)
-TV Remove from parent action (done)
-- Stopping action -- (done) TV
-
-Reversing actions
-Animation action
-
-Scale action
-Space game - aliens or bombs could grow and shrink
-Rotate action
-Space game - and meteorites could rotate
-Group action
-Combine any actions into groups -->
-
-
-
-
-<!-- Moved these actions from prior lesson:
-
-TV Repeating actions
-TV Remove from parent action
-
-
-#### Reversing actions
-
-
-
-#### Wait action
-
-#### Run-block
-
-
-#### Repeating actions
-
-
-## Touch events
-
-## Playable area limitation
-
-#### Wait-for duration action
-
-
- -->
-
-
-<!-- List from Syllabus outline 7/25/19:
-AG Wait action
-AG Run-block
-Reversing actions
-TV Repeating actions
-TV Remove from parent action
-Animation action
-Stopping action
-Scale action
-Space game - aliens or bombs could grow and shrink
-Rotate action
-Space game - and meteorites could rotate
-Group action
-Combine any actions into groups -->
-
-
 ### Wait action
 
 The wait-for-duration action makes the sprite wait for a period of time before continue doing anything else. These actions will be the most useful when combined with a sequence action. We will simulate pauses in the game with this combo.
@@ -303,6 +235,23 @@ let updateScores = SKAction.run(){
 }
 let sequence = SKAction.sequence([actionMove, updateScores, waitAction, actionMove])
 ```
+
+## In Class Activity I (20 min)
+
+Next steps for the Space Junk game:
+
+1. Use actions to control the creation of debris and meteors.
+
+- Newly created debris and meteors should originate (be created at) random positions in the scene and should move from top to bottom.
+
+- For falling elements, make them spin (rotate) as they fall. Try applying different spinning speeds to different elements.
+
+> Research how to rotate nodes.
+
+2. Use actions to make aliens or bombs grow or shrink.
+
+> Research how to animate the visual scaling of a node.
+
 
 ## Collision Detection (20 min)
 
@@ -326,7 +275,7 @@ Playground demo + explanation
 - The problem with the update method.
 - Bounding box bigger than sprite. Shrink the box using `insetBy(dx:dy:)`
 
-## In Class Activity I (30 min)
+## In Class Activity II (30 min)
 
 Next steps for the Space Junk game:
 
@@ -367,7 +316,7 @@ Every touch has a property called location which we can use to see where that to
 
 There’s a lot we can do with touches. Have a sprite follow our touches, activate special powers, shoot enemies, etc.
 
-## In Class Activity II (20 min)
+## In Class Activity III (20 min)
 
 Next steps for the Space Junk game:
 
@@ -449,3 +398,5 @@ https://developer.apple.com/documentation/spritekit/skaction/1417676-repeatforev
 
 
 [How To Make a Game Like Space Invaders with SpriteKit and Swift: Part 2 - A tutorial from raywenderlich](https://www.raywenderlich.com/1163-how-to-make-a-game-like-space-invaders-with-spritekit-and-swift-part-2)
+
+https://developer.apple.com/documentation/spritekit/sktransformnode
