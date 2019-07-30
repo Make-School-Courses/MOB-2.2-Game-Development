@@ -197,7 +197,7 @@ func removeFromParent()
 
 Calling this function on the node itself will remove itself from its parent.
 
-*Example of Option 1:* Calling `removeFromParent()` on the `SKNode` object directly:
+__*Example &mdash; Option 1:*__ Calling `removeFromParent()` on the `SKNode` object directly:
 
 ```Swift  
   let removeNode = spriteNode.removeFromParent()
