@@ -216,32 +216,19 @@ Example &mdash; Creating and using a `removeFromParent()` SKAction:
 
 
 
-<!--
-// Create the actions
-let actionMove = SKAction.move(to: CGPoint(x: -monster.size.width/2, y: actualY),
-                               duration: TimeInterval(actualDuration))
-let actionMoveDone = SKAction.removeFromParent()
-monster.run(SKAction.sequence([actionMove, actionMoveDone])) -->
-
-
-
-
-
-
-
 
 <!-- From Syllabus doc on 7/29/19:
 
-More actions
-AG Wait action
-AG Run-block
+More actions:
+AG Wait action (done)
+AG Run-block (done)
+
+TV Repeating actions (done)
+TV Remove from parent action (done)
+- Stopping action -- (done) TV
+
 Reversing actions
-TV Repeating actions
-TV Remove from parent action
 Animation action
-
-- Stopping action -- ???
-
 
 Scale action
 Space game - aliens or bombs could grow and shrink
