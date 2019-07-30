@@ -182,22 +182,22 @@ And, over extended playing time, inactive nodes can build up, eventually consumi
 
 To keep your game running smoothly, remove nodes from the scene graph when they are no longer needed. Removing them will delete them from the scene, but you can always recreate them easily when needed.
 
-**Two Removal Functions**
+**Two Removal Functions** </br>
 When you no longer need a node and want to remove it from a scene, you have two options:
 
-1. Call `removeFromParent()` on the `SKNode` object directly &mdash;  Will remove the receiving node from its parent.
+__*Option 1:*__ Call `removeFromParent()` on the `SKNode` object directly &mdash;  Will remove the receiving node from its parent.
 
 ```Swift  
   func removeFromParent()
 ```
 
-2. Create a `removeFromParent()` action &mdash; This creates an action that removes the node from its parent. When the action executes, the node is immediately removed from its parent. This action is not reversible; the reverse of this action is the same action.
+__*Option 2:*__ Create a `removeFromParent()` action &mdash; This creates an action that removes the node from its parent. When the action executes, the node is immediately removed from its parent. This action is not reversible; the reverse of this action is the same action.
 
 ```Swift  
     class func removeFromParent() -> SKAction
 ```
 
-Example &mdash; Calling `removeFromParent()` on the `SKNode` object directly:
+Example of Option 1: Calling `removeFromParent()` on the `SKNode` object directly:
 
 ```Swift  
     let removeAction = spriteNode.removeFromParent()
@@ -257,11 +257,11 @@ Next steps for the Space Junk game:
 
 - For falling elements, make them spin (rotate) as they fall. Try applying different spinning speeds to different elements.
 
-> Research how to rotate nodes.
+> TODO: Research how to rotate nodes.
 
 2. Use actions to make aliens or bombs grow or shrink.
 
-> Research how to animate the visual scaling of a node.
+> TODO: Research how to animate the visual scaling of a node.
 
 
 ## Collision Detection (20 min)
@@ -274,7 +274,7 @@ There are several ways to handle collision detection. One of them is using the b
 ### The main idea
 
 We need a way to get all the elements in the scene into a collection or list so we can then check for collisions on each one. This is easy when we give every node a name at the moment of creation. Then we can use the method `enumerateChildNodes(withName:using:)` to find all the nodes matching a name.
-Once we have the lists, we can loop on them to check for collisions. Each node has a frame property representing the node’s location on screen. This frame is a rectangle so keep in mind that even when you ave round sprites, the bounding box of all elements is a rectangle.
+Once we have the lists, we can loop on them to check for collisions. Each node has a frame property representing the node’s location on screen. This frame is a rectangle so keep in mind that even when you have round sprites, the bounding box of all elements is a rectangle.
 When you can have access to the frames, you can now use CGRect’s `intersects(_ :)` method to check for collisions.
 
 ### Trying it out
@@ -360,13 +360,12 @@ Use these values to compare them with the ship’s position to know what to do d
 For the Space Junk game, debug the playable area (make it visible with a rectangle) and see if it works the same for multiple screen sizes.
 
 
-
 # After Class
 
 Assignments:
 1. For you AstroJunk app: If you have not done so already, make sure that the active elements (SpriteKit nodes) in your app are each in their own separate classes.
 
-i.e., you should have class files for your `Spaceship`, `Meteor`, and `Debris` elements
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i.e., you should have class files for your `Spaceship`, `Meteor`, and `Debris` elements
 
 2. Review:
 - [Accessing and Modifying the Node Tree - from Apple docs](https://developer.apple.com/documentation/spritekit/sknode/accessing_and_modifying_the_node_tree)
