@@ -215,7 +215,7 @@ When the action executes, the node is immediately removed from its parent.
 
 This action is not reversible; the reverse of this action is the same action.
 
-_*Example &mdash; Option 2:*__ Creating and using a `removeFromParent()` action:
+__*Example &mdash; Option 2:*__ Creating and using a `removeFromParent()` action:
 
 ```Swift  
   // Create move action
