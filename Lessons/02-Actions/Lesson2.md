@@ -355,52 +355,29 @@ For the Space Junk game, debug the playable area (make it visible with a rectang
 Assignments:
 1. For you AstroJunk app: If you have not done so already, make sure that the active elements (SpriteKit nodes) in your app are each in their own separate classes.
 
-i.e., you should have class files for Spaceship, Meteor, and Debris
+i.e., you should have class files for your `Spaceship`, `Meteor`, and `Debris` elements
 
 2. Review:
-- [Accessing and Modifying the Node Tree - from Apple](https://developer.apple.com/documentation/spritekit/sknode/accessing_and_modifying_the_node_tree)
-- [Controlling Actions Precisely by Using Names - from Apple](https://developer.apple.com/documentation/spritekit/skaction/controlling_actions_precisely_by_using_names)
+- [Accessing and Modifying the Node Tree - from Apple docs](https://developer.apple.com/documentation/spritekit/sknode/accessing_and_modifying_the_node_tree)
+- [Controlling Actions Precisely by Using Names - from Apple docs](https://developer.apple.com/documentation/spritekit/skaction/controlling_actions_precisely_by_using_names)
+- [SKTransformNode - from Apple docs](https://developer.apple.com/documentation/spritekit/sktransformnode)
 - `removeChildren(in:)`
 - `removeAllChildren()`
 
-
-
-
 ## Wrap Up (5 min)
 
-- Continue working on your current tutorial
+- Continue working on your current Space Junk game stretch challenge, etc.
 - Complete reading
 - Complete challenges
 
 ## Additional Resources
 
 1. [Slides]()
-1. []()
-1. []()
-1. []()
-1. []()
-
-https://developer.apple.com/documentation/spritekit/skaction/action_initializers
-
-
-
-https://developer.apple.com/documentation/spritekit/skaction/1417688-group
-
-
-
-https://developer.apple.com/documentation/spritekit/skaction/1417788-wait
-
-https://developer.apple.com/documentation/spritekit/skaction/1417750-repeat
-
-https://developer.apple.com/documentation/spritekit/skaction/1417676-repeatforever
-
-[SKNode > removeFromParent() - from Apple](https://developer.apple.com/documentation/spritekit/sknode/1483119-removefromparent)
-
-
-[SKAction > removeFromParent() - from Apple](https://developer.apple.com/documentation/spritekit/skaction/1417748-removefromparent)
-
-
-
-[How To Make a Game Like Space Invaders with SpriteKit and Swift: Part 2 - A tutorial from raywenderlich](https://www.raywenderlich.com/1163-how-to-make-a-game-like-space-invaders-with-spritekit-and-swift-part-2)
-
-https://developer.apple.com/documentation/spritekit/sktransformnode
+2. [Action Initializers - from Apple docs](https://developer.apple.com/documentation/spritekit/skaction/action_initializers)
+3. [`group(_:)` method - - from Apple docs](https://developer.apple.com/documentation/spritekit/skaction/1417688-group)
+4. [`wait(forDuration:)` method - from Apple docs](https://developer.apple.com/documentation/spritekit/skaction/1417788-wait)
+5. [`repeat(_:count:)` method - from Apple docs](https://developer.apple.com/documentation/spritekit/skaction/1417750-repeat)
+6. [`repeatForever(_:)` method - from Apple docs](https://developer.apple.com/documentation/spritekit/skaction/1417676-repeatforever)
+7. [SKNode > removeFromParent() - from Apple](https://developer.apple.com/documentation/spritekit/sknode/1483119-removefromparent)
+8. [SKAction > removeFromParent() - from Apple](https://developer.apple.com/documentation/spritekit/skaction/1417748-removefromparent)
+9. [How To Make a Game Like Space Invaders with SpriteKit and Swift: Part 2 - A tutorial from raywenderlich](https://www.raywenderlich.com/1163-how-to-make-a-game-like-space-invaders-with-spritekit-and-swift-part-2)
