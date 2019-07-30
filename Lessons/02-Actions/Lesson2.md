@@ -219,17 +219,17 @@ _*Example &mdash; Option 2:*__ Creating and using a `removeFromParent()` action:
 
 ```Swift  
   // Create move action
-  let actionMove = SKAction.move(to: CGPoint(x: -dragon.size.width/2, y: actualY),
+  let moveAction = SKAction.move(to: CGPoint(x: -dragon.size.width/2, y: actualY),
                                  duration: TimeInterval(actualDuration))
 
   // Create remove action
-  let actionRemove = SKAction.removeFromParent()
+  let removalAction = SKAction.removeFromParent()
 
   // Run move action, then apply the removal action to dragon sprite
-  dragon.run(SKAction.sequence([actionMove, actionRemove]))
+  dragon.run(SKAction.sequence([moveAction, removalAction]))
 ```
 
-As you can see above &mdash; and have already seen in Lesson 1 &mdash; either of the two optinal `removeFromParent()` functions can be used efficiently with `sequence` actions...
+As you can see above &mdash; and have already seen in Lesson 1 &mdash; either of the two optional `removeFromParent()` functions can be used efficiently with `sequence` actions...
 
 
 <!-- ...and we've already seen in Lesson 1 how this can be used efficiently with `sequence` actions:
