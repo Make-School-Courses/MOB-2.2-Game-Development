@@ -94,8 +94,7 @@ In addition to the ability to chain actions together with `sequence(_:)` and `gr
 
 2. `repeatForever(_:)` &mdash; Creates an action that repeats another action forever.<sup>1</sup>
 
-
-`repeat(_:count:)` example:
+A simple `repeat(_:count:)` example:
 
 ```Swift  
   let moveUp = SKAction.move(to: CGPoint(x: 50.0, y: 0.0), duration: 5.0)
@@ -110,7 +109,7 @@ In addition to the ability to chain actions together with `sequence(_:)` and `gr
   mySprite.run(repeatUpDownMovement)
 ```
 
-`repeat(_:count:)` example:
+Example of a `repeatForever(_:)` action:
 
 ```Swift  
   let moveUp = SKAction.move(to: CGPoint(x: 50.0, y: 0.0), duration: 5.0)
@@ -125,18 +124,91 @@ In addition to the ability to chain actions together with `sequence(_:)` and `gr
   mySprite.run(repeatUpDownMovement)
 ```
 
-
 Both of these repeating actions are reversible; reversing either one creates a new action that is the reverse of the specified action and then repeats it the same number of times or forever, respectively.
 
 
-> <sup>1</sup> Repeating an action forever invites the obvious question: When will the repeated action stop? While there are several ways this can be achieved, stopping a `repeatForever(_:)` action can depend on your app's component makeup and specific behavioral needs. We will cover the two built-in functions most commonly used for stopping actions soon...
+> <sup>1</sup> *Repeating an action forever invites the obvious question: When will the repeated action stop? While there are several ways this can be achieved, stopping a `repeatForever(_:)` action can depend on your app's component makeup and specific behavioral needs. To start, we will go over the two built-in functions most commonly used for stopping actions in an upcoming topic...*
+
+<!--
+
+### Stopping Actions -->
+
 
 
 ### removeFromParent() Action
 
+<!-- Building up a massive list of nodes in a game is never good. -->
+<!-- Removing nodes from the scene graph when they are no longer needed is a critical factor in maintaining a highly-performant game. -->
+
+When nodes are no longer needed &mdash; when they finish moving, move offscreen or are otherwise no longer visible &mdash; they still get factored into physics calculations and might still require SpriteKit to check if they need to be redrawn.
+
+And, over extended playing time, inactive nodes can build up, which will eventually consume all available device memory, prompting iOS to automatically terminate your app. From the user perspective, this will likely look as if your app crashed.
+
+To keep your game running smoothly, remove nodes from the scene graph when they are no longer needed. Removing them will delete them from the scene, but you can always recreate them easily when needed.
+
+When you no longer need a node and want to remove it from a scene, you have two options:
+
+1. Call `removeFromParent()` on the `SKNode` object directly:
+
+  `removeFromParent()` &mdash; Removes the receiving node from its parent.
+
+    ```Swift  
+      func removeFromParent()
+    ```
+
+2. Create a `removeFromParent()` action:
+
+  `removeFromParent()` &mdash; Creates an action that removes the node from its parent. When the action executes, the node is immediately removed from its parent. This action is not reversible; the reverse of this action is the same action.
+
+    ```Swift  
+      class func removeFromParent() -> SKAction
+    ```
+
+Example &mdash; Calling `removeFromParent()` on the `SKNode` object directly:
+
+```Swift  
+  let removeAction = spriteNode.removeFromParent()
+```
+
+...and we've already seen in Lesson 1 how this can be used efficiently with the `sequence` actions:
+
+```Swift  
+  let moveUpAction = SKAction.moveBy(x: 0, y: 30, duration: 2)
+  let moveDownAction = SKAction.moveBy(x: 0, y: -30, duration: 2)
+  let removeAction = SKAction.removeFromParent()
+  let sequenceAction = SKAction.sequence([moveUpAction, moveDownAction, removeAction])
+  node.run(sequenceAction)
+```
+
+Example &mdash; Creating and using a `removeFromParent()` SKAction:
+
+```Swift  
+  // Create move action
+  let actionMove = SKAction.move(to: CGPoint(x: -dragon.size.width/2, y: actualY),
+                                 duration: TimeInterval(actualDuration))
+
+  // Create remove action
+  let actionRemove = SKAction.removeFromParent()
+
+  // Run move action, then remove sprite
+  dragon.run(SKAction.sequence([actionMove, actionRemove]))
+```
 
 
- Remove from parent action
+
+
+<!--
+// Create the actions
+let actionMove = SKAction.move(to: CGPoint(x: -monster.size.width/2, y: actualY),
+                               duration: TimeInterval(actualDuration))
+let actionMoveDone = SKAction.removeFromParent()
+monster.run(SKAction.sequence([actionMove, actionMoveDone])) -->
+
+
+
+
+
+
 
 
 <!-- From Syllabus doc on 7/29/19:
@@ -308,7 +380,12 @@ For the Space Junk game, debug the playable area (make it visible with a rectang
 
 Assignments:
 1. Review:
--
+- [Accessing and Modifying the Node Tree - from Apple](https://developer.apple.com/documentation/spritekit/sknode/accessing_and_modifying_the_node_tree)
+- [Controlling Actions Precisely by Using Names - from Apple](https://developer.apple.com/documentation/spritekit/skaction/controlling_actions_precisely_by_using_names)
+- `removeChildren(in:)`
+- `removeAllChildren()`
+
+
 
 
 ## Wrap Up (5 min)
@@ -338,3 +415,12 @@ https://developer.apple.com/documentation/spritekit/skaction/1417788-wait
 https://developer.apple.com/documentation/spritekit/skaction/1417750-repeat
 
 https://developer.apple.com/documentation/spritekit/skaction/1417676-repeatforever
+
+[SKNode > removeFromParent() - from Apple](https://developer.apple.com/documentation/spritekit/sknode/1483119-removefromparent)
+
+
+[SKAction > removeFromParent() - from Apple](https://developer.apple.com/documentation/spritekit/skaction/1417748-removefromparent)
+
+
+
+[How To Make a Game Like Space Invaders with SpriteKit and Swift: Part 2 - A tutorial from raywenderlich](https://www.raywenderlich.com/1163-how-to-make-a-game-like-space-invaders-with-spritekit-and-swift-part-2)
