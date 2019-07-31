@@ -1,4 +1,4 @@
-# Selection an Architecture
+# Choosing an Architecture
 
 <!-- INSTRUCTOR NOTES:
 1) Quiz for Initial Exercise is located: -->
@@ -16,9 +16,12 @@
 | 1:45        | 0:05      | Wrap up review objectives |
 | TOTAL       | 1:50      | -                         |
 
-## Why you should know this or industry application (optional) (5 min)
+## Why you should know this or industry application (5 min)
+When you develop a game app, you need to pay particular attention upfront to how your app will handle various tasks that the game needs to perform: from handling user input, to rendering graphics, to updating AI components &mdash; along with the many small tasks your game might need to handle.
 
-Explain why students should care to learn the material presented in this class.
+And for every game you make, you will need to create objects to represent game elements (aka, "entities") such as players, vehicles and other moving objects, projectiles, and so on.
+
+Intelligently laying out your game's structure and organizing its content in ways which facilitate adding more content and game play elements will make game development much easier.
 
 ## Learning Objectives (5 min)
 
@@ -41,6 +44,12 @@ In preparation for today's activities...
 
 
 ## Overview/TT I (20 min)
+
+
+<!-- Biggest thing to consider
+
+entities or elements  -->
+
 
 
 
@@ -71,7 +80,11 @@ Assignments:
 
 ## Additional Resources
 
-1. []()
+1. [Slides]()
+<!-- TODO: insert Design Patterns links here... -->
+
+
+
 1. []()
 1. []()
 1. []()
