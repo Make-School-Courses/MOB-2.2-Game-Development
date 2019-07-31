@@ -1,4 +1,4 @@
-# Selection An Architecture
+# Selection an Architecture
 
 <!-- INSTRUCTOR NOTES:
 1) Quiz for Initial Exercise is located: -->
@@ -27,8 +27,17 @@ Explain why students should care to learn the material presented in this class.
 1. Design
 1. Implement
 
-## Initial Exercise (20 min)
+## Initial Exercise (15 min)
 
+### As a class
+
+In preparation for today's activities...
+
+1. Let's review progress of the assignment from end of last class
+
+- In your AstroJunk app, you should now have class files for your Spaceship, Meteor, and Debris elements
+
+2. Volunteers to showcase their work on AstroJunk so far, especially their organization of class files listed above...
 
 
 ## Overview/TT I (20 min)
