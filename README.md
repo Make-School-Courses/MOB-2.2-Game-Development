@@ -51,7 +51,7 @@ By the end of the course, students will be able to ...
 
 
 [Introduction to iOS Game Development]: Lessons/01-Intro-iOS-Game-Development/Lesson1.md
-[Actions]: Lessons/Lesson2.md
+[Actions]: Lessons/02-Actions/Lesson2.md
 [Choosing an Architecture]: Lessons/Lesson3.md
 [Working with Scenes]: Lessons/Lesson4.md
 [Lesson 5]: Lessons/Lesson5.md
