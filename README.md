@@ -36,18 +36,18 @@ By the end of the course, students will be able to ...
 
 | Class |          Date          |                 Topics                  |
 |:-----:|:----------------------:|:---------------------------------------:|
-|  1 |  < DAY >, < DATE >                        | [Introduction to iOS Game Development] |
-|  2 |   Wed, xxx                           | [Actions] |
-|  3 |   Mon, July 15                        | [Choosing an Architecture] |
-|  4 |   Wed, July 17                            | [Working with Scenes] |
-|  5 |   Mon, July 22                         | [Lesson 6] |
-|  6 |   Wed, July 24                            | [Lesson 7] <br/> **/** <br/> [Lesson 8] |
-|  7 |   Mon, July 29                         | [Lesson 9] |
-|  8 |   Wed, July 31                            | [Lesson 10] |
-| 9 |   Mon, August 5                           | [Lesson 11] |
-| 10 |   Wed, August 7                             | [Lesson 12] |  
-| 11 |   Mon, August 12                         | [Lesson 13]|
-| 12 |   Wed, August 14                         | Final Exam/Presentations  |
+|  1 |  < DAY >, < DATE >           | [Introduction to iOS Game Development] |
+|  2 |  < DAY >, < DATE >           | [Actions] |
+|  3 |  < DAY >, < DATE >           | [Choosing an Architecture] |
+|  4 |  < DAY >, < DATE >           | [Working with Scenes] |
+|  5 |  < DAY >, < DATE >           | [Lesson 6] |
+|  6 |  < DAY >, < DATE >           | [Lesson 7] <br/> **/** <br/> [Lesson 8] |
+|  7 |  < DAY >, < DATE >           | [Lesson 9] |
+|  8 |  < DAY >, < DATE >           | [Lesson 10] |
+| 9 |   < DAY >, < DATE >           | [Lesson 11] |
+| 10 |  < DAY >, < DATE >           | [Lesson 12] |  
+| 11 |  < DAY >, < DATE >           | [Lesson 13]|
+| 12 |  < DAY >, < DATE >           | Final Exam/Presentations  |
 
 
 [Introduction to iOS Game Development]: Lessons/01-Intro-iOS-Game-Development/Lesson1.md
