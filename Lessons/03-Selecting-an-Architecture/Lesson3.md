@@ -1,4 +1,4 @@
-# [TITTLE]
+# Selection An Architecture
 
 <!-- INSTRUCTOR NOTES:
 1) Quiz for Initial Exercise is located: -->

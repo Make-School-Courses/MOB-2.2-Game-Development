@@ -1,4 +1,4 @@
-# [TITTLE]
+# [TITLE]
 
 <!-- INSTRUCTOR NOTES:
 1) Quiz for Initial Exercise is located: -->
@@ -62,7 +62,7 @@ Assignments:
 
 ## Additional Resources
 
-1. []()
+1. [Slides]()
 1. []()
 1. []()
 1. []()

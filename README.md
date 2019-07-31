@@ -38,8 +38,8 @@ By the end of the course, students will be able to ...
 |:-----:|:----------------------:|:---------------------------------------:|
 |  1 |  < DAY >, < DATE >                        | [Introduction to iOS Game Development] |
 |  2 |   Wed, xxx                           | [Actions] |
-|  3 |   Mon, July 15                        | [Lesson 3] <br/> **/** <br/> [Lesson 4] |
-|  4 |   Wed, July 17                            | [Lesson 5] |
+|  3 |   Mon, July 15                        | [Choosing an Architecture] |
+|  4 |   Wed, July 17                            | [Working with Scenes] |
 |  5 |   Mon, July 22                         | [Lesson 6] |
 |  6 |   Wed, July 24                            | [Lesson 7] <br/> **/** <br/> [Lesson 8] |
 |  7 |   Mon, July 29                         | [Lesson 9] |
@@ -52,8 +52,8 @@ By the end of the course, students will be able to ...
 
 [Introduction to iOS Game Development]: Lessons/01-Intro-iOS-Game-Development/Lesson1.md
 [Actions]: Lessons/Lesson2.md
-[Lesson 3]: Lessons/Lesson3.md
-[Lesson 4]: Lessons/Lesson4.md
+[Choosing an Architecture]: Lessons/Lesson3.md
+[Working with Scenes]: Lessons/Lesson4.md
 [Lesson 5]: Lessons/Lesson5.md
 [Lesson 6]: Lessons/Lesson6.md
 [Lesson 7]: Lessons/Lesson7.md
