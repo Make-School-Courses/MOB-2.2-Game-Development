@@ -49,7 +49,7 @@ Though there are more than a few software design patterns which *could* be usefu
 In this lesson, we will explore the high-level design concepts, benefits, and shortcomings of the patterns most commonly-used to make iOS game apps.
 
 ### Inheritance-Based Architecture
-In inheritance-based architecture, each game object is a subclass of a more general base class, and all game objects ultimately derive from this initial base class.
+In an inheritance-based (or "hierarchy-based") architecture, each game object is a subclass of a more general base class, and all game objects ultimately derive from this initial base class.
 
 The first step in this architecture is to define a single base class common to all game objects. (As a standard convention, the base class is often named "GameObject")
 
@@ -60,6 +60,7 @@ Once you have your `GameObject` class, all other game objects then inherit prope
 Note that though your `GameObject` does not need to extend either `SKNode` or `SKSpriteNode`, doing so is a very common form of the inheritance-based layout in iOS games.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![inheritance-based](assets/inheritance-based.png)
+
 #### Example
 The following three classes together illustrate a simple example of using an inhertiance-based game architecture. In this example, the `Princess` can `Dragon` subclasses each inherit and override then `update(deltaTime:)` function from the base class (`GameObject`), along with whatever custom behaviors and properties the `Princess` can `Dragon` subclasses need:
 
@@ -108,55 +109,35 @@ class Dragon: GameObject {
 }
 ```
 
-It is also quite common with this pattern to create subclasses of `GameObject` for each specific type of game element in your game. For example, if your game has dragons, ogres, harpies, and cyclops, all with common traits, creating a subclass of `GameObject` of type `Monster` or `Creature` will allow you to add behaviors common to all those elements in addition to those inherent in the `GameObject` base class.
+It is also quite common with this pattern to create subclasses of `GameObject` for each specific type of game element in your game. For example, if your game has dragons, ogres, harpies, and cyclops, all with common traits, creating a subclass of `GameObject` of type `Monster` or `Creature` will allow you to add behaviors common to all those elements, while still inheriting all the generic behaviors from the same `GameObject` base class.
 
 **Benefits**
+One key advantage of a game layout based on an inheritance hierarchy is that each object can stand on its own. In our example above, all of the behaviors of a `Princess` object live inside that single object, without needing any other object to do the work of a `Princess` element.
 
-- simplest to Implement
-
-- inheritance
-
-<!--
-The advantage of a hierarchy-based layout is that each object is able to stand alone: if you have a Dragon object, you know that all of its behavior is contained inside that single object, and it doesn’t rely on other objects to work.s
-
-
-
-
-For simple games, this works quite fine and is quite easy to program. However, as your game get larger and more complex, this architecture begins to cause some problems in practice. -->
-
-
-
+Inheritance-based architecture is also:
+- the simplest to implement
+- built on familiar concepts (object/class inheritance)
 
 
 **Drawbacks**
- <!-- The downside is that you can often end up with a very deep hierarchy of different game object types, which can be tricky to keep in your head as you program.
+An inheritance-based layout works fine and is easy to implement for simple games.
 
-
- This hierarchy of subclasses can be multiple levels deep (e.g., you might subclass the GameObject class to make the Monster subclass, and then subclass that to create the Goblin and Dragon classes, each of which has its own different kinds of monster-like behavior). -->
-
-<!--
-
- Drawbacks of Object Oriented Game Architecture
- Even though this game is fairly simple, you can already see a number of problems with object oriented game architecture as the game gets more complicated:
- As you extend the game design, you start having more and more “exceptions” to the original rules. This makes you want to move more and more code to the base GameObject class, making it long and convoluted.
- Alternatively you might have a hierarchy that doesn’t make logical sense – i.e. is a Laser really a Monster?
- Code for various “systems” for the game is all jumbled together. Wouldnt it be better if all of the code related to shooting was in one place, and all the code for movement in another place?
- These sorts of problems is exactly what component based game architecture is meant to solve! Let’s take a look.
-
-  -->
-
-
-
-
-
+But in practice, as your game grows in complexity, an inheritance hierarchy begins to create its own set of challenges. Examples include:
+- You can often end up with a hierarchy of different game object subclass types that are multiple levels deep, which can be difficult to keep track of as you expand your code base.
+- Your initial `GameObject` base class evolves as you add elements, but moving more and more code to the base class makes it long, convoluted and difficult to work with.
+- Conversely, you might find that not all game elements should derive from the same generic base class &mdash; i.e., should weapons really derive from the same base class as creatures?
+- Code for various game "systems" &mdash; such as a drawing function or collision detection &mdash; is all mixed together in the same object hierarchy.
 
 ### Component-Based Architecture
 
+<!-- This eliminates the ambiguity problems of deep and wide inheritance hierarchies that are difficult to understand, maintain and extend
 
 The basic idea behind component based architecture is to prefer composition over inheritance.
 
 
+Wouldnt it be better if all of the code related to shooting was in one place, and all the code for movement in another place?
 
+These sorts of problems is exactly what component based game architecture is meant to solve! Let’s take a look. -->
 
 <!--
 ALL of your game entities are of the same class, and they are defined by what components they have, rather than what type they inherit from. Rather than re-using code in super-classes, you re-use code by giving similar entities similar components, and rather than hiding information from your super-classes, you hide the components from one another, keeping them as self-contained as possible. -->
@@ -192,7 +173,6 @@ entities or elements  -->
 
 
 
-This eliminates the ambiguity problems of deep and wide inheritance hierarchies that are difficult to understand, maintain and extend
 
 https://www.raywenderlich.com/2806-introduction-to-component-based-architecture-in-games
 
