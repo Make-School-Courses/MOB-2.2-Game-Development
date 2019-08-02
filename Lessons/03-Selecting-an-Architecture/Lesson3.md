@@ -118,7 +118,6 @@ Inheritance-based architecture is also:
 - the simplest to implement
 - built on familiar concepts (object/class inheritance)
 
-
 **Drawbacks**
 An inheritance-based layout works fine and is easy to implement for simple games.
 
@@ -128,19 +127,88 @@ But in practice, as your game grows in complexity, an inheritance hierarchy begi
 - Conversely, you might find that not all game elements should derive from the same generic base class &mdash; i.e., should weapons really derive from the same base class as creatures?
 - Code for various game "systems" &mdash; such as a drawing function or collision detection &mdash; is all mixed together in the same object hierarchy.
 
+<!-- inflexible -->
+
 ### Component-Based Architecture
+The basic idea behind component-based architecture &mdash; otherwise known as an "Entity Component System" <sup>1</sup> &mdash; is to prefer composition over inheritance.
 
-<!-- This eliminates the ambiguity problems of deep and wide inheritance hierarchies that are difficult to understand, maintain and extend
+It seeks to eliminate the problems of deep and wide inheritance hierarchies that are difficult to understand, maintain and extend.
 
-The basic idea behind component based architecture is to prefer composition over inheritance.
+In a component-based architecture, each game object has a list of components. When the game updates, or the object is added to or removed from the game &mdash; or when some other game event occurs &mdash; the object notifies each component in its component list of the event.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![xxx](assets/xxxx.png) </br>
+
+The first step is to create a base `Component` class:
+
+```Swift  
+class Component {
+
+    // The game object this component is associated with
+    var gameObject : GameObject?
+
+    func update(deltaTime : Float) {
+        // Update this component
+    }
+
+}
+```
+
+Next, create a base class for game objects which holds a collection of all components associated with a given object of any game element:
+
+```Swift  
+class GameObject {
+
+    // The list of Component objects belonging to this object
+    var components : [Component] = []
+
+        func update(deltaTime : Float) { // Update this object by updating all of its components
+
+            for component in self.components {
+                component.update(deltaTime: deltaTime)
+            }
+
+        }
+
+        // And other functions, including functions to add and remove components...
+  }
+```
+
+<!--
+**Benefits**
+This is the most commonly used architecture in game apps.
+
 
 
 Wouldnt it be better if all of the code related to shooting was in one place, and all the code for movement in another place?
 
-These sorts of problems is exactly what component based game architecture is meant to solve! Let’s take a look. -->
+These sorts of problems is exactly what component based game architecture is meant to solve! Let’s take a look.
+
+
+
+
+each game object is made up of multiple components. Compare this to an inheritance-based architecture, where each game object is a subclass of some more general class
+
+
+
+A component-based layout means you can be more flexible with your design and not worry about inheritance issues. -->
+ -->
+
 
 <!--
 ALL of your game entities are of the same class, and they are defined by what components they have, rather than what type they inherit from. Rather than re-using code in super-classes, you re-use code by giving similar entities similar components, and rather than hiding information from your super-classes, you hide the components from one another, keeping them as self-contained as possible. -->
+
+
+
+<!-- **Drawbacks**
+
+The main problem with component-based architectures is that it’s more laborious to create multiple copies of an object, because you have to create and add the same set of components every time you want a new copy. -->
+
+
+
+> *Note that Apple’s GameplayKit framework provides a set of classes for you construct your own entity-component system. Hold tight &mdash; we'll be learning more about GameplayKit framework shortly...*
+
+
+
 
 
 <!--
@@ -160,21 +228,15 @@ The Component-Based Architecture is incredibly flexible to different kinds of ga
 4. Consistency
 When all your game entities are instances of the same class, and all of your functionality has a standardized interface, it makes it much easier to keep track of what is going on in your game, and much easier to manage dependencies and capabilities. You can avoid all of the hassle of clunky inheritance trees and dependency diagrams and focus on core functionality. It can be a real production booster. In Component-Based architectures, game Entities are demoted to being linkers between various components of functionality.
 
+
+https://www.raywenderlich.com/2806-introduction-to-component-based-architecture-in-games
+
  -->
 
 
 
 
-<!-- Biggest thing to consider
 
-entities or elements  -->
-
-
-
-
-
-
-https://www.raywenderlich.com/2806-introduction-to-component-based-architecture-in-games
 
 
 ## In Class Activity I (30 min)
@@ -205,7 +267,8 @@ Assignments:
 -->
 
 
-<!-- TODO: command and Observer patterns from MOB 2.x course here  -->
+<!-- TODO: command and Observer ...and strategy?... patterns from MOB 2.x course here  -->
+<!-- TODO: insert Design Patterns links here... -->
 
 
 ## Wrap Up (5 min)
@@ -217,15 +280,11 @@ Assignments:
 ## Additional Resources
 
 1. [Slides]()
-<!-- TODO: insert Design Patterns links here... -->
+2. <sup>1</sup> [Entity component system - wikipedia](https://en.wikipedia.org/wiki/Entity_component_system)
+3. [GameplayKit - from Apple docs](https://developer.apple.com/documentation/gameplaykit)
 
 
 1. []()
 1. []()
 1. []()
 1. []()
-
-[GameplayKit - from Apple docs](https://developer.apple.com/documentation/gameplaykit)
-
-
-https://en.wikipedia.org/wiki/Entity_component_system
