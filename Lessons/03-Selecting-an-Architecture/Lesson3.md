@@ -59,7 +59,7 @@ Once you have your `GameObject` class, all other game objects then inherit prope
 
 Note that though your `GameObject` does not need to extend either `SKNode` or `SKSpriteNode`, doing so is a very common form of the inheritance-based layout in iOS games.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![inheritance-based](assets/inheritance-based.png)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![inheritance-based](assets/inheritance-based.png) </br>
 
 #### Example
 The following three classes together illustrate a simple example of using an inhertiance-based game architecture. In this example, the `Princess` can `Dragon` subclasses each inherit and override then `update(deltaTime:)` function from the base class (`GameObject`), along with whatever custom behaviors and properties the `Princess` can `Dragon` subclasses need:
