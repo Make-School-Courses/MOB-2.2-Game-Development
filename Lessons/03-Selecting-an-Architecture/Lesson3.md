@@ -193,7 +193,7 @@ each game object is made up of multiple components. Compare this to an inheritan
 
 
 A component-based layout means you can be more flexible with your design and not worry about inheritance issues. -->
- -->
+
 
 
 <!--
@@ -207,7 +207,7 @@ The main problem with component-based architectures is that it’s more laboriou
 
 
 
-> *Note that Apple’s GameplayKit framework provides a set of classes for you construct your own entity-component system. Hold tight &mdash; we'll be learning more about GameplayKit framework shortly...*
+> Note that Apple’s GameplayKit framework provides a set of classes for you construct your own entity-component system. Hold tight &mdash; we'll be learning more about GameplayKit framework shortly...
 
 
 
