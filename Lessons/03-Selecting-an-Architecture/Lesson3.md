@@ -136,7 +136,7 @@ It seeks to eliminate the problems of deep and wide inheritance hierarchies that
 
 In a component-based architecture, each game object has a list of components. When the game updates, or the object is added to or removed from the game &mdash; or when some other game event occurs &mdash; the object notifies each component in its component list of the event.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![xxx](assets/xxxx.png) </br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![component-based](assets/component-based.png) </br>
 
 The first step is to create a base `Component` class:
 
