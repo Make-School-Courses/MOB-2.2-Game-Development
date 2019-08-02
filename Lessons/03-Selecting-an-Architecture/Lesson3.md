@@ -138,6 +138,8 @@ In a component-based architecture, each game object has a list of components. Wh
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![component-based](assets/component-based.png) </br>
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *Source*: http://cowboyprogramming.com/2007/01/05/evolve-your-heirachy/
+
 The first step is to create a base `Component` class:
 
 ```Swift  
