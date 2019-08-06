@@ -1,4 +1,4 @@
-# Working with Scenes
+# Adding “Juice” & Working With Scenes
 
 <!-- INSTRUCTOR NOTES:
 1) Quiz for Initial Exercise is located: -->
@@ -26,6 +26,43 @@ Explain why students should care to learn the material presented in this class.
 1. Define
 1. Design
 1. Implement
+
+
+<!-- reworked Original Outline :
+Class 4: Adding “Juice” & Working With Scenes
+AG Particle systems (SpriteKit)
+	Activity:
+Add explosions? Collisions? Between meteors and the ship
+Fire to the ship as it flies
+Debugging and/or testing
+
+TV - Creating scenes (with custom init)
+Could we use the Space game and add levels? Will that adequately illustrate creating multiple scenes?
+  - requires covering Win / Lose conditions first
+  
+TV - Changing scenes
+TV - Creating a menus
+TV - Background music
+TV - Sound action
+Saving/Loading -->
+
+
+<!-- from Original Outline doc:
+Class 4: Adding “Juice” & Working With Scenes
+AG Particle systems (SpriteKit)
+	Activity:
+Add explosions? Collisions? Between meteors and the ship
+Fire to the ship as it flies
+Debugging and/or testing
+TV - Background music
+TV - Sound action
+TV - Creating scenes (with custom init)
+Could we use the Space game and add levels? Will that adequately illustrate creating multiple scenes?
+TV - Changing scenes
+TV - Creating a menus
+Saving/Loading -->
+
+
 
 ## Initial Exercise (20 min)
 

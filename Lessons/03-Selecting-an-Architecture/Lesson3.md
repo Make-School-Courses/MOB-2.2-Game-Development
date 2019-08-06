@@ -17,20 +17,20 @@
 | TOTAL       | 1:50      | -                         |
 
 ## Why you should know this or industry application (5 min)
-When you develop a game app, you need to pay particular attention upfront to how your app will handle various tasks that the game needs to perform: from handling user input, to rendering graphics, to updating AI components &mdash; along with the many small tasks your game might need to handle.
+When you develop a game app, you need to pay particular attention upfront to how your app will handle various tasks that the game needs to perform: from handling user input, to rendering graphics, to updating AI components, along with the many smaller tasks your game might need to execute.
 
-And for every game you make, you will need to create objects to represent game elements (aka, "entities") such as players, vehicles and other moving objects, projectiles, and so on.
+And for every game you make, you will need to create objects to represent game elements (sometimes called "entities") such as players, vehicles and other moving objects, projectiles, and so on.
 
 Intelligently laying out your game's structure and organizing its content in ways which facilitate adding more content and game play elements will make game development much easier.
 
 ## Learning Objectives (5 min)
 
-1. Identify and describe the pros and cons of the most populate iOS game architectures, including:
+1. Identify and describe the pros and cons of the most popular iOS game architectures, including:
 - Inheritance-Based
 - Component-Based
 - State Machine
 2. Identify and describe how to implement GameplayKit components
-3. Refactor (Implement)an existing code base into:
+3. Refactor (implement)an existing code base into:
 - Inheritance-Based architecture
 - Component-Based architecture using GameplayKit
 4. Implement a simple State Machine using GameplayKit
@@ -63,12 +63,12 @@ The `GameObject` base class can be designed with all the behaviors and propertie
 
 Once you have your `GameObject` class, all other game objects then inherit properties and behaviors from `GameObject`, though subclasses can also be customized to suit their own specific needs.
 
-Note that though your `GameObject` does not need to extend either `SKNode` or `SKSpriteNode`, doing so is a very common form of the inheritance-based layout in iOS games.
+Note that though your `GameObject` is not required to extend either `SKNode` or `SKSpriteNode`, but doing so is a very common form of the inheritance-based layout used in iOS games.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![inheritance-based](assets/inheritance-based.png)
 
 #### Example
-The following three classes together illustrate a simple example of using an inhertiance-based game architecture. In this example, the `Princess` can `Dragon` subclasses each inherit and override then `update(deltaTime:)` function from the base class (`GameObject`), along with whatever custom behaviors and properties the `Princess` can `Dragon` subclasses need:
+The following three classes together illustrate a simple example of using an inhertiance-based game architecture. In this example, the `Princess` and `Dragon` subclasses each inherit and override the `update(deltaTime:)` function from the base class (`GameObject`), along with whatever custom behaviors and properties the `Princess` and `Dragon` subclasses need themselves:
 
 ```Swift
 class GameObject: SKSpriteNode {
@@ -117,14 +117,14 @@ class Dragon: GameObject {
 
 It is also quite common with this pattern to create subclasses of `GameObject` for each specific type of game element in your game. For example, if your game has dragons, ogres, harpies, and cyclops, all with common traits, creating a subclass of `GameObject` of type `Monster` or `Creature` will allow you to add behaviors common to all those elements, while still inheriting all the generic behaviors from the same `GameObject` base class.
 
-**Benefits**
+**Benefits** </br>
 One key advantage of a game layout based on an inheritance hierarchy is that each object can stand on its own. In our example above, all of the behaviors of a `Princess` object live inside that single object, without needing any other object to do the work of a `Princess` element.
 
 Inheritance-based architecture is also:
 - the simplest to implement
 - built on familiar concepts (object/class inheritance)
 
-**Drawbacks**
+**Drawbacks** </br>
 An inheritance-based layout works fine and is easy to implement for simple games.
 
 But in practice, as your game grows in complexity, an inheritance hierarchy begins to create its own set of challenges. Examples include:
@@ -187,7 +187,7 @@ Then, you can create specific components as customized subclasses of `Component`
 
 <!-- TODO: useful to add examples of these last 3 steps here? -->
 
-**Benefits**
+**Benefits** </br>
 Component-based architecture is the most commonly used architecture in game app development.
 
 In this architecture, game objects (Entities) are reduced to simple structures that serve primarily to connect various functional components, which can really boost game production.
@@ -203,13 +203,13 @@ Here are key reasons why:
 4. Consistency &mdash; When all your game entities are instances of the same class, and all of your functionality has a standardized interface, you can avoid all of the hassle of cumbersone inheritance trees and dependency diagrams and focus on your core game functionality.
 
 
-&nbsp;&nbsp;&nbsp; *Source:* https://www.raywenderlich.com/2806-introduction-to-component-based-architecture-in-games
+*Source:* https://www.raywenderlich.com/2806-introduction-to-component-based-architecture-in-games
 
 
-**Drawbacks**
-The chief drawback of component-based architecture is the increase in Level-Of-Effort (LOE) required:
+**Drawbacks** </br>
+The chief drawback of component-based architecture is the increase in Level Of Effort (LOE) required:
 
-- Initially &mdash; At the start of development, you will need to create more base classes (than you would for inheritance-based).
+- Initially &mdash; At the start of development, you will need to create more base classes than you likely would for inheritance-based.
 - As your game grows &mdash; It takes more effort to create multiple copies of an object because you need to create and add the same set of components each time you want a new copy.
 
 > Note that Apple’s GameplayKit framework provides a set of classes that allows you to easily construct your own entity-component system. Hang tight &mdash; we'll be learning more about the GameplayKit framework shortly...
@@ -218,17 +218,17 @@ The chief drawback of component-based architecture is the increase in Level-Of-E
 ## In Class Activity I (30 min)
 
 ### Individually
-So far, we've applied no special thought to the design of the game objects in you AstroJunk app. We could say that we've only applied some generic OOP concepts to it &mdash; or maybe even the some very basic tenets of MVC.
+So far, we've applied no special thought to the design of the game objects in you AstroJunk app. We could say that we've only applied some generic OOP concepts to it &mdash; or maybe just the very basic tenets of MVC.
 
 **TODO:**
-Your assignment is to apply what you've learned so far about inheritance-based architecture to your AstroJunk app code base by refactoring your game objects to derive from an initial base class:
+Your assignment is to apply what you've learned so far about inheritance-based architecture to your AstroJunk app code base by refactoring your game objects so that they now derive from an initial base class:
 
 1. Create a `GameObject` base class
-- Decide on your own what generic functionality for all game objects should be in this base class
-2. Create new versions of your game object classes (meteor, debris, and so on), where each new game object class now extends from the `GameObject` class itself
+- Decide on your own what functionality, generic to all game objects, should be present in this base class
+2. Create new versions of your game object classes (meteor, debris, and so on) in which each new game object class now extends from the `GameObject` class itself
 3. Run your code ...
 
-__*Result:*__ Your code should behave exactly as it did before you refactored it (the only difference should be that your game objects will now derive from the `GameObject` class)
+__*Result:*__ Your code should behave exactly as it did before you refactored it! The only difference should be that your game objects now derive from the `GameObject` class.
 
 <!-- TODO: Add questions here about: 1) is it now easy to add other game objects? 2) what would be the effect if you needed to add <something complex that will cause you to have to rework your base class and all classes derived from it> ? -->
 
