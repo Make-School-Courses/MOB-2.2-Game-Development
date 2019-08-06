@@ -25,10 +25,16 @@ Intelligently laying out your game's structure and organizing its content in way
 
 ## Learning Objectives (5 min)
 
-1. Identify and describe
-1. Define
-1. Design
-1. Implement
+1. Identify and describe the pros and cons of the most populate iOS game architectures, including:
+- Inheritance-Based
+- Component-Based
+- State Machine
+2. Identify and describe how to implement GameplayKit components
+3. Refactor (Implement)an existing code base into:
+- Inheritance-Based architecture
+- Component-Based architecture using GameplayKit
+4. Implement a simple State Machine using GameplayKit
+
 
 ## Initial Exercise (15 min)
 
@@ -211,6 +217,21 @@ The chief drawback of component-based architecture is the increase in Level-Of-E
 
 ## In Class Activity I (30 min)
 
+### Individually
+So far, we've applied no special thought to the design of the game objects in you AstroJunk app. We could say that we've only applied some generic OOP concepts to it &mdash; or maybe even the some very basic tenets of MVC.
+
+**TODO:**
+Your assignment is to apply what you've learned so far about inheritance-based architecture to your AstroJunk app code base by refactoring your game objects to derive from an initial base class:
+
+1. Create a `GameObject` base class
+- Decide on your own what generic functionality for all game objects should be in this base class
+2. Create new versions of your game object classes (meteor, debris, and so on), where each new game object class now extends from the `GameObject` class itself
+3. Run your code ...
+
+__*Result:*__ Your code should behave exactly as it did before you refactored it (the only difference should be that your game objects will now derive from the `GameObject` class)
+
+<!-- TODO: Add questions here about: 1) is it now easy to add other game objects? 2) what would be the effect if you needed to add <something complex that will cause you to have to rework your base class and all classes derived from it> ? -->
+
 
 
 ## Overview/TT II (20 min)
@@ -227,6 +248,9 @@ Assignments:
 
 1. Review:
 - [Entities and Components - from Apple docs](https://developer.apple.com/library/archive/documentation/General/Conceptual/GameplayKit_Guide/EntityComponent.html)
+- [The Command Pattern - MOB 2.4 Lesson 3](https://github.com/Make-School-Courses/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/blob/master/Lessons/03-Behavioral-PatternsPt.1/Lesson3.md)
+- [The Observer Pattern - MOB 2.4 Lesson 4](https://github.com/Make-School-Courses/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/blob/master/Lessons/04-Behavioral-PatternsPt.2/Lesson4.md)
+- The Strategy Pattern
 
 
 
@@ -235,10 +259,6 @@ Assignments:
 - [Introduction to Component Based Architecture in Games - A Ray Wenderlich tutorial](https://www.raywenderlich.com/2806-introduction-to-component-based-architecture-in-games)
 
 -->
-
-
-<!-- TODO: command and Observer ...and strategy?... patterns from MOB 2.x course here  -->
-<!-- TODO: insert Design Patterns links here... -->
 
 
 ## Wrap Up (5 min)
@@ -252,15 +272,14 @@ Assignments:
 1. [Slides]()
 2. <sup>1</sup> [Entity component system - wikipedia](https://en.wikipedia.org/wiki/Entity_component_system)
 3. [GameplayKit - from Apple docs](https://developer.apple.com/documentation/gameplaykit)
+4. [Entity Component System - an article](http://www.roguebasin.com/index.php?title=Entity_Component_System)
+5. [Refactoring Game Entities with Components - an article](http://cowboyprogramming.com/2007/01/05/evolve-your-heirachy/)
+6. [Software design pattern - wikipedia](https://en.wikipedia.org/wiki/Software_design_pattern)
+7. [Design Patterns: Elements of Reusable Object-Oriented Software](https://en.wikipedia.org/wiki/Design_Patterns)
+- An extremely important book in the field of software development. Co-written by the "Gang of Four" (not the British punk rock group of the same name)
+8. [Top 5 Design Patterns in Swift for iOS App Development - an article](https://rubygarage.org/blog/swift-design-patterns)
+9. [Basic Parent-Child Concepts in Sprite Kit](http://spritekitlessons.com/child-basics-in-sprite-kit-adding-removing-finding/)
 
-[Entity Component System - an article](http://www.roguebasin.com/index.php?title=Entity_Component_System)
 
-
-
-http://spritekitlessons.com/child-basics-in-sprite-kit-adding-removing-finding/
-
-
-1. [Refactoring Game Entities with Components - an article](http://cowboyprogramming.com/2007/01/05/evolve-your-heirachy/)
-1. []()
-1. []()
-1. []()
+10. []()
+11. []()
