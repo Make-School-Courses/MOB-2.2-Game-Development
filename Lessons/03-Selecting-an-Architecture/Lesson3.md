@@ -134,13 +134,15 @@ The basic idea behind component-based architecture &mdash; otherwise known as an
 
 It seeks to eliminate the problems of deep and wide inheritance hierarchies that are difficult to understand, maintain and extend.
 
-In a component-based architecture, each game object has a list of components. When the game updates, or the object is added to or removed from the game &mdash; or when some other game event occurs &mdash; the object notifies each component in its component list of the event.
+In a component-based architecture, *all* of your game objects (Entities) are derived from the same initial base class, but they are __*defined*__ by what __*components*__ they have &mdash; *not* by the type of subclass from which they inherit.
+
+Each game object (Entity) has a list of components. When the game updates, or the object is added to or removed from the game &mdash; or when some other game event occurs &mdash; the object notifies each component in its component list of the event.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![component-based](assets/component-based.png) </br>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *Source*: http://cowboyprogramming.com/2007/01/05/evolve-your-heirachy/
 
-The first step is to create a base `Component` class:
+The first step in a component-based design is to create a base `Component` class:
 
 ```Swift  
 class Component {
@@ -175,70 +177,36 @@ class GameObject {
   }
 ```
 
-<!--
+Then, you can create specific components as customized subclasses of `Component`, subclass `GameObject` to create new Entity objects, and define each Entity object's gameplay capabilities by assigning it its own specific set of components.
+
+<!-- TODO: useful to add examples of these last 3 steps here? -->
+
 **Benefits**
-This is the most commonly used architecture in game apps.
+Component-based architecture is the most commonly used architecture in game app development.
+
+In this architecture, game objects (Entities) are reduced to simple structures that serve primarily to connect various functional components, which can really boost game production.
+
+Here are key reasons why:
+
+1. Scalability &mdash; Whenever you need to add new features or change the way some feature works, all you need to do is to create a new component. No fussing with class hierarchies or dependencies. And new types of entities can be created on-the-fly (programmatically) without developer input.
+
+2. Re-usability &mdash; Rather than re-using code in super-classes, you re-use code by giving similar entities similar components. Since components are self-contained, they can be interchanged to create fantastic new entities. You can also take components from one game and put them into another extremely easily.
+
+3. Flexibility &mdash; A component-based layout means you can be more flexible with your design and not worry about inheritance issues. It also lends itself well to different kinds of games and different strategies of storing and representing entities, including data-driven entity design, or generating entities on the fly inside an editor or during gameplay.
+
+4. Consistency &mdash; When all your game entities are instances of the same class, and all of your functionality has a standardized interface, you can avoid all of the hassle of cumbersone inheritance trees and dependency diagrams and focus on your core game functionality.
 
 
-
-Wouldnt it be better if all of the code related to shooting was in one place, and all the code for movement in another place?
-
-These sorts of problems is exactly what component based game architecture is meant to solve! Let’s take a look.
+&nbsp;&nbsp;&nbsp; *Source:* https://www.raywenderlich.com/2806-introduction-to-component-based-architecture-in-games
 
 
+**Drawbacks**
+The chief drawback of component-based architecture is the increase in Level-Of-Effort (LOE) required:
 
+- Initially &mdash; At the start of development, you will need to create more base classes (than you would for inheritance-based).
+- As your game grows &mdash; It takes more effort to create multiple copies of an object because you need to create and add the same set of components each time you want a new copy.
 
-each game object is made up of multiple components. Compare this to an inheritance-based architecture, where each game object is a subclass of some more general class
-
-
-
-A component-based layout means you can be more flexible with your design and not worry about inheritance issues. -->
-
-
-
-<!--
-ALL of your game entities are of the same class, and they are defined by what components they have, rather than what type they inherit from. Rather than re-using code in super-classes, you re-use code by giving similar entities similar components, and rather than hiding information from your super-classes, you hide the components from one another, keeping them as self-contained as possible. -->
-
-
-
-<!-- **Drawbacks**
-
-The main problem with component-based architectures is that it’s more laborious to create multiple copies of an object, because you have to create and add the same set of components every time you want a new copy. -->
-
-
-
-> Note that Apple’s GameplayKit framework provides a set of classes for you construct your own entity-component system. Hold tight &mdash; we'll be learning more about GameplayKit framework shortly...
-
-
-
-
-
-<!--
-
-Part III: Why Component-Based Architectures Rock
-
-1. Scalability
-Whenever we need to add new features, or change the way features work, all we have to do is make a new component, and the features are instantly in the game, automatically. No fussing with class hierarchies or dependencies, no hard-coded changes to the underlying engine, just new functionality. Since components are self-contained, they can be interchanged to create fantastic new entities. New types of entities can be created on the fly in our game by a procedural process, without even requiring any input from the programmer.
-
-
-2. Re-usability
-Games with the same component-based architecture can use each others components without any changes to the underlying engine design. As long as the interface remains consistent, you can take components from one game and put them into another extremely easily.
-
-3. Flexibility
-The Component-Based Architecture is incredibly flexible to different kinds of games and different strategies of storing and representing entities. One of the biggest perks of this architecture is that its easily applicable to data-driven entity design. You could stick all of your entities in consistent XML data files, which can be edited by designers. You could even have entities generated on the fly inside an editor or during gameplay.
-
-4. Consistency
-When all your game entities are instances of the same class, and all of your functionality has a standardized interface, it makes it much easier to keep track of what is going on in your game, and much easier to manage dependencies and capabilities. You can avoid all of the hassle of clunky inheritance trees and dependency diagrams and focus on core functionality. It can be a real production booster. In Component-Based architectures, game Entities are demoted to being linkers between various components of functionality.
-
-
-https://www.raywenderlich.com/2806-introduction-to-component-based-architecture-in-games
-
- -->
-
-
-
-
-
+> Note that Apple’s GameplayKit framework provides a set of classes that allows you to easily construct your own entity-component system. Hang tight &mdash; we'll be learning more about the GameplayKit framework shortly...
 
 
 ## In Class Activity I (30 min)
@@ -285,8 +253,14 @@ Assignments:
 2. <sup>1</sup> [Entity component system - wikipedia](https://en.wikipedia.org/wiki/Entity_component_system)
 3. [GameplayKit - from Apple docs](https://developer.apple.com/documentation/gameplaykit)
 
+[Entity Component System - an article](http://www.roguebasin.com/index.php?title=Entity_Component_System)
 
-1. []()
+
+
+http://spritekitlessons.com/child-basics-in-sprite-kit-adding-removing-finding/
+
+
+1. [Refactoring Game Entities with Components - an article](http://cowboyprogramming.com/2007/01/05/evolve-your-heirachy/)
 1. []()
 1. []()
 1. []()
