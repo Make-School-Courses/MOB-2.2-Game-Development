@@ -79,29 +79,18 @@ And SpriteKit adds many features of its own on top of the basic set borrowed fro
 A short list of SpriteKit's supported features includes:
 
 - Textured Sprites
-- Physics Engine (collisions, events, forces & gravity, simulations)
-- Scene Editor
-- Tilesets
+- Physics Engine (for collisions, events, forces & gravity, simulations)
 - A 2D Coordinate System
 - Particles Editor (to create fire, smoke, and more...)
+- Scene Editor
+- Tilesets
 - Camera
 - Sound & Videos
 - Shape Creation
 - Special Effects for Images
 
 
-
-
-
-> <sup>00</sup> <!-- TODO: add note about SceneKit and Unity -->
-
-
-
-
-<!-- TODO: reference Apple and <sup>0</sup> -->
-
-
-
+> <sup>00</sup> *While SpriteKit is for 2D games, Apple's SceneKit framework was created in response to the demand for a 3D game development framework. There is also a 3rd-party framework, Unity, that is worth your awareness as it is extremely popular for iOS (and non-iOS) game development. Unity allows you to develop in either 2D or 3D, borrowing concepts and paradigms from both SpriteKit and SceneKit. Though there will not be time in the course to cover Unity, we will introduce SceneKit to you later on...*
 
 
 <!-- Supports/Includes:
@@ -125,79 +114,48 @@ SpriteKit has a very powerful particle engine which can be used to simulate part
 
 
 
-
-<!--
-SpriteKit also has a few extra bells and whistles, like support for playing videos, making shapes and applying special image effects.
-
- -->
-
-
-<!-- Add high-performance 2D content with smooth animations to your app, or create a game with a high-level set of 2D game-based tools. -->
-
-
-
-
-
-
 ### Why SpriteKit?
 
-<!-- Briefly explain SpriteKit, show its historical antecedents: i.e., "before spritekit..." -->
+**Powerful, Yet Easy-to-Use** </br>
+SpriteKit is well-designed and easy-to-use. Especially for beginners.
+
+It leverages Metal to achieve high-performance rendering, but it offers a simple programming interface to make it easy to create high quality 2D games and other graphics-intensive apps, without your needing to worry about the complexities of graphics APIs such as OpenGL and Metal.
+
+In addition, SpriteKit offers a rich array of extra functionality (see the short list of supported features above) to enhance 2D game development.
+
+**Apple Support** </br>
+SpriteKit works the same on iOS, macOS, tvOS and watchOS, which makes porting your game from one platform to another incredibly easy.
+
+SpriteKit is fully supported by Apple and kept up to date with iOS. Apple has also heavily optimized it for creating 2D games efficiently on iOS.
+
+SpriteKit is the clear choice for 2D game development on iOS.
+
+**2D is Essential** </br>
+On some level, nearly every game &mdash; even very sophisticated 3D games &mdash; use 2D elements, such as in the game's interface or its menu system.
+
+And 2D games are a lot easier to make, for a number of reasons, including:
+- Artwork is far less complicated
+- Programming is faster, requires less math
+
+Because you don’t need to worry as much about lighting, or about how elements will look from multiple angles, it’s often simpler to create a great-looking scene with 2D images than it is to create a 3D version of the same scene.
+
+All of this allows you to focus on creating awesome gameplay, and in terms of both gameplay and graphics, you will end up with a much easier to manage game.
+
+For a beginner, 2D is definitely the best way to get started.
+
+For an advanced game developer, making a 2D game is still much faster than making a 3D game.
+
+And creating a game that limits itself to 2D graphics is a good way to keep your game simple.
+
+If you just want to make something simple for Apple platforms only, SpriteKit is definitely the way to go.
 
 
-<!-- SpriteKit is a 2D game engine.
-Developed by Apple.
-Build on top of openGL.
-
-Let’s you create high-performance, battery-efficient 2D games. -->
-
-<!--
-iOS comes with a system for creating 2D graphics, called SpriteKit.
+<!-- Since it’s not necessarily the case that you earn more money with 3D games, why not go for the easier win? Plus, some people prefer 2D games anyway! -->
 
 
-Using a rich set of animations and physics behaviors, you can quickly add life to your visual elements and gracefully transition between screens.
-SpriteKit is supported on iOS, macOS, tvOS, and watchOS, and it integrates well with frameworks such as GameplayKit and SceneKit.
-
-
-SpriteKit is Apple's 2D game engine—a rendering engine built on top of OpenGL. It was introduced with iOS 7, and each subsequent release has brought great additions to the framework. With the use of textured sprites, a built-in physics engine, and the very powerful SKAction class, you can very quickly build functional 2D games.
-
-SpriteKit has built-in editors for scenes and particles, a camera node since the release of iOS9, and built-in support for tilesets since the release of iOS 10. With these new additions, SpriteKit is quickly becoming a powerhouse for creating 2D games.
-
-It leverages Metal to achieve high-performance rendering, while offering a simple programming interface to make it easy to create games and other graphics-intensive apps.
-
-The SpriteKit API is well-designed and easy to use, especially for beginners. Best of all, you can use it knowing that it’s fully supported by Apple and heavily optimized to make 2D games on iOS — and now with support for macOS, tvOS and watchOS, it makes it the clear choice for Apple 2D game development.
-
-SpriteKit, available on iOS, tvOS, and OS X, is a framework that allows developers to create high quality 2D games without worrying about the complexities of graphics APIs, such as OpenGL and Metal. In addition to handling all of the graphics for developers, SpriteKit also offers a wide range of extra functionality, including physics simulation, audio/video playback, and saving/loading games.
-
-
-SpriteKit was introduced in iOS 7, and is available on both iOS and OS X. The API for SpriteKit is the same on both platforms, which makes porting your game from one platform to the other easier.
-
-
-
-
-Just about every game out there incorporates 2D graphics on some level. Even the most sophisticated 3D games use 2D elements, such as in the menu or in the in-game interface. Creating a game that
-
-Creating a game that limits itself to 2D graphics is also a good way to keep your game simple. 2D is simpler than 3D, and you’ll end up with an easier-to-manage game, in terms of both gameplay and graphics.
-
-
-2D is simpler for a number of reasons: you don’t need to worry about how objects are going to look from multiple angles, you don’t need to worry as much about lighting, and it’s often simpler to create a great-looking scene with 2D images than it is to create a 3D version of the same scene.
-
-
-One of the great things about SpriteKit is that it works on iOS, macOS, tvOS and watchOS. If you get your game running on iOS, it’s incredibly easy to get it working on the other platforms too.
-
-
-2D games are a lot easier to make. The artwork is far less complicated, and programming is faster and doesn’t require as much math. All of this allows you, as a developer, to focus on creating killer gameplay.
-If you’re a beginner, making 2D games is definitely the best way to get started.
-If you’re an advanced developer, making a 2D game is still much faster than making a 3D game. Since it’s not necessarily the case that you earn more money with 3D games, why not go for the easier win? Plus, some people prefer 2D games anyway!
-
-
-
-
-If you just want to make something simple for Apple platforms only, SpriteKit is the way to go. -->
-
-
-
-<!-- TODO: add note about SceneKit and Unity later... -->
-
+*Sources:* </br>
+- *Apple Docs*
+- *Ref <sup>0</sup> below*
 
 
 
