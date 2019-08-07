@@ -667,6 +667,7 @@ Assignments:
 3. Review/study:
 - The "Nodes that Draw" section in [Nodes for Scene Building - Apple docs](https://developer.apple.com/documentation/spritekit/nodes_for_scene_building)
 - The "Use a Scene Delegate Instead of Subclassing a Scene" section in [Responding to Frame-Cycle Events](https://developer.apple.com/documentation/spritekit/skscene/responding_to_frame-cycle_events) and [SKSceneDelegate](https://developer.apple.com/documentation/spritekit/skscenedelegate) and [Subclassing Scenes Versus Assigning a Delegate](https://developer.apple.com/documentation/spritekit/skscene/subclassing_scenes_versus_assigning_a_delegate)
+- [preferredFramesPerSecond - Apple Docs](https://developer.apple.com/library/archive/documentation/3DDrawing/Conceptual/MTLBestPracticesGuide/FrameRate.html)
 - Delta Time
 - `SKEffectNode`
 -  The `SKWarpable` Protocol
@@ -691,80 +692,25 @@ Assignments:
 ## Additional Resources
 
 1. [Slides]()
-2. []()
-
-
-
-https://developer.apple.com/documentation/spritekit
-2. []()
-
-https://code.tutsplus.com/tutorials/introducing-spritekit--cms-28648 <sup>0</sup>
-
-
-888
-
-OpenGL ES
-
-https://en.wikipedia.org/wiki/OpenGL_ES
-
-https://www.khronos.org/opengles/
-
-https://developer.apple.com/library/archive/documentation/3DDrawing/Conceptual/OpenGLES_ProgrammingGuide/Introduction/Introduction.html
-
-
-
-Metal
-
-https://developer.apple.com/metal/
-
-http://cocos2d.org
-
-
-https://developer.apple.com/documentation/spritekit/sknode
-2. []()
-https://developer.apple.com/documentation/spritekit/skscene/responding_to_frame-cycle_events
-2. []()
-https://en.wikipedia.org/wiki/Key_frame
-2. []()
-
-
-
-https://gameprogrammingpatterns.com/state.html
-
-
-
-[Persistence of vision: how does animation work? - an article](https://www.futurelearn.com/courses/explore-animation/0/steps/12222) <sup>1</sup>
-2. []()
-
-https://developer.apple.com/documentation/spritekit/skview/1642773-preferredframespersecond
-
-2. []()
-https://developer.apple.com/library/archive/documentation/3DDrawing/Conceptual/MTLBestPracticesGuide/FrameRate.html
-
-2. []()
-https://en.wikipedia.org/wiki/Coordinate_system
-
-1. [Vector_(mathematics_and_physics) - wikipedia](https://en.wikipedia.org/wiki/Vector_(mathematics_and_physics)) [Vector_space - wikipedia](https://en.wikipedia.org/wiki/Vector_space) [Euclidean_vector - wikipedia](https://en.wikipedia.org/wiki/Euclidean_vector) <sup>3</sup>
-
-
-1. [Vector Algebra - an article](https://www.mathsisfun.com/algebra/vectors.html) <sup>5</sup>
-
-2. []()
-https://www.mathsisfun.com/pythagoras.html
-
-2. []()
-https://www.gamedev.net/articles/programming/math-and-physics/practical-use-of-vector-math-in-games-r2968/
-
-2. []()
-https://developer.apple.com/documentation/spritekit/skaction
-
-2. []()
-https://developer.apple.com/documentation/spritekit/skaction/action_initializers
-
-1. [Getting Started with Actions](https://developer.apple.com/documentation/spritekit/getting_started_with_actions#2982305 <sup>6</sup>
-
-2. []()
-https://developer.apple.com/documentation/spritekit/skaction/1417817-sequence
-
-
-https://en.wikipedia.org/wiki/First-person_shooter
+2. [SpriteKit - Apple Docs](https://developer.apple.com/documentation/spritekit)
+3.  <sup>0</sup> [Introducing SpriteKit - A Tutorial](https://code.tutsplus.com/tutorials/introducing-spritekit--cms-28648)
+4. [OpenGL ES - wikipedia](https://en.wikipedia.org/wiki/OpenGL_ES)
+5. [OpenGL ES: The Standard for Embedded Accelerated 3D Graphics - The Khronos Group (developers consortium)](https://www.khronos.org/opengles/)
+6. [About OpenGL ES - Apple Docs](https://developer.apple.com/library/archive/documentation/3DDrawing/Conceptual/OpenGLES_ProgrammingGuide/Introduction/Introduction.html)
+7. [Metal - Apple Docs](https://developer.apple.com/metal/)
+8. [Cocos2d - Cocos2d (developers consortium)](http://cocos2d.org)
+9. [SKNode (class) - Apple Docs](https://developer.apple.com/documentation/spritekit/sknode)
+10. [Responding to Frame-Cycle Events - Apple Docs](https://developer.apple.com/documentation/spritekit/skscene/responding_to_frame-cycle_events)
+11. [Key frame - wikipedia](https://en.wikipedia.org/wiki/Key_frame)
+12. [State (pattern) - from Game Programming Patterns](https://gameprogrammingpatterns.com/state.html)
+13. <sup>1</sup> [Persistence of vision: how does animation work? - an article](https://www.futurelearn.com/courses/explore-animation/0/steps/12222)
+14. [Coordinate system - wikipedia](https://en.wikipedia.org/wiki/Coordinate_system)
+15. [Vector_(mathematics_and_physics) - wikipedia](https://en.wikipedia.org/wiki/Vector_(mathematics_and_physics)) [Vector_space - wikipedia](https://en.wikipedia.org/wiki/Vector_space) [Euclidean_vector - wikipedia](https://en.wikipedia.org/wiki/Euclidean_vector) <sup>3</sup>
+16. <sup>5</sup> [Vector Algebra - an article](https://www.mathsisfun.com/algebra/vectors.html)
+17. [Pythagoras' Theorem - an excellent resource for understanding vectors, etc.](https://www.mathsisfun.com/pythagoras.html)
+18. [Practical use of Vector Math in Games - an article](https://www.gamedev.net/articles/programming/math-and-physics/practical-use-of-vector-math-in-games-r2968/)
+19. [SKAction (class) - Apple Docs](https://developer.apple.com/documentation/spritekit/skaction)
+20. [Action Initializers - Apple Docs](https://developer.apple.com/documentation/spritekit/skaction/action_initializers)
+21. <sup>6</sup> [Getting Started with Actions](https://developer.apple.com/documentation/spritekit/getting_started_with_actions#2982305
+22. [`sequence(_:)` (function) - Apple Docs](https://developer.apple.com/documentation/spritekit/skaction/1417817-sequence)
+23. [First-person shooter - wikipedia](https://en.wikipedia.org/wiki/First-person_shooter)
