@@ -56,26 +56,31 @@ Debugging and/or testing
 -->
 
 
-<!-- from Original Outline doc, prior to 8/6/19:
-Class 4: Adding “Juice” & Working With Scenes
-AG Particle systems (SpriteKit)
-	Activity:
-Add explosions? Collisions? Between meteors and the ship
-Fire to the ship as it flies
-Debugging and/or testing
-TV - Background music
-TV - Sound action
-TV - Creating scenes (with custom init)
-Could we use the Space game and add levels? Will that adequately illustrate creating multiple scenes?
-TV - Changing scenes
-TV - Creating a menus
-Saving/Loading -->
-
-
 
 ## Initial Exercise (20 min)
 
+### As A Class
 
+Discuss these topics related to **Game Mechanics ...**
+
+**Topic 1:** From your assignment at the end of last class, what key game mechanisms <sup>1</sup> stood out most prominently in your mind when you read Wikipedia's definition of the term, "Game mechanics"?
+
+**Topic 2:** Think about the current state of your AstroJunk game....
+
+**Q:** What game mechanisms are the most obviously missing from AstroJunk so far?
+
+**Q:** What game mechanics would you add to AstroJunk first? (i.e., what would add the most value to the game? Does the order that you develop game mechanisms matter?)
+
+[Optional] Diagram the UI flow of the top 1 or 2 game mechanisms identified by the class as the first to implement.
+
+ > <sup>1</sup> [Game mechanics - wikipedia](https://en.wikipedia.org/wiki/Game_mechanics)
+
+<!-- INSTRUCTOR NOTES:
+- the idea is to review Game Mechanics, and to get students thinking about what is missing from AstroJunk at this point, as a lead in to TT1 and later in-class activities
+- some of the most obviously missing mechanisms now:
+- a way to rack up points for either (a) asteroid or bomb hits (b) debris that has slipped by the ship (could add up to negative points), and/or (c) positive points accrued when the ship collects debris
+...all of these are prerequisites to developing a GameOver scene and/or its Win/Loss conditions.
+- Victory conditions - as mentioned above, this is missing, but Win/Loss is also dependent on some sort of score acrruing... -->
 
 
 ## Working with Scenes [Overview/TT I] (20 min)
@@ -162,7 +167,7 @@ Creating a new SpriteKit scene requires only these simple steps:
 1. Create a new subclass that derives from `SKScene`
 - Be sure that you import `SpriteKit`
 
-2. Implement its desired behaviors.<sup>1</sup> This can include (but is not limited to):
+2. Implement its desired behaviors.<sup>2</sup> This can include (but is not limited to):
 - `init(size:)` &mdash; or a custom initializer
 - `update(_:)`
 - `didMove(to:)` and/or other `SKScene` lifecycle methods
@@ -171,7 +176,7 @@ Creating a new SpriteKit scene requires only these simple steps:
 3. Then load and present it at the desired place in your code
 - New scenes are often loaded in either a ViewController's lifecycle method or in some function in the default `GameScene` class, including its `update(_:)` or `SKScene` lifecycle methods. But where your new scene is loaded and presented depends on your app's own requirements.
 
-> <sup>1</sup> *HINT: For ideas on methods to implement in your new scene, review any overridden methods in the default `GameScene` class that is provided as part of Xcode's SpriteKit game app template.*
+> <sup>2</sup> *HINT: For ideas on methods to implement in your new scene, review any overridden methods in the default `GameScene` class that is provided as part of Xcode's SpriteKit game app template.*
 
 **Example:** </br>
 The code snippet below is of a newly-created subclass of `SKScene` called `NewScene` which has several stubbed-out functions depicting a simple, standard implementation of a new SpriteKit scene.
@@ -302,7 +307,7 @@ override func didMove(to view: SKView) {
 
 `touchesBegan(_:with:)`
 
- <sup>2</sup>
+ <sup>1</sup>
 
 <!-- TODO: have students create a game over scene? -->
 
@@ -339,7 +344,6 @@ Assignments:
 1. Review:
 - The "Enabling Visual Statistics for Debugging" section of [SKView - from Apple docs](https://developer.apple.com/documentation/spritekit/skview)
 - [SKSceneDelegate - from Apple docs](https://developer.apple.com/documentation/spritekit/skscenedelegate)
-- [Game mechanics - wikipedia](https://en.wikipedia.org/wiki/Game_mechanics) <sup>2</sup>
 - [Gameplay - wikipedia](https://en.wikipedia.org/wiki/Gameplay)
 - [Scaling a Scene's Content to Fit the View - from Apple docs](https://developer.apple.com/documentation/spritekit/skscene/scaling_a_scene_s_content_to_fit_the_view)
 
@@ -373,6 +377,7 @@ https://www.makeschool.com/academy/track/build-ios-games/clone-angry-birds-with-
 1. []()
 1. []()
 
+- [Game mechanics - wikipedia](https://en.wikipedia.org/wiki/Game_mechanics) <sup>1</sup>
 
 x. [Kerbal Space Program - wikipedia](https://en.wikipedia.org/wiki/Kerbal_Space_Program)
 x. [Game studies - wikipedia](https://en.wikipedia.org/wiki/Game_studies)

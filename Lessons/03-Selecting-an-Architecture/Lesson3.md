@@ -246,7 +246,8 @@ __*Result:*__ Your code should behave exactly as it did before you refactored it
 
 Assignments:
 
-1. Review / research:
+1. Review:
+- [Game mechanics - wikipedia](https://en.wikipedia.org/wiki/Game_mechanics)
 - [Entities and Components - from Apple docs](https://developer.apple.com/library/archive/documentation/General/Conceptual/GameplayKit_Guide/EntityComponent.html)
 - [The Command Pattern - MOB 2.4 Lesson 3](https://github.com/Make-School-Courses/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/blob/master/Lessons/03-Behavioral-PatternsPt.1/Lesson3.md)
 - [The Command Pattern - an article](https://gameprogrammingpatterns.com/command.html)
