@@ -166,12 +166,12 @@ Creating a new SpriteKit scene requires only these simple steps:
 - `init(size:)` &mdash; or a custom initializer
 - `update(_:)`
 - `didMove(to:)` and/or other `SKScene` lifecycle methods
-- Functions for Touches or Movement, such as
+- Functions for Touches or Movement
 
 3. Then load and present it at the desired place in your code
 - New scenes are often loaded in either a ViewController's lifecycle method or in some function in the default `GameScene` class, including its `update(_:)` or `SKScene` lifecycle methods. But where your new scene is loaded and presented depends on your app's own requirements.
 
-> <sup>1</sup> HINT: For ideas on methods to implement in your new scene, review any overridden methods in the default `GameScene` class provided as part of Xcode's SpriteKit game app template.
+> <sup>1</sup> *HINT: For ideas on methods to implement in your new scene, review any overridden methods in the default `GameScene` class that is provided as part of Xcode's SpriteKit game app template.*
 
 **Example:** </br>
 The code snippet below is of a newly-created subclass of `SKScene` called `NewScene` which has several stubbed-out functions depicting a simple, standard implementation of a new SpriteKit scene.
@@ -207,7 +207,7 @@ class NewScene: SKScene {
 override func viewWillAppear(_ animated: Bool) {
      let myNewScene = NewScene()
      myNewScene.size = self.view.bounds.size
-     if let spriteView = self.view as? SKView {
+     if let spriteView = self.view as? SKView { // cast self.view as an SKView before calling presentScene()
          spriteView.presentScene(myNewScene)
      }
  }
@@ -235,21 +235,79 @@ The default value is `SKSceneScaleMode.fill`.
 > https://developer.apple.com/documentation/spritekit/skscenescalemode
 > https://developer.apple.com/documentation/spritekit/skscene/scaling_a_scene_s_content_to_fit_the_view
 
+### Changing Scenes (Transitions)
+While the simple, direct manner outlined above works fine for presenting some new scene objects, most game scenes will benefit from more dramatic transitional effects.
+
+#### SKTransition
+`SKTransition` is an object used to perform an animated transition to a new scene.
+
+It affords you the option of using a transition to animate the change from an old scene to a new scene, which provides continuity so that the scene change is not quite so abrupt.
+
+```Swift  
+class SKTransition : NSObject
+```
+
+*Source:* https://developer.apple.com/documentation/spritekit/sktransition
+
+**Example:** </br>
+A simple example showing `scaleMode` property and a `crossFade` transition:
+
+```Swift  
+myNewScene = NewScene(size: size)
+myNewScene.scaleMode = .aspectFill
+
+let crossFade = SKTransition.crossFade(withDuration: 0.5)
+view?.presentScene(myNewScene, transition: crossFade)
+```
 
 #### Creating Scenes with Custom `init()`
+Another common pattern for setting up your scene is to create a custom initialization method in your new game scene class.
+
+In the example below, we added a custom initializer that takes just one extra parameter: a `Boolean` that should be `true` if this is the first time the player played the game and `false` if it is not. We store this value in a property named `firstTime`.
+
+```Swift  
+class LoadingScene: SKScene {
+  let firstTime:Bool
+  init(size: CGSize, firstTime: Bool) {
+    self.firstTime = firstTime
+    super.init(size: size)
+  }
+  required init(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+}
+```
+
+...and we could use this Boolean flag to make conditional decisions at key points in the scene's lifecycle, such as in the `didMove(to:)`, or elsewhere, when the scene is presented:
+
+```Swift  
+override func didMove(to view: SKView) {
+
+  if (!firstTime) {
+    // If not first time, start regular game
+  } else {
+    // If players first time, do first time things (i.e., explain rules, offer video explaining gameplay, etc.)
+  }
+}
+```
+
+## In Class Activity I (30 min)
 
 
 
+- Game mechanics (win/lose conditions)
 
 
-
-
-
-
-  let myNewScene = NewScene(size: self.size)
 
 
 `touchesBegan(_:with:)`
+
+
+
+<!-- TODO: have students create a game over scene? -->
+
+
+<!-- TODO:  challenge: add debugging steps to the SKView object? -->
 
 
 <!-- TODO: show some generic code, with comments, on how to create a different new scene from the VC, etc. -->
@@ -257,49 +315,6 @@ The default value is `SKSceneScaleMode.fill`.
 <!-- TODO: show creation of Win/Loss or "GameOverScene"? (see eBook 1 for ideas)  -->
 
 
-
-
-### Custom Init (SKScene)
-Another common pattern for setting up your scene is to create a custom initialization method in the game scene class.
-
-<!-- TODO: show example of custom init here -->
-
-<!-- Creating scenes (with custom init) -->
-
-
-## Changing scenes
-
-
-
-### SKTransition
-An object used to perform an animated transition to a new scene.
-
-```Swift  
-class SKTransition : NSObject
-```
-
-`SKTransition` provides the option of using a transition to animate the change from an old scene to a new scene, which provides continuity so that the scene change is not quite so abrupt.
-
-*Source:* https://developer.apple.com/documentation/spritekit/sktransition
-
-- Game mechanics (win/lose conditions)
-
-
-
-
-
-
-
-
-
-
-## In Class Activity I (30 min)
-
-
-<!-- TODO: have students create a game over scene? -->
-
-
-<!-- TODO:  challenge: add debugging steps to the SKView object? -->
 
 
 
