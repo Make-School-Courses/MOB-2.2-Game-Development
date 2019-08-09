@@ -302,7 +302,7 @@ override func didMove(to view: SKView) {
 
 `touchesBegan(_:with:)`
 
-
+ <sup>2</sup>
 
 <!-- TODO: have students create a game over scene? -->
 
@@ -339,7 +339,7 @@ Assignments:
 1. Review:
 - The "Enabling Visual Statistics for Debugging" section of [SKView - from Apple docs](https://developer.apple.com/documentation/spritekit/skview)
 - [SKSceneDelegate - from Apple docs](https://developer.apple.com/documentation/spritekit/skscenedelegate)
-- [Game mechanics - wikipedia](https://en.wikipedia.org/wiki/Game_mechanics)
+- [Game mechanics - wikipedia](https://en.wikipedia.org/wiki/Game_mechanics) <sup>2</sup>
 - [Gameplay - wikipedia](https://en.wikipedia.org/wiki/Gameplay)
 - [Scaling a Scene's Content to Fit the View - from Apple docs](https://developer.apple.com/documentation/spritekit/skscene/scaling_a_scene_s_content_to_fit_the_view)
 
@@ -361,37 +361,19 @@ https://www.makeschool.com/academy/track/build-ios-games/clone-angry-birds-with-
 ## Additional Resources
 
 1. [Slides]()
+1. [](https://developer.apple.com/documentation/spritekit/skview)
+1. [](https://developer.apple.com/documentation/spritekit/sktransition)
+1. [](https://developer.apple.com/documentation/spritekit/drawing_spritekit_content_in_a_view)
+1. [](https://developer.apple.com/documentation/spritekit/nodes_for_scene_building)
+1. [](https://developer.apple.com/documentation/spritekit/skscene/1519562-scalemode)
+1. [](https://infinitecortex.com/2014/01/spritekit-understanding-skscene-scalemode/)
+1. [](https://developer.apple.com/documentation/spritekit/skscene/1519607-didmove)
+1. [](https://developer.apple.com/documentation/spritekit/sktransition/transitioning_between_two_scenes)
 1. []()
 1. []()
 1. []()
-1. []()
-
-https://developer.apple.com/documentation/spritekit/skview
-
-https://developer.apple.com/documentation/spritekit/sktransition
 
 
-https://developer.apple.com/documentation/spritekit/drawing_spritekit_content_in_a_view
-
-https://developer.apple.com/documentation/spritekit/nodes_for_scene_building
-
-
-https://developer.apple.com/documentation/spritekit/sktransition
-
-https://developer.apple.com/documentation/spritekit/sktransition/transitioning_between_two_scenes
-
-
-https://developer.apple.com/documentation/spritekit/skscene/1519607-didmove
-
-[Kerbal Space Program - wikipedia](https://en.wikipedia.org/wiki/Kerbal_Space_Program)
-
-https://en.wikipedia.org/wiki/Asteroids_(video_game)
-
-[Game studies - wikipedia](https://en.wikipedia.org/wiki/Game_studies)
-
-[Asteroids (video game) - wikipedia](https://en.wikipedia.org/wiki/Asteroids_(video_game))
-
-https://developer.apple.com/documentation/spritekit/skscene/1519562-scalemode
-
-
-https://infinitecortex.com/2014/01/spritekit-understanding-skscene-scalemode/
+x. [Kerbal Space Program - wikipedia](https://en.wikipedia.org/wiki/Kerbal_Space_Program)
+x. [Game studies - wikipedia](https://en.wikipedia.org/wiki/Game_studies)
+x. [Asteroids (video game) - wikipedia](https://en.wikipedia.org/wiki/Asteroids_(video_game))
