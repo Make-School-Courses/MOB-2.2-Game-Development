@@ -88,8 +88,8 @@ But to really delight and engage your users, you'll want them to have more oppor
 You've probably also noticed that most games come with a very common set of standard features which often include:
 
 - A Loading scene &mdash; Scene to display while other content is loading.
-- Menus &mdash; Uses might include showing the game's logo, starting a new game or resuming a paused one, navigating to some other scenes, showing game data such as high scores or game rules, or choosing what kind of game the user wants to play.
-- Win / Lose Conditions &mdash; Most games respond to "Game Over" or other win/lose conditions by presenting choices (scenes) to the user based on the win/lose state or when gameplay ends.
+- Menus &mdash; Uses might include showing the game's logo, starting a new game or resuming a paused one, navigation to some other scene, showing game data such as high scores or game rules, or choosing what kind of game (mode) the user wants to play.
+- Victory / Loss Conditions &mdash; Most games respond to "Game Over" or other win/lose conditions by presenting choices (scenes) to the user based on the win/lose state or when gameplay ends.
 - Game Levels &mdash; A great way to engage users is to offer them the ability to progress to a new level through mastery of previous levels; each level is typically represented by its own scene (or set of scenes).
 
 Learning how to work with scenes can really add depth and dimension to the user experience.
@@ -141,16 +141,7 @@ func presentScene(_ scene: SKScene?)
 ```
 When the `presentScene(_:)` method is called, the new scene immediately replaces the current scene, if one exists.
 
-### SKTransition
-An object used to perform an animated transition to a new scene.
 
-```Swift  
-class SKTransition : NSObject
-```
-
-`SKTransition` provides the option of using a transition to animate the change from an old scene to a new scene, which provides continuity so that the scene change is not quite so abrupt.
-
-*Source:* https://developer.apple.com/documentation/spritekit/sktransition
 
 ### SKScene's Lifecycle Methods
 `SKScene` comes with several functions you can override to be notified when the scene is loaded or presented, or it changes size.
@@ -165,15 +156,107 @@ When you present a scene (by calling `presentScene(_:)`, for example), SpriteKit
 
 Thus, `didMove(to:)` offers you a good place to do some initial setup of your scene’s contents.
 
+### Creating Scenes
+Creating a new SpriteKit scene requires only these simple steps:
 
-<!-- Other potential building blocks:
-boolean flags...
+1. Create a new subclass that derives from `SKScene`
+- Be sure that you import `SpriteKit`
 
-touchesBegan() -->
+2. Implement its desired behaviors.<sup>1</sup> This can include (but is not limited to):
+- `init(size:)` &mdash; or a custom initializer
+- `update(_:)`
+- `didMove(to:)` and/or other `SKScene` lifecycle methods
+- Functions for Touches or Movement, such as
+
+3. Then load and present it at the desired place in your code
+- New scenes are often loaded in either a ViewController's lifecycle method or in some function in the default `GameScene` class, including its `update(_:)` or `SKScene` lifecycle methods. But where your new scene is loaded and presented depends on your app's own requirements.
+
+> <sup>1</sup> HINT: For ideas on methods to implement in your new scene, review any overridden methods in the default `GameScene` class provided as part of Xcode's SpriteKit game app template.
+
+**Example:** </br>
+The code snippet below is of a newly-created subclass of `SKScene` called `NewScene` which has several stubbed-out functions depicting a simple, standard implementation of a new SpriteKit scene.
+
+```Swift
+import Foundation
+import SpriteKit
+
+class NewScene: SKScene {
+
+    override init(size: CGSize) {
+        // do initial configuration work here
+        super.init(size: size)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    override func update(_ currentTime: TimeInterval) {
+        // Called before each frame is rendered
+    }
+
+    override func didMove(to view: SKView) {
+        // Use this method to implement any custom behavior for your scene when it is about to be presented by a view. For example, you might use this method to create the scene’s contents.
+    }
+}
+```
+
+...and here is a basic example of how one could instantiate and present an instance of `NewScene` in some ViewController's `viewWillAppear()`:
+
+```Swift
+override func viewWillAppear(_ animated: Bool) {
+     let myNewScene = NewScene()
+     myNewScene.size = self.view.bounds.size
+     if let spriteView = self.view as? SKView {
+         spriteView.presentScene(myNewScene)
+     }
+ }
+```
+
+#### The `scaleMode` Property
+Because your scene might appear on screens of different sizes (i.e., iPhone, iPad, etc.), it is important to determine how the scene should be sized to fit into the `SKView` for different devices.
+
+How the `SKView` scales the scene is determined by its `scaleMode` property.
+
+```Swift  
+var scaleMode: SKSceneScaleMode { get set }
+```
+
+Under the hood, the `scaleMode` property is backed by the `SKSceneScaleMode` enum, which offers these cases:
+
+- `.fill`
+- `.aspectFill`
+- `.aspectFit`
+- `.resizeFill`
+
+The default value is `SKSceneScaleMode.fill`.
+
+> *See these links for more on the `scaleMode` property or `SKSceneScaleMode`:*
+> https://developer.apple.com/documentation/spritekit/skscenescalemode
+> https://developer.apple.com/documentation/spritekit/skscene/scaling_a_scene_s_content_to_fit_the_view
+
+
+#### Creating Scenes with Custom `init()`
 
 
 
-## Creating scenes (with custom init)
+
+
+
+
+
+
+  let myNewScene = NewScene(size: self.size)
+
+
+`touchesBegan(_:with:)`
+
+
+<!-- TODO: show some generic code, with comments, on how to create a different new scene from the VC, etc. -->
+
+<!-- TODO: show creation of Win/Loss or "GameOverScene"? (see eBook 1 for ideas)  -->
+
+
 
 
 ### Custom Init (SKScene)
@@ -185,7 +268,27 @@ Another common pattern for setting up your scene is to create a custom initializ
 
 
 ## Changing scenes
+
+
+
+### SKTransition
+An object used to perform an animated transition to a new scene.
+
+```Swift  
+class SKTransition : NSObject
+```
+
+`SKTransition` provides the option of using a transition to animate the change from an old scene to a new scene, which provides continuity so that the scene change is not quite so abrupt.
+
+*Source:* https://developer.apple.com/documentation/spritekit/sktransition
+
 - Game mechanics (win/lose conditions)
+
+
+
+
+
+
 
 
 
@@ -193,6 +296,19 @@ Another common pattern for setting up your scene is to create a custom initializ
 ## In Class Activity I (30 min)
 
 
+<!-- TODO: have students create a game over scene? -->
+
+
+<!-- TODO:  challenge: add debugging steps to the SKView object? -->
+
+
+
+<!-- Other potential building blocks:
+boolean flags...
+
+touchesBegan() -- might be good as part of Win/Lose scene
+
+-->
 
 ## Overview/TT II (20 min)
 
@@ -207,7 +323,10 @@ Another common pattern for setting up your scene is to create a custom initializ
 Assignments:
 1. Review:
 - The "Enabling Visual Statistics for Debugging" section of [SKView - from Apple docs](https://developer.apple.com/documentation/spritekit/skview)
-
+- [SKSceneDelegate - from Apple docs](https://developer.apple.com/documentation/spritekit/skscenedelegate)
+- [Game mechanics - wikipedia](https://en.wikipedia.org/wiki/Game_mechanics)
+- [Gameplay - wikipedia](https://en.wikipedia.org/wiki/Gameplay)
+- [Scaling a Scene's Content to Fit the View - from Apple docs](https://developer.apple.com/documentation/spritekit/skscene/scaling_a_scene_s_content_to_fit_the_view)
 
 <!--
 TODO: Create a new scene (which?) using SpriteKit Scene Editor?
@@ -248,3 +367,16 @@ https://developer.apple.com/documentation/spritekit/sktransition/transitioning_b
 
 
 https://developer.apple.com/documentation/spritekit/skscene/1519607-didmove
+
+[Kerbal Space Program - wikipedia](https://en.wikipedia.org/wiki/Kerbal_Space_Program)
+
+https://en.wikipedia.org/wiki/Asteroids_(video_game)
+
+[Game studies - wikipedia](https://en.wikipedia.org/wiki/Game_studies)
+
+[Asteroids (video game) - wikipedia](https://en.wikipedia.org/wiki/Asteroids_(video_game))
+
+https://developer.apple.com/documentation/spritekit/skscene/1519562-scalemode
+
+
+https://infinitecortex.com/2014/01/spritekit-understanding-skscene-scalemode/
