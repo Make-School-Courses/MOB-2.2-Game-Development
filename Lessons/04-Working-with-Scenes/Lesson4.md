@@ -377,7 +377,7 @@ override func didMove(to view: SKView) {
 
 
 ## Sound [Overview/TT II]  (20 min)
-George Lucas, the creator of the *Star Wars* movies, once famously said: "The sound and music are 50% of the entertainment in a movie." <sup>3</br>
+> George Lucas, the creator of the *Star Wars* movies, once famously said: "The sound and music are 50% of the entertainment in a movie." <sup>3</br>
 
 Sound is just as important in game apps.
 
