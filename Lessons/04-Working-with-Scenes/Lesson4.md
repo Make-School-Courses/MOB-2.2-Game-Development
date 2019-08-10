@@ -23,6 +23,8 @@
 
 Explain why students should care to learn the material presented in this class.
 
+<!-- TODO:  Describe why you need to Work with Games and add "Juice"... -->
+
 <!-- to really engage your users and hold their interest...add:
 
 to really add depth and dimension to the user experience.
@@ -37,7 +39,9 @@ But to really entertain and delight your users &mdash; to get users to engage wi
 1. Identify and describe
 1. Define
 1. Design
-1. Implement
+1. Implement:
+
+<!-- - iOS’s built-in support for playing both sound effects and background music -->
 
 
 <!-- From outline reworked on 8/6/19:
@@ -372,9 +376,30 @@ override func didMove(to view: SKView) {
 
 
 
-## Overview/TT II (20 min)
+## Sound [Overview/TT II]  (20 min)
+George Lucas, the creator of the *Star Wars* movies, once famously said: "The sound and music are 50% of the entertainment in a movie." <sup>3</br>
+
+Sound is just as important in game apps.
+
+When a game includes awesome sound effects that respond to visible gameplay elements and great-sounding background music, players become immersed in the game's world.
+
+iOS supports two built-in functional mechanisms for including sound effects and music in your game:
+
+1. `AVAudioPlayer` - Part of the `AVFoundation` framework. It's an audio player that provides playback of audio data from a file or memory. Use AVAudioPlayer for long running background music.
+
+2. `SKAudioNode` &mdash; A subclass of `SKNode` that plays audio. `SKAudioNode` allows you to create sound *actions* &mdash; subclasses of `SKAction` that you can use to control your sound effects which can be implemented like any other `SKAction` (including participating in group or sequence actions).
 
 
+
+
+<!-- TODO:  Describe "Juice" more fully... -->
+
+
+### Adding Background Music
+
+
+
+888
 
 
 
@@ -388,6 +413,18 @@ Assignments:
 - [SKSceneDelegate - from Apple docs](https://developer.apple.com/documentation/spritekit/skscenedelegate)
 - [Gameplay - wikipedia](https://en.wikipedia.org/wiki/Gameplay)
 - [Scaling a Scene's Content to Fit the View - from Apple docs](https://developer.apple.com/documentation/spritekit/skscene/scaling_a_scene_s_content_to_fit_the_view)
+
+
+https://developer.apple.com/documentation/avfoundation/avaudioplayer
+
+https://developer.apple.com/documentation/spritekit/skaudionode
+
+
+- The "Conrolling the Audio of a Node" section of the [Action Initializers - Apple docs](https://developer.apple.com/documentation/spritekit/skaction/action_initializers)
+
+
+
+
 
 <!--
 TODO: Create a new scene (which?) using SpriteKit Scene Editor?
@@ -433,6 +470,23 @@ Q: Add a menu to allow player to (1) Start Over (2) Go to next level? ...or othe
 
 - [Game mechanics - wikipedia](https://en.wikipedia.org/wiki/Game_mechanics) <sup>1</sup>
 
+x. <sup>3</br> [George Lucas Quote](https://quotefancy.com/quote/1021372/George-Lucas-The-sound-and-music-are-50-of-the-entertainment-in-a-movie)
+
 x. [Kerbal Space Program - wikipedia](https://en.wikipedia.org/wiki/Kerbal_Space_Program)
 x. [Game studies - wikipedia](https://en.wikipedia.org/wiki/Game_studies)
 x. [Asteroids (video game) - wikipedia](https://en.wikipedia.org/wiki/Asteroids_(video_game))
+
+
+https://en.wikipedia.org/wiki/AVFoundation
+
+https://developer.apple.com/av-foundation/
+
+https://developer.apple.com/documentation/avfoundation
+
+https://developer.apple.com/documentation/avfoundation/audio_track_engineering
+
+
+https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/AVFoundationPG/Articles/00_Introduction.html
+
+
+https://www.hackingwithswift.com/read/36/6/background-music-with-skaudionode-an-intro-plus-game-over
