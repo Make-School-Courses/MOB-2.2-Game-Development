@@ -1,7 +1,10 @@
 # Adding “Juice” & Working With Scenes
 
 <!-- INSTRUCTOR NOTES:
-1) Quiz for Initial Exercise is located: -->
+1) For Initial Exercise:
+- there are some ideas below the exercise that could guide or prompt discourse, in the event students do not proffer topic discussion on their own
+
+-->
 
 
 ## Minute-by-Minute
@@ -80,7 +83,8 @@ Discuss these topics related to **Game Mechanics ...**
 - some of the most obviously missing mechanisms now:
 - a way to rack up points for either (a) asteroid or bomb hits (b) debris that has slipped by the ship (could add up to negative points), and/or (c) positive points accrued when the ship collects debris
 ...all of these are prerequisites to developing a GameOver scene and/or its Win/Loss conditions.
-- Victory conditions - as mentioned above, this is missing, but Win/Loss is also dependent on some sort of score acrruing... -->
+- Victory conditions (Loss avoidance, Victory points, Combination conditions, etc. <sup>1</sup>) - as mentioned above, this is missing, but Win/Loss is also dependent on some sort of score accrual (i.e., Victory points and/or Loss avoidance)...
+-->
 
 
 ## Working with Scenes [Overview/TT I] (20 min)
@@ -268,10 +272,10 @@ view?.presentScene(myNewScene, transition: crossFade)
 #### Creating Scenes with Custom `init()`
 Another common pattern for setting up your scene is to create a custom initialization method in your new game scene class.
 
-In the example below, we added a custom initializer that takes just one extra parameter: a `Boolean` that should be `true` if this is the first time the player played the game and `false` if it is not. We store this value in a property named `firstTime`.
+In the example below, we added a custom initializer that takes just one extra parameter: a Boolean that should be `true` if this is the first time the player played the game and `false` if it is not. We store this value in a property named `firstTime`.
 
 ```Swift  
-class LoadingScene: SKScene {
+class GameLoadingScene: SKScene {
   let firstTime:Bool
   init(size: CGSize, firstTime: Bool) {
     self.firstTime = firstTime
@@ -298,37 +302,75 @@ override func didMove(to view: SKView) {
 
 ## In Class Activity I (30 min)
 
+Let's start __*adding game mechanics*__<sup>1</sup> to AstroJunk...
+
+### As Individuals
+So far, AstroJunk has no mechanism for Win/Loss (aka, Victory) conditions.
+
+Applying what you've learned so far about working with SpriteKit scenes &mdash; and using ideas from the class discussion in today's initial exercise &mdash; you are to begin adding the first piece of a Win/Loss condition to your AstroJunk game.
+
+**Output:**
+The output or final product at the end of this in-class exercise will only be a new scene called "Game Over" that you will present when the user achieves either a Win or Loss state. Once the your new scene is presented, tapping anywhere on its screen/view should restart the game.
+
+How the Win / Loss states are achieved will ultimately be up to you (and you will create these Victory Conditions as an After Class assignment later.)
+
+But, for now, you only need to create a simple Boolean condition that will be used to invoke the presentation of your "Game Over" scene, present the scene, and restart the game when the new scene's view is touched.
+
+**TODO:**
+1. Create a new subclass of `SKScene` called `GameOverScene`
+
+2. In your `GameScene` class, you will need a counter that will be incremented any time the spaceship captures a piece of space debris
+
+- When this flag increments to 3, invoke your new `GameOverScene`
+
+3. In your new `GameOverScene` class, you will need to implement:
+
+- a Boolean flag named `won` representing whether the player has won the most recent game play or not
+
+- a `didMove(to:)` function with a conditional statement that shows a label stating "You Won!" when the `won` flag is true, or "You lose...", when the `won` flag is false
+
+- some function which will restart the game when the user taps the screen of the `GameOverScene`
+
+<!-- INSTRUCTOR NOTE: The `touchesBegan(_:with:)` function might be the best place for this (but not the only appropriate function) -->
+
+<!--
+INSTRUCTOR NOTE - here is what the new GameOverScene could look like:
+
+class GameOverScene: SKScene {
+  let won:Bool
+  private var stateLabel : SKLabelNode?
+
+  init(size: CGSize, won: Bool) {
+    self.won = won
+    super.init(size: size)
+  }
+
+  required init(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+}
+
+override func didMove(to view: SKView) {
+  var background: SKSpriteNode
+  if (won) {
+    stateLabel.text = "You Win"
+  } else {
+    stateLabel.text = "You Lose"
+  }
+  background.position =
+    CGPoint(x: size.width/2, y: size.height/2)
+  self.addChild(background)
+  // More here...
+} -->
 
 
-- Game mechanics (win/lose conditions)
 
-
-
-
-`touchesBegan(_:with:)`
-
- <sup>1</sup>
-
-<!-- TODO: have students create a game over scene? -->
+<!-- TODO: create and add graphics to show the Win and Loss graphics for the GameOverScene-->
 
 
 <!-- TODO:  challenge: add debugging steps to the SKView object? -->
 
 
-<!-- TODO: show some generic code, with comments, on how to create a different new scene from the VC, etc. -->
-
-<!-- TODO: show creation of Win/Loss or "GameOverScene"? (see eBook 1 for ideas)  -->
-
-
-
-
-
-<!-- Other potential building blocks:
-boolean flags...
-
-touchesBegan() -- might be good as part of Win/Lose scene
-
--->
 
 ## Overview/TT II (20 min)
 
@@ -361,6 +403,18 @@ https://www.makeschool.com/academy/track/build-ios-games/clone-angry-birds-with-
 - Continue working on your current tutorial
 - Complete reading
 - Complete challenges
+
+
+
+
+<!-- Resume: AstroJunk -- add Win / Loss conditions, such as Victory points for capturing debris, or Loss avoidance (negative points for getting hit by bombs/asteroids, or letting debris pass)
+- present GameOverScene, with requisite graphic and sound effects for either (a) Win conditions or (b) Loss conditions...
+- will require adding graphics
+
+Q: Add a menu to allow player to (1) Start Over (2) Go to next level? ...or other?
+-->
+
+
 
 ## Additional Resources
 
