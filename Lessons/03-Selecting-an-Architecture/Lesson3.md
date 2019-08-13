@@ -234,13 +234,74 @@ __*Result:*__ Your code should behave exactly as it did before you refactored it
 
 
 
-## Overview/TT II (20 min)
+## State Machines (20 min)
+
+When developing games, at some point we will encounter the need to work with finite state machines.
+
+**What is a FSM?**
+
+*“A structure that allows to define complex behaviors.”*
+
+This means we can define complex behaviors and encapsulate them in a single object that we call state. Each state should describe a very simple action.
+
+The easiest way to visualize state machines is by drawing FSM diagrams.
+
+Let’s start with a basic example: a button. This button can have two states: Pressed and Released. To track this logic we could use a boolean.
+
+This boolean enables us to track two states.
+
+```Swift
+class somebutton:UIButton{
+
+  let isPressed = false
+
+    if(isPressed){
+      //the button has been pressed, do something
+    }else{
+      //the button has been released do something else
+    }
+}
+```
+
+![buttonStates](assets/button.png)
+
+The arrows show the relation between the two states. You can move from one state to the other at any given time.
 
 
+## In Class Activity II (5 min)
+Now let’s say we have something a little more complex. The movement of a main character in a game. That can do these:
+- Be standing
+- Jump (with single tap)
+- Attack in middle of jump (with double tap)
+- Duck (with long press)
 
+Draw how you would represent this with a FSM diagram.
 
+These are the main points:
 
-## In Class Activity II (optional) (30 min)
+- We have a fixed set of states that the machine can be in. Standing, jumping, attacking and diving.
+- The machine can only be in one state at a time. The character can’t be jumping and standing at the same time.
+- A sequence of inputs is sent to the machine.These events are the long presses and taps.
+- Each state has a set of transitions, each associated with an input and pointing to a state. When an input comes, if it matches a transition for the current state, the machine changes to that state.
+
+## State machines - the coding part
+
+When we start building a game it’s easy to put all the state-dependent code in one place. For example, in the update method. As you can already imagine, as our game grows, it becomes more complex and harder to maintain there.
+
+In code we could translate this to 4 booleans to represent the 4 states. But think about what this would imply moving forward:
+- A lot of if-else statements to check the current state
+- Possibly land in some bugs by mistakenly setting any combination of booleans wrong.
+
+What could really help is to define all the different states in the game and the rules that determine which transitions between states should be allowed. By using a state machine to organize code, we can more easily reason about complicated behaviors in the game.
+
+GameplayKit has a ready to use solution for state machines that we can take advantage of. We can see how it works with [this example of a water dispenser](https://developer.apple.com/library/archive/samplecode/Dispenser_GameplayKit/Introduction/Intro.html#//apple_ref/doc/uid/TP40016460).
+
+The game simulates a water dispenser that can only be in one state at a time out of these: empty, full, partially full, serving or refilling. In this case using a state machine makes it easy to enforce this restriction and helps organizing the game logic of each specific state (how the graphics move, what to enable/disable, etc.)
+
+Take some time to go over the sample project with a partner to see how State Machines were used.
+
+## In Class Activity III (25 min)
+Diagram a state machine for your game (SpaceJunk). Then as a stretch challenge implement in in code.
 
 # After Class
 
@@ -281,7 +342,6 @@ Assignments:
 - An extremely important book in the field of software development. Co-written by the "Gang of Four" (not the British punk rock group of the same name)
 8. [Top 5 Design Patterns in Swift for iOS App Development - an article](https://rubygarage.org/blog/swift-design-patterns)
 9. [Basic Parent-Child Concepts in Sprite Kit](http://spritekitlessons.com/child-basics-in-sprite-kit-adding-removing-finding/)
-
-
-10. []()
-11. []()
+10. [FSM](https://gamedevelopertips.com/finite-state-machine-game-developers/)
+11. [FSM](https://gameprogrammingpatterns.com/state.html)
+12. [State machines with GameplayKit](https://developer.apple.com/library/archive/documentation/General/Conceptual/GameplayKit_Guide/StateMachine.html)
