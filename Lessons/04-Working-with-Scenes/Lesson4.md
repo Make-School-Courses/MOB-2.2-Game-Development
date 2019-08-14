@@ -28,6 +28,19 @@ Explain why students should care to learn the material presented in this class.
 <!-- TODO: search ref books 1 and 2 for ideas on how to describe, exemplify "juice" -->
 
 
+<!-- TODO: list the types of Juice -- see Ref books for ideas:
+
+- sound Effects
+- game mechanics, including Victory or Game Over Conditions
+- Partical Physics
+- screen Effects
+
+
+...and these leads directly into the Learning Objectives...
+
+ -->
+
+
 
 <!-- TODO:  Describe why you need to Work with Games and add "Juice"... -->
 
@@ -391,7 +404,7 @@ Sound is just as important in game apps.
 
 When a game includes awesome sound effects that respond to visible gameplay elements and great-sounding background music, players become immersed in the game's world.
 
-### Sound in iOS apps
+### Sound in SpriteKit apps
 <!-- Thank goodness the good folks at Apple realize the importance of sound! They added some really cool sound capabilities into SceneKit. -->
 
 iOS supports two built-in functional mechanisms in SpriteKit for including sound effects and music in your game:
@@ -406,7 +419,7 @@ iOS supports two built-in functional mechanisms in SpriteKit for including sound
 <!-- TODO:  Describe "Juice" more fully... -->
 
 
-### Background Music
+### Adding Background Music
 
 <!-- TODO:  show basic steps to implement sound file for bg music, using code snippets, and end by showing how to play, loop, etc. - reference Ref Ebook 2 for details...Ref ebook 1 for other clues -->
 
@@ -462,7 +475,7 @@ public func playBackgroundMusic(_ filename: String) {
 
 888
 
-### Sound Effects
+### Adding Sound Effects
 
  <!-- Typically music and large audio files should be streamed, but for small sound effects, it’s better to preload them into memory for faster playback. -->
 
