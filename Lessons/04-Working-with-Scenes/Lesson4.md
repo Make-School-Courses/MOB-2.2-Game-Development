@@ -1,4 +1,4 @@
-# Adding “Juice” & Working With Scenes
+# Working With Scenes & Adding "Juice"
 
 <!-- INSTRUCTOR NOTES:
 1) For Initial Exercise:
@@ -22,6 +22,12 @@
 ## Why you should know this or industry application (optional) (5 min)
 
 Explain why students should care to learn the material presented in this class.
+
+<!-- TODO:  Describe "Juice" here -- it is an umbrella under which all topics in the outline for this lesson fit properly -->
+
+<!-- TODO: search ref books 1 and 2 for ideas on how to describe, exemplify "juice" -->
+
+
 
 <!-- TODO:  Describe why you need to Work with Games and add "Juice"... -->
 
@@ -88,6 +94,8 @@ Discuss these topics related to **Game Mechanics ...**
 - a way to rack up points for either (a) asteroid or bomb hits (b) debris that has slipped by the ship (could add up to negative points), and/or (c) positive points accrued when the ship collects debris
 ...all of these are prerequisites to developing a GameOver scene and/or its Win/Loss conditions.
 - Victory conditions (Loss avoidance, Victory points, Combination conditions, etc. <sup>1</sup>) - as mentioned above, this is missing, but Win/Loss is also dependent on some sort of score accrual (i.e., Victory points and/or Loss avoidance)...
+- game Levels
+- also, what "juice" can b added? Sound effects? explosions on collision? other?
 -->
 
 
@@ -383,9 +391,12 @@ Sound is just as important in game apps.
 
 When a game includes awesome sound effects that respond to visible gameplay elements and great-sounding background music, players become immersed in the game's world.
 
-iOS supports two built-in functional mechanisms for including sound effects and music in your game:
+### Sound in iOS apps
+<!-- Thank goodness the good folks at Apple realize the importance of sound! They added some really cool sound capabilities into SceneKit. -->
 
-1. `AVAudioPlayer` - Part of the `AVFoundation` framework. It's an audio player that provides playback of audio data from a file or memory. Use AVAudioPlayer for long running background music.
+iOS supports two built-in functional mechanisms in SpriteKit for including sound effects and music in your game:
+
+1. `AVAudioPlayer` - Part of the `AVFoundation` framework. It's an audio player that provides playback of audio data from a file or memory. You'll want to use `AVAudioPlayer` for playing long-running background music.
 
 2. `SKAudioNode` &mdash; A subclass of `SKNode` that plays audio. `SKAudioNode` allows you to create sound *actions* &mdash; subclasses of `SKAction` that you can use to control your sound effects which can be implemented like any other `SKAction` (including participating in group or sequence actions).
 
@@ -395,12 +406,87 @@ iOS supports two built-in functional mechanisms for including sound effects and 
 <!-- TODO:  Describe "Juice" more fully... -->
 
 
-### Adding Background Music
+### Background Music
+
+<!-- TODO:  show basic steps to implement sound file for bg music, using code snippets, and end by showing how to play, loop, etc. - reference Ref Ebook 2 for details...Ref ebook 1 for other clues -->
+
+
+
+<!-- Main points
+
+
+Show code, with numbers explaining key lines ...
+ -->
+
+
+```Swift  
+public var backgroundMusicPlayer: AVAudioPlayer?
+
+public func playBackgroundMusic(_ filename: String) {
+    let url = Bundle.main.url(forResource: filename, withExtension: nil)
+    if (url == nil) {
+      print("Could not find file: \(filename)")
+      return
+    }
+
+    var error: NSError? = nil
+    do {
+      backgroundMusicPlayer = try AVAudioPlayer(contentsOf: url!)
+    } catch let error1 as NSError {
+      error = error1
+      backgroundMusicPlayer = nil
+    }
+    if let player = backgroundMusicPlayer {
+      player.numberOfLoops = -1
+      player.prepareToPlay()
+      player.play()
+    } else {
+      print("Could not create audio player: \(error!)")
+    }
+  }
+
+```
+
+
+
+```Swift  
+  .playBackgroundMusic("backgroundMusic.wav")
+  ```
+
+
+<!-- TODO:  discuss Asset Catalog with sound folder? or is that too much?
+
+- same with adding a utility class for  handling AVAudioPlayer and BG sounds? -->
 
 
 
 888
 
+### Sound Effects
+
+ <!-- Typically music and large audio files should be streamed, but for small sound effects, it’s better to preload them into memory for faster playback. -->
+
+<!-- where are the sound effects? One of the biggest mistakes a game developer can make is to underestimate the power of audio. -->
+
+<!-- TODO: see Game State Management section in ref book on 3D games for ideas on when you would add sound to act as Game State cues  -->
+
+<!-- TODO: firt, tie sound effects to events, including Game State, but also collisions, etc. -->
+
+
+<!-- TODO: Ending: "As you develop your game, you will add Juice to it as you go..." -->
+
+
+Sound Actions...
+
+SKAction.playSoundFileNamed("pop.mp3",
+   waitForCompletion: false),
+
+<!--
+
+
+
+    preloading into memory...reusing effects...
+ -->
 
 
 ## In Class Activity II (optional) (30 min)
@@ -490,3 +576,6 @@ https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/
 
 
 https://www.hackingwithswift.com/read/36/6/background-music-with-skaudionode-an-intro-plus-game-over
+
+
+https://developer.apple.com/documentation/spritekit/skaction/1417664-playsoundfilenamed
