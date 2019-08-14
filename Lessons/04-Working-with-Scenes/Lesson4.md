@@ -31,6 +31,7 @@ Explain why students should care to learn the material presented in this class.
 <!-- TODO: list the types of Juice -- see Ref books for ideas:
 
 - sound Effects
+- scenes
 - game mechanics, including Victory or Game Over Conditions
 - Partical Physics
 - screen Effects
@@ -521,6 +522,9 @@ https://developer.apple.com/documentation/spritekit/skaudionode
 
 - The "Conrolling the Audio of a Node" section of the [Action Initializers - Apple docs](https://developer.apple.com/documentation/spritekit/skaction/action_initializers)
 
+add challenge
+- to gameover scene, add a menu that offers REplay or next level (means you have to add levels)
+<!-- TODO: get URLS to illustrate adding menus, etc -->
 
 
 
