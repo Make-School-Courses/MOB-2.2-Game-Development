@@ -412,7 +412,7 @@ iOS supports two built-in functional mechanisms in SpriteKit for including sound
 
 1. `AVAudioPlayer` - Part of the `AVFoundation` framework. It's an audio player that provides playback of audio data from a file or memory. You'll want to use `AVAudioPlayer` for playing long-running background music.
 
-2. `SKAudioNode` &mdash; A subclass of `SKNode` that plays audio. `SKAudioNode` allows you to create sound *actions* &mdash; subclasses of `SKAction` that you can use to control your sound effects which can be implemented like any other `SKAction` (including participating in group or sequence actions).
+2. `SKAudioNode` &mdash; A subclass of `SKNode` that plays audio. `SKAudioNode` allows you to create sound *actions* &mdash; subclasses of `SKAction` that you can use to control your sound effects which can be implemented like any other `SKAction` (including participation in group or sequence actions).
 
 
 
@@ -422,22 +422,47 @@ iOS supports two built-in functional mechanisms in SpriteKit for including sound
 
 ### Adding Background Music
 
-<!-- TODO:  show basic steps to implement sound file for bg music, using code snippets, and end by showing how to play, loop, etc. - reference Ref Ebook 2 for details...Ref ebook 1 for other clues -->
+<!-- TODO:  show basic steps  -- and key points about -- to implement sound file for bg music, using code snippets, and end by showing how to play, loop, etc. - reference Ref Ebook 2 for details...Ref ebook 1 for other clues -->
 
 
 
-<!-- Main points
+<!-- Main points:
 
+- see ref books for ideas and coverage
 
-Show code, with numbers explaining key lines ...
+***
+- use `AVAudioPlayer` for playing long-running background music.
+
+- loading files early to avoid delays in sound -- but measuring this against memory used up if you have lots of these long-running files
+
+-  
  -->
 
 
+ <!-- TODO:  discuss Asset Catalog with sound folder? or is that too much?
+
+ - same with adding a utility class for  handling AVAudioPlayer and BG sounds? -->
+
+
+
+
+**Illustrating Example**
+
+Here is an example of xxxx showing xxx from above...
+
+
+Assumptions;
+imported `AVFoundation` framework
+
+
+<!-- Show code, with numbers explaining key lines ... -->
+
+
 ```Swift  
-public var backgroundMusicPlayer: AVAudioPlayer?
+public var backgroundMusicPlayer: AVAudioPlayer? // 1)
 
 public func playBackgroundMusic(_ filename: String) {
-    let url = Bundle.main.url(forResource: filename, withExtension: nil)
+    let url = Bundle.main.url(forResource: filename, withExtension: nil) // 2)
     if (url == nil) {
       print("Could not find file: \(filename)")
       return
@@ -445,32 +470,28 @@ public func playBackgroundMusic(_ filename: String) {
 
     var error: NSError? = nil
     do {
-      backgroundMusicPlayer = try AVAudioPlayer(contentsOf: url!)
+      backgroundMusicPlayer = try AVAudioPlayer(contentsOf: url!) // 3)
     } catch let error1 as NSError {
       error = error1
       backgroundMusicPlayer = nil
     }
     if let player = backgroundMusicPlayer {
-      player.numberOfLoops = -1
-      player.prepareToPlay()
-      player.play()
+      player.numberOfLoops = -1 // 4)
+      player.prepareToPlay() // 6)
+      player.play() // 6)
     } else {
       print("Could not create audio player: \(error!)")
     }
   }
 
+  .playBackgroundMusic("backgroundMusic.wav") // 7)
 ```
 
+Here is a breakdown of what is happening in the code snippet above
 
 
-```Swift  
-  .playBackgroundMusic("backgroundMusic.wav")
-  ```
+6) call the above playBackgroundMusic() function, passing in an audio file to play
 
-
-<!-- TODO:  discuss Asset Catalog with sound folder? or is that too much?
-
-- same with adding a utility class for  handling AVAudioPlayer and BG sounds? -->
 
 
 
@@ -497,8 +518,6 @@ SKAction.playSoundFileNamed("pop.mp3",
 
 <!--
 
-
-
     preloading into memory...reusing effects...
  -->
 
@@ -508,11 +527,33 @@ SKAction.playSoundFileNamed("pop.mp3",
 # After Class
 
 Assignments:
-1. Review:
+
+1. **Challenge** &mdash; Add the following to your AstroJunk game's Game Over scene:
+- A __*menu*__ that, on winning the game, offers the user the option of choosing:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a) "Replay" or "Restart" &mdash; which replays the previous level of game just played
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b) "Next Level" &mdash; which offers the user a new level of the game to play (this means you will have to create at least one additional level)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c) "High Scores" &mdash; presenting the user with a list of highest scores so far.
+<!-- TODO: get URLS to illustrate adding menus, etc -->
+
+
+
+2. Review:
 - The "Enabling Visual Statistics for Debugging" section of [SKView - from Apple docs](https://developer.apple.com/documentation/spritekit/skview)
 - [SKSceneDelegate - from Apple docs](https://developer.apple.com/documentation/spritekit/skscenedelegate)
 - [Gameplay - wikipedia](https://en.wikipedia.org/wiki/Gameplay)
 - [Scaling a Scene's Content to Fit the View - from Apple docs](https://developer.apple.com/documentation/spritekit/skscene/scaling_a_scene_s_content_to_fit_the_view)
+- The "Conrolling the Audio of a Node" section of the [Action Initializers - Apple docs](https://developer.apple.com/documentation/spritekit/skaction/action_initializers)
+
+
+<!-- < look up other AVAudioPlayer functions -- see Apple docs for list:
+To rewind an audio player, you change the currentTime property.
+
+To rewind an audio player, you change the currentTime property.
+
+To rewind an audio player, you change the currentTime property. -->
+
+
+
 
 
 https://developer.apple.com/documentation/avfoundation/avaudioplayer
@@ -520,11 +561,6 @@ https://developer.apple.com/documentation/avfoundation/avaudioplayer
 https://developer.apple.com/documentation/spritekit/skaudionode
 
 
-- The "Conrolling the Audio of a Node" section of the [Action Initializers - Apple docs](https://developer.apple.com/documentation/spritekit/skaction/action_initializers)
-
-add challenge
-- to gameover scene, add a menu that offers REplay or next level (means you have to add levels)
-<!-- TODO: get URLS to illustrate adding menus, etc -->
 
 
 
@@ -559,40 +595,31 @@ Q: Add a menu to allow player to (1) Start Over (2) Go to next level? ...or othe
 ## Additional Resources
 
 1. [Slides]()
-1. [](https://developer.apple.com/documentation/spritekit/skview)
-1. [](https://developer.apple.com/documentation/spritekit/sktransition)
-1. [](https://developer.apple.com/documentation/spritekit/drawing_spritekit_content_in_a_view)
-1. [](https://developer.apple.com/documentation/spritekit/nodes_for_scene_building)
-1. [](https://developer.apple.com/documentation/spritekit/skscene/1519562-scalemode)
-1. [](https://infinitecortex.com/2014/01/spritekit-understanding-skscene-scalemode/)
-1. [](https://developer.apple.com/documentation/spritekit/skscene/1519607-didmove)
-1. [](https://developer.apple.com/documentation/spritekit/sktransition/transitioning_between_two_scenes)
+2. <sup>1</sup> [Game mechanics - wikipedia](https://en.wikipedia.org/wiki/Game_mechanics)
+3. [](https://developer.apple.com/documentation/spritekit/skview)
+4. [](https://developer.apple.com/documentation/spritekit/sktransition)
+5. [](https://developer.apple.com/documentation/spritekit/drawing_spritekit_content_in_a_view)
+6. [](https://developer.apple.com/documentation/spritekit/nodes_for_scene_building)
+7. [](https://developer.apple.com/documentation/spritekit/skscene/1519562-scalemode)
+8. [](https://infinitecortex.com/2014/01/spritekit-understanding-skscene-scalemode/)
+9. [](https://developer.apple.com/documentation/spritekit/skscene/1519607-didmove)
+10. [](https://developer.apple.com/documentation/spritekit/sktransition/transitioning_between_two_scenes)
+11. <sup>3</br> [George Lucas Quote](https://quotefancy.com/quote/1021372/George-Lucas-The-sound-and-music-are-50-of-the-entertainment-in-a-movie)
+12. [Kerbal Space Program - wikipedia](https://en.wikipedia.org/wiki/Kerbal_Space_Program)
+13. [Game studies - wikipedia](https://en.wikipedia.org/wiki/Game_studies)
+14. [Asteroids (video game) - wikipedia](https://en.wikipedia.org/wiki/Asteroids_(video_game))
+
+
+1. [](https://en.wikipedia.org/wiki/AVFoundation)
+1. [](https://developer.apple.com/av-foundation/)
+1. [](https://developer.apple.com/documentation/avfoundation)
+
+1. [](https://developer.apple.com/documentation/avfoundation/audio_track_engineering)
+1. [](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/AVFoundationPG/Articles/00_Introduction.html)
+1. [](https://www.hackingwithswift.com/read/36/6/background-music-with-skaudionode-an-intro-plus-game-over)
+
+1. [](https://developer.apple.com/documentation/spritekit/skaction/1417664-playsoundfilenamed)
+
 1. []()
+
 1. []()
-1. []()
-
-- [Game mechanics - wikipedia](https://en.wikipedia.org/wiki/Game_mechanics) <sup>1</sup>
-
-x. <sup>3</br> [George Lucas Quote](https://quotefancy.com/quote/1021372/George-Lucas-The-sound-and-music-are-50-of-the-entertainment-in-a-movie)
-
-x. [Kerbal Space Program - wikipedia](https://en.wikipedia.org/wiki/Kerbal_Space_Program)
-x. [Game studies - wikipedia](https://en.wikipedia.org/wiki/Game_studies)
-x. [Asteroids (video game) - wikipedia](https://en.wikipedia.org/wiki/Asteroids_(video_game))
-
-
-https://en.wikipedia.org/wiki/AVFoundation
-
-https://developer.apple.com/av-foundation/
-
-https://developer.apple.com/documentation/avfoundation
-
-https://developer.apple.com/documentation/avfoundation/audio_track_engineering
-
-
-https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/AVFoundationPG/Articles/00_Introduction.html
-
-
-https://www.hackingwithswift.com/read/36/6/background-music-with-skaudionode-an-intro-plus-game-over
-
-
-https://developer.apple.com/documentation/spritekit/skaction/1417664-playsoundfilenamed
