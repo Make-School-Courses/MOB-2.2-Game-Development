@@ -517,7 +517,7 @@ By setting the `numberOfLoops` property, you can make an `AVAudioPlayer` play it
 audioPlayer?.numberOfLoops = 0
 ```
 
-This is the *default* for `AVAudioPlayer` &mdash; unless you tell it otherwise, it will play its sound only one time, stop the player, and unload the player object from memory.
+> *This behavior is the same as the default behavior `AVAudioPlayer` &mdash; unless you configure it otherwise, `AVAudioPlayer` by default plays its sound only one time, stops the player, and unloads the player object from memory.*
 
 - Setting the `numberOfLoops` property to `1` will make `AVAudioPlayer` play twice, then stop:
 
@@ -527,39 +527,19 @@ audioPlayer?.numberOfLoops = 1
 
 After it’s finished playing, a second call to `play()` will rewind it and play it again.
 
+6) Calling the `prepareToPlay()` method on the player object minimizes the lag between calling the `play()` method and the start of sound output by preparing the audio player's hardware and memory buffers required for playback.
 
-6)
+> *Note that if the audio player is not already prepared for playback, the `prepareToPlay()` method will be called implicitly by the `play()` method when it is called, but this will likely result in the sound lag mentioned.*
 
+7) Calling `play()` on the player will asynchronously play the sound file passed to the player
 
-7)
+8) At the desired point(s) in your code, call the `playBackgroundMusic()` function, passing in the audio file you want to play
 
+9) At key points in your game &mdash; when your Game Over Scene is presented, for example &mdash; you'll to stop playback:
 
-8)
-
-
-
-9) To stop playback, you use the `pause()` or `stop()` functions <sup>4</sup>
-
+- To stop playback, you use the `pause()` or `stop()` functions <sup>4</sup>
 
 
-
-
-
-
-
-
-
-
-888
-
-
-
-8)  any place in your code you want to play the BG music...
-call the above playBackgroundMusic() function, passing in an audio file to play
-
-9) // ...at some point, you want to stop playing...
-
-<sup>4</sup>
 
 
 888
