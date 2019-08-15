@@ -444,6 +444,7 @@ iOS supports two built-in functional mechanisms in SpriteKit for including sound
  - same with adding a utility class for  handling AVAudioPlayer and BG sounds? -->
 
 
+ <!-- You create an AVAudioPlayer by providing it with the location of the file you want it to play. This should generally be done ahead of time, before the sound needs to be played, to avoid playback delays. -->
 
 
 **Illustrating Example**
@@ -453,16 +454,19 @@ Here is an example of xxxx showing xxx from above...
 
 Assumptions;
 imported `AVFoundation` framework
+non-working
 
 
 <!-- Show code, with numbers explaining key lines ... -->
 
 
 ```Swift  
-public var backgroundMusicPlayer: AVAudioPlayer? // 1)
+import AVFoundation // 1)
+
+public var backgroundMusicPlayer: AVAudioPlayer? // 2)
 
 public func playBackgroundMusic(_ filename: String) {
-    let url = Bundle.main.url(forResource: filename, withExtension: nil) // 2)
+    let url = Bundle.main.url(forResource: filename, withExtension: nil) // 3)
     if (url == nil) {
       print("Could not find file: \(filename)")
       return
@@ -470,29 +474,92 @@ public func playBackgroundMusic(_ filename: String) {
 
     var error: NSError? = nil
     do {
-      backgroundMusicPlayer = try AVAudioPlayer(contentsOf: url!) // 3)
+      backgroundMusicPlayer = try AVAudioPlayer(contentsOf: url!) // 4)
     } catch let error1 as NSError {
       error = error1
       backgroundMusicPlayer = nil
     }
     if let player = backgroundMusicPlayer {
-      player.numberOfLoops = -1 // 4)
+      player.numberOfLoops = -1 // 5)
       player.prepareToPlay() // 6)
-      player.play() // 6)
+      player.play() // 7)
     } else {
       print("Could not create audio player: \(error!)")
     }
   }
 
-  .playBackgroundMusic("backgroundMusic.wav") // 7)
+  // any place in your code you want to play the BG music...
+  playBackgroundMusic("backgroundMusic.wav") // 8)
+
+  // ...at some point, you want to stop playing...
+  backgroundMusicPlayer.stop() // 9)
 ```
 
-Here is a breakdown of what is happening in the code snippet above
+Let's breakdown the key events in this code snippet:
+
+1) For access to the `AVAudioPlayer`, we imported the `AVFoundation` framework
+
+2) Here, we simply create an instance variable that is of type `Optional: AVAudioPlayer` for later use
+
+3) We want to pass the location (as a URL) of whatever file we want to play to the `AVAudioPlayer` variable:
+
+- And to get the location of the file, we use the `Bundle` class’s `url(forResource:, withExtension:)` function because it allows us to access the location of __*any*__ resource that has been added to the app’s Xcode target
+
+4) Here, we pass the location of the file to play to the `AVAudioPlayer` instance, handling any of the typical file I/O errors that can occur
+
+5) To loop playback, you change the `numberOfLoops`<sup>4</sup> property on your `AVAudioPlayer` instance:
+
+By setting the `numberOfLoops` property, you can make an `AVAudioPlayer` play its file a single time or a fixed number of times before stopping. Or you can set it to run continuously until it is sent a `pause` or a `stop` message.
+
+- To make an `AVAudioPlayer` play one time and then stop:
+
+```Swift  
+audioPlayer?.numberOfLoops = 0
+```
+
+This is the *default* for `AVAudioPlayer` &mdash; unless you tell it otherwise, it will play its sound only one time, stop the player, and unload the player object from memory.
+
+- Setting the `numberOfLoops` property to `1` will make `AVAudioPlayer` play twice, then stop:
+
+```Swift  
+audioPlayer?.numberOfLoops = 1
+```
+
+After it’s finished playing, a second call to `play()` will rewind it and play it again.
 
 
-6) call the above playBackgroundMusic() function, passing in an audio file to play
+6)
 
 
+7)
+
+
+8)
+
+
+
+9) To stop playback, you use the `pause()` or `stop()` functions <sup>4</sup>
+
+
+
+
+
+
+
+
+
+
+
+888
+
+
+
+8)  any place in your code you want to play the BG music...
+call the above playBackgroundMusic() function, passing in an audio file to play
+
+9) // ...at some point, you want to stop playing...
+
+<sup>4</sup>
 
 
 888
@@ -536,6 +603,8 @@ Assignments:
 <!-- TODO: get URLS to illustrate adding menus, etc -->
 
 
+<!-- Often, it’s best to start a game with an opening or main menu scene, rather than throw the player right into the action. The main menu often includes options to start a new game, continue a game, access game options and so on. -->
+
 
 2. Review:
 - The "Enabling Visual Statistics for Debugging" section of [SKView - from Apple docs](https://developer.apple.com/documentation/spritekit/skview)
@@ -543,6 +612,11 @@ Assignments:
 - [Gameplay - wikipedia](https://en.wikipedia.org/wiki/Gameplay)
 - [Scaling a Scene's Content to Fit the View - from Apple docs](https://developer.apple.com/documentation/spritekit/skscene/scaling_a_scene_s_content_to_fit_the_view)
 - The "Conrolling the Audio of a Node" section of the [Action Initializers - Apple docs](https://developer.apple.com/documentation/spritekit/skaction/action_initializers)
+- Functions and properties in the "Configuring and Controlling Playback" and "Managing Information About a Sound" sections of the [AVAudioPlayer - Apple docs](https://developer.apple.com/documentation/avfoundation/avaudioplayer) <sup>4</sup> especially how to:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - stop
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - pause
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - rewind
+
 
 
 <!-- < look up other AVAudioPlayer functions -- see Apple docs for list:
@@ -553,10 +627,6 @@ To rewind an audio player, you change the currentTime property.
 To rewind an audio player, you change the currentTime property. -->
 
 
-
-
-
-https://developer.apple.com/documentation/avfoundation/avaudioplayer
 
 https://developer.apple.com/documentation/spritekit/skaudionode
 
