@@ -46,6 +46,9 @@ Explain why students should care to learn the material presented in this class.
 
 888
 
+
+<!-- To push your game to that next level, you absolutely have to add something known as juice. Juice will give your game that little something special, just to make it stand out above the rest. -->
+
 <!-- TODO:  Describe "Juice" more fully... -->
 
 <!--
@@ -553,22 +556,57 @@ After it’s finished playing, a second call to `play()` will rewind it and play
 
 
 ### Adding Sound Effects
+Sound effects can also significantly enhance user immersion in your game world.
+
+Adding sounds effects that play at just the right moments is another great way to add "juice" to your game.
+
+One of the best initial strategies for adding sound is to tie the effects to game events. Examples:
+
+1. Game State events:
+
+- game start
+
+- game over (Win/Lose)
+
+- new game level achieved
+
+- game progress is paused
+
+- game reload from a saved state
+
+2. Player events:
+
+- collisions
+
+- points scored
 
 
-<!-- Sound effects can greatly enhance immersion as well. You can use this same concept to add juice to your game. -->
 
 
- <!-- Typically music and large audio files should be streamed, but for small sound effects, it’s better to preload them into memory for faster playback. -->
 
+
+
+888
 
 <!-- TODO: see Game State Management section in ref book on 3D games for ideas on when you would add sound to act as Game State cues  -->
 
-<!-- TODO: firt, tie sound effects to events, including Game State, but also collisions, etc. -->
+
+
+<!-- TODO: first, tie sound effects to events, including Game State, but also collisions, etc. -->
+
+
+Key points:
+
+ <!-- Typically music and large audio files should be streamed, but for small sound effects, it’s better to preload them into memory for faster playback. -->
+
 
 <!--
 
     preloading into memory...reusing effects...
  -->
+<!-- The application is loading the sound the first time you create an action that uses it. So to prevent the sound delay, you can create the actions in advance and then use them when necessary. -->
+
+
 
 
 
@@ -578,8 +616,16 @@ SKAction.playSoundFileNamed("pop.mp3",
    waitForCompletion: false),
 
 
+<!-- TODO: add examples of adding sounds with SKActions
 
-<!-- The application is loading the sound the first time you create an action that uses it. So to prevent the sound delay, you can create the actions in advance and then use them when necessary. -->
+- and how to call them
+
+- esp. using with other sequences, and as an array of sounds
+
+ -->
+
+
+
 
 
 
