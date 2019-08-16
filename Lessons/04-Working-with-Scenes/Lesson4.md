@@ -424,6 +424,8 @@ override func didMove(to view: SKView) {
 ## Sound [Overview/TT II]  (20 min)
 > George Lucas, the creator of the *Star Wars* movies, once famously said: "The sound and music are 50% of the entertainment in a movie." <sup>3</br>
 
+It's just as important in game apps.
+
 One of the biggest mistakes a game developer can make is to underestimate the power of audio.
 
 When a game includes awesome sound effects that respond to visible gameplay elements and great-sounding background music, players become immersed in the game's world.
@@ -446,11 +448,13 @@ You'll want to use `AVAudioPlayer` for playing long-running sound files like bac
 
 
 ### Adding Background Music
-It is widely known that music plays an important part in setting the tone and pace of a movie.
+Music plays an important part in setting the pace and emotional tone of a movie.
 
-And it's just as important in game apps.
+In game apps, background music servers a similar purpose.
 
-Adding background music to your game is easy. But there are important considerations you should be aware of.
+And adding background music to your game is easy.
+
+But there are important considerations you should be aware of.
 
 Here are a few key points to consider when adding background music:
 
