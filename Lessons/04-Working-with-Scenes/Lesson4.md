@@ -735,7 +735,7 @@ https://www.makeschool.com/academy/track/build-ios-games/clone-angry-birds-with-
 ## Additional Resources
 
 1. [Slides]()
-2. <sup>1</sup> [Game mechanics - wikipedia](https://en.wikipedia.org/wiki/Game_mechanics)
+2. [Game mechanics - wikipedia](https://en.wikipedia.org/wiki/Game_mechanics) <sup>1</sup>
 3. [SKView - Apple Docs](https://developer.apple.com/documentation/spritekit/skview)
 4. [SKTransition - Apple Docs](https://developer.apple.com/documentation/spritekit/sktransition)
 5. [](https://developer.apple.com/documentation/spritekit/drawing_spritekit_content_in_a_view)
@@ -744,7 +744,7 @@ https://www.makeschool.com/academy/track/build-ios-games/clone-angry-birds-with-
 8. [](https://infinitecortex.com/2014/01/spritekit-understanding-skscene-scalemode/)
 9. [](https://developer.apple.com/documentation/spritekit/skscene/1519607-didmove)
 10. [](https://developer.apple.com/documentation/spritekit/sktransition/transitioning_between_two_scenes)
-11. <sup>3</br> [George Lucas Quote](https://quotefancy.com/quote/1021372/George-Lucas-The-sound-and-music-are-50-of-the-entertainment-in-a-movie)
+11. [George Lucas Quote](https://quotefancy.com/quote/1021372/George-Lucas-The-sound-and-music-are-50-of-the-entertainment-in-a-movie) <sup>3</sup>
 12. [Kerbal Space Program - wikipedia](https://en.wikipedia.org/wiki/Kerbal_Space_Program)
 13. [Game studies - wikipedia](https://en.wikipedia.org/wiki/Game_studies)
 14. [Asteroids (video game) - wikipedia](https://en.wikipedia.org/wiki/Asteroids_(video_game))
