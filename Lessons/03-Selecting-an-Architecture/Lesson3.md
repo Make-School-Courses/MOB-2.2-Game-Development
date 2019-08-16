@@ -315,7 +315,16 @@ Assignments:
 - [The Observer Pattern - MOB 2.4 Lesson 4](https://github.com/Make-School-Courses/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/blob/master/Lessons/04-Behavioral-PatternsPt.2/Lesson4.md)
 - The Strategy Pattern
 
+2. Get sound files
 
+__*For next lesson,*__ you will need to have sound files for your game on hand:
+
+- background music
+- sound effects for game events such as collisions, Win and Loss conditions, etc.
+
+**TODO:**
+- Find out what audio file types are supported in iOS apps
+- Find and have ready to insert into your game an assortment of 
 
 <!-- TODO: find a version of this tutorial in Swift ...NOT Obj-C...
 
