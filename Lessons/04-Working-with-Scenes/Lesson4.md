@@ -3,7 +3,8 @@
 <!-- INSTRUCTOR NOTES:
 1) For Initial Exercise:
 - there are some ideas below the exercise that could guide or prompt discourse, in the event students do not proffer topic discussion on their own
-
+2) for Activity 1:
+- there are also some ideas for discussion (as possible solutions) hidden in comments below the exercise
 -->
 
 
@@ -20,67 +21,29 @@
 | TOTAL       | 1:50      | -                         |
 
 ## Why you should know this or industry application (5 min)
+The key to making a popular game app is polish: adding loads of well-considered details that set your game apart and bring it to life.
 
+To push your game to that next level &mdash; to really entertain and delight your users, to get them to engage with your game &mdash; you absolutely *must* add what is known as __*"juice."*__
 
-Explain why students should care to learn the material presented in this class.
+Adding juice means tricking out your game with special effects such as:
+
+- Scenes and Scene Transitions
+- Simple Animation (scaling, rotation, movement, and more)
+- Music and Sound Effects
+- Game Mechanics (including Victory or Game Over Conditions)
+- Particle Effects (explosions, collisions, etc.)
+- Screen Effects
+
+When every interaction within your game world results in a cascade of visual and audible feedback really adds depth and dimension to the user experience and keeps users coming back for more.
+
+As you develop your game, you will get in the habit of adding juice to it as you go...
+
+> Most of the tools to create the special effects listed above are already in your iOS toolkit; others, such as music and sound effects, can be found online or created with free or inexpensive software
+
 
 <!-- TODO:  Describe "Juice" here -- it is an umbrella under which all topics in the outline for this lesson fit properly -->
 
 <!-- TODO: search ref books 1 and 2 for ideas on how to describe, exemplify "juice" -->
-
-
-<!-- TODO: list the types of Juice -- see Ref books for ideas:
-
-- sound Effects
-- scenes
-- game mechanics, including Victory or Game Over Conditions
-- Partical Physics
-- screen Effects
-
-
-
-...add Game Mechanics
-
-...and these leads directly into the Learning Objectives...
-
- -->
-
-888
-
-<!-- TODO:  Describe "Juice" more fully... -->
-<!-- To push your game to that next level, you absolutely have to add something known as juice. Juice will give your game that little something special, just to make it stand out above the rest. -->
-
-<!-- The key to making a hit game is polish — adding loads of well- considered details that set your game apart.
-
-
-polishing your game with special effects — otherwise known as adding “Juice” ...
-
-ou’ll trick out your game with music, sound, animation, more particles and other special effects, -->
-
-
-
-<!--
-The great thing about juice is that you don’t need to have a large art budget or hire expensive consultants with impressive resumes. Instead, you can use particle effects, music, sound effects and simple animation effects — such as scaling, rotation and movement. Most of these things are already in your toolkit; others, like music and sound effects, you can find online or create with free or inexpensive software. This is wonderful news for programmers like you and me!
-
-
-On their own, none of these effects are terribly exciting, but when combined, every interaction within the game world results in a cascade of visual and audible feedback that keeps players coming back for more. That is what it means to make your game juicy. -->
-
-
-
-
-
-<!-- TODO:  Describe why you need to Work with Games and add "Juice"... -->
-
-<!-- to really engage your users and hold their interest...add:
-
-to really add depth and dimension to the user experience.
-
-But to really entertain and delight your users &mdash; to get users to engage with your game...
-
-- Scenes
-- "Juice" -->
-
-<!-- TODO: Ending: "As you develop your game, you will add Juice to it as you go..." -->
 
 
 ## Learning Objectives (5 min)
