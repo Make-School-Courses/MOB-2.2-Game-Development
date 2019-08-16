@@ -568,7 +568,7 @@ One of the best initial strategies for adding sound is to tie the effects to gam
 
 - game start
 
-- game over (Win/Lose)
+- game over (Win/Lose conditions)
 
 - new game level achieved
 
@@ -614,6 +614,45 @@ Key points:
 
 
 
+let soundGameStart = SKAction.playSoundFileNamed("gameStart.wav", waitForCompletion: true)
+let soundCoinDrop = SKAction.playSoundFileNamed("coinDrop.wav", waitForCompletion: true)
+let soundPointScored = SKAction.playSoundFileNamed("pointScored.wav", waitForCompletion: true)
+let soundGameOver = SKAction.playSoundFileNamed("player_die.wav", waitForCompletion: false)
+let soundWin = SKAction.playSoundFileNamed("winning.wav", waitForCompletion: false)
+
+
+...by now, this should be familiar from previous lesson on SKActions...
+
+
+
+...simple version... REWORK THIS...
+
+let catCollisionSound: SKAction = SKAction.playSoundFileNamed(
+  "hitCat.wav", waitForCompletion: false)
+let enemyCollisionSound: SKAction = SKAction.playSoundFileNamed(
+  "hitCatLady.wav", waitForCompletion: false)
+
+
+  run(catCollisionSound)
+
+  run(enemyCollisionSound)
+
+
+TODO - show sequence action... for collision...
+<!-- TODO:  review the lesson on collision detection, and expand examples from it, if applicable -->
+
+
+
+
+
+
+
+let soundCarCrashes = [
+  SKAction.playSoundFileNamed("carCrash1.wav", waitForCompletion: false),
+  SKAction.playSoundFileNamed("carCrash2.wav", waitForCompletion: false),
+  SKAction.playSoundFileNamed("carCrash3.wav", waitForCompletion: false),
+]
+
 
 <!-- TODO:  rework these: -->
 
@@ -643,7 +682,16 @@ Key points:
 
 
 
+<!-- TODO: add 2nd form -  SKAction.playSoundFileNamed()? -->
+
+
+
+
+
 Sound Actions...
+
+run(SKAction.playSoundFileNamed("win.wav",
+        waitForCompletion: false))
 
 SKAction.playSoundFileNamed("pop.mp3",
    waitForCompletion: false),
