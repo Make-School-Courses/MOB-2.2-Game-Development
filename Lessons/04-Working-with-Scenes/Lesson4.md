@@ -798,7 +798,38 @@ SKAction.playSoundFileNamed("pop.mp3",
 
 
 
+## Particle emitter
 
+Adding particle systems to your games is an effective way to add special effects. With particle systems you can simulate: water, smoke, fire, snow, stars, sparks, rain, bubbles, explosions, and much more.
+
+How the effect is created is by using a small image texture and a configuration file.
+
+![particle1](assets/particle1.png) ![particle2](assets/particle2.png)
+*Source: 2D Apple Games by Tutorials*
+
+SpriteKit makes it easy to create and use particle systems by giving you a special node nam [ed `SKEmitterNode`, its purpose is to make particle systems and render them as quickly as possible.
+You can create particles programmatically or with the particle editor. The second one is helpful to use since you can make changes to the values making up the particle and see the results being animated.
+
+To do this, you simply create a new file with the iOS/Resource/SpriteKit Particle File template. This will create an .sks file that can be modified with the editor.
+
+Once in code you’ll only need to instantiate the particles with the file and a position. Then add the particle emitter as child in the scene.
+
+```Swift
+let fireEmitter = SKEmitterNode(fileNamed: "Fire.sks")!
+fireEmitter.position = CGPoint(x: 200, y: 200)
+addChild(fireEmitter)
+
+```
+
+You can check what all the properties do [here](particleProperties.md).
+
+## Activity
+
+Create an .sks file for a new particle emitter. You want to add fire to the spaceship as it flies. Play around with all the values of the particle emitter until you’re happy with the result.
+
+This is an example of how it might turn out like:
+
+![particle2](assets/particle2.png)
 
 
 # After Class
