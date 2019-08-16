@@ -31,7 +31,7 @@ Adding juice means tricking out your game with special effects such as:
 - Simple Animation (scaling, rotation, movement, and more)
 - Music and Sound Effects
 - Game Mechanics (including Victory or Game Over Conditions)
-- Particle Effects (explosions, collisions, etc.)
+- Particle Effects (explosions, collisions, fire, etc.)
 - Screen Effects
 
 When every interaction within your game world results in a cascade of visual and audible feedback really adds depth and dimension to the user experience and keeps users coming back for more.
@@ -48,12 +48,20 @@ As you develop your game, you will get in the habit of adding juice to it as you
 
 ## Learning Objectives (5 min)
 
-1. Identify and describe
+1. Identify and describe:
+- What Game Mechanics are and how to implement them
+- The functional relationship between the `SKView` and `SKScene` classes, and how to use them to create new scenes
+- How to create transitions between game scenes using `SKTransition`
+- iOS’s three built-in support mechanisms for playing both sound effects and background music, and how to use them to create sound FX in a game
+- how to work with SpriteKit Particle Effects to create special effects
 1. Define
 1. Design
-1. Implement:
+1. Implement in your running class project, AstroJunk:
+- Background music
+- Sound effects, in response to game events/mechanics
+- Game Mechanics, including a Game Over Scene that reacts to Win/Loss conditions (Victory Conditions)
+- SpriteKit Particle Systems to add explosions/fire in response to game entity events (collisions, etc.)
 
-<!-- - iOS’s built-in support for playing both sound effects and background music -->
 
 
 <!-- From outline reworked on 8/6/19:
