@@ -667,6 +667,13 @@ Using the audio files you gathered in the previous lesson:
 
 # After Class
 
+<!-- Resume: AstroJunk -- add Win / Loss conditions, such as Victory points for capturing debris, or Loss avoidance (negative points for getting hit by bombs/asteroids, or letting debris pass)
+- present GameOverScene, with requisite graphic and sound effects for either (a) Win conditions or (b) Loss conditions...
+- will require adding graphics
+
+Q: Add a menu to allow player to (1) Start Over (2) Go to next level? ...or other?
+-->
+
 Assignments:
 
 1. **Challenge** &mdash; Add the following to your AstroJunk game's Game Over scene:
@@ -674,11 +681,10 @@ Assignments:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a) "Replay" or "Restart" &mdash; which replays the previous level of game just played
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b) "Next Level" &mdash; which offers the user a new level of the game to play (this means you will have to create at least one additional level)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c) "High Scores" &mdash; presenting the user with a list of highest scores so far.
+
 <!-- TODO: get URLS to illustrate adding menus, etc -->
 
-
 <!-- Often, it’s best to start a game with an opening or main menu scene, rather than throw the player right into the action. The main menu often includes options to start a new game, continue a game, access game options and so on. -->
-
 
 2. Review:
 - The "Enabling Visual Statistics for Debugging" section of [SKView - from Apple docs](https://developer.apple.com/documentation/spritekit/skview)
@@ -705,8 +711,6 @@ To rewind an audio player, you change the currentTime property. -->
 
 
 
-https://developer.apple.com/documentation/spritekit/skaudionode
-
 
 
 
@@ -728,23 +732,12 @@ https://www.makeschool.com/academy/track/build-ios-games/clone-angry-birds-with-
 - Complete challenges
 
 
-
-
-<!-- Resume: AstroJunk -- add Win / Loss conditions, such as Victory points for capturing debris, or Loss avoidance (negative points for getting hit by bombs/asteroids, or letting debris pass)
-- present GameOverScene, with requisite graphic and sound effects for either (a) Win conditions or (b) Loss conditions...
-- will require adding graphics
-
-Q: Add a menu to allow player to (1) Start Over (2) Go to next level? ...or other?
--->
-
-
-
 ## Additional Resources
 
 1. [Slides]()
 2. <sup>1</sup> [Game mechanics - wikipedia](https://en.wikipedia.org/wiki/Game_mechanics)
-3. [](https://developer.apple.com/documentation/spritekit/skview)
-4. [](https://developer.apple.com/documentation/spritekit/sktransition)
+3. [SKView - Apple Docs](https://developer.apple.com/documentation/spritekit/skview)
+4. [SKTransition - Apple Docs](https://developer.apple.com/documentation/spritekit/sktransition)
 5. [](https://developer.apple.com/documentation/spritekit/drawing_spritekit_content_in_a_view)
 6. [](https://developer.apple.com/documentation/spritekit/nodes_for_scene_building)
 7. [](https://developer.apple.com/documentation/spritekit/skscene/1519562-scalemode)
@@ -755,21 +748,12 @@ Q: Add a menu to allow player to (1) Start Over (2) Go to next level? ...or othe
 12. [Kerbal Space Program - wikipedia](https://en.wikipedia.org/wiki/Kerbal_Space_Program)
 13. [Game studies - wikipedia](https://en.wikipedia.org/wiki/Game_studies)
 14. [Asteroids (video game) - wikipedia](https://en.wikipedia.org/wiki/Asteroids_(video_game))
-
-
-1. [](https://en.wikipedia.org/wiki/AVFoundation)
-1. [](https://developer.apple.com/av-foundation/)
-1. [](https://developer.apple.com/documentation/avfoundation)
-
-1. [](https://developer.apple.com/documentation/avfoundation/audio_track_engineering)
-1. [](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/AVFoundationPG/Articles/00_Introduction.html)
-1. [](https://www.hackingwithswift.com/read/36/6/background-music-with-skaudionode-an-intro-plus-game-over)
-
-1. [](https://developer.apple.com/documentation/spritekit/skaction/1417664-playsoundfilenamed)
-
-1. []()
-
-1. []()
-
-
-<sup>5</sup> https://developer.apple.com/documentation/spritekit/skscene/1520363-listener  
+15. [AVFoundation - wikipedia](https://en.wikipedia.org/wiki/AVFoundation)
+16. [AVFoundation - Apple Docs](https://developer.apple.com/av-foundation/)
+17. [AVFoundation - Apple Docs](https://developer.apple.com/documentation/avfoundation)
+18. [](https://developer.apple.com/documentation/avfoundation/audio_track_engineering)
+19. [](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/AVFoundationPG/Articles/00_Introduction.html)
+20. [](https://developer.apple.com/documentation/spritekit/skaudionode)
+21. [](https://www.hackingwithswift.com/read/36/6/background-music-with-skaudionode-an-intro-plus-game-over)
+22. [](https://developer.apple.com/documentation/spritekit/skaction/1417664-playsoundfilenamed)
+23. <sup>5</sup> [](https://developer.apple.com/documentation/spritekit/skscene/1520363-listener)
