@@ -422,7 +422,6 @@ override func didMove(to view: SKView) {
 
 <!-- TODO: create and add graphics to show the Win and Loss graphics for the GameOverScene-->
 
-
 <!-- TODO:  challenge: add debugging steps to the SKView object? -->
 
 
@@ -683,15 +682,17 @@ Then, depending on game conditions, you could choose which of the similar effect
 > __*TIP:*__ *As you can imagine, you might also randomize the index of the array, which could allow your game to appear lively by choosing similar sounds, at random, for the same or similar game events.*
 
 
-## In Class Activity II (optional) (30 min)
+## In Class Activity II (30 min)
 
+Let's add audio to AstroJunk...
 
-<!-- TODO:  add bg sound and FX to your game app -->
+### As Individuals
+Using the audio files you gathered in the previous lesson:
 
+- Add background music to be played while the game runs. Make the music stop at Game Over and any other appropriate game states
+- Add sound FX to appropriate game events (collisions, points scored, etc.)
 
-
-
-
+> *If not finished adding all sound during the time allotted, continue adding them after class.*
 
 # After Class
 
