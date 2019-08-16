@@ -470,11 +470,13 @@ But there are important considerations you should be aware of.
 **Considerations** </br>
 Here are a few key points to consider when adding background music:
 
-1. **for long-running files** &mdash; Use `AVAudioPlayer` for playing long-running files such as background music.
+1. **For long-running files** &mdash; Use `AVAudioPlayer` for playing long-running files such as background music.
 
-2. **Prevent sound delays**
+2. **Prevent Sound Delays**
 
 - load files ahead of time, before the sound needs to be played, to avoid playback delays (but weigh this against memory consumption: lots of long-running sound files can eat up memory)
+
+> *Typically music and large audio files should be streamed, if possible. For small sound effects, it’s better to preload them into memory for faster playback.*
 
 3. **Create utility classes** &mdash; for handling audio, including `AVAudioPlayer` functions, loading sound files, and so on
 
@@ -630,7 +632,7 @@ One of the best initial strategies for adding sound to your game is to tie effec
 <!-- TODO: 888 see Game State Management section in ref book on 3D games for ideas on when you would add sound to act as Game State cues  -->
 
 
-**Simple Examples** </br>
+**Simple Example** </br>
 Listed below are several sound actions created with `SKAction.playSoundFileNamed(...)` that one might set as constants in a utility file or in a project's `GameScene` file:
 
 ```Swift
@@ -642,144 +644,43 @@ let soundGameOver = SKAction.playSoundFileNamed("player_die.wav", waitForComplet
 let soundWin = SKAction.playSoundFileNamed("winning.wav", waitForCompletion: false)
 ```
 
-Each sound action will load and play an audio file. Because they were defined before they were needed, they will be preloaded into memory &mdash; which prevents the game from stalling when you play any of them for the first time.
+- Each sound action will load and play an audio file.
+- Because they were defined before they were needed, they will be preloaded into memory &mdash; which prevents the game from stalling when you play any of them for the first time. (Typically music and large audio files should be streamed, but for small sound effects, it’s better to preload them into memory for faster playback.
+)
 
-To play them, pass them to a `run()` function, just as you did with any `SKAction` in the previous lessons:
+To play them, pass them to a `run()` function, just as you did with any `SKAction` in previous lessons:
 
 ```Swift  
 run(wallCollisionSound)
 ```
 
-**Sequence Examples** </br>
+**Sequence Example** </br>
 One of the cool things about sound actions created using `SKAction.playSoundFileNamed(...)` is that you can associate them with a set of actions &mdash; perhaps a set of actions that all occur at the time of some game event &mdash; and include them in group or sequence actions.
 
-Expanding on the set of actions declared in the example above (and assuming that action1 and action2 are SKActions declared somewhere else), we could include a sound action as one of the actions that are executed together as part of a sequence:
+Expanding on the set of actions declared in the example above (and assuming that `action1` and `action2` are `SKActions` declared somewhere else), we could include a sound action as one of the actions that are executed together as part of a sequence:
 
 ```Swift
 let sequenceWallCollisionAction = SKAction.sequence([action1, action2, wallCollisionSound])
 ```
 
+**Random Selection Example** </br>
+To add variety to your game's world, `SKAction.playSoundFileNamed(...)` also let's you set up an array of similar effects from which your code can randomly choose a sound file to play:
 
-
-
-
-...simple version... REWORK THIS...
-
-
-
-
-<!--
-
-let enemyCollisionSound: SKAction = SKAction.playSoundFileNamed(
-  "hitCatLady.wav", waitForCompletion: false) -->
-
-
-
-
-  <!-- run(enemyCollisionSound) -->
-
-
-TODO - show sequence action... for collision...
-<!-- TODO:  review the lesson on collision detection, and expand examples from it, if applicable -->
-
-
-
-
-
-
-
-
+```Swift  
 let soundCarCrashesArray = [
   SKAction.playSoundFileNamed("carCrash1.wav", waitForCompletion: false),
   SKAction.playSoundFileNamed("carCrash2.wav", waitForCompletion: false),
   SKAction.playSoundFileNamed("carCrash3.wav", waitForCompletion: false)
 ]
+```
 
+Then, depending on game conditions, you could choose which of the similar effects to run:
 
-
-
-
-<!-- You also create an array of explosion sound effects that you’ll use to play a random boom. -->
-
-
+```Swift  
  run(soundCarCrashesArray[2])
+```
 
-
-...and as you can imagine, you could also randomize the index, which allow your game to appear lively by choosing similar sounds at random...
-
-
-
-<!-- TODO:  rework these: -->
-
-
-<!-- // Sound Effects
-  let soundBombDrop = SKAction.playSoundFileNamed("bombDrop.wav", waitForCompletion: true)
-  let soundSuperBoost = SKAction.playSoundFileNamed("nitro.wav", waitForCompletion: false)
-  let soundTickTock = SKAction.playSoundFileNamed("tickTock.wav", waitForCompletion: true)
-  let soundBoost = SKAction.playSoundFileNamed("boost.wav", waitForCompletion: false)
-  let soundJump = SKAction.playSoundFileNamed("jump.wav", waitForCompletion: false)
-  let soundCoin = SKAction.playSoundFileNamed("coin1.wav", waitForCompletion: false)
-  let soundBrick = SKAction.playSoundFileNamed("brick.caf", waitForCompletion: false)
-  let soundHitLava = SKAction.playSoundFileNamed("DrownFireBug.mp3", waitForCompletion: false)
-  let soundGameOver = SKAction.playSoundFileNamed("player_die.wav", waitForCompletion: false)
-
-  let soundExplosions = [
-    SKAction.playSoundFileNamed("explosion1.wav", waitForCompletion: false),
-    SKAction.playSoundFileNamed("explosion2.wav", waitForCompletion: false),
-    SKAction.playSoundFileNamed("explosion3.wav", waitForCompletion: false),
-    SKAction.playSoundFileNamed("explosion4.wav", waitForCompletion: false)
-  ] -->
-
-
-<!-- TODO:  show how to call 1 or 2 or those -->
-
-<!-- TODO:  add one of those actions to a sequence -->
-
-
-
-<!-- TODO: add 2nd form -  SKAction.playSoundFileNamed()? -->
-
-
-
-
-
-Sound Actions...
-
-run(SKAction.playSoundFileNamed("win.wav",
-        waitForCompletion: false))
-
-SKAction.playSoundFileNamed("pop.mp3",
-   waitForCompletion: false),
-
-
-<!-- TODO: add examples of adding sounds with SKActions
-
-- and how to call them
-
-- esp. using with other sequences, and as an array of sounds
-
- -->
-
-
-
-
-
-  Key points:
-
-   <!-- Typically music and large audio files should be streamed, but for small sound effects, it’s better to preload them into memory for faster playback. -->
-
-
-  <!--
-
-      preloading into memory...reusing effects...
-   -->
-  <!-- The application is loading the sound the first time you create an action that uses it. So to prevent the sound delay, you can create the actions in advance and then use them when necessary. -->
-
-
-  <!-- Here you define a series of SKAction constants, each of which will load and play a sound file. Because you define these actions before you need them, they are preloaded into memory, which prevents the game from stalling when you play the sounds for the first time.  -->
-
-
-
+> __*TIP:*__ *As you can imagine, you might also randomize the index of the array, which could allow your game to appear lively by choosing similar sounds, at random, for the same or similar game events.*
 
 
 ## In Class Activity II (optional) (30 min)
