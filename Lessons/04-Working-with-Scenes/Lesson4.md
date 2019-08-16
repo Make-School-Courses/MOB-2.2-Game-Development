@@ -572,9 +572,17 @@ After it’s finished playing, a second call to `play()` will rewind it and play
 
 - To stop playback, you use the `pause()` or `stop()` functions <sup>4</sup>
 
-
 __*SKAudioNode Example*__ </br>
-The simplest way to add audio to a SpriteKit scene is to add a child SKAudioNode to it:
+The simplest way to add audio to a SpriteKit scene is to add a child `SKAudioNode` to it.
+
+`SKAudioNode` was introduced in iOS 9 as an alternative to `SKAction.playSoundFileNamed(...)`.
+
+`SKAudioNode` is much more powerful than its alternative:
+- Sounds are played automatically using `AVFoundation`,
+- Can be added as a child to a SpriteKit `SKNode`
+- The node can optionally add 3D spatial audio effects to the audio when it is played (3D audio mixing is added automatically if the attribute `isPositional` is set to `true`), which allows you to pan your audio left and right.
+- It loops its audio file by default.
+- It allows stopping and restarting audio whenever you want.
 
 ```Swift  
 let audioNode = SKAudioNode(fileNamed: "drums.mp3")
@@ -584,24 +592,21 @@ audioNode.run(SKAction.stop()) // 2)
 audioNode.run(SKAction.play()) // 3)
 ```
 
+Let's examine what's happening in the code above:
 
+1) `isPositional` is a Boolean property that indicates whether the node’s audio is altered based on the position of the node.
 
+- The default value is `true`, the audio mixer considers the position and velocity of the `SKAudioNode` relative to scene's current listener<sup>5</sup> node. This means the audio is attached to the node and, if the node moves, the audio moves with it.
 
-`SKAudioNode` has been introduced in iOS 9 and is meant as a replacement for SKAction.playSoundFileNamed(...) as it is much more powerful (You can add it as a child to a SpriteKit SKNode and if the attribute positional is set to true, 3D audio mixing is added automatically).
+- If `false`, then the sound is played normally.
 
-The sounds are played automatically using AVFoundation, and the node can optionally add 3D spatial audio effects to the audio when it is played.
+2) Pass an 1 to the node to stop audio playback.
 
-loops its audio by default.
+3) Restart audio playback.
 
-
-
-pan your audio left and right. For our purposes, however, SKAudioNode is good because it lets us stop the audio whenever we want.
-
-you can also add actions to it...
-
-
-https://developer.apple.com/documentation/spritekit/skscene/using_audio_nodes_with_the_scene_s_listener
-
+*Sources:* </br>
+- https://developer.apple.com/documentation/spritekit/skscene/using_audio_nodes_with_the_scene_s_listener
+- https://tutorials.tinyappco.com/SwiftGames/Sound
 
 
 ### Adding Sound FX
@@ -888,3 +893,6 @@ Q: Add a menu to allow player to (1) Start Over (2) Go to next level? ...or othe
 1. []()
 
 1. []()
+
+
+<sup>5</sup> https://developer.apple.com/documentation/spritekit/skscene/1520363-listener  
