@@ -627,33 +627,7 @@ One of the best initial strategies for adding sound to your game is to tie effec
 - Loot, powers or weapons acquired
 
 
-
-
-888
-
-<!-- TODO: see Game State Management section in ref book on 3D games for ideas on when you would add sound to act as Game State cues  -->
-
-
-
-
- Key points:
-
-  <!-- Typically music and large audio files should be streamed, but for small sound effects, it’s better to preload them into memory for faster playback. -->
-
-
- <!--
-
-     preloading into memory...reusing effects...
-  -->
- <!-- The application is loading the sound the first time you create an action that uses it. So to prevent the sound delay, you can create the actions in advance and then use them when necessary. -->
-
-
- <!-- Here you define a series of SKAction constants, each of which will load and play a sound file. Because you define these actions before you need them, they are preloaded into memory, which prevents the game from stalling when you play the sounds for the first time.  -->
-
-
-
-
-
+<!-- TODO: 888 see Game State Management section in ref book on 3D games for ideas on when you would add sound to act as Game State cues  -->
 
 
 **Simple Examples** </br>
@@ -786,6 +760,23 @@ SKAction.playSoundFileNamed("pop.mp3",
 
  -->
 
+
+
+
+
+  Key points:
+
+   <!-- Typically music and large audio files should be streamed, but for small sound effects, it’s better to preload them into memory for faster playback. -->
+
+
+  <!--
+
+      preloading into memory...reusing effects...
+   -->
+  <!-- The application is loading the sound the first time you create an action that uses it. So to prevent the sound delay, you can create the actions in advance and then use them when necessary. -->
+
+
+  <!-- Here you define a series of SKAction constants, each of which will load and play a sound file. Because you define these actions before you need them, they are preloaded into memory, which prevents the game from stalling when you play the sounds for the first time.  -->
 
 
 
