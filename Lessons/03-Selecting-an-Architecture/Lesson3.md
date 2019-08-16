@@ -218,7 +218,7 @@ The chief drawback of component-based architecture is the increase in Level Of E
 ## In Class Activity I (30 min)
 
 ### Individually
-So far, we've applied no special thought to the design of the game objects in you AstroJunk app. We could say that we've only applied some generic OOP concepts to it &mdash; or maybe just the very basic tenets of MVC.
+So far, we've applied very little thought to the architecutural design of the game objects in your AstroJunk app. We could say that we've only applied some generic OOP concepts to it &mdash; or maybe just the very basic tenets of MVC.
 
 **TODO:**
 Your assignment is to apply what you've learned so far about inheritance-based architecture to your AstroJunk app code base by refactoring your game objects so that they now derive from an initial base class:

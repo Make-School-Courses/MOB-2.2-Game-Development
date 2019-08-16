@@ -230,7 +230,7 @@ Creating a new SpriteKit scene requires only these simple steps:
 - `init(size:)` &mdash; or a custom initializer
 - `update(_:)`
 - `didMove(to:)` and/or other `SKScene` lifecycle methods
-- Functions for Touches or Movement
+- Functions for Touches or Movement *(Hint: Review Touch Events sections of Lesson 2 &mdash; Actions)*
 
 3. Then load and present it at the desired place in your code
 - New scenes are often loaded in either a ViewController's lifecycle method or in some function in the default `GameScene` class, including its `update(_:)` or `SKScene` lifecycle methods. But where your new scene is loaded and presented depends on your app's own requirements.
@@ -437,15 +437,26 @@ One of the biggest mistakes a game developer can make is to underestimate the po
 When a game includes awesome sound effects that respond to visible gameplay elements and great-sounding background music, players become immersed in the game's world.
 
 ### Sound in SpriteKit apps
-<!-- Thank goodness the good folks at Apple realize the importance of sound! They added some really cool sound capabilities into SceneKit. -->
+Thankfully, the good folks at Apple realize the importance of sound! They've included some really flexible, really cool sound capabilities in SpriteKit...
 
-iOS supports two built-in functional mechanisms in SpriteKit for including sound effects and music in your game:
+iOS supports three built-in functional mechanisms in SpriteKit for including sound effects and music in your game:
 
-1. `AVAudioPlayer` - Part of the `AVFoundation` framework. It's an audio player that provides playback of audio data from a file or from memory.
+1. `AVAudioPlayer` &mdash; Part of the `AVFoundation` framework. It's an audio player that provides playback of audio data from a file or from memory.
+- Gives you the most power and control over audio playback.
+- Requires the most work to implement.
 
-2. `SKAudioNode` &mdash; A subclass of `SKNode` that plays audio. `SKAudioNode` allows you to create sound *actions* &mdash; subclasses of `SKAction` that you can use to control your sound effects which can be implemented like any other `SKAction` (including participation in group or sequence actions).
+2. `SKAction` &mdash; Allows you to create sound *actions* &mdash; subclasses of `SKAction` that you can use to control your sound effects which can be implemented like any other `SKAction` (including participation in group or sequence actions).
 
-`SKAudioNode` is easier to implement, but `AVAudioPlayer` provides more power and control.
+- Best for short, one-time audio clips (not as good for background music or other long-playing sound files)
+- Audio actions are instantaneous, which makes them more useful when chaining or reusing `SKAction` objects.
+
+3. `SKAudioNode` &mdash; A subclass of `SKNode` that plays audio.
+- Good for background music or other audio for which you might want to control stop and start.
+- Can also be used for Sound FX.
+- Because it is a subclass of `SKNode`, you can also manipulate it by passing `SKAction` objects to it.
+- Affords more power and control than `SKAction`, but has fewer controlling functions than `AVAudioPlayer`.
+
+*Sources: Various Apple Docs*
 
 ### Adding Background Music
 Music plays an important part in setting the pace and emotional tone of a movie.
@@ -456,6 +467,7 @@ And adding background music to your game is easy.
 
 But there are important considerations you should be aware of.
 
+**Considerations** </br>
 Here are a few key points to consider when adding background music:
 
 1. **for long-running files** &mdash; Use `AVAudioPlayer` for playing long-running files such as background music.
@@ -474,8 +486,12 @@ Here are a few key points to consider when adding background music:
 - see ref books for ideas and coverage  
 -->
 
-**Implementation Example** </br>
-This simple, non-working code snippet illustrates the key steps needed to add background music to a game app:
+**Two Implementation Options** </br>
+1. `AVAudioPlayer` provides more power and control.
+2. `SKAudioNode` is easier to implement
+
+__*AVAudioPlayer Example*__ </br>
+This simple, non-working code snippet illustrates the key steps needed to add background music to a game app by implementing an instance of `AVAudioPlayer`:
 
 ```Swift  
 import AVFoundation // 1)
@@ -557,33 +573,53 @@ After it’s finished playing, a second call to `play()` will rewind it and play
 - To stop playback, you use the `pause()` or `stop()` functions <sup>4</sup>
 
 
+__*SKAudioNode Example*__ </br>
+The simplest way to add audio to a SpriteKit scene is to add a child SKAudioNode to it:
+
+```Swift  
+let audioNode = SKAudioNode(fileNamed: "drums.mp3")
+spriteKitViewController.scene.addChild(audioNode)
+audioNode.isPositional = false // 1)
+audioNode.run(SKAction.stop()) // 2)
+audioNode.run(SKAction.play()) // 3)
+```
+
+
+
+
+`SKAudioNode` has been introduced in iOS 9 and is meant as a replacement for SKAction.playSoundFileNamed(...) as it is much more powerful (You can add it as a child to a SpriteKit SKNode and if the attribute positional is set to true, 3D audio mixing is added automatically).
+
+The sounds are played automatically using AVFoundation, and the node can optionally add 3D spatial audio effects to the audio when it is played.
+
+loops its audio by default.
+
+
+
+pan your audio left and right. For our purposes, however, SKAudioNode is good because it lets us stop the audio whenever we want.
+
+you can also add actions to it...
+
+
+https://developer.apple.com/documentation/spritekit/skscene/using_audio_nodes_with_the_scene_s_listener
+
+
+
 ### Adding Sound FX
-Sound effects can also significantly enhance user immersion in your game world.
+Adding sounds effects that play at just the right moments is another great way to add "juice" to your game, as they can also significantly enhance user immersion in your game's world.
 
-Adding sounds effects that play at just the right moments is another great way to add "juice" to your game.
+One of the best initial strategies for adding sound to your game is to tie effects to game events. Examples:
 
-One of the best initial strategies for adding sound is to tie the effects to game events. Examples:
+1. **Game State events** &mdash; which can include:
+- Game start
+- Game over (Win/Lose conditions)
+- New game level achieved
+- Game progress is paused
+- Game reload from a saved state
 
-1. Game State events:
-
-- game start
-
-- game over (Win/Lose conditions)
-
-- new game level achieved
-
-- game progress is paused
-
-- game reload from a saved state
-
-2. Player events:
-
-- collisions
-
-- points scored
-
-
-
+2. **Player events** &mdash; such as:
+- Collisions
+- Points scored
+- Loot, powers or weapons acquired
 
 
 
@@ -594,24 +630,28 @@ One of the best initial strategies for adding sound is to tie the effects to gam
 
 
 
-<!-- TODO: first, tie sound effects to events, including Game State, but also collisions, etc. -->
+
+ Key points:
+
+  <!-- Typically music and large audio files should be streamed, but for small sound effects, it’s better to preload them into memory for faster playback. -->
 
 
-Key points:
+ <!--
 
- <!-- Typically music and large audio files should be streamed, but for small sound effects, it’s better to preload them into memory for faster playback. -->
-
-
-<!--
-
-    preloading into memory...reusing effects...
- -->
-<!-- The application is loading the sound the first time you create an action that uses it. So to prevent the sound delay, you can create the actions in advance and then use them when necessary. -->
+     preloading into memory...reusing effects...
+  -->
+ <!-- The application is loading the sound the first time you create an action that uses it. So to prevent the sound delay, you can create the actions in advance and then use them when necessary. -->
 
 
-<!-- Here you define a series of SKAction constants, each of which will load and play a sound file. Because you define these actions before you need them, they are preloaded into memory, which prevents the game from stalling when you play the sounds for the first time.  -->
+ <!-- Here you define a series of SKAction constants, each of which will load and play a sound file. Because you define these actions before you need them, they are preloaded into memory, which prevents the game from stalling when you play the sounds for the first time.  -->
 
 
+
+
+
+
+
+**Simple Examples** </br>
 
 
 let soundGameStart = SKAction.playSoundFileNamed("gameStart.wav", waitForCompletion: true)
@@ -624,18 +664,25 @@ let soundWin = SKAction.playSoundFileNamed("winning.wav", waitForCompletion: fal
 ...by now, this should be familiar from previous lesson on SKActions...
 
 
+<!-- Here you define a series of SKAction constants, each of which will load and play a sound file. Because you define these actions before you need them, they are preloaded into memory, which prevents the game from stalling when you play the sounds for the first time.  -->
+
+
 
 ...simple version... REWORK THIS...
 
-let catCollisionSound: SKAction = SKAction.playSoundFileNamed(
-  "hitCat.wav", waitForCompletion: false)
+let wallCollisionSound: SKAction = SKAction.playSoundFileNamed(
+  "hitWall.wav", waitForCompletion: false)
+
+
+<!--
+
 let enemyCollisionSound: SKAction = SKAction.playSoundFileNamed(
-  "hitCatLady.wav", waitForCompletion: false)
+  "hitCatLady.wav", waitForCompletion: false) -->
 
 
-  run(catCollisionSound)
+  run(wallCollisionSound)
 
-  run(enemyCollisionSound)
+  <!-- run(enemyCollisionSound) -->
 
 
 TODO - show sequence action... for collision...
@@ -644,14 +691,30 @@ TODO - show sequence action... for collision...
 
 
 
+let sequenceWallCollisionAction = SKAction.sequence([action1, action2, wallCollisionSound])
 
 
 
-let soundCarCrashes = [
+
+
+let soundCarCrashesArray = [
   SKAction.playSoundFileNamed("carCrash1.wav", waitForCompletion: false),
   SKAction.playSoundFileNamed("carCrash2.wav", waitForCompletion: false),
-  SKAction.playSoundFileNamed("carCrash3.wav", waitForCompletion: false),
+  SKAction.playSoundFileNamed("carCrash3.wav", waitForCompletion: false)
 ]
+
+
+
+
+
+<!-- You also create an array of explosion sound effects that you’ll use to play a random boom. -->
+
+
+ run(soundCarCrashesArray[2])
+
+
+...and as you can imagine, you could also randomize the index, which allow your game to appear lively by choosing similar sounds at random...
+
 
 
 <!-- TODO:  rework these: -->
@@ -718,6 +781,8 @@ SKAction.playSoundFileNamed("pop.mp3",
 
 
 
+
+
 # After Class
 
 Assignments:
@@ -743,6 +808,9 @@ Assignments:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - stop
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - pause
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - rewind
+- SpriteKit's Scene Editor [Introduction to the SpriteKit Scene Editor - a tutorial by Ray Wenderlich](https://www.raywenderlich.com/620-introduction-to-the-spritekit-scene-editor) and [Creating a Scene from a File - Apple docs](https://developer.apple.com/documentation/spritekit/skscene/creating_a_scene_from_a_file)
+
+
 
 
 
