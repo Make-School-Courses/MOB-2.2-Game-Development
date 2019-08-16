@@ -19,7 +19,8 @@
 | 1:45        | 0:05      | Wrap up review objectives |
 | TOTAL       | 1:50      | -                         |
 
-## Why you should know this or industry application (optional) (5 min)
+## Why you should know this or industry application (5 min)
+
 
 Explain why students should care to learn the material presented in this class.
 
@@ -46,10 +47,17 @@ Explain why students should care to learn the material presented in this class.
 
 888
 
-
+<!-- TODO:  Describe "Juice" more fully... -->
 <!-- To push your game to that next level, you absolutely have to add something known as juice. Juice will give your game that little something special, just to make it stand out above the rest. -->
 
-<!-- TODO:  Describe "Juice" more fully... -->
+<!-- The key to making a hit game is polish — adding loads of well- considered details that set your game apart.
+
+
+polishing your game with special effects — otherwise known as adding “Juice” ...
+
+ou’ll trick out your game with music, sound, animation, more particles and other special effects, -->
+
+
 
 <!--
 The great thing about juice is that you don’t need to have a large art budget or hire expensive consultants with impressive resumes. Instead, you can use particle effects, music, sound effects and simple animation effects — such as scaling, rotation and movement. Most of these things are already in your toolkit; others, like music and sound effects, you can find online or create with free or inexpensive software. This is wonderful news for programmers like you and me!
@@ -59,12 +67,6 @@ On their own, none of these effects are terribly exciting, but when combined, ev
 
 
 
-<!-- The key to making a hit game is polish — adding loads of well- considered details that set your game apart.
-
-
-polishing your game with special effects — otherwise known as adding “Juice” ...
-
-ou’ll trick out your game with music, sound, animation, more particles and other special effects, -->
 
 
 <!-- TODO:  Describe why you need to Work with Games and add "Juice"... -->
