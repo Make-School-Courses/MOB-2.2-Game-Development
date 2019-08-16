@@ -578,8 +578,8 @@ The simplest way to add audio to a SpriteKit scene is to add a child `SKAudioNod
 `SKAudioNode` was introduced in iOS 9 as an alternative to `SKAction.playSoundFileNamed(...)`.
 
 `SKAudioNode` is much more powerful than its alternative:
-- Sounds are played automatically using `AVFoundation`,
-- Can be added as a child to a SpriteKit `SKNode`
+- Sounds are played automatically using `AVFoundation`.
+- Can be added as a child to a SpriteKit `SKNode`.
 - The node can optionally add 3D spatial audio effects to the audio when it is played (3D audio mixing is added automatically if the attribute `isPositional` is set to `true`), which allows you to pan your audio left and right.
 - It loops its audio file by default.
 - It allows stopping and restarting audio whenever you want.
@@ -600,7 +600,7 @@ Let's examine what's happening in the code above:
 
 - If `false`, then the sound is played normally.
 
-2) Pass an 1 to the node to stop audio playback.
+2) Pass an `SKAction` to the node to stop audio playback.
 
 3) Restart audio playback.
 
@@ -657,26 +657,41 @@ One of the best initial strategies for adding sound to your game is to tie effec
 
 
 **Simple Examples** </br>
+Listed below are several sound actions created with `SKAction.playSoundFileNamed(...)` that one might set as constants in a utility file or in a project's `GameScene` file:
 
-
+```Swift
 let soundGameStart = SKAction.playSoundFileNamed("gameStart.wav", waitForCompletion: true)
 let soundCoinDrop = SKAction.playSoundFileNamed("coinDrop.wav", waitForCompletion: true)
 let soundPointScored = SKAction.playSoundFileNamed("pointScored.wav", waitForCompletion: true)
+let wallCollisionSound: SKAction = SKAction.playSoundFileNamed("hitWall.wav", waitForCompletion: false)
 let soundGameOver = SKAction.playSoundFileNamed("player_die.wav", waitForCompletion: false)
 let soundWin = SKAction.playSoundFileNamed("winning.wav", waitForCompletion: false)
+```
+
+Each sound action will load and play an audio file. Because they were defined before they were needed, they will be preloaded into memory &mdash; which prevents the game from stalling when you play any of them for the first time.
+
+To play them, pass them to a `run()` function, just as you did with any `SKAction` in the previous lessons:
+
+```Swift  
+run(wallCollisionSound)
+```
+
+**Sequence Examples** </br>
+One of the cool things about sound actions created using `SKAction.playSoundFileNamed(...)` is that you can associate them with a set of actions &mdash; perhaps a set of actions that all occur at the time of some game event &mdash; and include them in group or sequence actions.
+
+Expanding on the set of actions declared in the example above (and assuming that action1 and action2 are SKActions declared somewhere else), we could include a sound action as one of the actions that are executed together as part of a sequence:
+
+```Swift
+let sequenceWallCollisionAction = SKAction.sequence([action1, action2, wallCollisionSound])
+```
 
 
-...by now, this should be familiar from previous lesson on SKActions...
-
-
-<!-- Here you define a series of SKAction constants, each of which will load and play a sound file. Because you define these actions before you need them, they are preloaded into memory, which prevents the game from stalling when you play the sounds for the first time.  -->
 
 
 
 ...simple version... REWORK THIS...
 
-let wallCollisionSound: SKAction = SKAction.playSoundFileNamed(
-  "hitWall.wav", waitForCompletion: false)
+
 
 
 <!--
@@ -685,7 +700,7 @@ let enemyCollisionSound: SKAction = SKAction.playSoundFileNamed(
   "hitCatLady.wav", waitForCompletion: false) -->
 
 
-  run(wallCollisionSound)
+
 
   <!-- run(enemyCollisionSound) -->
 
@@ -695,8 +710,6 @@ TODO - show sequence action... for collision...
 
 
 
-
-let sequenceWallCollisionAction = SKAction.sequence([action1, action2, wallCollisionSound])
 
 
 
