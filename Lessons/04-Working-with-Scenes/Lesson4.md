@@ -54,9 +54,8 @@ As you develop your game, you will get in the habit of adding juice to it as you
 - How to create transitions between game scenes using `SKTransition`
 - iOS’s three built-in support mechanisms for playing both sound effects and background music, and how to use them to create sound FX in a game
 - how to work with SpriteKit Particle Effects to create special effects
-1. Define
-1. Design
-1. Implement in your running class project, AstroJunk:
+
+2. Implement in your running class project, AstroJunk:
 - Background music
 - Sound effects, in response to game events/mechanics
 - Game Mechanics, including a Game Over Scene that reacts to Win/Loss conditions (Victory Conditions)
@@ -711,11 +710,6 @@ To rewind an audio player, you change the currentTime property. -->
 
 
 
-
-
-
-
-
 <!--
 TODO: Create a new scene (which?) using SpriteKit Scene Editor?
 https://developer.apple.com/documentation/spritekit/skscene/creating_a_scene_from_a_file -->
@@ -727,7 +721,7 @@ https://www.makeschool.com/academy/track/build-ios-games/clone-angry-birds-with-
 
 ## Wrap Up (5 min)
 
-- Continue working on your current tutorial
+- Pay close attention to After Class assignments &mdash; continue developing AstroJunk by completing today's assignments and activities after class
 - Complete reading
 - Complete challenges
 
@@ -756,4 +750,4 @@ https://www.makeschool.com/academy/track/build-ios-games/clone-angry-birds-with-
 20. [SKAudioNode - Apple Docs](https://developer.apple.com/documentation/spritekit/skaudionode)
 21. [Background music with SKAudioNode, an intro, plus game over - an article](https://www.hackingwithswift.com/read/36/6/background-music-with-skaudionode-an-intro-plus-game-over)
 22. [`playSoundFileNamed(_:waitForCompletion:)` - Apple Docs](https://developer.apple.com/documentation/spritekit/skaction/1417664-playsoundfilenamed)
-23. [listener (property) - Apple docs](https://developer.apple.com/documentation/spritekit/skscene/1520363-listener)
+23. [`listener` (property) - Apple docs](https://developer.apple.com/documentation/spritekit/skscene/1520363-listener)
