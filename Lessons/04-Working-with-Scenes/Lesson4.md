@@ -46,6 +46,7 @@ Explain why students should care to learn the material presented in this class.
 
 888
 
+<!-- TODO:  Describe "Juice" more fully... -->
 
 <!--
 The great thing about juice is that you don’t need to have a large art budget or hire expensive consultants with impressive resumes. Instead, you can use particle effects, music, sound effects and simple animation effects — such as scaling, rotation and movement. Most of these things are already in your toolkit; others, like music and sound effects, you can find online or create with free or inexpensive software. This is wonderful news for programmers like you and me!
@@ -435,17 +436,11 @@ When a game includes awesome sound effects that respond to visible gameplay elem
 
 iOS supports two built-in functional mechanisms in SpriteKit for including sound effects and music in your game:
 
-1. `AVAudioPlayer` - Part of the `AVFoundation` framework. It's an audio player that provides playback of audio data from a file or memory.
+1. `AVAudioPlayer` - Part of the `AVFoundation` framework. It's an audio player that provides playback of audio data from a file or from memory.
 
 2. `SKAudioNode` &mdash; A subclass of `SKNode` that plays audio. `SKAudioNode` allows you to create sound *actions* &mdash; subclasses of `SKAction` that you can use to control your sound effects which can be implemented like any other `SKAction` (including participation in group or sequence actions).
 
 `SKAudioNode` is easier to implement, but `AVAudioPlayer` provides more power and control.
-
-You'll want to use `AVAudioPlayer` for playing long-running sound files like background music.
-
-
-<!-- TODO:  Describe "Juice" more fully... -->
-
 
 ### Adding Background Music
 Music plays an important part in setting the pace and emotional tone of a movie.
@@ -458,15 +453,15 @@ But there are important considerations you should be aware of.
 
 Here are a few key points to consider when adding background music:
 
-1. Use `AVAudioPlayer` for playing long-running files such as background music.
+1. **for long-running files** &mdash; Use `AVAudioPlayer` for playing long-running files such as background music.
 
-2. Prevent sound delays:
+2. **Prevent sound delays**
 
 - load files ahead of time, before the sound needs to be played, to avoid playback delays (but weigh this against memory consumption: lots of long-running sound files can eat up memory)
 
-3. Create utility classes &mdash; for handling audio, including `AVAudioPlayer` functions, loading sound files, and so on
+3. **Create utility classes** &mdash; for handling audio, including `AVAudioPlayer` functions, loading sound files, and so on
 
-4. Use Asset Catalogs &mdash; To organize audio files, create a sound folder inside an Asset Catalog and store files there for loading
+4. **Use Asset Catalogs** &mdash; To organize audio files, create a sound folder inside an Asset Catalog and store files there for loading
 
 
 <!-- TODO: add more key points..
@@ -474,7 +469,7 @@ Here are a few key points to consider when adding background music:
 - see ref books for ideas and coverage  
 -->
 
-**Illustrating Example**
+**Implementation Example** </br>
 This simple, non-working code snippet illustrates the key steps needed to add background music to a game app:
 
 ```Swift  
@@ -520,9 +515,9 @@ Let's breakdown the key events in this code snippet:
 
 3) We want to pass the location (as a URL) of whatever file we want to play to the `AVAudioPlayer` variable:
 
-- And to get the location of the file, we use the `Bundle` class’s `url(forResource:, withExtension:)` function because it allows us to access the location of __*any*__ resource that has been added to the app’s Xcode target
+- To get the location of the file, we use the `Bundle` class’s `url(forResource:, withExtension:)` function because it allows us to access the location of __*any*__ resource that has been added to the app’s Xcode target
 
-4) Here, we pass the location of the file to play to the `AVAudioPlayer` instance, handling any of the typical file I/O errors that can occur
+4) Here, we pass the location of the file to play to the `AVAudioPlayer` instance, handling any of the typical file I/O errors that are commonly-known to occur
 
 5) To loop playback, you change the `numberOfLoops`<sup>4</sup> property on your `AVAudioPlayer` instance:
 
