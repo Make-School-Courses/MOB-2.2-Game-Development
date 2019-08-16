@@ -555,7 +555,7 @@ After it’s finished playing, a second call to `play()` will rewind it and play
 - To stop playback, you use the `pause()` or `stop()` functions <sup>4</sup>
 
 
-### Adding Sound Effects
+### Adding Sound FX
 Sound effects can also significantly enhance user immersion in your game world.
 
 Adding sounds effects that play at just the right moments is another great way to add "juice" to your game.
