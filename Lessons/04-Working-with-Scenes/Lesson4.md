@@ -137,7 +137,7 @@ Discuss these topics related to **Game Mechanics ...**
 -->
 
 
-## Working with Scenes [Overview/TT I] (20 min)
+## Working with Scenes &mdash; [Overview/TT I] (20 min)
 Up to now, you've been working with game environments comprised of only a single scene.
 
 This is fine for learning how to add basic functionality like elements and actions.
@@ -422,7 +422,7 @@ override func didMove(to view: SKView) {
 
 
 
-## Sound [Overview/TT II]  (20 min)
+## Sound &mdash; [Overview/TT II]  (20 min)
 > George Lucas, the creator of the *Star Wars* movies, once famously said: "The sound and music are 50% of the entertainment in a movie." <sup>3</br>
 
 It's just as important in game apps.
