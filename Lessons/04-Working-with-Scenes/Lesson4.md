@@ -3,7 +3,8 @@
 <!-- INSTRUCTOR NOTES:
 1) For Initial Exercise:
 - there are some ideas below the exercise that could guide or prompt discourse, in the event students do not proffer topic discussion on their own
-
+2) for Activity 1:
+- there are also some ideas for discussion (as possible solutions) hidden in comments below the exercise
 -->
 
 
@@ -20,77 +21,46 @@
 | TOTAL       | 1:50      | -                         |
 
 ## Why you should know this or industry application (5 min)
+The key to making a popular game app is polish: adding loads of well-considered details that set your game apart and bring it to life.
 
+To push your game to that next level &mdash; to really entertain and delight your users, to get them to engage with your game &mdash; you absolutely *must* add what is known as __*"juice."*__
 
-Explain why students should care to learn the material presented in this class.
+Adding juice means tricking out your game with special effects such as:
+
+- Scenes and Scene Transitions
+- Simple Animation (scaling, rotation, movement, and more)
+- Music and Sound Effects
+- Game Mechanics (including Victory or Game Over Conditions)
+- Particle Effects (explosions, collisions, fire, etc.)
+- Screen Effects
+
+When every interaction within your game world results in a cascade of visual and audible feedback really adds depth and dimension to the user experience and keeps users coming back for more.
+
+As you develop your game, you will get in the habit of adding juice to it as you go...
+
+> Most of the tools to create the special effects listed above are already in your iOS toolkit; others, such as music and sound effects, can be found online or created with free or inexpensive software
+
 
 <!-- TODO:  Describe "Juice" here -- it is an umbrella under which all topics in the outline for this lesson fit properly -->
 
 <!-- TODO: search ref books 1 and 2 for ideas on how to describe, exemplify "juice" -->
 
 
-<!-- TODO: list the types of Juice -- see Ref books for ideas:
-
-- sound Effects
-- scenes
-- game mechanics, including Victory or Game Over Conditions
-- Partical Physics
-- screen Effects
-
-
-
-...add Game Mechanics
-
-...and these leads directly into the Learning Objectives...
-
- -->
-
-888
-
-<!-- TODO:  Describe "Juice" more fully... -->
-<!-- To push your game to that next level, you absolutely have to add something known as juice. Juice will give your game that little something special, just to make it stand out above the rest. -->
-
-<!-- The key to making a hit game is polish — adding loads of well- considered details that set your game apart.
-
-
-polishing your game with special effects — otherwise known as adding “Juice” ...
-
-ou’ll trick out your game with music, sound, animation, more particles and other special effects, -->
-
-
-
-<!--
-The great thing about juice is that you don’t need to have a large art budget or hire expensive consultants with impressive resumes. Instead, you can use particle effects, music, sound effects and simple animation effects — such as scaling, rotation and movement. Most of these things are already in your toolkit; others, like music and sound effects, you can find online or create with free or inexpensive software. This is wonderful news for programmers like you and me!
-
-
-On their own, none of these effects are terribly exciting, but when combined, every interaction within the game world results in a cascade of visual and audible feedback that keeps players coming back for more. That is what it means to make your game juicy. -->
-
-
-
-
-
-<!-- TODO:  Describe why you need to Work with Games and add "Juice"... -->
-
-<!-- to really engage your users and hold their interest...add:
-
-to really add depth and dimension to the user experience.
-
-But to really entertain and delight your users &mdash; to get users to engage with your game...
-
-- Scenes
-- "Juice" -->
-
-<!-- TODO: Ending: "As you develop your game, you will add Juice to it as you go..." -->
-
-
 ## Learning Objectives (5 min)
 
-1. Identify and describe
-1. Define
-1. Design
-1. Implement:
+1. Identify and describe:
+- What Game Mechanics are and how to implement them
+- The functional relationship between the `SKView` and `SKScene` classes, and how to use them to create new scenes
+- How to create transitions between game scenes using `SKTransition`
+- iOS’s three built-in support mechanisms for playing both sound effects and background music, and how to use them to create sound FX in a game
+- how to work with SpriteKit Particle Effects to create special effects
 
-<!-- - iOS’s built-in support for playing both sound effects and background music -->
+2. Implement in your running class project, AstroJunk:
+- Background music
+- Sound effects, in response to game events/mechanics
+- Game Mechanics, including a Game Over Scene that reacts to Win/Loss conditions (Victory Conditions)
+- SpriteKit Particle Systems to add explosions/fire in response to game entity events (collisions, etc.)
+
 
 
 <!-- From outline reworked on 8/6/19:
@@ -422,7 +392,6 @@ override func didMove(to view: SKView) {
 
 <!-- TODO: create and add graphics to show the Win and Loss graphics for the GameOverScene-->
 
-
 <!-- TODO:  challenge: add debugging steps to the SKView object? -->
 
 
@@ -470,11 +439,13 @@ But there are important considerations you should be aware of.
 **Considerations** </br>
 Here are a few key points to consider when adding background music:
 
-1. **for long-running files** &mdash; Use `AVAudioPlayer` for playing long-running files such as background music.
+1. **For long-running files** &mdash; Use `AVAudioPlayer` for playing long-running files such as background music.
 
-2. **Prevent sound delays**
+2. **Prevent Sound Delays**
 
 - load files ahead of time, before the sound needs to be played, to avoid playback delays (but weigh this against memory consumption: lots of long-running sound files can eat up memory)
+
+> *Typically music and large audio files should be streamed, if possible. For small sound effects, it’s better to preload them into memory for faster playback.*
 
 3. **Create utility classes** &mdash; for handling audio, including `AVAudioPlayer` functions, loading sound files, and so on
 
@@ -627,36 +598,10 @@ One of the best initial strategies for adding sound to your game is to tie effec
 - Loot, powers or weapons acquired
 
 
+<!-- TODO: 888 see Game State Management section in ref book on 3D games for ideas on when you would add sound to act as Game State cues  -->
 
 
-888
-
-<!-- TODO: see Game State Management section in ref book on 3D games for ideas on when you would add sound to act as Game State cues  -->
-
-
-
-
- Key points:
-
-  <!-- Typically music and large audio files should be streamed, but for small sound effects, it’s better to preload them into memory for faster playback. -->
-
-
- <!--
-
-     preloading into memory...reusing effects...
-  -->
- <!-- The application is loading the sound the first time you create an action that uses it. So to prevent the sound delay, you can create the actions in advance and then use them when necessary. -->
-
-
- <!-- Here you define a series of SKAction constants, each of which will load and play a sound file. Because you define these actions before you need them, they are preloaded into memory, which prevents the game from stalling when you play the sounds for the first time.  -->
-
-
-
-
-
-
-
-**Simple Examples** </br>
+**Simple Example** </br>
 Listed below are several sound actions created with `SKAction.playSoundFileNamed(...)` that one might set as constants in a utility file or in a project's `GameScene` file:
 
 ```Swift
@@ -668,136 +613,56 @@ let soundGameOver = SKAction.playSoundFileNamed("player_die.wav", waitForComplet
 let soundWin = SKAction.playSoundFileNamed("winning.wav", waitForCompletion: false)
 ```
 
-Each sound action will load and play an audio file. Because they were defined before they were needed, they will be preloaded into memory &mdash; which prevents the game from stalling when you play any of them for the first time.
+- Each sound action will load and play an audio file.
+- Because they were defined before they were needed, they will be preloaded into memory &mdash; which prevents the game from stalling when you play any of them for the first time. (Typically music and large audio files should be streamed, but for small sound effects, it’s better to preload them into memory for faster playback.
+)
 
-To play them, pass them to a `run()` function, just as you did with any `SKAction` in the previous lessons:
+To play them, pass them to a `run()` function, just as you did with any `SKAction` in previous lessons:
 
 ```Swift  
 run(wallCollisionSound)
 ```
 
-**Sequence Examples** </br>
+**Sequence Example** </br>
 One of the cool things about sound actions created using `SKAction.playSoundFileNamed(...)` is that you can associate them with a set of actions &mdash; perhaps a set of actions that all occur at the time of some game event &mdash; and include them in group or sequence actions.
 
-Expanding on the set of actions declared in the example above (and assuming that action1 and action2 are SKActions declared somewhere else), we could include a sound action as one of the actions that are executed together as part of a sequence:
+Expanding on the set of actions declared in the example above (and assuming that `action1` and `action2` are `SKActions` declared somewhere else), we could include a sound action as one of the actions that are executed together as part of a sequence:
 
 ```Swift
 let sequenceWallCollisionAction = SKAction.sequence([action1, action2, wallCollisionSound])
 ```
 
+**Random Selection Example** </br>
+To add variety to your game's world, `SKAction.playSoundFileNamed(...)` also let's you set up an array of similar effects from which your code can randomly choose a sound file to play:
 
-
-
-
-...simple version... REWORK THIS...
-
-
-
-
-<!--
-
-let enemyCollisionSound: SKAction = SKAction.playSoundFileNamed(
-  "hitCatLady.wav", waitForCompletion: false) -->
-
-
-
-
-  <!-- run(enemyCollisionSound) -->
-
-
-TODO - show sequence action... for collision...
-<!-- TODO:  review the lesson on collision detection, and expand examples from it, if applicable -->
-
-
-
-
-
-
-
-
+```Swift  
 let soundCarCrashesArray = [
   SKAction.playSoundFileNamed("carCrash1.wav", waitForCompletion: false),
   SKAction.playSoundFileNamed("carCrash2.wav", waitForCompletion: false),
   SKAction.playSoundFileNamed("carCrash3.wav", waitForCompletion: false)
 ]
+```
 
+Then, depending on game conditions, you could choose which of the similar effects to run:
 
-
-
-
-<!-- You also create an array of explosion sound effects that you’ll use to play a random boom. -->
-
-
+```Swift  
  run(soundCarCrashesArray[2])
+```
+
+> __*TIP:*__ *As you can imagine, you might also randomize the index of the array, which could allow your game to appear lively by choosing similar sounds, at random, for the same or similar game events.*
 
 
-...and as you can imagine, you could also randomize the index, which allow your game to appear lively by choosing similar sounds at random...
+## In Class Activity II (30 min)
 
+Let's add audio to AstroJunk...
 
+### As Individuals
+Using the audio files you gathered in the previous lesson:
 
-<!-- TODO:  rework these: -->
+- Add background music to be played while the game runs. Make the music stop at Game Over and any other appropriate game states
+- Add sound FX to appropriate game events (collisions, points scored, etc.)
 
-
-<!-- // Sound Effects
-  let soundBombDrop = SKAction.playSoundFileNamed("bombDrop.wav", waitForCompletion: true)
-  let soundSuperBoost = SKAction.playSoundFileNamed("nitro.wav", waitForCompletion: false)
-  let soundTickTock = SKAction.playSoundFileNamed("tickTock.wav", waitForCompletion: true)
-  let soundBoost = SKAction.playSoundFileNamed("boost.wav", waitForCompletion: false)
-  let soundJump = SKAction.playSoundFileNamed("jump.wav", waitForCompletion: false)
-  let soundCoin = SKAction.playSoundFileNamed("coin1.wav", waitForCompletion: false)
-  let soundBrick = SKAction.playSoundFileNamed("brick.caf", waitForCompletion: false)
-  let soundHitLava = SKAction.playSoundFileNamed("DrownFireBug.mp3", waitForCompletion: false)
-  let soundGameOver = SKAction.playSoundFileNamed("player_die.wav", waitForCompletion: false)
-
-  let soundExplosions = [
-    SKAction.playSoundFileNamed("explosion1.wav", waitForCompletion: false),
-    SKAction.playSoundFileNamed("explosion2.wav", waitForCompletion: false),
-    SKAction.playSoundFileNamed("explosion3.wav", waitForCompletion: false),
-    SKAction.playSoundFileNamed("explosion4.wav", waitForCompletion: false)
-  ] -->
-
-
-<!-- TODO:  show how to call 1 or 2 or those -->
-
-<!-- TODO:  add one of those actions to a sequence -->
-
-
-
-<!-- TODO: add 2nd form -  SKAction.playSoundFileNamed()? -->
-
-
-
-
-
-Sound Actions...
-
-run(SKAction.playSoundFileNamed("win.wav",
-        waitForCompletion: false))
-
-SKAction.playSoundFileNamed("pop.mp3",
-   waitForCompletion: false),
-
-
-<!-- TODO: add examples of adding sounds with SKActions
-
-- and how to call them
-
-- esp. using with other sequences, and as an array of sounds
-
- -->
-
-
-
-
-
-
-## In Class Activity II (optional) (30 min)
-
-
-<!-- TODO:  add bg sound and FX to your game app -->
-
-
-
+<<<<<<< HEAD
 ## Particle emitter
 
 Adding particle systems to your games is an effective way to add special effects. With particle systems you can simulate: water, smoke, fire, snow, stars, sparks, rain, bubbles, explosions, and much more.
@@ -830,9 +695,18 @@ Create an .sks file for a new particle emitter. You want to add fire to the spac
 This is an example of how it might turn out like:
 
 ![particle2](assets/particle2.png)
-
+=======
+> *If not finished adding all sound during the time allotted, continue adding them after class.*
 
 # After Class
+>>>>>>> 75973eb1e4b9c772a6135689f31cc6ed03a348fc
+
+<!-- Resume: AstroJunk -- add Win / Loss conditions, such as Victory points for capturing debris, or Loss avoidance (negative points for getting hit by bombs/asteroids, or letting debris pass)
+- present GameOverScene, with requisite graphic and sound effects for either (a) Win conditions or (b) Loss conditions...
+- will require adding graphics
+
+Q: Add a menu to allow player to (1) Start Over (2) Go to next level? ...or other?
+-->
 
 Assignments:
 
@@ -841,11 +715,10 @@ Assignments:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a) "Replay" or "Restart" &mdash; which replays the previous level of game just played
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b) "Next Level" &mdash; which offers the user a new level of the game to play (this means you will have to create at least one additional level)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c) "High Scores" &mdash; presenting the user with a list of highest scores so far.
+
 <!-- TODO: get URLS to illustrate adding menus, etc -->
 
-
 <!-- Often, it’s best to start a game with an opening or main menu scene, rather than throw the player right into the action. The main menu often includes options to start a new game, continue a game, access game options and so on. -->
-
 
 2. Review:
 - The "Enabling Visual Statistics for Debugging" section of [SKView - from Apple docs](https://developer.apple.com/documentation/spritekit/skview)
@@ -872,13 +745,6 @@ To rewind an audio player, you change the currentTime property. -->
 
 
 
-https://developer.apple.com/documentation/spritekit/skaudionode
-
-
-
-
-
-
 <!--
 TODO: Create a new scene (which?) using SpriteKit Scene Editor?
 https://developer.apple.com/documentation/spritekit/skscene/creating_a_scene_from_a_file -->
@@ -890,53 +756,33 @@ https://www.makeschool.com/academy/track/build-ios-games/clone-angry-birds-with-
 
 ## Wrap Up (5 min)
 
-- Continue working on your current tutorial
+- Pay close attention to After Class assignments &mdash; continue developing AstroJunk by completing today's assignments and activities after class
 - Complete reading
 - Complete challenges
-
-
-
-
-<!-- Resume: AstroJunk -- add Win / Loss conditions, such as Victory points for capturing debris, or Loss avoidance (negative points for getting hit by bombs/asteroids, or letting debris pass)
-- present GameOverScene, with requisite graphic and sound effects for either (a) Win conditions or (b) Loss conditions...
-- will require adding graphics
-
-Q: Add a menu to allow player to (1) Start Over (2) Go to next level? ...or other?
--->
-
 
 
 ## Additional Resources
 
 1. [Slides]()
-2. <sup>1</sup> [Game mechanics - wikipedia](https://en.wikipedia.org/wiki/Game_mechanics)
-3. [](https://developer.apple.com/documentation/spritekit/skview)
-4. [](https://developer.apple.com/documentation/spritekit/sktransition)
-5. [](https://developer.apple.com/documentation/spritekit/drawing_spritekit_content_in_a_view)
-6. [](https://developer.apple.com/documentation/spritekit/nodes_for_scene_building)
-7. [](https://developer.apple.com/documentation/spritekit/skscene/1519562-scalemode)
-8. [](https://infinitecortex.com/2014/01/spritekit-understanding-skscene-scalemode/)
-9. [](https://developer.apple.com/documentation/spritekit/skscene/1519607-didmove)
-10. [](https://developer.apple.com/documentation/spritekit/sktransition/transitioning_between_two_scenes)
-11. <sup>3</br> [George Lucas Quote](https://quotefancy.com/quote/1021372/George-Lucas-The-sound-and-music-are-50-of-the-entertainment-in-a-movie)
+2. [Game mechanics - wikipedia](https://en.wikipedia.org/wiki/Game_mechanics) <sup>1</sup>
+3. [SKView - Apple Docs](https://developer.apple.com/documentation/spritekit/skview)
+4. [SKTransition - Apple Docs](https://developer.apple.com/documentation/spritekit/sktransition)
+5. [Drawing SpriteKit Content in a View - Apple Docs](https://developer.apple.com/documentation/spritekit/drawing_spritekit_content_in_a_view)
+6. [Nodes for Scene Building - Apple Docs](https://developer.apple.com/documentation/spritekit/nodes_for_scene_building)
+7. [scaleMode - Apple Docs](https://developer.apple.com/documentation/spritekit/skscene/1519562-scalemode)
+8. [SpriteKit – Understanding SKScene scaleMode - an article](https://infinitecortex.com/2014/01/spritekit-understanding-skscene-scalemode/)
+9. [`didMove(to:)` - Apple Docs](https://developer.apple.com/documentation/spritekit/skscene/1519607-didmove)
+10. [Transitioning Between Two Scenes - Apple Docs](https://developer.apple.com/documentation/spritekit/sktransition/transitioning_between_two_scenes)
+11. [George Lucas Quote](https://quotefancy.com/quote/1021372/George-Lucas-The-sound-and-music-are-50-of-the-entertainment-in-a-movie) <sup>3</sup>
 12. [Kerbal Space Program - wikipedia](https://en.wikipedia.org/wiki/Kerbal_Space_Program)
 13. [Game studies - wikipedia](https://en.wikipedia.org/wiki/Game_studies)
 14. [Asteroids (video game) - wikipedia](https://en.wikipedia.org/wiki/Asteroids_(video_game))
-
-
-1. [](https://en.wikipedia.org/wiki/AVFoundation)
-1. [](https://developer.apple.com/av-foundation/)
-1. [](https://developer.apple.com/documentation/avfoundation)
-
-1. [](https://developer.apple.com/documentation/avfoundation/audio_track_engineering)
-1. [](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/AVFoundationPG/Articles/00_Introduction.html)
-1. [](https://www.hackingwithswift.com/read/36/6/background-music-with-skaudionode-an-intro-plus-game-over)
-
-1. [](https://developer.apple.com/documentation/spritekit/skaction/1417664-playsoundfilenamed)
-
-1. []()
-
-1. []()
-
-
-<sup>5</sup> https://developer.apple.com/documentation/spritekit/skscene/1520363-listener  
+15. [AVFoundation - wikipedia](https://en.wikipedia.org/wiki/AVFoundation)
+16. [AVFoundation - Apple Docs](https://developer.apple.com/av-foundation/)
+17. [AVFoundation - Apple Docs](https://developer.apple.com/documentation/avfoundation)
+18. [Audio Track Engineering - Apple Docs](https://developer.apple.com/documentation/avfoundation/audio_track_engineering)
+19. [About AVFoundation - Apple Docs](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/AVFoundationPG/Articles/00_Introduction.html)
+20. [SKAudioNode - Apple Docs](https://developer.apple.com/documentation/spritekit/skaudionode)
+21. [Background music with SKAudioNode, an intro, plus game over - an article](https://www.hackingwithswift.com/read/36/6/background-music-with-skaudionode-an-intro-plus-game-over)
+22. [`playSoundFileNamed(_:waitForCompletion:)` - Apple Docs](https://developer.apple.com/documentation/spritekit/skaction/1417664-playsoundfilenamed)
+23. [`listener` (property) - Apple docs](https://developer.apple.com/documentation/spritekit/skscene/1520363-listener)
