@@ -662,7 +662,6 @@ Using the audio files you gathered in the previous lesson:
 - Add background music to be played while the game runs. Make the music stop at Game Over and any other appropriate game states
 - Add sound FX to appropriate game events (collisions, points scored, etc.)
 
-<<<<<<< HEAD
 ## Particle emitter
 
 Adding particle systems to your games is an effective way to add special effects. With particle systems you can simulate: water, smoke, fire, snow, stars, sparks, rain, bubbles, explosions, and much more.
@@ -694,12 +693,7 @@ Create an .sks file for a new particle emitter. You want to add fire to the spac
 
 This is an example of how it might turn out like:
 
-![particle2](assets/particle2.png)
-=======
-> *If not finished adding all sound during the time allotted, continue adding them after class.*
-
-# After Class
->>>>>>> 75973eb1e4b9c772a6135689f31cc6ed03a348fc
+![particle2](assets/fire.gif)
 
 <!-- Resume: AstroJunk -- add Win / Loss conditions, such as Victory points for capturing debris, or Loss avoidance (negative points for getting hit by bombs/asteroids, or letting debris pass)
 - present GameOverScene, with requisite graphic and sound effects for either (a) Win conditions or (b) Loss conditions...

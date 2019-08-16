@@ -29,3 +29,5 @@
 - particleColorBlendFactor: The amount of color the emitter applies to the texture when rendering each particle.
 
 - particleBlendMode: The blending mode used to blend particles with the other colors onscreen. The default value is SKBlendMode.alpha, which means that the particles and other objects are blended by multiplying the particles’ alpha values.
+
+Source: 2D Apple Games by Tutorials
