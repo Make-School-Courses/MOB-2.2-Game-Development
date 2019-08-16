@@ -607,6 +607,37 @@ Key points:
 <!-- The application is loading the sound the first time you create an action that uses it. So to prevent the sound delay, you can create the actions in advance and then use them when necessary. -->
 
 
+<!-- Here you define a series of SKAction constants, each of which will load and play a sound file. Because you define these actions before you need them, they are preloaded into memory, which prevents the game from stalling when you play the sounds for the first time.  -->
+
+
+
+
+
+<!-- TODO:  rework these: -->
+
+
+<!-- // Sound Effects
+  let soundBombDrop = SKAction.playSoundFileNamed("bombDrop.wav", waitForCompletion: true)
+  let soundSuperBoost = SKAction.playSoundFileNamed("nitro.wav", waitForCompletion: false)
+  let soundTickTock = SKAction.playSoundFileNamed("tickTock.wav", waitForCompletion: true)
+  let soundBoost = SKAction.playSoundFileNamed("boost.wav", waitForCompletion: false)
+  let soundJump = SKAction.playSoundFileNamed("jump.wav", waitForCompletion: false)
+  let soundCoin = SKAction.playSoundFileNamed("coin1.wav", waitForCompletion: false)
+  let soundBrick = SKAction.playSoundFileNamed("brick.caf", waitForCompletion: false)
+  let soundHitLava = SKAction.playSoundFileNamed("DrownFireBug.mp3", waitForCompletion: false)
+  let soundGameOver = SKAction.playSoundFileNamed("player_die.wav", waitForCompletion: false)
+
+  let soundExplosions = [
+    SKAction.playSoundFileNamed("explosion1.wav", waitForCompletion: false),
+    SKAction.playSoundFileNamed("explosion2.wav", waitForCompletion: false),
+    SKAction.playSoundFileNamed("explosion3.wav", waitForCompletion: false),
+    SKAction.playSoundFileNamed("explosion4.wav", waitForCompletion: false)
+  ] -->
+
+
+<!-- TODO:  show how to call 1 or 2 or those -->
+
+<!-- TODO:  add one of those actions to a sequence -->
 
 
 
@@ -630,6 +661,12 @@ SKAction.playSoundFileNamed("pop.mp3",
 
 
 ## In Class Activity II (optional) (30 min)
+
+
+<!-- TODO:  add bg sound and FX to your game app -->
+
+
+
 
 # After Class
 
