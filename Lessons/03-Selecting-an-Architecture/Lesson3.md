@@ -324,7 +324,9 @@ __*For next lesson,*__ you will need to have sound files for your game on hand:
 
 **TODO:**
 - Find out what audio file types are supported in iOS apps
-- Find and have ready to insert into your game an assortment of 
+- Find them, and have them ready to insert into them in your game
+
+> *You should be able to find lots of free audio on the internet. If stuck, please talk to instructor for ideas.*
 
 <!-- TODO: find a version of this tutorial in Swift ...NOT Obj-C...
 
@@ -335,6 +337,7 @@ __*For next lesson,*__ you will need to have sound files for your game on hand:
 
 ## Wrap Up (5 min)
 
+- Pay particular attention to the assignments in After Class above &mdash; these will be important for next lesson!
 - Continue working on your current tutorial
 - Complete reading
 - Complete challenges
