@@ -37,10 +37,30 @@ Explain why students should care to learn the material presented in this class.
 - screen Effects
 
 
+
+...add Game Mechanics
+
 ...and these leads directly into the Learning Objectives...
 
  -->
 
+888
+
+
+<!--
+The great thing about juice is that you don’t need to have a large art budget or hire expensive consultants with impressive resumes. Instead, you can use particle effects, music, sound effects and simple animation effects — such as scaling, rotation and movement. Most of these things are already in your toolkit; others, like music and sound effects, you can find online or create with free or inexpensive software. This is wonderful news for programmers like you and me!
+
+
+On their own, none of these effects are terribly exciting, but when combined, every interaction within the game world results in a cascade of visual and audible feedback that keeps players coming back for more. That is what it means to make your game juicy. -->
+
+
+
+<!-- The key to making a hit game is polish — adding loads of well- considered details that set your game apart.
+
+
+polishing your game with special effects — otherwise known as adding “Juice” ...
+
+ou’ll trick out your game with music, sound, animation, more particles and other special effects, -->
 
 
 <!-- TODO:  Describe why you need to Work with Games and add "Juice"... -->
@@ -53,6 +73,9 @@ But to really entertain and delight your users &mdash; to get users to engage wi
 
 - Scenes
 - "Juice" -->
+
+<!-- TODO: Ending: "As you develop your game, you will add Juice to it as you go..." -->
+
 
 ## Learning Objectives (5 min)
 
@@ -401,7 +424,7 @@ override func didMove(to view: SKView) {
 ## Sound [Overview/TT II]  (20 min)
 > George Lucas, the creator of the *Star Wars* movies, once famously said: "The sound and music are 50% of the entertainment in a movie." <sup>3</br>
 
-Sound is just as important in game apps.
+One of the biggest mistakes a game developer can make is to underestimate the power of audio.
 
 When a game includes awesome sound effects that respond to visible gameplay elements and great-sounding background music, players become immersed in the game's world.
 
@@ -410,55 +433,45 @@ When a game includes awesome sound effects that respond to visible gameplay elem
 
 iOS supports two built-in functional mechanisms in SpriteKit for including sound effects and music in your game:
 
-1. `AVAudioPlayer` - Part of the `AVFoundation` framework. It's an audio player that provides playback of audio data from a file or memory. You'll want to use `AVAudioPlayer` for playing long-running background music.
+1. `AVAudioPlayer` - Part of the `AVFoundation` framework. It's an audio player that provides playback of audio data from a file or memory.
 
 2. `SKAudioNode` &mdash; A subclass of `SKNode` that plays audio. `SKAudioNode` allows you to create sound *actions* &mdash; subclasses of `SKAction` that you can use to control your sound effects which can be implemented like any other `SKAction` (including participation in group or sequence actions).
 
+`SKAudioNode` is easier to implement, but `AVAudioPlayer` provides more power and control.
 
+You'll want to use `AVAudioPlayer` for playing long-running sound files like background music.
 
 
 <!-- TODO:  Describe "Juice" more fully... -->
 
 
 ### Adding Background Music
+It is widely known that music plays an important part in setting the tone and pace of a movie.
 
-<!-- TODO:  show basic steps  -- and key points about -- to implement sound file for bg music, using code snippets, and end by showing how to play, loop, etc. - reference Ref Ebook 2 for details...Ref ebook 1 for other clues -->
+And it's just as important in game apps.
 
+Adding background music to your game is easy. But there are important considerations you should be aware of.
 
+Here are a few key points to consider when adding background music:
 
-<!-- Main points:
+1. Use `AVAudioPlayer` for playing long-running files such as background music.
 
-- see ref books for ideas and coverage
+2. Prevent sound delays:
 
-***
-- use `AVAudioPlayer` for playing long-running background music.
+- load files ahead of time, before the sound needs to be played, to avoid playback delays (but weigh this against memory consumption: lots of long-running sound files can eat up memory)
 
-- loading files early to avoid delays in sound -- but measuring this against memory used up if you have lots of these long-running files
+3. Create utility classes &mdash; for handling audio, including `AVAudioPlayer` functions, loading sound files, and so on
 
--  
- -->
-
-
- <!-- TODO:  discuss Asset Catalog with sound folder? or is that too much?
-
- - same with adding a utility class for  handling AVAudioPlayer and BG sounds? -->
+4. Use Asset Catalogs &mdash; To organize audio files, create a sound folder inside an Asset Catalog and store files there for loading
 
 
- <!-- You create an AVAudioPlayer by providing it with the location of the file you want it to play. This should generally be done ahead of time, before the sound needs to be played, to avoid playback delays. -->
+<!-- TODO: add more key points..
 
+- see ref books for ideas and coverage  
+-->
 
 **Illustrating Example**
-
-Here is an example of xxxx showing xxx from above...
-
-
-Assumptions;
-imported `AVFoundation` framework
-non-working
-
-
-<!-- Show code, with numbers explaining key lines ... -->
-
+This simple, non-working code snippet illustrates the key steps needed to add background music to a game app:
 
 ```Swift  
 import AVFoundation // 1)
@@ -540,22 +553,24 @@ After it’s finished playing, a second call to `play()` will rewind it and play
 - To stop playback, you use the `pause()` or `stop()` functions <sup>4</sup>
 
 
-
-
-888
-
 ### Adding Sound Effects
+
+
+<!-- Sound effects can greatly enhance immersion as well. You can use this same concept to add juice to your game. -->
+
 
  <!-- Typically music and large audio files should be streamed, but for small sound effects, it’s better to preload them into memory for faster playback. -->
 
-<!-- where are the sound effects? One of the biggest mistakes a game developer can make is to underestimate the power of audio. -->
 
 <!-- TODO: see Game State Management section in ref book on 3D games for ideas on when you would add sound to act as Game State cues  -->
 
 <!-- TODO: firt, tie sound effects to events, including Game State, but also collisions, etc. -->
 
+<!--
 
-<!-- TODO: Ending: "As you develop your game, you will add Juice to it as you go..." -->
+    preloading into memory...reusing effects...
+ -->
+
 
 
 Sound Actions...
@@ -563,10 +578,10 @@ Sound Actions...
 SKAction.playSoundFileNamed("pop.mp3",
    waitForCompletion: false),
 
-<!--
 
-    preloading into memory...reusing effects...
- -->
+
+<!-- The application is loading the sound the first time you create an action that uses it. So to prevent the sound delay, you can create the actions in advance and then use them when necessary. -->
+
 
 
 ## In Class Activity II (optional) (30 min)
