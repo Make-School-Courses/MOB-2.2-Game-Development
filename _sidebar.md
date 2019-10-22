@@ -1,1 +1,3 @@
-- [Syllabus](README.md)
+- **[MOB 2.2](README.md)**
+- **[Day 1](Lessons/Game-Design/Readme.md)**
+- **[Day 2](Lessons/01-Intro-iOS-Game-Development/Lesson1.md)**
