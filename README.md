@@ -36,7 +36,7 @@ By the end of the course, students will be able to ...
 | 14 |   Mon, Dec 9              | Final Exam                           |
 | 15 |   Wed, Dec 11             | Presentations                        |
 
-
+[Game Design]: Lessons/Game-Design/Readme.md
 [Intro to iOS Game Development]: Lessons/01-Intro-iOS-Game-Development/Lesson1.md
 [Actions]: Lessons/02-Actions/Lesson2.md
 [Choosing an Architecture]: Lessons/Lesson3.md
