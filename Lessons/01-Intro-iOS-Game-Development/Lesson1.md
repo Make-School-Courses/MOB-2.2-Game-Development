@@ -2,17 +2,21 @@
 
 # Intro to iOS Game Development
 
-<aside class="notes>"
 ## [Slides](https://make-school-courses.github.io/MOB-2.2-Game-Development/Slides/01-Intro-iOS-Game-Development/Lesson1.html ':ignore')
-</aside>
 
 <!-- > -->
 
 ## Agenda
 
 - Learning objectives
-
-
+- iOS development history
+- Sprites
+- Frames
+- Game activity
+- Movement with vectors
+- Movement with actions
+- Game activity
+ 
 <!-- > -->
 
 ## Learning Objectives
