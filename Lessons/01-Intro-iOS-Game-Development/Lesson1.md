@@ -16,7 +16,7 @@
 - Movement with vectors
 - Movement with actions
 - Game activity
- 
+
 <!-- > -->
 
 ## Learning Objectives
@@ -25,11 +25,6 @@
 - Create and position nodes
 - Describe how Frames, Frame Rate, and the Game Loop relate to each other
 - Move nodes with actions
-
-<!-- TOPICS:
-SpriteKit, Sprites, Nodes (SKNode), scenes (SKScene), key node properties,
-creating a sprite, Frames, Frame Rate and Game Loop
- -->
 
 <!-- > -->
 
@@ -40,6 +35,8 @@ For a game developer, there’s no better platform. The development tools are we
 <!-- > -->
 
 ## Let's read about the history of games in iOS
+
+[Notes](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/blob/master/Lessons/01-Intro-iOS-Game-Development/assignments/Intro.md)
 
 <!-- > -->
 
