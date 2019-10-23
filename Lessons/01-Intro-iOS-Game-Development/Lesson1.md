@@ -275,60 +275,74 @@ override func update(_ currentTime: TimeInterval) {
 
 <!-- > -->
 
-
 ## Creating the AstroJunk app
 Read and follow the [Space Junk](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/blob/master/Lessons/01-Intro-iOS-Game-Development/assignments/activity_1_space_junk.md) instructions for creating your first app, AstroJunk. 🛰 🚀
 
 <!-- > -->
 
-## Movement (20 min)
+## Movement
 
-### The 2D Coordinate System
+#### The 2D Coordinate System
+
 In 2D graphics, we deal with space that only has two dimensions: the X and Y axes.
-
-- X axis &mdash; Horizontal, left-to-right axis.
-- Y axis &mdash; Vertical axis. Runs from bottom to top.
-
-We call this the "2D Coordinate System":
 
 ![2D_coordinate_system](assets/2D_coordinate_system.png) </br>
 
-To describe a specific location &mdash; known as a *point* &mdash; in a 2D coordinate space, you only need to provide two numbers:
+<aside class="notes">
+- X axis - Horizontal, left-to-right axis.
+- Y axis - Vertical axis. Runs from bottom to top.
 
-- X coordinate &mdash; the distance the location point is from the origin on the horizontal axis
-- Y coordinate &mdash; how far away it is from the origin on the vertical axis
+We call this the "2D Coordinate System"
+</aside>
+
+<!-- v -->
+
+To describe a specific location, known as a *point*, in a 2D coordinate space, you only need to provide two numbers:
+
+- X coordinate - the distance the location point is from the origin on the horizontal axis
+- Y coordinate - how far away it is from the origin on the vertical axis
 
 We typically write coordinates in parentheses: `(x coordinate, y coordinate)`
+
+<!-- v -->
 
 A point 7 units to the right of the origin and 4 units above it is written: `(7,4)`
 
 The central point of a coordinate system used in graphics is called the *origin.*
 
-The coordinates for the origin point itself are written `(0,0)` &mdash; which is the same as saying that it is "zero units away from the origin point on both the the x and y axes.""
+The coordinates for the origin point itself are written `(0,0)`, which is the same as saying that it is "zero units away from the origin point on both the the x and y axes".
+
+<!-- > -->
 
 ### Movement with 2D Vectors
 
-**In Mathematics and Physics** &mdash; A __*vector*__ is a geometric object that has *magnitude* (or *length*) and *direction.*
+**In Mathematics and Physics** a *vector* is a geometric object that has *magnitude* (or *length*) and *direction.*
 
 Vectors are frequently represented by a line segment with a definite direction, or graphically as an arrow, connecting an initial point `A` with a terminal point, `B`:
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![vector](assets/vector.png) </br>
+![vector](assets/vector.png)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *Source:* <sup>3</sup>
-
+<aside class="notes">
 Vectors play an important role in physics: the velocity and acceleration of a moving object and the forces acting on that object can all be described with vectors.
+</aside>
 
-**In Computer Programming** &mdash; In its most simplified definition, a __*vector*__ is a complex value (or data structure) that is composed of two or more simple values (components).
+<!-- v -->
+
+**In Computer Programming** in its most simplified definition, a *vector* is a complex value (or data structure) that is composed of two or more simple values (components).
 
 In game apps, we commonly use vectors to describe two things:
 - on-screen positions (i.e., coordinates)
 - velocities
 
-Some programming languages represent 2D vectors as simple arrays. But in iOS, it is useful and very common to represent a 2D vector as a `CGPoint`. <sup>4</sup>
+Some programming languages represent 2D vectors as simple arrays. But in iOS, it is useful and very common to represent a 2D vector as a `CGPoint`.
 
-> <sup>4</sup> *Because the `x` and `y` coordinates behind a `CGPoint` are both of type `CGFloat`, `CGPoint` lends itself readily to calculations with other `CGFloats`. `CGPoint` is used so frequently to describe vectors in iOS that Apple created `CGVector` which, under the hood, is nearly identical to `CGPoint`. This allows you to extend `CGVector` to suit your app's particular vector-related requirements.*
+<aside class="notes">
+Because the `x` and `y` coordinates behind a `CGPoint` are both of type `CGFloat`, `CGPoint` lends itself readily to calculations with other `CGFloats`. `CGPoint` is used so frequently to describe vectors in iOS that Apple created `CGVector` which, under the hood, is nearly identical to `CGPoint`. This allows you to extend `CGVector` to suit your app's particular vector-related requirements.
+</aside>
 
-**Position (or Point) Vectors** </br>
+<!-- v -->
+
+**Position (or Point) Vectors**
 In a 2D system such as UIKit or SpriteKit, you use a coordinate point to describe the position of a view or a sprite on the x and y axes:
 
 ```Swift  
@@ -347,31 +361,42 @@ An empty 2D vector — one with only zeros for each coordinate — can be writte
   var velocity = CGPoint.zero
 ```
 
-**Velocity Vectors** </br>
-Vectors can also be used to store __*velocities.*__
+<!-- v -->
+
+**Velocity Vectors**
+
+Vectors can also be used to store *velocities.*
 
 A velocity represents how far a location changes over time.
 
 A 2D velocity vector represents a *direction* and a *length* (aka, its *magnitude*).
 
+<!-- v -->
+
 For example:
-- if an object is moving 4 units to the right and 6 units upward every second, you could write its velocity as `[4, 6]`.
+- If an object is moving 4 units to the right and 6 units upward every second, you could write its velocity as `[4, 6]`.
 - Then, every second, you could add the object’s velocity to its current position.
 
+![velocity_vector](assets/velocity_vector.png)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![velocity_vector](assets/velocity_vector.png) </br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *Graph depicting a velocity vector from point `[0, 0]` to point `[4, 6]`*
+<aside class="notes">
+Graph depicting a velocity vector from point `[0, 0]` to point `[4, 6]`
+</aside>
 
-</br>
+<!-- v -->
 
-__*Direction*__ </br>
+**Direction**
+
 Note that in the graph above, we drew a straight line from the origin point `[0, 0]` to a second point at `[4, 6]`.
 
-The line from the origin point to the second point gives us the __*direction*__ of the vector.
+The line from the origin point to the second point gives us the **direction** of the vector.
 
 <!-- TODO: question for class: Where would the line be (i.e., what would the vector's direction be) if the vector were `[-4,6]` -->
 
-__*Calculating Vector Length*__ </br>
+<!-- v -->
+
+**Calculating Vector Length**
+
 For the object above with the velocity vector of `[4, 6]`, what distance will it have travelled in any given second?
 
 To calculate the *length* (aka, *magnitude*) of a vector, you must:
@@ -379,9 +404,9 @@ To calculate the *length* (aka, *magnitude*) of a vector, you must:
 - add up the squares of each component,
 - and take the square root of the result
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![calculate_vector_length_formula](assets/calculate_vector_length_formula.png)
+ ![calculate_vector_length_formula](assets/calculate_vector_length_formula.png)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *Source:* <sup>5</sup>
+<!-- v -->
 
 ```Swift
   let vector = CGPoint(x: 5, y: 7)
@@ -390,11 +415,15 @@ To calculate the *length* (aka, *magnitude*) of a vector, you must:
   // 8.602325267042627
  ```
 
+<!-- v -->
 
-__*Vector Translation*__ </br>
+**Vector Translation**
+
 When you want to move an object closer to or farther away from its origin point, you add its position and velocity vectors together.
 
 To add two vectors together &mdash; which is known as __*vector translation*__ &mdash; you simply add the respective components of each vector.
+
+<!-- v -->
 
 In other words:
 - you sum the `x` coordinates of both vectors
@@ -412,19 +441,17 @@ This results in a new position for your object.
   // newPosition coordinates: [3, 7]
 ```
 
-
-</br>
+<!-- v -->
 
 > For a good start in learning more about how to work with vectors in your game apps: </br>
 > • Experiment with the code in the [Vector playground](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/tree/master/Lessons/01-Intro-iOS-Game-Development/playgrounds/Vector.playground) </br>
-> • Study the resources listed in Additional Resources below
+> • Study the resources listed in Additional Resources
 
+<!-- > -->
 
-<!-- TODO: discuss moving right as positive? left as negative? -->
+## Movement with Actions
 
-
-### Movement with Actions
-The above manual approach to moving a node by setting its position over time gives you power and control over movement.
+The manual approach to moving a node by setting its position over time gives you power and control over movement.
 
 But you can move, change, rotate or scale a sprite's position over time incrementally &mdash; and much more easily &mdash; using SpriteKit __*actions*__.
 
@@ -432,7 +459,10 @@ Usually, with only a single line of code.
 
 SpriteKit __*actions*__ also let you easily create combinations of movements by chaining actions together.
 
-#### SKAction
+<!-- v -->
+
+## SKAction
+
 `SKAction` is a powerful class used to bring nodes to life.
 
 Instances of `SKAction` are used to change the structure or content of a node in some way. They represent an animation that is executed by a node in the scene.
@@ -440,6 +470,8 @@ Instances of `SKAction` are used to change the structure or content of a node in
 You can use `SKAction` objects to make *any* node in the scene perform an action. An action is something that changes one or more properties &mdash; like position, size, transparency, color, etc. &mdash; of *any* node in your scene &mdash; including the scene node itself. <sup>6</sup>
 
 Actions can also change the node tree, play sounds, or even execute custom code.
+
+<!-- v -->
 
 Example uses:
 - to change a node’s position (or other property) over time
@@ -450,16 +482,24 @@ You can also combine several actions together in:
 - A group action
 - A repeating action
 
+<aside class="notes">
 When the scene processes its nodes, the actions associated with those nodes are all processed.
+</aside>
 
-##### How to Implement
-To apply an action to a node, you simply need to:
+<!-- v -->
+
+### How to Implement
+
+To apply an action to a node, you need to:
 
 1. Create an instance of `SKAction`
 2. Run it by calling one of the built-in `run(_:)` functions found on the node itself, passing in the action instance just created
 
-##### __*Creating Actions*__
-To create a SpriteKit action, call one of the many built-in static constructors (factory methods)<sup>8</sup> of the `SKAction` class.
+<!-- v -->
+
+__*Creating Actions*__
+
+To create a SpriteKit action, call one of the many built-in static constructors (factory methods) of the `SKAction` class.
 
 In this example, we use the `moveBy(x:y:duration:)` function built-in to `SKAction` to create an action which will make a sprite move `2` units along the x-axis and `3` units along the y axis in `1` second:
 
@@ -467,13 +507,15 @@ In this example, we use the `moveBy(x:y:duration:)` function built-in to `SKActi
   let simpleTwoByThreeAction = SKAction.moveByX(2, y: 3, duration: 1)
 ```
 
+<aside class="notes">
 Notice that this is essentially the same motion that we applied above when we created position and velocity vectors, then added them together.
-
 But in only 1 line of code...
+</aside>
 
-> <sup>8</sup> *See [Action Initializers](https://developer.apple.com/documentation/spritekit/skaction/action_initializers) for a detailed list of factory methods on `SKAction` and how to use them.*
+<!-- v -->
 
 __*Running Actions*__
+
 Once you've created your desired action, you can run it on *any* `SKNode` object by invoking one of the node object's various `run(_:)` functions:
 
 ```Swift  
@@ -482,7 +524,9 @@ Once you've created your desired action, you can run it on *any* `SKNode` object
 
 And, if you want to apply the same action to multiple nodes, you can create your `SKAction` once, then call a `run(_:)` method on each of the several nodes for which you would like to perform the same action.
 
-#### Move Actions
+<!-- > -->
+
+## Move Actions
 There are several methods on `SKAction` that allow you to easily create an action that moves a node relative to its current position.
 
 The simplest is [`move(to:duration:)`](https://developer.apple.com/documentation/spritekit/skaction/1417768-move), which Creates an action that moves a node to a new position:
@@ -492,6 +536,8 @@ The simplest is [`move(to:duration:)`](https://developer.apple.com/documentation
          duration: TimeInterval) -> SKAction
 ```
 
+<!-- v -->
+
 Example:
 
 ```Swift  
@@ -499,6 +545,8 @@ Example:
   let moveBottomLeftAction = SKAction.move(to: newPosition, duration:3.0)
   node.run(moveBottomLeftAction)
 ```
+
+<!-- v -->
 
 And there are a few noteworthy variations of this basic move action:
 
@@ -509,29 +557,40 @@ These let you specify a change in *only one* axis &mdash; either the x- or the y
 
 3. `moveBy(x:y:duration:)` &mdash; Creates an action that moves a node relative to its current position.
 
+<aside class="notes">
 Instead of moving a node to particular point, `moveBy(x:y:duration:)` lets you move it by an offset from its current position, wherever it is at any given time. For example, the offset could be some multiple of the size of the object allowing you to move different size objects by amounts relative to their respective sizes.
 
-__*Important Note:*__ </br>
+Important Note:
 This pattern of having `<action>To` and `<action>By` function variations appears in many of the [Action Initializers](https://developer.apple.com/documentation/spritekit/skaction/action_initializers) on `SKAction`.
 Feel free to use whichever variation works best and most conveniently for you, but remember that `<action>By` functions are preferred because they are __*reversible*__ (more on reversible actions later).
+</aside>
 
+<!-- > -->
 
-#### Sequence Actions
+## Sequence Actions
+
 Many actions are designed to take place over time and to be executed by themselves.
 
 But what if you wanted some actions to occur immediately or in combination with one or more other actions?
 
 What if you wanted to run your own custom code or to remove a node from a scene on completion of some other action?
 
-The real power of `SKAction` lies in how easily you can combine actions together with `sequence(_:)` or `group(_:)`.<sup>9</br>
+<!-- v -->
+
+The real power of `SKAction` lies in how easily you can combine actions together with `sequence(_:)` or `group(_:)`.
 
 A `sequence` is an `SKAction` that runs other actions, one after another.
 
 `SKAction.sequence(_:)` creates an action that runs a collection of actions sequentially.
 
+<!-- v -->
+
 It takes an array of `SKActions`, each separated by commas, and it runs them one after the other in listed order.
 
 When the `sequence` action executes, the first action in the sequence starts and runs to completion. Subsequent actions in the sequence run in a similar fashion until all of the actions in the sequence have executed.
+
+<!-- v -->
+
 
 To create a sequence action, use `SKAction.sequence(_:)`, which takes an array of `SKAction` objects:
 
@@ -539,7 +598,7 @@ To create a sequence action, use `SKAction.sequence(_:)`, which takes an array o
   let sequenceAction = SKAction.sequence([action1, action2, action3])
 ```
 
-In the example below, the node is moved up the x-axis by `30` points, then down the y-axis by `30`, then removed from the scene:
+<!-- v -->
 
 ```Swift  
   let moveUpAction = SKAction.moveBy(x: 0, y: 30, duration: 2)
@@ -548,65 +607,72 @@ In the example below, the node is moved up the x-axis by `30` points, then down 
   let sequenceAction = SKAction.sequence([moveUpAction, moveDownAction, removeAction])
   node.run(sequenceAction)
 ```
+<aside class="notes">
+In the example, the node is moved up the x-axis by `30` points, then down the y-axis by `30`, then removed from the scene:
+</aside>
+
+<!-- v -->
 
 The sequence action is one of the most useful and commonly used actions in iOS game development.
 
-It is also reversible &mdash; it creates a new sequence action that reverses the order of the actions.
+It is also reversible, it creates a new sequence action that reverses the order of the actions.
 
-> <sup>9</br> *We'll cover `group(_:)` actions in next lesson.*
+<!-- > -->
 
-## In Class Activity II (optional) (25 min)
+## Adding movement to our game
 
-**Individually:**
-1. Continue working on your AstroJunk app, adding movement to all nodes created so far
+Continue working on your AstroJunk app, adding movement to all nodes created so far
 
 At end of this activity, the state of your game should be described as:
 - the ship should be moving along the X axis. But when it moves, it will not stop when it hits the screen edge &mdash; it will go off screen if moved too far to the left or right
 - all sprites/nodes should have their intended motions implemented
 - but no collision detection will be implemented (at this point in development, when they collide, nothing will happen)
 
-> __*If you get stuck*__ &mdash; Review key material above, especially the [Vector playground](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/tree/master/Lessons/01-Intro-iOS-Game-Development/playgrounds/Vector.playground), if Understanding how to work with vectors is an obstacle to your progress.
+<aside class="notes">
+ __*If you get stuck*__ &mdash; Review key material above, especially the [Vector playground](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/tree/master/Lessons/01-Intro-iOS-Game-Development/playgrounds/Vector.playground), if Understanding how to work with vectors is an obstacle to your progress.
+</aside>
 
-
+<!-- > -->
 
 # After Class
 
 Assignments:
-1. Review lesson 05-Introduction-to-SpriteKit from MOB 1.1 course
-- be prepared to answer questions on key components outlined in Lesson 5
+1. Continue working on your AstroJunk app (if not caught up with today's 2 in-class activities)
 
-2. Continue working on your AstroJunk app (if not caught up with today's 2 in-class activities)
+3. Useful links & concepts
 
-3. Review/study:
+<aside class="notes">
 - The "Nodes that Draw" section in [Nodes for Scene Building - Apple docs](https://developer.apple.com/documentation/spritekit/nodes_for_scene_building)
 - The "Use a Scene Delegate Instead of Subclassing a Scene" section in [Responding to Frame-Cycle Events](https://developer.apple.com/documentation/spritekit/skscene/responding_to_frame-cycle_events) and [SKSceneDelegate](https://developer.apple.com/documentation/spritekit/skscenedelegate) and [Subclassing Scenes Versus Assigning a Delegate](https://developer.apple.com/documentation/spritekit/skscene/subclassing_scenes_versus_assigning_a_delegate)
 - [preferredFramesPerSecond - Apple Docs](https://developer.apple.com/library/archive/documentation/3DDrawing/Conceptual/MTLBestPracticesGuide/FrameRate.html)
 - Delta Time
 - `SKEffectNode`
--  The `SKWarpable` Protocol
--  `SKTexture`
+- The `SKWarpable` Protocol
+- `SKTexture`
 - `anchorPoint`
--  `SKView`
+- `SKView`
 - `SKRenderer`
 - `WKInterfaceSKScene`
-`GCVector`
+- `GCVector`
 - How do you set frame rate in SpriteKit?
--  How do you normalize a vector?
+- How do you normalize a vector?
 - Game Types:
   - RPG, FPS, Open World
+</aside>
 
+<!-- > -->
 
 ## Wrap Up (5 min)
 
 - Continue working on your AstroJunk app assignments from today's class
 - Complete reading and review assignments
 
+<!-- > -->
 
 ## Additional Resources
 
-1. [Slides]()
 2. [SpriteKit - Apple Docs](https://developer.apple.com/documentation/spritekit)
-3.  <sup>0</sup> [Introducing SpriteKit - A Tutorial](https://code.tutsplus.com/tutorials/introducing-spritekit--cms-28648)
+3. [Introducing SpriteKit - A Tutorial](https://code.tutsplus.com/tutorials/introducing-spritekit--cms-28648)
 4. [OpenGL ES - wikipedia](https://en.wikipedia.org/wiki/OpenGL_ES)
 5. [OpenGL ES: The Standard for Embedded Accelerated 3D Graphics - The Khronos Group (developers consortium)](https://www.khronos.org/opengles/)
 6. [About OpenGL ES - Apple Docs](https://developer.apple.com/library/archive/documentation/3DDrawing/Conceptual/OpenGLES_ProgrammingGuide/Introduction/Introduction.html)
@@ -614,16 +680,22 @@ Assignments:
 8. [Cocos2d - Cocos2d (developers consortium)](http://cocos2d.org)
 9. [SKNode (class) - Apple Docs](https://developer.apple.com/documentation/spritekit/sknode)
 10. [Responding to Frame-Cycle Events - Apple Docs](https://developer.apple.com/documentation/spritekit/skscene/responding_to_frame-cycle_events)
+
+<!-- > -->
+
 11. [Key frame - wikipedia](https://en.wikipedia.org/wiki/Key_frame)
 12. [State (pattern) - from Game Programming Patterns](https://gameprogrammingpatterns.com/state.html)
 13. <sup>1</sup> [Persistence of vision: how does animation work? - an article](https://www.futurelearn.com/courses/explore-animation/0/steps/12222)
 14. [Coordinate system - wikipedia](https://en.wikipedia.org/wiki/Coordinate_system)
-15. [Vector_(mathematics_and_physics) - wikipedia](https://en.wikipedia.org/wiki/Vector_(mathematics_and_physics)) [Vector_space - wikipedia](https://en.wikipedia.org/wiki/Vector_space) [Euclidean_vector - wikipedia](https://en.wikipedia.org/wiki/Euclidean_vector) <sup>3</sup>
-16. <sup>5</sup> [Vector Algebra - an article](https://www.mathsisfun.com/algebra/vectors.html)
+15. [Vector_(mathematics_and_physics) - wikipedia](https://en.wikipedia.org/wiki/Vector_(mathematics_and_physics)) [Vector_space - wikipedia](https://en.wikipedia.org/wiki/Vector_space) [Euclidean_vector - wikipedia](https://en.wikipedia.org/wiki/Euclidean_vector)
+16. [Vector Algebra - an article](https://www.mathsisfun.com/algebra/vectors.html)
 17. [Pythagoras' Theorem - an excellent resource for understanding vectors, etc.](https://www.mathsisfun.com/pythagoras.html)
+
+<!-- > -->
+
 18. [Practical use of Vector Math in Games - an article](https://www.gamedev.net/articles/programming/math-and-physics/practical-use-of-vector-math-in-games-r2968/)
 19. [SKAction (class) - Apple Docs](https://developer.apple.com/documentation/spritekit/skaction)
 20. [Action Initializers - Apple Docs](https://developer.apple.com/documentation/spritekit/skaction/action_initializers)
-21. <sup>6</sup> [Getting Started with Actions](https://developer.apple.com/documentation/spritekit/getting_started_with_actions#2982305
+21. [Getting Started with Actions](https://developer.apple.com/documentation/spritekit/getting_started_with_actions#2982305)
 22. [`sequence(_:)` (function) - Apple Docs](https://developer.apple.com/documentation/spritekit/skaction/1417817-sequence)
 23. [First-person shooter - wikipedia](https://en.wikipedia.org/wiki/First-person_shooter)

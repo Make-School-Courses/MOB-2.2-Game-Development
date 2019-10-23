@@ -41,10 +41,10 @@ You can go online and search for cool free graphics. Or just use [these](../asse
 ### Example
 
 How the game will look and behave at this point.
-![gameStage1](../assets/game.png){:height="400px" width="150"}
+![gameStage1](../assets/game.png)
 
 
 ## Additional Resources
 
-1. [Fixed Shooter Game - wikipedia](https://en.wikipedia.org/wiki/Shoot_%27em_up#Fixed_shooters) <sup>1</sup>
+1. [Fixed Shooter Game - wikipedia](https://en.wikipedia.org/wiki/Shoot_%27em_up#Fixed_shooters) 
 2. [Space Invaders - wikipedia](https://en.wikipedia.org/wiki/Space_Invaders)
