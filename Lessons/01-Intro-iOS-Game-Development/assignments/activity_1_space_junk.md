@@ -36,12 +36,12 @@ For this __*first released version*__ of AstroJunk, you are to:
 
 At this point, these will be static nodes only, since we have not covered motion yet, none of these sprites need to be able to move at this point...
 
-You can go online and search for cool free graphics. Or just use ![these](/assets/gameAssets.zip) for now and change them later if you want.
+You can go online and search for cool free graphics. Or just use ![these](../assets/gameAssets.zip) for now and change them later if you want.
 
 ### Example
 
 How the game will look and behave at this point.
-![gameStage1](/assets/stage1.png)
+![gameStage1](../assets/stage1.png)
 
 
 ## Additional Resources
