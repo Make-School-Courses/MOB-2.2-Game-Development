@@ -41,7 +41,7 @@ You can go online and search for cool free graphics. Or just use ![these](../ass
 ### Example
 
 How the game will look and behave at this point.
-![gameStage1](/assets/stage1.png)
+![gameStage1](assets/stage1.png)
 
 
 ## Additional Resources
