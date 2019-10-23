@@ -2,7 +2,9 @@
 
 # Intro to iOS Game Development
 
-[**Slides**](https://make-school-courses.github.io/MOB-2.2-Game-Development/Slides/01-Intro-iOS-Game-Development/Lesson1.html ':ignore')
+<aside class="notes>"
+## [Slides](https://make-school-courses.github.io/MOB-2.2-Game-Development/Slides/01-Intro-iOS-Game-Development/Lesson1.html ':ignore')
+</aside>
 
 <!-- > -->
 
