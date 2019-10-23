@@ -41,7 +41,7 @@ You can go online and search for cool free graphics. Or just use [these](../asse
 ### Example
 
 How the game will look and behave at this point.
-![gameStage1](../assets/game.png)
+![gameStage1](../assets/game.png){:height="400px" width="150"}
 
 
 ## Additional Resources
