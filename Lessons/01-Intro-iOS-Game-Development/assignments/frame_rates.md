@@ -29,7 +29,7 @@ SpriteKit tries to draw frames as fast as possible, up to 60 FPS. By default, Sp
 It it takes too long to update and render a frame of your game, SpriteKit can decide to call your  `update(_:)` method less often, and the frame rate will decrease.
 
 ## Device Support
-Some physical iOS devices can easily support your game at 60 fps. But less-powerful devices &mdash; including the Simulator &mdash; cannot support that frame rate.
+Some physical iOS devices can easily support your game at 60 fps. But less-powerful devices, including the Simulator, cannot support that frame rate.
 
 The Simulator runs on a Mac, which has a faster CPU and much more memory than an iPhone or iPad. But Macs have very slow GPUs and as such are extremely slow at simulated rendering. So you can’t count on accurate performance measurements from the Simulator on your Mac.
 
@@ -47,11 +47,10 @@ As mentioned, you will get very different performance on the Simulator. Only pay
 
 
 ## Related Terms
-- **Frame Time** &mdash; This is the total amount of time it took to draw a single frame. A frame
- time of 16.7ms is required to achieve a frame rate of 60fps.
-- **Delta Time** &mdash; The number of seconds since the last update was run. (The amount of time between frames becomes because game content changes frame by frame.) Note that even if your game runs at a smooth 60 FPS, there will always be some small variance in how often SpriteKit calls your `update(_:)` method. Thus, you need to take the delta time into account in your calculations.
+- **Frame Time** - This is the total amount of time it took to draw a single frame. A frame time of 16.7ms is required to achieve a frame rate of 60fps.
+- **Delta Time** - The number of seconds since the last update was run. (The amount of time between frames becomes because game content changes frame by frame.) Note that even if your game runs at a smooth 60 FPS, there will always be some small variance in how often SpriteKit calls your `update(_:)` method. Thus, you need to take the delta time into account in your calculations.
 
 ## Best Practices
 Tips to keep your game running fast:
-1. Keep `update(_:)` fast &mdash; Since it’s called every frame, avoid slow algorithms in the `update(_:)` method .
+1. Keep `update(_:)` fast - Since it’s called every frame, avoid slow algorithms in the `update(_:)` method .
 2. Keep your the number of active nodes as low as possible. Remove nodes from the scene graph when they are offscreen and you no longer need them.

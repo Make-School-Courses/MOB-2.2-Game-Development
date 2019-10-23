@@ -1,187 +1,63 @@
+<!-- .slide: class="header" -->
+
 # Intro to iOS Game Development
 
-## Minute-by-Minute
+<!-- > -->
 
-| **Elapsed** | **Time**  | **Activity**              |
-| ----------- | --------- | ------------------------- |
-| 0:00        | 0:05      | Objectives                |
-| 0:05        | 0:20     | Overview/TT1                  |
-| 0:25        | 0:30      | In Class Activity I       |
-| 0:55        | 0:10      | BREAK                     |
-| 1:05        | 0:20      | TT2 - Movement                |
-| 1:25        | 0:25      | In Class Activity II      |
-| 1:50       | 0:05      | Wrap up review objectives |
-| TOTAL       | 1:55      | -                         |
+## Agenda
 
-## Why you should know this or industry application (5 min)
+- Learning objectives
 
-Explain why students should care to learn the material presented in this class.
+<!-- > -->
 
-<!-- TODO: explain why? -->
+## Learning Objectives
 
-
-
- For a game developer, there’s no better platform. The development tools are well-designed and easy to learn. Plus, the App Store makes it incredibly simple to distribute your game to a massive audience — and get paid for it!
-
- ...leads into AR/VR....
-
-
-## Learning Objectives (5 min)
-
-1. Identify and describe:
-- SpriteKit's role in iOS game development
-- SpriteKit nodes and their chief properties
-- How instances of `SKNode`, `SKSpriteNode`, and `SKScene` are used in game development
-- Sprite creation and positioning
-- How Frames, Frame Rate, and the Game Loop relate to each other
-- The 2D Coordinate System
-- Game movement: </br>
-&nbsp;&nbsp;&nbsp; • with 2D Vectors </br>
-&nbsp;&nbsp;&nbsp; • with simple actions (`SKAction`)
-2. Implement a basic Fixed Shooter game app:
-- using SpriteKit
-- adding nodes and simple actions
+- Identify SpriteKit's role in iOS game development
+- Create and position nodes
+- Describe how Frames, Frame Rate, and the Game Loop relate to each other
+- Move nodes with actions
 
 <!-- TOPICS:
 SpriteKit, Sprites, Nodes (SKNode), scenes (SKScene), key node properties,
 creating a sprite, Frames, Frame Rate and Game Loop
-
-1.Implement:
-- a simple FPS game? using SpriteKit, adding nodes and simple actions...
-
  -->
 
+<!-- > -->
 
+## Why building games with iOS
 
-## Overview/TT I (20 min)
+For a game developer, there’s no better platform. The development tools are well-designed and easy to learn. Plus, the App Store makes it incredibly simple to distribute your game to a massive audience — and get paid for it!
 
-### iOS Game Development - An Evolution
-If you wanted to make a game app in the early days of iOS, your only option was OpenGL ES (and later, Metal). Open GL ES (along with Metal) is the lowest-level graphics API available on iOS.
+<!-- > -->
 
-Because OpenGL ES is notoriously difficult to learn, it was a huge obstacle for many beginning iOS game developers.
+## Let's read about the history of games in iOS
 
-Third-party game development frameworks for iOS &mdash; built on top of OpenGL &mdash; emerged in response.
+<!-- > -->
 
-**Cocos2D**
-The most popular of these third-party frameworks was Cocos2D. Most of the top game apps in the App Store at the time were made with Cocos2D.
+## Nodes (Sprites)
 
-Cocos2D was an excellent framework. But because it was neither written nor supported by Apple, developers often had issues integrating it with other Apple frameworks or when new versions of iOS were released.
-
-### SpriteKit
-With iOS 7, Apple released SpriteKit to provide developers a new framework for making 2D games<sup>00</sup> and graphics.
-
-SpriteKit is a general-purpose framework for drawing shapes, particles, text, images, and video in two dimensions. It takes care of low-level graphics tasks like creating OpenGL contexts and managing textures, allowing you to focus on game-related tasks like showing your game’s sprites on the screen.
-
-To minimize the learning curve for experienced Cocos2D developers, Apple designed the SpriteKit API to be very similar to Cocos2D &mdash; only without the Cocos2D's shortcomings note above. SpriteKit contains similar element types to Cocos2D, including the same sprites, actions and scenes familiar to Cocos2D developers.
-
-And SpriteKit adds many features of its own on top of the basic set borrowed from Cocos2D.
-
-A short list of SpriteKit's supported features includes:
-
-- Textured Sprites
-- Physics Engine (for collisions, events, forces & gravity, simulations)
-- A 2D Coordinate System
-- Particles Editor (to create fire, smoke, and more...)
-- Scene Editor
-- Tilesets
-- Camera
-- Sound & Videos
-- Shape Creation
-- Special Effects for Images
-
-
-> <sup>00</sup> *While SpriteKit is for 2D games, Apple's SceneKit framework was created in response to the demand for a 3D game development framework. There is also a 3rd-party framework, Unity, that is worth your awareness as it is extremely popular for iOS (and non-iOS) game development. Unity allows you to develop in either 2D or 3D, borrowing concepts and paradigms from both SpriteKit and SceneKit. Though there will not be time in the course to cover Unity, we will introduce SceneKit to you later on...*
-
-
-<!-- Supports/Includes:
-Textured sprites
-Physics engine (collisions, events, forces & gravity, simulations)
-Scene editor
-Coordinate System
-Particles editor (fire, smoke…)
-Camera
-support for playing videos, making shapes and applying special image effects.
-Tilesets  -->
-<!--
-Physics
-SpriteKit has a built-in physics engine that makes handling complex physics scenarios a breeze. Built on top of the popular Box2D framework, it allows you to respond to collisions and contact events, apply forces and gravity, and build very complex physics simulations using joints, such as pins and springs. You can use the scene editor to visually add physics to the nodes, or you can add physics programmatically.
-
-Coordinate System
-In SpriteKit, the coordinate (0,0) is located at the bottom left of the screen instead of the top left, which you may be used to if you've worked with Flash, Corona, HTML5 Canvas, and many other game frameworks. Having the origin at the bottom left is an OpenGL convention, and SpriteKit follows it because SpriteKit uses OpenGL under the hood.
-
-Particle System
-SpriteKit has a very powerful particle engine which can be used to simulate particle systems such as fire and smoke. There is also a built-in particle editor where you can visually lay out particle systems. If you prefer to stick with code, you can program these systems from the ground up using nothing but code. -->
-
-
-
-### Why SpriteKit?
-
-**Powerful, Yet Easy-to-Use** </br>
-SpriteKit is well-designed and easy-to-use. Especially for beginners.
-
-It leverages Metal to achieve high-performance rendering, but it offers a simple programming interface to make it easy to create high quality 2D games and other graphics-intensive apps, without your needing to worry about the complexities of graphics APIs such as OpenGL and Metal.
-
-In addition, SpriteKit offers a rich array of extra functionality (see the short list of supported features above) to enhance 2D game development.
-
-**Apple Support** </br>
-SpriteKit works the same on iOS, macOS, tvOS and watchOS, which makes porting your game from one platform to another incredibly easy.
-
-SpriteKit is fully supported by Apple and kept up to date with iOS. Apple has also heavily optimized it for creating 2D games efficiently on iOS.
-
-SpriteKit is the clear choice for 2D game development on iOS.
-
-**2D is Essential** </br>
-On some level, nearly every game &mdash; even very sophisticated 3D games &mdash; use 2D elements, such as in the game's interface or its menu system.
-
-And 2D games are a lot easier to make, for a number of reasons, including:
-- Artwork is far less complicated
-- Programming is faster, requires less math
-
-Because you don’t need to worry as much about lighting, or about how elements will look from multiple angles, it’s often simpler to create a great-looking scene with 2D images than it is to create a 3D version of the same scene.
-
-All of this allows you to focus on creating awesome gameplay, and in terms of both gameplay and graphics, you will end up with a much easier to manage game.
-
-For a beginner, 2D is definitely the best way to get started.
-
-For an advanced game developer, making a 2D game is still much faster than making a 3D game.
-
-And creating a game that limits itself to 2D graphics is a good way to keep your game simple.
-
-If you just want to make something simple for Apple platforms only, SpriteKit is definitely the way to go.
-
-
-<!-- Since it’s not necessarily the case that you earn more money with 3D games, why not go for the easier win? Plus, some people prefer 2D games anyway! -->
-
-
-*Sources:* </br>
-- *Apple Docs*
-- *Ref <sup>0</sup> below*
-
-
-
-### Quick Review: Key Classes & Concepts
-
-#### Nodes (Sprites)
 Nodes are the building blocks of SpriteKit.
 
-A __*node*__ is an object that can be put inside a scene.
+A **node** is an object that can be put inside a scene.
 
-Nodes in SpriteKit are commonly referred to as __*sprites.*__
+Nodes in SpriteKit are commonly referred to as **sprites**
 
 `SKNode` is the base class of all nodes.
 
 All onscreen assets will be an `SKNode` or a subclass of it.
 
+<!-- v -->
+
 Example subclasses of `SKNode`:
-- `SKScene` &mdash; an object that organizes all of the active SpriteKit content.
-- `SKShapeNode` &mdash; renders a shape defined by a Core Graphics path
-- `SKVideo` &mdash; displays video content
-- `SKLabel` &mdash; displays a text label
+- `SKScene` - an object that organizes all of the active SpriteKit content.
+- `SKShapeNode` - renders a shape defined by a Core Graphics path
+- `SKVideo` - displays video content
+- `SKLabel` - displays a text label
 
-**Node Properties** </br>
-SpriteKit offers many different node types, but they all share a common set of key properties inherited from `SKNode`.
+<!-- v -->
 
-A few of the most important properties of `SKNode` and its subclasses that you can manipulate:
+### Node Properties
+
 - `position` (CGPoint)
 - `xScale` (CGFloat): representing the horizontal scale of a node
 - `yScale` (CGFloat): similar to xScale but it acts in the vertical direction instead
@@ -190,23 +66,35 @@ A few of the most important properties of `SKNode` and its subclasses that you c
 - `zRotation` (CGFloat): representing the angle, in radians, that the node should be rotated
 - `zPosition` (CGFloat): used to determine which nodes should be displayed on top of other nodes in the scene
 
-*Source:* </br>
-https://code.tutsplus.com/tutorials/spritekit-from-scratch-fundamentals--cms-26326
+<aside class="notes">
+SpriteKit offers many different node types, but they all share a common set of key properties inherited from `SKNode`.
 
+A few of the most important properties of `SKNode` and its subclasses that you can manipulate.
+
+https://code.tutsplus.com/tutorials/spritekit-from-scratch-fundamentals--cms-26326
+</aside>
+
+<!-- v -->
 
 #### SKSpriteNode
+
 The most common `SKNode` subclass that you will use is the `SKSpriteNode` class.
 
 An `SKSpriteNode` is a type of node that can display either a colored rectangle, or an image.
 
+<!-- v -->
+
 #### SKScene
 An instance of the `SKScene` class represents an active scene of content in SpriteKit.
 
-A scene is the __*root node*__ in a tree of SpriteKit nodes. This tree of nodes provides content that the scene animates and renders for display.
+A scene is the **root node** in a tree of SpriteKit nodes. This tree of nodes provides content that the scene animates and renders for display.
 
-You can display or present a scene &mdash; that is, a collection of sprites &mdash; from inside an `SKView`, `SKRenderer`, or `WKInterfaceSKScene` object.
+You can display or present a scene, that is, a collection of sprites, from inside an `SKView`, `SKRenderer`, or `WKInterfaceSKScene` object.
+
+<!-- v -->
 
 #### Positioning
+
 The position of a sprite is controlled by its `position` property, which is a CGPoint (a simple struct that has two properties of its own: x and y).
 
 ```Swift  
@@ -217,19 +105,24 @@ The position of a sprite is controlled by its `position` property, which is a CG
   }
 ```
 
+<!-- v -->
+
 By default, SpriteKit positions sprites so they are centered at `(0, 0)`, which in SpriteKit represents the bottom left.
 
-__*Important Note*__</br>
-Unlike the coordinate systems in UIKit and AppKit &mdash; where `0` on the y-axis is at the __*top-left*__ &mdash; in SpriteKit, `0` on the y-axis is at the __*bottom-left*__ of the screen:
+**Important Note**
+Unlike the coordinate systems in UIKit and AppKit, where **0** on the y-axis is at the **top-left**, in SpriteKit, **0** on the y-axis is at the **bottom-left** of the screen:
 
-![XandY_in_spritekit](assets/XandY_in_spritekit.png) </br>
+![XandY_in_spritekit](assets/XandY_in_spritekit.png)
 
-
+<aside class="notes">
 *Source:* </br>
 https://hackernoon.com/swift-spritekit-basics-94b1798ab639
+</aside>
 
+<!-- v -->
 
-__*Simple Example:*__ </br>
+**Simple Example:**
+
 Basic example of how to write code to create a sprite and set its `position` property:
 
 ```Swift  
@@ -241,7 +134,9 @@ Basic example of how to write code to create a sprite and set its `position` pro
   myCoolSprite.position = CGPoint(x: 100, y: 100)
 ```
 
-##### Positioning Notes
+<!-- v -->
+
+#### Positioning Notes
 
 1. When you set the position of a sprite, by default you are positioning the center of the sprite (but this can be changed by setting the sprite's `anchorPoint`).
 
@@ -250,7 +145,10 @@ Basic example of how to write code to create a sprite and set its `position` pro
 - This means that you can add sprites as children of other sprites.
 - If you do this, the child sprites will move with their parents.
 
-#### Creating A Sprite
+<!-- > -->
+
+## Creating A Sprite
+
 To create a sprite and display it to your users:
 
 1. create an instance of `SKSpriteNode`
@@ -259,15 +157,15 @@ To create a sprite and display it to your users:
 
 3. add it to an `SKScene` object
 
-- Sprites are not visible unless they are inside an `SKScene` object, which means you need to add them as children of the scene itself by calling the `addChild(_:)` method (which comes with any `SKNode` object) on the `SKScene` object in which you want your sprite to appear.
+Sprites are not visible unless they are inside an `SKScene` object, which means you need to add them as children of the scene itself by calling the `addChild(_:)` method (which comes with any `SKNode` object) on the `SKScene` object in which you want your sprite to appear.
 
 <!-- For any nodes that you want in your scene, you need to add them as children of the scene itself using the `addChild(_:)` method which comes with any `SKNode` object. -->
 
-##### Simple Example: Creating a Sprite
-Example illustrates creation of a simple, colored rectangle sprite. All you need to create it is to provide the desired size and color of the rectangle and then add it as a child to the scene you want:
+<!-- v -->
 
-```Swift  
+#### Simple Example: Creating a Sprite
 
+```swift  
 // create sprite
   let myCoolSprite = SKSpriteNode(color: SKColor.red,
                           size: CGSize(width: 64, height: 64))
@@ -279,60 +177,68 @@ Example illustrates creation of a simple, colored rectangle sprite. All you need
   myScene.addChild(myCoolSprite)
 ```
 
-> Note: For the example above, assume that the `myScene` object is an instance of `SKScene` previously declared outside of the code snippet shown.
+<aside class="notes">
+Example illustrates creation of a simple, colored rectangle sprite. All you need to create it is to provide the desired size and color of the rectangle and then add it as a child to the scene you want
 
+Assume that the `myScene` object is an instance of `SKScene` previously declared outside of the code snippet shown.
+</aside>
 
-#### Frame Rate & the Game Loop
+<!-- > -->
+
+## Warm up
+
+Create a simple sprite in the middle of the screen in a new Xcode project.
+
+<!-- > -->
+
+## Frame Rate & the Game Loop
+
 When we think about "real-time" game behaviors, you might imagine objects such as players (avatars), vehicles, and other things which move around the screen in what appears to be continuous motion.
 
 What is really happening is that the screen is redrawing itself every 1/60th of a second. And every time the screen redraws, the locations on screen of some or all of the objects change slightly.
 
-If done quickly enough, it can fool the human eye<sup>1</sup> into believing that everything is continuously moving.
+If done quickly enough, it can fool the human eye into believing that everything is continuously moving.
 
-> <sup>1</sup> *See "Persistence of Vision" link below...*
+<!-- v -->
 
-</br>
+**Frames**
 
-**Frames** </br>
-Game app development borrows concepts and terminology from movie and video production, as well as from traditional and digital animation.
+Concept borrowed from movie and video production.
 
-In an iOS game app, each individual picture drawn on screen is called a __*frame*__<sup>2</sup> &mdash; just as each individual still image in a movie, animation or video is called a frame.<sup>2</sup>
+In an iOS game app, each individual picture drawn on screen is called a **frame**, just as each individual still image in a movie, animation or video is called a frame.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![horse_in_motion_frames](assets/horse_in_motion_frames.png) </br>
+![horse_in_motion_frames](assets/horse_in_motion_frames.png)
 
-</br>
+<!-- v -->
 
->  <sup>2</sup>  *Disambiguation: The term "frame" used in game development should not to be confused with the `frame` property on UIKit objects such as the `window` and `UIView` objects.*
+**Frame Rate**
 
-</br>
-
-
-**Frame Rate** </br>
 Games typically try to draw frames at either 30 or 60 times per second and aim to keep that rate consistent so animations appear smooth.
 
-This rate at which the screen is redrawn is called the __*frame rate.*__ Measured in __*frames-per-second (FPS),*__ frame rate is the measure of the total number of consecutive frame redraws done in one second.
+This rate at which the screen is redrawn is called the **frame rate.** Measured in **frames-per-second (FPS)**, frame rate is the measure of the total number of consecutive frame redraws done in one second.
 
 If the frame rate is low, your game is likely performing poorly for your user.
 
-</br>
+<!-- v -->
 
-> __*Important Note:*__ Understanding frame rates in iOS game development is a critical factor in optimizing your game app's performance. This is a topic of considerable depth and complexity, of which only some small concepts might be relevant to your specific game.
->
-> We recommend that you take every opportunity to become familiar with this topic.
->
-> To get you started, we've provided some [Notes on Frame Rates](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/blob/master/Lessons/01-Intro-iOS-Game-Development/assignments/frame_rates.md) as introductory background.
+Understanding frame rates in iOS game development is a critical factor in optimizing your game app's performance. This is a topic of considerable depth and complexity, of which only some small concepts might be relevant to your specific game.
 
-> At the very least, be aware that SpriteKit performs better on a physical device than it does in the Simulator; your frame rates will appear lower than expected when running your game in the Simulator.
+Read the [Notes on Frame Rates](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/blob/master/Lessons/01-Intro-iOS-Game-Development/assignments/frame_rates.md) as introductory background.
 
-</br>
+Write down what you consider are the 3 most important take aways.
 
-**The Game Loop** </br>
-Like most game engines, SpriteKit runs an endless rendering loop &mdash; often called a "game loop" &mdash; to update and render (redraw) the screen.
+<!-- > -->
+
+**The Game Loop**
+
+Like most game engines, SpriteKit runs an endless rendering loop, often called a "game loop", to update and render (redraw) the screen.
 
 ![game_loop_frame-cycle_functions](assets/game_loop_frame-cycle_functions.png) </br>
 
 *Source:* </br>
 https://developer.apple.com/documentation/spritekit/skscene/responding_to_frame-cycle_events
+
+<!-- v -->
 
 Steps in rendering each scene typically include:
 1. Updating the scene & its objects
@@ -341,32 +247,39 @@ Steps in rendering each scene typically include:
 4. Apply constraints
 5. Render the scene
 
+<!-- v -->
+
 To optimize game performance factors, including frame rate, you'll want to interact with the game loop to manage node behavior within a scene.
 
 Example: Objects that move out of sight still consume memory, which impacts performance. The game loop offers an excellent point at which to evaluate status and remove objects no longer needed.
 
-__*The `update(_:)` function*__ </br>
+<!-- v -->
+
+**The `update(_:)` function**
+
 The `update(_:)` function tells your app to perform any app-specific logic to update your scene. You override it to perform per-frame game logic.
 
-It is called exactly once per frame &mdash; *before* any actions are evaluated and any physics are simulated.
+It is called exactly once per frame *before* any actions are evaluated and any physics are simulated.
+
+<!-- v -->
 
 Because it is called each frame, it provides an excellent opportunity to interact with the game loop and update the positions of your nodes (sprites).
 
-```Swift  
-  override func update(_ currentTime: TimeInterval) {
+```swift  
+override func update(_ currentTime: TimeInterval) {
 
-          //TODO: Update nodes in this scene
+    //TODO: Update nodes in this scene
 
-      }
+}
 ```
 
-## In Class Activity I (30 min)
+<!-- > -->
 
-### As Individuals
 
-#### Creating the AstroJunk app
-1. Read and follow the [Space Junk](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/blob/master/Lessons/01-Intro-iOS-Game-Development/assignments/activity_1_space_junk.md) instructions for creating your first app, AstroJunk...
+## Creating the AstroJunk app
+Read and follow the [Space Junk](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/blob/master/Lessons/01-Intro-iOS-Game-Development/assignments/activity_1_space_junk.md) instructions for creating your first app, AstroJunk. 🛰 🚀
 
+<!-- > -->
 
 ## Movement (20 min)
 

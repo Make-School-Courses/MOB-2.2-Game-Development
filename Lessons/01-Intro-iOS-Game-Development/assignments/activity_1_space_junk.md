@@ -15,7 +15,7 @@ The final released version of the game will have the following characteristics:
 - Target objects move in only one direction (top to bottom) and only originate (descend) from the top of the screen
 - Each level of the game is contained within a single screen
 3. Game Play:
-- The object of the game is to collect as many pieces of floating space junk as possible, while avoiding collisions with hostile objects (meteorites or alien bombs)
+- The objective of the game is to collect as many pieces of floating space junk as possible, while avoiding collisions with hostile objects (meteorites or alien bombs)
 - Points are awarded for each piece of debris captured, and the total score tabulated and presented on screen
 - If pilot fails to avoid a hostile object, the collision of the object with the ship will result in the ship exploding &mdash; and Game Over!
 
@@ -25,30 +25,23 @@ The final released version of the game will have the following characteristics:
 
 For this __*first released version*__ of AstroJunk, you are to:
 
-1. Create the basic SpriteKit game app project
+1. Create the basic SpriteKit game app project in Xcode
 
 2. Applying the concepts covered so far, you must also create all sprites/nodes required for the game including:
 
 - background scene
-
 - meteorites
-
-- alien bombs
-
+- space debris
 - space ship
 
-At this point, these will be static nodes only &mdash; since we have not covered motion yet, none of these sprites need to be able to move at this point...
+At this point, these will be static nodes only, since we have not covered motion yet, none of these sprites need to be able to move at this point...
 
-> For graphic assets, see these links:
-> []()
+You can go online and search for cool free graphics. Or just use [these](/assets/gameAssets.zip) for now and change them later if you want.
 
-<!-- TODO: students will need to get graphic assets? -->
+### Example
 
-### Instructor Demo
-
-For ideas of how the game will eventually look and behave...
-
-<!-- TODO: Instructor to demo game app prototype/POC version  -->
+How the game will look and behave at this point.
+![gameStage1](assets/stage1.png)
 
 
 ## Additional Resources
