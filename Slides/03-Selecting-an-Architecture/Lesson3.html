@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Syllabus Template Slides</title>
+    <link rel="stylesheet" href="./../css/reveal.css" />
+    <link rel="stylesheet" href="./../css/theme/black.css" id="theme" />
+    <link rel="stylesheet" href="./../css/highlight/zenburn.css" />
+    <link rel="stylesheet" href="./../css/print/paper.css" type="text/css" media="print" />
+    <link rel="stylesheet" href="./../assets/Reveal/makeschool.css" />
+
+    <script>
+      document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>');
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"># Choosing an Architecture
+
+<!-- INSTRUCTOR <aside class="notes"><p>1) Quiz for Initial Exercise is located: --&gt;</p>
+<h2 id="minute-by-minute">Minute-by-Minute</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Elapsed</strong></th>
+<th><strong>Time</strong></th>
+<th><strong>Activity</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0:00</td>
+<td>0:05</td>
+<td>Objectives</td>
+</tr>
+<tr>
+<td>0:05</td>
+<td>0:15</td>
+<td>Overview</td>
+</tr>
+<tr>
+<td>0:20</td>
+<td>0:30</td>
+<td>In Class Activity I</td>
+</tr>
+<tr>
+<td>0:50</td>
+<td>0:10</td>
+<td>BREAK</td>
+</tr>
+<tr>
+<td>1:00</td>
+<td>0:45</td>
+<td>In Class Activity II</td>
+</tr>
+<tr>
+<td>1:45</td>
+<td>0:05</td>
+<td>Wrap up review objectives</td>
+</tr>
+<tr>
+<td>TOTAL</td>
+<td>1:50</td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h2 id="why-you-should-know-this-or-industry-application-5-min">Why you should know this or industry application (5 min)</h2>
+<p>When you develop a game app, you need to pay particular attention upfront to how your app will handle various tasks that the game needs to perform: from handling user input, to rendering graphics, to updating AI components, along with the many smaller tasks your game might need to execute.</p>
+<p>And for every game you make, you will need to create objects to represent game elements (sometimes called &quot;entities&quot;) such as players, vehicles and other moving objects, projectiles, and so on.</p>
+<p>Intelligently laying out your game&#39;s structure and organizing its content in ways which facilitate adding more content and game play elements will make game development much easier.</p>
+<h2 id="learning-objectives-5-min">Learning Objectives (5 min)</h2>
+<ol>
+<li>Identify and describe the pros and cons of the most popular iOS game architectures, including:</li>
+</ol>
+<ul>
+<li>Inheritance-Based</li>
+<li>Component-Based</li>
+<li>State Machine</li>
+</ul>
+<ol start="2">
+<li>Identify and describe how to implement GameplayKit components</li>
+<li>Refactor (implement)an existing code base into:</li>
+</ol>
+<ul>
+<li>Inheritance-Based architecture</li>
+<li>Component-Based architecture using GameplayKit</li>
+</ul>
+<ol start="4">
+<li>Implement a simple State Machine using GameplayKit</li>
+</ol>
+<h2 id="initial-exercise-15-min">Initial Exercise (15 min)</h2>
+<h3 id="as-a-class">As a class</h3>
+<p>In preparation for today&#39;s activities...</p>
+<ol>
+<li>Let&#39;s review progress of the assignment from end of last class</li>
+</ol>
+<ul>
+<li>In your AstroJunk app, you should now have class files for your Spaceship, Meteor, and Debris elements</li>
+</ul>
+<ol start="2">
+<li>Volunteers to showcase their work on AstroJunk so far, especially their organization of class files listed above...</li>
+</ol>
+<h2 id="common-ios-game-architectures-20-min">Common iOS Game Architectures (20 min)</h2>
+<p>Though there are more than a few software design patterns which <em>could</em> be useful for a given game app, only a small set are commonly used for iOS game app development.</p>
+<p>In this lesson, we will explore the high-level design concepts, benefits, and shortcomings of the patterns most commonly-used to make iOS game apps.</p>
+<h3 id="inheritance-based-architecture">Inheritance-Based Architecture</h3>
+<p>In an inheritance-based (or &quot;hierarchy-based&quot;) architecture, each game object is a subclass of a more general base class, and all game objects ultimately derive from this initial base class.</p>
+<p>The first step in this architecture is to define a single base class common to all game objects. (As a standard convention, the base class is often named &quot;GameObject&quot;)</p>
+<p>The <code>GameObject</code> base class can be designed with all the behaviors and properties common to any and all game objects, especially general tasks such as being updated every frame.</p>
+<p>Once you have your <code>GameObject</code> class, all other game objects then inherit properties and behaviors from <code>GameObject</code>, though subclasses can also be customized to suit their own specific needs.</p>
+<p>Note that though your <code>GameObject</code> is not required to extend either <code>SKNode</code> or <code>SKSpriteNode</code>, but doing so is a very common form of the inheritance-based layout used in iOS games.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="assets/inheritance-based.png" alt="inheritance-based"></p>
+<h4 id="example">Example</h4>
+<p>The following three classes together illustrate a simple example of using an inhertiance-based game architecture. In this example, the <code>Princess</code> and <code>Dragon</code> subclasses each inherit and override the <code>update(deltaTime:)</code> function from the base class (<code>GameObject</code>), along with whatever custom behaviors and properties the <code>Princess</code> and <code>Dragon</code> subclasses need themselves:</p>
+<pre><code class="language-Swift">class GameObject: SKSpriteNode {
+
+    func update(deltaTime : Float) { // &#39;deltaTime&#39; is the number of seconds since update() was called last
+
+      // Override this function in subclasses to update the object state (i.e., changes in position, direction, etc.)
+
+    }
+}</code></pre>
+<pre><code class="language-Swift">class Princess: GameObject {
+
+    var magicPowersRemaining : Int = 20 // Set initial amt of spells and magic powers
+    var target : GameObject? // some other game object this object is interacting with
+
+    override func update(deltaTime: Float) {
+
+        super.update(deltaTime: deltaTime)
+
+        // Do Princess-specific update tasks
+
+    }
+
+}</code></pre>
+<pre><code class="language-Swift">class Dragon: GameObject {
+
+    var firePowerRemaining : Int = 40 // Set initial amt of fire units
+    var target : GameObject? // some other game object this object is interacting with
+
+    override func update(deltaTime: Float) {
+
+        super.update(deltaTime: deltaTime)
+
+        // Do Dragon-specific update tasks
+
+    }
+
+}</code></pre>
+<p>It is also quite common with this pattern to create subclasses of <code>GameObject</code> for each specific type of game element in your game. For example, if your game has dragons, ogres, harpies, and cyclops, all with common traits, creating a subclass of <code>GameObject</code> of type <code>Monster</code> or <code>Creature</code> will allow you to add behaviors common to all those elements, while still inheriting all the generic behaviors from the same <code>GameObject</code> base class.</p>
+<p><strong>Benefits</strong> </br>
+One key advantage of a game layout based on an inheritance hierarchy is that each object can stand on its own. In our example above, all of the behaviors of a <code>Princess</code> object live inside that single object, without needing any other object to do the work of a <code>Princess</code> element.</p>
+<p>Inheritance-based architecture is also:</p>
+<ul>
+<li>the simplest to implement</li>
+<li>built on familiar concepts (object/class inheritance)</li>
+</ul>
+<p><strong>Drawbacks</strong> </br>
+An inheritance-based layout works fine and is easy to implement for simple games.</p>
+<p>But in practice, as your game grows in complexity, an inheritance hierarchy begins to create its own set of challenges. Examples include:</p>
+<ul>
+<li>You can often end up with a hierarchy of different game object subclass types that are multiple levels deep, which can be difficult to keep track of as you expand your code base.</li>
+<li>Your initial <code>GameObject</code> base class evolves as you add elements, but moving more and more code to the base class makes it long, convoluted and difficult to work with.</li>
+<li>Conversely, you might find that not all game elements should derive from the same generic base class &mdash; i.e., should weapons really derive from the same base class as creatures?</li>
+<li>Code for various game &quot;systems&quot; &mdash; such as a drawing function or collision detection &mdash; is all mixed together in the same object hierarchy.</li>
+</ul>
+<!-- inflexible -->
+
+<h3 id="component-based-architecture">Component-Based Architecture</h3>
+<p>The basic idea behind component-based architecture &mdash; otherwise known as an &quot;Entity Component System&quot; <sup>1</sup> &mdash; is to prefer composition over inheritance.</p>
+<p>It seeks to eliminate the problems of deep and wide inheritance hierarchies that are difficult to understand, maintain and extend.</p>
+<p>In a component-based architecture, <em>all</em> of your game objects (Entities) are derived from the same initial base class, but they are <strong><em>defined</em></strong> by what <strong><em>components</em></strong> they have &mdash; <em>not</em> by the type of subclass from which they inherit.</p>
+<p>Each game object (Entity) has a list of components. When the game updates, or the object is added to or removed from the game &mdash; or when some other game event occurs &mdash; the object notifies each component in its component list of the event.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="assets/component-based.png" alt="component-based"> </br></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <em>Source</em>: <a href="http://cowboyprogramming.com/2007/01/05/evolve-your-heirachy/">http://cowboyprogramming.com/2007/01/05/evolve-your-heirachy/</a></p>
+<p>The first step in a component-based design is to create a base <code>Component</code> class:</p>
+<pre><code class="language-Swift">class Component {
+
+    // The game object this component is associated with
+    var gameObject : GameObject?
+
+    func update(deltaTime : Float) {
+        // Update this component
+    }
+
+}</code></pre>
+<p>Next, create a base class for game objects which holds a collection of all components associated with a given object of any game element:</p>
+<pre><code class="language-Swift">class GameObject {
+
+    // The list of Component objects belonging to this object
+    var components : [Component] = []
+
+        func update(deltaTime : Float) { // Update this object by updating all of its components
+
+            for component in self.components {
+                component.update(deltaTime: deltaTime)
+            }
+
+        }
+
+        // And other functions, including functions to add and remove components...
+  }</code></pre>
+<p>Then, you can create specific components as customized subclasses of <code>Component</code>, subclass <code>GameObject</code> to create new Entity objects, and define each Entity object&#39;s gameplay capabilities by assigning it its own specific set of components.</p>
+<!-- TODO: useful to add examples of these last 3 steps here? -->
+
+<p><strong>Benefits</strong> </br>
+Component-based architecture is the most commonly used architecture in game app development.</p>
+<p>In this architecture, game objects (Entities) are reduced to simple structures that serve primarily to connect various functional components, which can really boost game production.</p>
+<p>Here are key reasons why:</p>
+<ol>
+<li><p>Scalability &mdash; Whenever you need to add new features or change the way some feature works, all you need to do is to create a new component. No fussing with class hierarchies or dependencies. And new types of entities can be created on-the-fly (programmatically) without developer input.</p>
+</li>
+<li><p>Re-usability &mdash; Rather than re-using code in super-classes, you re-use code by giving similar entities similar components. Since components are self-contained, they can be interchanged to create fantastic new entities. You can also take components from one game and put them into another extremely easily.</p>
+</li>
+<li><p>Flexibility &mdash; A component-based layout means you can be more flexible with your design and not worry about inheritance issues. It also lends itself well to different kinds of games and different strategies of storing and representing entities, including data-driven entity design, or generating entities on the fly inside an editor or during gameplay.</p>
+</li>
+<li><p>Consistency &mdash; When all your game entities are instances of the same class, and all of your functionality has a standardized interface, you can avoid all of the hassle of cumbersone inheritance trees and dependency diagrams and focus on your core game functionality.</p>
+</li>
+</ol>
+<p><em>Source:</em> <a href="https://www.raywenderlich.com/2806-introduction-to-component-based-architecture-in-games">https://www.raywenderlich.com/2806-introduction-to-component-based-architecture-in-games</a></p>
+<p><strong>Drawbacks</strong> </br>
+The chief drawback of component-based architecture is the increase in Level Of Effort (LOE) required:</p>
+<ul>
+<li>Initially &mdash; At the start of development, you will need to create more base classes than you likely would for inheritance-based.</li>
+<li>As your game grows &mdash; It takes more effort to create multiple copies of an object because you need to create and add the same set of components each time you want a new copy.</li>
+</ul>
+<blockquote>
+<p>Note that Apple’s GameplayKit framework provides a set of classes that allows you to easily construct your own entity-component system. Hang tight &mdash; we&#39;ll be learning more about the GameplayKit framework shortly...</p>
+</blockquote>
+<h2 id="in-class-activity-i-30-min">In Class Activity I (30 min)</h2>
+<h3 id="individually">Individually</h3>
+<p>So far, we&#39;ve applied very little thought to the architecutural design of the game objects in your AstroJunk app. We could say that we&#39;ve only applied some generic OOP concepts to it &mdash; or maybe just the very basic tenets of MVC.</p>
+<p><strong>TODO:</strong>
+Your assignment is to apply what you&#39;ve learned so far about inheritance-based architecture to your AstroJunk app code base by refactoring your game objects so that they now derive from an initial base class:</p>
+<ol>
+<li>Create a <code>GameObject</code> base class</li>
+</ol>
+<ul>
+<li>Decide on your own what functionality, generic to all game objects, should be present in this base class</li>
+</ul>
+<ol start="2">
+<li>Create new versions of your game object classes (meteor, debris, and so on) in which each new game object class now extends from the <code>GameObject</code> class itself</li>
+<li>Run your code ...</li>
+</ol>
+<p><strong><em>Result:</em></strong> Your code should behave exactly as it did before you refactored it! The only difference should be that your game objects now derive from the <code>GameObject</code> class.</p>
+<!-- TODO: Add questions here about: 1) is it now easy to add other game objects? 2) what would be the effect if you needed to add <something complex that will cause you to have to rework your base class and all classes derived from it> ? -->
+
+
+
+<h2 id="state-machines-20-min">State Machines (20 min)</h2>
+<p>When developing games, at some point we will encounter the need to work with finite state machines.</p>
+<p><strong>What is a FSM?</strong></p>
+<p><em>“A structure that allows to define complex behaviors.”</em></p>
+<p>This means we can define complex behaviors and encapsulate them in a single object that we call state. Each state should describe a very simple action.</p>
+<p>The easiest way to visualize state machines is by drawing FSM diagrams.</p>
+<p>Let’s start with a basic example: a button. This button can have two states: Pressed and Released. To track this logic we could use a boolean.</p>
+<p>This boolean enables us to track two states.</p>
+<pre><code class="language-Swift">class somebutton:UIButton{
+
+  let isPressed = false
+
+    if(isPressed){
+      //the button has been pressed, do something
+    }else{
+      //the button has been released do something else
+    }
+}</code></pre>
+<p><img src="assets/button.png" alt="buttonStates"></p>
+<p>The arrows show the relation between the two states. You can move from one state to the other at any given time.</p>
+<h2 id="in-class-activity-ii-5-min">In Class Activity II (5 min)</h2>
+<p>Now let’s say we have something a little more complex. The movement of a main character in a game. That can do these:</p>
+<ul>
+<li>Be standing</li>
+<li>Jump (with single tap)</li>
+<li>Attack in middle of jump (with double tap)</li>
+<li>Duck (with long press)</li>
+</ul>
+<p>Draw how you would represent this with a FSM diagram.</p>
+<p>These are the main points:</p>
+<ul>
+<li>We have a fixed set of states that the machine can be in. Standing, jumping, attacking and diving.</li>
+<li>The machine can only be in one state at a time. The character can’t be jumping and standing at the same time.</li>
+<li>A sequence of inputs is sent to the machine.These events are the long presses and taps.</li>
+<li>Each state has a set of transitions, each associated with an input and pointing to a state. When an input comes, if it matches a transition for the current state, the machine changes to that state.</li>
+</ul>
+<h2 id="state-machines---the-coding-part">State machines - the coding part</h2>
+<p>When we start building a game it’s easy to put all the state-dependent code in one place. For example, in the update method. As you can already imagine, as our game grows, it becomes more complex and harder to maintain there.</p>
+<p>In code we could translate this to 4 booleans to represent the 4 states. But think about what this would imply moving forward:</p>
+<ul>
+<li>A lot of if-else statements to check the current state</li>
+<li>Possibly land in some bugs by mistakenly setting any combination of booleans wrong.</li>
+</ul>
+<p>What could really help is to define all the different states in the game and the rules that determine which transitions between states should be allowed. By using a state machine to organize code, we can more easily reason about complicated behaviors in the game.</p>
+<p>GameplayKit has a ready to use solution for state machines that we can take advantage of. We can see how it works with <a href="https://developer.apple.com/library/archive/samplecode/Dispenser_GameplayKit/Introduction/Intro.html#//apple_ref/doc/uid/TP40016460">this example of a water dispenser</a>.</p>
+<p>The game simulates a water dispenser that can only be in one state at a time out of these: empty, full, partially full, serving or refilling. In this case using a state machine makes it easy to enforce this restriction and helps organizing the game logic of each specific state (how the graphics move, what to enable/disable, etc.)</p>
+<p>Take some time to go over the sample project with a partner to see how State Machines were used.</p>
+<h2 id="in-class-activity-iii-25-min">In Class Activity III (25 min)</h2>
+<p>Diagram a state machine for your game (SpaceJunk). Then as a stretch challenge implement in in code.</p>
+<h1 id="after-class">After Class</h1>
+<p>Assignments:</p>
+<ol>
+<li>Review:</li>
+</ol>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Game_mechanics">Game mechanics - wikipedia</a></li>
+<li><a href="https://developer.apple.com/library/archive/documentation/General/Conceptual/GameplayKit_Guide/EntityComponent.html">Entities and Components - from Apple docs</a></li>
+<li><a href="https://github.com/Make-School-Courses/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/blob/master/Lessons/03-Behavioral-PatternsPt.1/Lesson3.md">The Command Pattern - MOB 2.4 Lesson 3</a></li>
+<li><a href="https://gameprogrammingpatterns.com/command.html">The Command Pattern - an article</a></li>
+<li><a href="https://github.com/Make-School-Courses/MOB-2.4-Advanced-Architectural-Patterns-in-iOS/blob/master/Lessons/04-Behavioral-PatternsPt.2/Lesson4.md">The Observer Pattern - MOB 2.4 Lesson 4</a></li>
+<li>The Strategy Pattern</li>
+</ul>
+<ol start="2">
+<li>Get sound files</li>
+</ol>
+<p><strong><em>For next lesson,</em></strong> you will need to have sound files for your game on hand:</p>
+<ul>
+<li>background music</li>
+<li>sound effects for game events such as collisions, Win and Loss conditions, etc.</li>
+</ul>
+<p><strong>TODO:</strong></p>
+<ul>
+<li>Find out what audio file types are supported in iOS apps</li>
+<li>Find them, and have them ready to insert into them in your game</li>
+</ul>
+<blockquote>
+<p><em>You should be able to find lots of free audio on the internet. If stuck, please talk to instructor for ideas.</em></p>
+</blockquote>
+<!-- TODO: find a version of this tutorial in Swift ...NOT Obj-C...
+
+- [Introduction to Component Based Architecture in Games - A Ray Wenderlich tutorial](https://www.raywenderlich.com/2806-introduction-to-component-based-architecture-in-games)
+
+-->
+
+
+<h2 id="wrap-up-5-min">Wrap Up (5 min)</h2>
+<ul>
+<li>Pay particular attention to the assignments in After Class above &mdash; these will be important for next lesson!</li>
+<li>Continue working on your current tutorial</li>
+<li>Complete reading</li>
+<li>Complete challenges</li>
+</ul>
+<h2 id="additional-resources">Additional Resources</h2>
+<ol>
+<li><a href="">Slides</a></li>
+<li><sup>1</sup> <a href="https://en.wikipedia.org/wiki/Entity_component_system">Entity component system - wikipedia</a></li>
+<li><a href="https://developer.apple.com/documentation/gameplaykit">GameplayKit - from Apple docs</a></li>
+<li><a href="http://www.roguebasin.com/index.php?title=Entity_Component_System">Entity Component System - an article</a></li>
+<li><a href="http://cowboyprogramming.com/2007/01/05/evolve-your-heirachy/">Refactoring Game Entities with Components - an article</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Software_design_pattern">Software design pattern - wikipedia</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Design_Patterns">Design Patterns: Elements of Reusable Object-Oriented Software</a></li>
+</ol>
+<ul>
+<li>An extremely important book in the field of software development. Co-written by the &quot;Gang of Four&quot; (not the British punk rock group of the same name)</li>
+</ul>
+<ol start="8">
+<li><a href="https://rubygarage.org/blog/swift-design-patterns">Top 5 Design Patterns in Swift for iOS App Development - an article</a></li>
+<li><a href="http://spritekitlessons.com/child-basics-in-sprite-kit-adding-removing-finding/">Basic Parent-Child Concepts in Sprite Kit</a></li>
+<li><a href="https://gamedevelopertips.com/finite-state-machine-game-developers/">FSM</a></li>
+<li><a href="https://gameprogrammingpatterns.com/state.html">FSM</a></li>
+<li><a href="https://developer.apple.com/library/archive/documentation/General/Conceptual/GameplayKit_Guide/StateMachine.html">State machines with GameplayKit</a></li>
+</ol>
+</aside></script></section></div>
+    </div>
+
+    <script src="./../js/reveal.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // Optional libraries used to extend on reveal.js
+      var deps = [
+        { src: './../plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+        { src: './../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
+        { src: './../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: './../plugin/zoom-js/zoom.js', async: true },
+        { src: './../plugin/notes/notes.js', async: true },
+        { src: './../plugin/math/math.js', async: true }
+      ];
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        dependencies: deps
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal.getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"controls":true,"progress":true,"autoPlayMedia":false,"slideNumber":"c/t","showSlideNumber":"all","controlsTutorial":true,"controlsLayout":"edges","transition":"slide","transitionSpeed":"medium","minScale":0.5,"maxScale":3}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
