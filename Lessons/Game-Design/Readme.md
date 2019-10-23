@@ -2,7 +2,7 @@
 
 # Game Design
 
-## [Slides](https://make-school-courses.github.io/MOB-2.2-Game-Development/Slides/Game-Desigm/Readme.html ':ignore')
+## [Slides](https://make-school-courses.github.io/MOB-2.2-Game-Development/Slides/Game-Design/Readme.html ':ignore')
 
 <!-- > -->
 
