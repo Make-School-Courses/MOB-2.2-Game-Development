@@ -233,7 +233,7 @@ Write down what you consider are the 3 most important take aways.
 
 Like most game engines, SpriteKit runs an endless rendering loop, often called a "game loop", to update and render (redraw) the screen.
 
-![game_loop_frame-cycle_functions](assets/game_loop_frame-cycle_functions.png) </br>
+![game_loop_frame-cycle_functions](assets/game_loop_frame-cycle_functions.png)
 
 *Source:* </br>
 https://developer.apple.com/documentation/spritekit/skscene/responding_to_frame-cycle_events
