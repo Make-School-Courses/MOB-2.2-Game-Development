@@ -39,9 +39,11 @@ class GameScene: SKScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
-        checkCollisions()
     }
   
+    override func didEvaluateActions() {
+        checkCollisions()
+    }
     
     func collision(with node: SKSpriteNode) {
         print("Hey something just happened!")
