@@ -17,114 +17,48 @@
   </head>
   <body>
     <div class="reveal">
-      <div class="slides"><section  data-markdown><script type="text/template"># Actions
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="header" -->
 
-<!-- INSTRUCTOR <aside class="notes"><p>1) Quiz for Initial Exercise is located:
-<a href="https://docs.google.com/document/d/1Qo3Llmfjttfu-LPMCjeuR4iRy2WWS_mG_Pt8Xa8nPh4/edit">https://docs.google.com/document/d/1Qo3Llmfjttfu-LPMCjeuR4iRy2WWS_mG_Pt8Xa8nPh4/edit</a></p>
-<p>...answers for quiz are inline below...</p>
-<p>--&gt;</p>
-<h2 id="minute-by-minute">Minute-by-Minute</h2>
-<table>
-<thead>
-<tr>
-<th><strong>Elapsed</strong></th>
-<th><strong>Time</strong></th>
-<th><strong>Activity</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>0:00</td>
-<td>0:05</td>
-<td>Objectives</td>
-</tr>
-<tr>
-<td>0:05</td>
-<td>0:15</td>
-<td>Initial Exercise</td>
-</tr>
-<tr>
-<td>0:20</td>
-<td>0:10</td>
-<td>Overview I: More Actions</td>
-</tr>
-<tr>
-<td>0:30</td>
-<td>0:20</td>
-<td>In Class Activity I</td>
-</tr>
-<tr>
-<td>0:50</td>
-<td>0:10</td>
-<td>BREAK</td>
-</tr>
-<tr>
-<td>1:00</td>
-<td>0:15</td>
-<td>Overview II: Collision Detection</td>
-</tr>
-<tr>
-<td>1:15</td>
-<td>0:20</td>
-<td>In Class Activity II</td>
-</tr>
-<tr>
-<td>1:35</td>
-<td>0:10</td>
-<td>Overview III: Touch Events</td>
-</tr>
-<tr>
-<td>1:45</td>
-<td>0:10</td>
-<td>In Class Activity III</td>
-</tr>
-<tr>
-<td>1:50</td>
-<td>0:05</td>
-<td>Wrap up review objectives</td>
-</tr>
-<tr>
-<td>TOTAL</td>
-<td>1:55</td>
-<td>-</td>
-</tr>
-</tbody></table>
-<h2 id="why-you-should-know-this-or-industry-application-5-min">Why you should know this or industry application (5 min)</h2>
-<p>To give your game life, you&#39;ll want your nodes to move in various ways, to respond to touch events, and to emulate real-world reactions when two or more game elements bump into each other...</p>
-<h2 id="learning-objectives-5-min">Learning Objectives (5 min)</h2>
-<ol>
-<li>Identify and describe the behavioral results and implementation steps of these <code>SKAction</code> types:</li>
-</ol>
-<ul>
-<li>group</li>
-<li>repeating (two variations)</li>
-<li>removeFromParent()</li>
-<li>wait</li>
-<li>Run-block</li>
-</ul>
-<ol start="2">
-<li>Identify and describe:</li>
-</ol>
-<ul>
-<li>the two built-in functions used to stop running actions</li>
-<li>the main idea behind Collision Detection</li>
-<li>how users can interact with game elements using Touch Events</li>
-</ul>
-<ol start="3">
-<li>Design strategies for debugging:</li>
-</ol>
-<ul>
-<li>Collision Detection behavior</li>
-<li>A game&#39;s Playable Area</li>
-</ul>
-<ol start="4">
-<li>Implement:</li>
-</ol>
-<ul>
-<li>various actions (Scaling, rotation, etc.), collision detection, and touch events in a simple game app</li>
-</ul>
-<h2 id="initial-exercise-15-min">Initial Exercise (15 min)</h2>
-<p>To help you reinforce your learning and to confirm your understanding of the concepts presented so far...</p>
-<p>Quiz...</p>
+# Actions
+
+## [Slides](https://make-school-courses.github.io/MOB-2.2-Game-Development/Slides/02-Actions/Lesson2.html ':ignore')
+
+<!-- https://docs.google.com/document/d/1Qo3Llmfjttfu-LPMCjeuR4iRy2WWS_mG_Pt8Xa8nPh4/edit -->
+</script></section><section  data-markdown><script type="text/template">
+## Agenda
+
+- Review Activity
+- Actions
+- Space Junk: more actions
+- Break
+- Collision detection
+- Space Junk: collisions
+- Touch events
+- Space Junk: touches
+</script></section><section  data-markdown><script type="text/template">
+## Why?
+
+To give your game life, you'll want your nodes to move in various ways, to respond to touch events, and to emulate real-world reactions when two or more game elements bump into each other.
+</script></section><section  data-markdown><script type="text/template">
+## Learning Objectives
+
+1. Identify and describe the behavioral results and implementation steps of these `SKAction` types:
+  - group, repeating (two variations), removeFromParent(), wait, run block
+2. Identify and describe:
+  - the main idea behind Collision Detection
+  - how users can interact with game elements using Touch Events
+3. Design strategies for debugging:
+  - Collision Detection behavior
+  - A game's Playable Area
+4. Implement:
+  - various actions (Scaling, rotation, etc.), collision detection, and touch events in a simple game app
+</script></section><section  data-markdown><script type="text/template">
+## Review Exercise
+
+To help you reinforce your learning and to confirm your understanding of the concepts presented so far...
+
+Quiz...
+
 <!--
 Answers to quiz:
 
@@ -139,37 +73,47 @@ Answers to quiz:
 - C
 
 -->
+</script></section><section ><section data-markdown><script type="text/template">
+## Group Actions
 
+`group(_:)` creates an action that runs a collection of actions **in parallel.**
 
-<h2 id="more-actions-20-min">More Actions (20 min)</h2>
-<h3 id="group-actions">Group Actions</h3>
-<p>In our last lesson we learned that sequence actions run other actions one after another.</p>
-<p>But what if you want to run two or more actions at exactly the same time?</p>
-<p><code>group(_:)</code> creates an action that runs a collection of actions <strong>*in parallel.</strong>*</p>
-<p>Creating groups is very similar to creating sequences.</p>
-<p>To create a group, you pass in a collection of <code>SKAction</code> objects to the <code>group(_:)</code> method:</p>
-<pre><code class="language-Swift">  let groupAction = SKAction.group([action1, action2, action3])</code></pre>
-<p>However, instead of running them one after the other, a group action runs them all at once.</p>
-<p>When the group action executes, the collection of actions that comprise the group all start immediately and run in parallel.</p>
-<p>The <code>duration</code> of the group action is the longest duration among the collection of actions. Thus, a group action does not complete until the longest-running action in its collection has completed.</p>
-<p>If an action in the group has a duration less than the group’s duration, the action completes, then idles until the group completes the remaining actions. <em>(This matters most when creating a repeating action that repeats a group; we will cover repeating actions in next lesson)</em></p>
-<p>Note that you can also combine groups and sequences.</p>
-<ul>
-<li>You can run two sequences at the same time by combining them into a group action</li>
-<li>You can also create sequences that contain group actions.</li>
-</ul>
-<p><code>group(_:)</code> action is also reversible; it creates a new group action that contains the reverse of each action specified in the group.</p>
-<h3 id="repeating-actions">Repeating Actions</h3>
-<p>In addition to the ability to chain actions together with <code>sequence(_:)</code> and <code>group(_:)</code>, you can create one action and have it execute some other action multiple times.</p>
-<p><code>SKAction</code> provides two built-in functions for repeating targeted (aka, <em>associated</em>) actions:</p>
-<ol>
-<li><p><code>repeat(_:count:)</code> &mdash; Creates an action that repeats another action a specified number of times.</p>
-</li>
-<li><p><code>repeatForever(_:)</code> &mdash; Creates an action that repeats another action forever.<sup>1</sup></p>
-</li>
-</ol>
-<p>A simple <code>repeat(_:count:)</code> example:</p>
-<pre><code class="language-Swift">  let moveUp = SKAction.move(to: CGPoint(x: 50.0, y: 0.0), duration: 5.0)
+Creating groups is very similar to creating sequences.
+
+To create a group, you pass in a collection of `SKAction` objects to the `group(_:)` method:
+
+```Swift  
+  let groupAction = SKAction.group([action1, action2, action3])
+```
+
+<aside class="notes">
+However, instead of running them one after the other, a group action runs them all at once.
+
+When the group action executes, the collection of actions that comprise the group all start immediately and run in parallel.
+
+The `duration` of the group action is the longest duration among the collection of actions. Thus, a group action does not complete until the longest-running action in its collection has completed.
+
+If an action in the group has a duration less than the group’s duration, the action completes, then idles until the group completes the remaining actions. *(This matters most when creating a repeating action that repeats a group; we will cover repeating actions in next lesson)*
+</aside>
+</script></section><section data-markdown><script type="text/template">
+Note that you can also combine groups and sequences.
+- You can run two sequences at the same time by combining them into a group action
+- You can also create sequences that contain group actions.
+
+`group(_:)` action is also reversible; it creates a new group action that contains the reverse of each action specified in the group.
+</script></section><section data-markdown><script type="text/template">
+### Repeating Actions
+
+In addition to the ability to chain actions together with `sequence(_:)` and `group(_:)`, you can create one action and have it execute some other action multiple times.
+
+`SKAction` provides two built-in functions for repeating targeted (aka, *associated*) actions:
+
+1. `repeat(_:count:)` &mdash; Creates an action that repeats another action a specified number of times.
+
+2. `repeatForever(_:)` &mdash; Creates an action that repeats another action forever.
+</script></section><section data-markdown><script type="text/template">
+```Swift  
+  let moveUp = SKAction.move(to: CGPoint(x: 50.0, y: 0.0), duration: 5.0)
   let moveDown = SKAction.move(to: CGPoint(x: -50.0, y: 0.0), duration: 5.0)
 
   // Execute move actions in sequence
@@ -178,9 +122,13 @@ Answers to quiz:
   // Repeat execution of sequence every 7 seconds
   let repeatUpDownMovement = SKAction.repeatForever(moveUpAndDown, count: 7)
 
-  mySprite.run(repeatUpDownMovement)</code></pre>
-<p>Example of a <code>repeatForever(_:)</code> action:</p>
-<pre><code class="language-Swift">  let moveUp = SKAction.move(to: CGPoint(x: 50.0, y: 0.0), duration: 5.0)
+  mySprite.run(repeatUpDownMovement)
+```
+</script></section><section data-markdown><script type="text/template">
+Example of a `repeatForever(_:)` action:
+
+```Swift  
+  let moveUp = SKAction.move(to: CGPoint(x: 50.0, y: 0.0), duration: 5.0)
   let moveDown = SKAction.move(to: CGPoint(x: -50.0, y: 0.0), duration: 5.0)
 
   // Execute move actions in sequence
@@ -189,55 +137,95 @@ Answers to quiz:
   // Repeat execution of sequence FOREVER...
   let repeatUpDownMovement = SKAction.repeatForever(moveUpAndDown)
 
-  mySprite.run(repeatUpDownMovement)</code></pre>
-<p>Both of these repeating actions are reversible; reversing either one creates a new action that is the reverse of the specified action and then repeats it the same number of times or forever, respectively.</p>
-<blockquote>
-<p><sup>1</sup> <em>Repeating an action forever invites the obvious question: When will the repeated action stop? While there are several ways this can be achieved, stopping a <code>repeatForever(_:)</code> action can depend on your app&#39;s component makeup and specific behavioral needs. To start, we will go over the two built-in functions most commonly used for stopping actions...</em></p>
-</blockquote>
-<h3 id="stopping-actions">Stopping Actions</h3>
-<p>Oftentimes you&#39;ll need to stop a node from running its actions.</p>
-<p>There are two basic ways to stop actions while they are running:</p>
-<ol>
-<li><p>By calling <code>removeAllActions()</code> &mdash; Stops <strong><em>all</em></strong> actions currently running on the node.</p>
-</li>
-<li><p>Or by calling <code>removeAction(forKey:)</code> &mdash; Removes an action based on a unique key given to the action when the <code>run(_:withKey:)</code> is called. If an action is found that matches the key, it is removed from the node.</p>
-</li>
-</ol>
-<p><code>run(_:withKey:)</code> &mdash; Adds an identifiable action to the list of actions executed by the node. This method is identical to <code>run(_:)</code>, but the action is stored so that it can be retrieved later.</p>
-<p>Example of using <code>removeAction(forKey:)</code> &mdash; Here, we create an action with a key as a unique identifier so that we can remove only the action that matches that identifier. (Note that we first use <code>action(forKey:)</code>to ensure that there is not an action with the &quot;flying&quot; identifier already running.)</p>
-<pre><code class="language-Swift">  func startPenguinFlying() {
-    if penguin.action(forKey: &quot;flying&quot;) == nil {
+  mySprite.run(repeatUpDownMovement)
+```
+
+<aside class="notes">
+Both of these repeating actions are reversible; reversing either one creates a new action that is the reverse of the specified action and then repeats it the same number of times or forever, respectively.
+</aside>
+</script></section></section><section  data-markdown><script type="text/template">
+*Repeating an action forever invites the obvious question: When will the repeated action stop? While there are several ways this can be achieved, stopping a `repeatForever(_:)` action can depend on your app's component makeup and specific behavioral needs. To start, we will go over the two built-in functions most commonly used for stopping actions...*
+</script></section><section ><section data-markdown><script type="text/template">
+### Stopping Actions
+
+Oftentimes you'll need to stop a node from running its actions.
+
+There are two basic ways to stop actions while they are running:
+
+1. By calling `removeAllActions()` &mdash; Stops __*all*__ actions currently running on the node.
+
+2. Or by calling `removeAction(forKey:)` &mdash; Removes an action based on a unique key given to the action when the `run(_:withKey:)` is called. If an action is found that matches the key, it is removed from the node.
+
+<aside class="notes">
+`run(_:withKey:)` &mdash; Adds an identifiable action to the list of actions executed by the node. This method is identical to `run(_:)`, but the action is stored so that it can be retrieved later.
+</aside>
+</script></section><section data-markdown><script type="text/template">
+<aside class="notes">
+Example of using `removeAction(forKey:)` &mdash; Here, we create an action with a key as a unique identifier so that we can remove only the action that matches that identifier. (Note that we first use `action(forKey:) `to ensure that there is not an action with the "flying" identifier already running.)
+</aside>
+
+```Swift  
+  func startPenguinFlying() {
+    if penguin.action(forKey: "flying") == nil {
       penguin.run(
         SKAction.repeatForever(penguinAnimation),
-        withKey: &quot;flying&quot;)
+        withKey: "flying")
   } }
   func stopPenguinFlying() {
-    penguin.removeAction(forKey: &quot;flying&quot;)
+    penguin.removeAction(forKey: "flying")
   }
-</code></pre>
-<h3 id="removefromparent-action">removeFromParent() Action</h3>
-<!-- Building up a massive list of nodes in a game is never good. -->
-<!-- Removing nodes from the scene graph when they are no longer needed is a critical factor in maintaining a highly-performant game. -->
 
-<p>When nodes are no longer needed &mdash; when they finish moving, move offscreen or are otherwise no longer visible &mdash; they still get factored into physics calculations and might still require SpriteKit to check if they need to be redrawn.</p>
-<p>And, over extended playing time, inactive nodes can build up, eventually consuming all available device memory, prompting iOS to automatically terminate your app.</p>
-<p>From the user perspective, this will look as if your app crashed.</p>
-<p>To keep your game running smoothly, remove nodes from the scene graph when they are no longer needed. Removing them will delete them from the scene, but you can always recreate them easily when needed.</p>
-<p><strong>Two Removal Functions</strong> </br>
-When you no longer need a node and want to remove it from a scene, you have two <code>removeFromParent()</code> options:</p>
-<p><strong><em>Option 1:</em></strong> Call the built-in <code>removeFromParent()</code> function on the <code>SKNode</code> object directly.</p>
-<p>Note that in this function&#39;s declaration it returns nothing:</p>
-<pre><code class="language-Swift">func removeFromParent()</code></pre>
-<p>Calling this function on the node itself will remove itself from its parent.</p>
-<p><strong><em>Example &mdash; Option 1:</em></strong> Calling <code>removeFromParent()</code> on the <code>SKNode</code> object directly:</p>
-<pre><code class="language-Swift">  let removeNode = spriteNode.removeFromParent()</code></pre>
-<p><strong><em>Option 2:</em></strong> Create a <code>removeFromParent()</code> action.</p>
-<p>This <code>removeFromParent()</code> function creates and returns an <code>SKAction</code> object that removes the node from its parent:</p>
-<pre><code class="language-Swift">class func removeFromParent() -&gt; SKAction</code></pre>
-<p>When the action executes, the node is immediately removed from its parent.</p>
-<p>This action is not reversible; the reverse of this action is the same action.</p>
-<p><strong><em>Example &mdash; Option 2:</em></strong> Creating and using a <code>removeFromParent()</code> action:</p>
-<pre><code class="language-Swift">  // Create move action
+```
+</script></section><section data-markdown><script type="text/template">
+### removeFromParent() Action
+
+- Building up a massive list of nodes in a game is never good.
+- Removing nodes from the scene graph when they are no longer needed is a critical factor in maintaining a highly-performant game.
+
+<aside class="notes">
+When nodes are no longer needed &mdash; when they finish moving, move offscreen or are otherwise no longer visible &mdash; they still get factored into physics calculations and might still require SpriteKit to check if they need to be redrawn.
+
+And, over extended playing time, inactive nodes can build up, eventually consuming all available device memory, prompting iOS to automatically terminate your app.
+
+From the user perspective, this will look as if your app crashed.
+
+To keep your game running smoothly, remove nodes from the scene graph when they are no longer needed. Removing them will delete them from the scene, but you can always recreate them easily when needed.
+<aside>
+</script></section><section data-markdown><script type="text/template">
+### removeFromParent() Action
+
+__*Option 1:*__ Call the built-in `removeFromParent()` function on the `SKNode` object directly.
+
+Note that in this function's declaration it returns nothing:
+
+```Swift  
+func removeFromParent()
+```
+
+Calling this function on the node itself will remove itself from its parent.
+
+__*Example &mdash; Option 1:*__ Calling `removeFromParent()` on the `SKNode` object directly:
+
+```Swift  
+  let removeNode = spriteNode.removeFromParent()
+```
+</script></section><section data-markdown><script type="text/template">
+__*Option 2:*__ Create a `removeFromParent()` action.
+
+This `removeFromParent()` function creates and returns an `SKAction` object that removes the node from its parent:
+
+```Swift  
+class func removeFromParent() -> SKAction
+```
+
+When the action executes, the node is immediately removed from its parent.
+
+This action is not reversible; the reverse of this action is the same action.
+</script></section><section data-markdown><script type="text/template">
+__*Example &mdash; Option 2:*__ Creating and using a `removeFromParent()` action:
+
+```Swift  
+  // Create move action
   let moveAction = SKAction.move(to: CGPoint(x: -dragon.size.width/2, y: actualY),
                                  duration: TimeInterval(actualDuration))
 
@@ -245,8 +233,12 @@ When you no longer need a node and want to remove it from a scene, you have two 
   let removalAction = SKAction.removeFromParent()
 
   // Run move action, then apply the removal action to dragon sprite
-  dragon.run(SKAction.sequence([moveAction, removalAction]))</code></pre>
-<p>As you can see above &mdash; and have already seen in Lesson 1 &mdash; either of the two optional <code>removeFromParent()</code> functions can be used efficiently with <code>sequence</code> actions...</p>
+  dragon.run(SKAction.sequence([moveAction, removalAction]))
+```
+
+As you can see above &mdash; and have already seen in Lesson 1 &mdash; either of the two optional `removeFromParent()` functions can be used efficiently with `sequence` actions...
+
+
 <!-- ...and we've already seen in Lesson 1 how this can be used efficiently with `sequence` actions:
 
 ```Swift  
@@ -256,131 +248,175 @@ When you no longer need a node and want to remove it from a scene, you have two 
   let sequenceAction = SKAction.sequence([moveUpAction, moveDownAction, removeAction])
   node.run(sequenceAction)
 ``` -->
+</script></section></section><section  data-markdown><script type="text/template">
+### Wait action
 
-<h3 id="wait-action">Wait action</h3>
-<p>The wait-for-duration action makes the sprite wait for a period of time before continue doing anything else. These actions will be the most useful when combined with a sequence action. We will simulate pauses in the game with this combo.</p>
-<pre><code class="language-Swift">let waitAction = SKAction.wait(forDuration:0.5)</code></pre>
-<p>After declaring the action we can include it in any sequence to create a delay.</p>
-<h3 id="run-block-action">Run-block action</h3>
-<p>What if there is a piece of code you wrote that you want executed in the game? You can call it inside the run-block action and treat it as any other action. This means you can include it in a sequence too.</p>
-<pre><code class="language-Swift">let updateScores = SKAction.run(){
+The wait-for-duration action makes the sprite wait for a period of time before continue doing anything else. These actions will be the most useful when combined with a sequence action. We will simulate pauses in the game with this combo.
+
+```Swift
+let waitAction = SKAction.wait(forDuration:0.5)
+```
+
+After declaring the action we can include it in any sequence to create a delay.
+</script></section><section  data-markdown><script type="text/template">
+### Run-block action
+What if there is a piece of code you wrote that you want executed in the game? You can call it inside the run-block action and treat it as any other action. This means you can include it in a sequence too.
+
+```Swift
+let updateScores = SKAction.run(){
   //update some variables here
 }
-let sequence = SKAction.sequence([actionMove, updateScores, waitAction, actionMove])</code></pre>
-<h2 id="in-class-activity-i-20-min">In Class Activity I (20 min)</h2>
-<p>Next steps for the Space Junk game:</p>
-<ol>
-<li>Use actions to control the creation of debris and meteors.</li>
-</ol>
-<ul>
-<li><p>Newly created debris and meteors should originate (be created at) random positions in the scene and should move from top to bottom.</p>
-</li>
-<li><p>For falling elements, make them spin (rotate) as they fall. Try applying different spinning speeds to different elements.</p>
-</li>
-</ul>
-<blockquote>
-<p>TODO: Research how to rotate nodes.</p>
-</blockquote>
-<ol start="2">
-<li>Use actions to make aliens or bombs grow or shrink.</li>
-</ol>
-<blockquote>
-<p>TODO: Research how to animate the visual scaling of a node.</p>
-</blockquote>
-<h2 id="collision-detection-20-min">Collision Detection (20 min)</h2>
-<p>So far we know how to get sprite nodes on screen. We also know how to make them move. But nothing works as a playable game yet. And this is in greater part because we are not handling how objects interact with each other. This can be done using collision detection. We detect when objects collide with each other to then assess what action should follow. An explosion? Adding points to the score? Collecting power ups or lives? It’s our job to handle all these possibilities.
-How it works</p>
-<p>There are several ways to handle collision detection. One of them is using the built-in physics engine and this one we’ll learn later in the course. Today we’ll use the easiest approach which is bounding-box collision detection.</p>
-<h3 id="the-main-idea">The main idea</h3>
-<p>We need a way to get all the elements in the scene into a collection or list so we can then check for collisions on each one. This is easy when we give every node a name at the moment of creation. Then we can use the method <code>enumerateChildNodes(withName:using:)</code> to find all the nodes matching a name.
-Once we have the lists, we can loop on them to check for collisions. Each node has a frame property representing the node’s location on screen. This frame is a rectangle so keep in mind that even when you have round sprites, the bounding box of all elements is a rectangle.
-When you can have access to the frames, you can now use CGRect’s <code>intersects(_ :)</code> method to check for collisions.</p>
-<h3 id="trying-it-out">Trying it out</h3>
-<p>Playground demo + explanation</p>
-<p><strong>Debugging</strong></p>
-<ul>
-<li>The problem with the update method.</li>
-<li>Bounding box bigger than sprite. Shrink the box using <code>insetBy(dx:dy:)</code></li>
-</ul>
-<h2 id="in-class-activity-ii-30-min">In Class Activity II (30 min)</h2>
-<p>Next steps for the Space Junk game:</p>
-<ul>
-<li>Include collision detection using the frame bounding box technique.</li>
-<li>Detect when the ship collides with either meteors or debris.</li>
-<li>(If <code>removefromparent</code> has been covered) once the ship collides with objects, make the object disappear from the scene.
-Debug the frame of the objects to make the collision as realistic as possible.</li>
-</ul>
-<h2 id="touch-events">Touch Events</h2>
-<p>We need a way to interact with the game. A way to control how elements move in the scene. We can achieve this control using touch events. There are several methods we use for this.</p>
-<pre><code class="language-Swift">override func touchesBegan(_ touches: Set&lt;UITouch&gt;, with event: UIEvent?) {}
+let sequence = SKAction.sequence([actionMove, updateScores, waitAction, actionMove])
+```
+</script></section><section  data-markdown><script type="text/template">
 
-override func touchesMoved(_ touches: Set&lt;UITouch&gt;, with event: UIEvent?) {}
+## In Class Activity I
 
-override func touchesEnded(_ touches: Set&lt;UITouch&gt;, with event: UIEvent?) {}
+Next steps for the Space Junk game:
 
-override func touchesCancelled(_ touches: Set&lt;UITouch&gt;, with event: UIEvent?) {}
-</code></pre>
-<p>All of them handle different stages in the lifetime of a touch: Begins, Moves, Ends and Canceled. Inside the body of these methods you can access a set of touches. This is due to the fact that we can have multiple touches at the same time in a scene.</p>
-<p>We can access the first touch in the set.</p>
-<p><code>guard let touch = touches.first else{return}</code></p>
-<p>Or we can iterate through all of them.</p>
-<pre><code class="language-Swift">for touch in touches {
-}</code></pre>
-<p>Every touch has a property called location which we can use to see where that touch happened in the scene.</p>
-<p><code>let location = touch.location(in: self)</code></p>
-<p>There’s a lot we can do with touches. Have a sprite follow our touches, activate special powers, shoot enemies, etc.</p>
-<h2 id="in-class-activity-iii-20-min">In Class Activity III (20 min)</h2>
-<p>Next steps for the Space Junk game:</p>
-<ul>
-<li>Using touches, handle how the spaceship moves. We need it to move either left or right. What’s the best approach we can take? Think about it and implement a solution.</li>
-</ul>
-<h2 id="playable-area">Playable area</h2>
-<p>The ship now moves across the screen. Depending on how you implemented the movement it might happen to you that the ship goes off the scene. But we need it to be visible all the time. You can fix this in many ways. You can have it bounce back or stay at the edge of the screen. It’s up to you.</p>
-<p>Create a method to check the bounds of the game.</p>
-<pre><code class="language-Swift">func boundsCheckSpaceship() {
-}</code></pre>
-<p>Then grab the value of the limit that corresponds to the bottom left and bottom right of the screen.</p>
-<pre><code class="language-Swift"> let bottomLeft = CGPoint(x: ship.size.width/2, y: 0)
- let bottomRight = CGPoint(x: size.width - ship.size.width/2, y: 0)</code></pre>
-<p>Use these values to compare them with the ship’s position to know what to do depending on what you want the game to behave.</p>
-<p><strong>Q: Where should we call the method?</strong></p>
-<h2 id="stretch-challenge">Stretch challenge</h2>
-<p>For the Space Junk game, debug the playable area (make it visible with a rectangle) and see if it works the same for multiple screen sizes.</p>
-<h1 id="after-class">After Class</h1>
-<p>Assignments:</p>
-<ol>
-<li>For you AstroJunk app: If you have not done so already, make sure that the active elements (SpriteKit nodes) in your app are each in their own separate classes.</li>
-</ol>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i.e., you should have class files for your <code>Spaceship</code>, <code>Meteor</code>, and <code>Debris</code> elements</p>
-<ol start="2">
-<li>Review:</li>
-</ol>
-<ul>
-<li><a href="https://developer.apple.com/documentation/spritekit/sknode/accessing_and_modifying_the_node_tree">Accessing and Modifying the Node Tree - from Apple docs</a></li>
-<li><a href="https://developer.apple.com/documentation/spritekit/skaction/controlling_actions_precisely_by_using_names">Controlling Actions Precisely by Using Names - from Apple docs</a></li>
-<li><a href="https://developer.apple.com/documentation/spritekit/sktransformnode">SKTransformNode - from Apple docs</a></li>
-<li><code>removeChildren(in:)</code></li>
-<li><code>removeAllChildren()</code></li>
-</ul>
-<h2 id="wrap-up-5-min">Wrap Up (5 min)</h2>
-<ul>
-<li>Continue working on your current Space Junk game stretch challenge, etc.</li>
-<li>Complete reading</li>
-<li>Complete challenges</li>
-</ul>
-<h2 id="additional-resources">Additional Resources</h2>
-<ol>
-<li><a href="">Slides</a></li>
-<li><a href="https://developer.apple.com/documentation/spritekit/skaction/action_initializers">Action Initializers - from Apple docs</a></li>
-<li><a href="https://developer.apple.com/documentation/spritekit/skaction/1417688-group"><code>group(_:)</code> method - - from Apple docs</a></li>
-<li><a href="https://developer.apple.com/documentation/spritekit/skaction/1417788-wait"><code>wait(forDuration:)</code> method - from Apple docs</a></li>
-<li><a href="https://developer.apple.com/documentation/spritekit/skaction/1417750-repeat"><code>repeat(_:count:)</code> method - from Apple docs</a></li>
-<li><a href="https://developer.apple.com/documentation/spritekit/skaction/1417676-repeatforever"><code>repeatForever(_:)</code> method - from Apple docs</a></li>
-<li><a href="https://developer.apple.com/documentation/spritekit/sknode/1483119-removefromparent">SKNode &gt; removeFromParent() - from Apple</a></li>
-<li><a href="https://developer.apple.com/documentation/spritekit/skaction/1417748-removefromparent">SKAction &gt; removeFromParent() - from Apple</a></li>
-<li><a href="https://www.raywenderlich.com/1163-how-to-make-a-game-like-space-invaders-with-spritekit-and-swift-part-2">How To Make a Game Like Space Invaders with SpriteKit and Swift: Part 2 - A tutorial from raywenderlich</a></li>
-</ol>
-</aside></script></section></div>
+1. Use actions to control the creation of debris and meteors.
+
+- Newly created debris and meteors should originate (be created at) random positions in the scene and should move from top to bottom.
+
+- For falling elements, make them spin (rotate) as they fall. Try applying different spinning speeds to different elements.
+
+Stretch: Add bombs to the game that grow and shrink while falling (pulsating).
+</script></section><section ><section data-markdown><script type="text/template">
+## Collision Detection
+
+<aside class="notes">
+So far we know how to get sprite nodes on screen. We also know how to make them move. But nothing works as a playable game yet. And this is in greater part because we are not handling how objects interact with each other. This can be done using collision detection. We detect when objects collide with each other to then assess what action should follow. An explosion? Adding points to the score? Collecting power ups or lives? It’s our job to handle all these possibilities.
+How it works
+</aside>
+
+There are several ways to handle collision detection. One of them is using the built-in physics engine and this one we’ll learn later in the course. Today we’ll use the easiest approach which is bounding-box collision detection.
+</script></section><section data-markdown><script type="text/template">
+### The main idea
+
+1. We need a way to get all the elements in the scene into a collection or list so we can then check for collisions on each one. This is easy when we give every node a name at the moment of creation.
+
+2. Then we can use the method `enumerateChildNodes(withName:using:)` to find all the nodes matching a name.
+</script></section><section data-markdown><script type="text/template">
+3. Once we have the lists, we can loop on them to check for collisions. Each node has a frame property representing the node’s location on screen. This frame is a rectangle so keep in mind that even when you have round sprites, the bounding box of all elements is a rectangle.
+
+4. When you can have access to the frames, you can now use CGRect’s `intersects(_ :)` method to check for collisions.
+</script></section><section data-markdown><script type="text/template">
+### Trying it out
+
+Playground demo + explanation
+
+**Debugging**
+
+- The problem with the update method.
+- Bounding box bigger than sprite. Shrink the box using `insetBy(dx:dy:)`
+</script></section></section><section  data-markdown><script type="text/template">
+## In Class Activity II
+
+Next steps for the Space Junk game:
+
+- Include collision detection using the frame bounding box technique.
+- Detect when the ship collides with either meteors or debris.
+- Once the ship collides with objects, make the object disappear from the scene.
+Debug the frame of the objects to make the collision as realistic as possible.
+</script></section><section ><section data-markdown><script type="text/template">
+## Touch Events
+
+We need a way to interact with the game. A way to control how elements move in the scene. We can achieve this control using touch events. There are several methods we use for this.
+
+```Swift   
+override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {}
+
+override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {}
+
+override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {}
+
+override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {}
+
+```
+<aside class="notes">
+All of them handle different stages in the lifetime of a touch: Begins, Moves, Ends and Canceled. Inside the body of these methods you can access a set of touches. This is due to the fact that we can have multiple touches at the same time in a scene.
+</aside>
+</script></section><section data-markdown><script type="text/template">
+We can access the first touch in the set.
+
+`guard let touch = touches.first else{return}`
+
+Or we can iterate through all of them.
+
+```Swift
+for touch in touches {
+}
+```
+</script></section><section data-markdown><script type="text/template">
+Every touch has a property called location which we can use to see where that touch happened in the scene.
+
+`let location = touch.location(in: self)`
+
+There’s a lot we can do with touches. Have a sprite follow our touches, activate special powers, shoot enemies, etc.
+</script></section></section><section  data-markdown><script type="text/template">
+## In Class Activity III
+
+Next steps for the Space Junk game:
+
+- Using touches, handle how the spaceship moves. We need it to move either left or right. What’s the best approach we can take? Think about it and implement a solution.
+</script></section><section ><section data-markdown><script type="text/template">
+## Playable area
+
+The ship now moves across the screen. Depending on how you implemented the movement it might happen to you that the ship goes off the scene. But we need it to be visible all the time. You can fix this in many ways. You can have it bounce back or stay at the edge of the screen. It’s up to you.
+
+Create a method to check the bounds of the game.
+
+```Swift
+func boundsCheckSpaceship() {
+}
+```
+</script></section><section data-markdown><script type="text/template">
+Then grab the value of the limit that corresponds to the bottom left and bottom right of the screen.
+
+ ```Swift
+ let bottomLeft = CGPoint(x: ship.size.width/2, y: 0)
+ let bottomRight = CGPoint(x: size.width - ship.size.width/2, y: 0)
+ ```
+
+Use these values to compare them with the ship’s position to know what to do depending on what you want the game to behave.
+
+**Q: Where should we call the method?**
+</script></section><section data-markdown><script type="text/template">
+## Stretch challenge
+
+For the Space Junk game, debug the playable area (make it visible with a rectangle) and see if it works the same for multiple screen sizes.
+</script></section></section><section  data-markdown><script type="text/template">
+# After Class
+
+Assignments:
+1. For you AstroJunk app: If you have not done so already, make sure that the active elements (SpriteKit nodes) in your app are each in their own separate classes.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i.e., you should have class files for your `Spaceship`, `Meteor`, and `Debris` elements
+</script></section><section  data-markdown><script type="text/template">
+2. Review:
+- [Accessing and Modifying the Node Tree - from Apple docs](https://developer.apple.com/documentation/spritekit/sknode/accessing_and_modifying_the_node_tree)
+- [Controlling Actions Precisely by Using Names - from Apple docs](https://developer.apple.com/documentation/spritekit/skaction/controlling_actions_precisely_by_using_names)
+- [SKTransformNode - from Apple docs](https://developer.apple.com/documentation/spritekit/sktransformnode)
+- `removeChildren(in:)`
+- `removeAllChildren()`
+</script></section><section  data-markdown><script type="text/template">
+## Wrap Up
+
+- Continue working on your current Space Junk game stretch challenge, etc.
+- Complete reading
+- Complete challenges
+</script></section><section  data-markdown><script type="text/template">
+## Additional Resources
+
+1. [Action Initializers - from Apple docs](https://developer.apple.com/documentation/spritekit/skaction/action_initializers)
+2. [`group(_:)` method - - from Apple docs](https://developer.apple.com/documentation/spritekit/skaction/1417688-group)
+3. [`wait(forDuration:)` method - from Apple docs](https://developer.apple.com/documentation/spritekit/skaction/1417788-wait)
+4. [`repeat(_:count:)` method - from Apple docs](https://developer.apple.com/documentation/spritekit/skaction/1417750-repeat)
+5. [`repeatForever(_:)` method - from Apple docs](https://developer.apple.com/documentation/spritekit/skaction/1417676-repeatforever)
+6. [SKNode > removeFromParent() - from Apple](https://developer.apple.com/documentation/spritekit/sknode/1483119-removefromparent)
+7. [SKAction > removeFromParent() - from Apple](https://developer.apple.com/documentation/spritekit/skaction/1417748-removefromparent)
+8. [How To Make a Game Like Space Invaders with SpriteKit and Swift: Part 2 - A tutorial from raywenderlich](https://www.raywenderlich.com/1163-how-to-make-a-game-like-space-invaders-with-spritekit-and-swift-part-2)
+</script></section></div>
     </div>
 
     <script src="./../js/reveal.js"></script>

@@ -67,7 +67,7 @@ Answers to quiz:
 
 ## Group Actions
 
-`group(_:)` creates an action that runs a collection of actions __*in parallel.__*
+`group(_:)` creates an action that runs a collection of actions **in parallel.**
 
 Creating groups is very similar to creating sequences.
 
@@ -105,7 +105,7 @@ In addition to the ability to chain actions together with `sequence(_:)` and `gr
 
 1. `repeat(_:count:)` &mdash; Creates an action that repeats another action a specified number of times.
 
-2. `repeatForever(_:)` &mdash; Creates an action that repeats another action forever.<sup>1</sup>
+2. `repeatForever(_:)` &mdash; Creates an action that repeats another action forever.
 
 <!-- v -->
 
@@ -233,6 +233,8 @@ When the action executes, the node is immediately removed from its parent.
 
 This action is not reversible; the reverse of this action is the same action.
 
+<!-- v -->
+
 __*Example &mdash; Option 2:*__ Creating and using a `removeFromParent()` action:
 
 ```Swift  
@@ -343,7 +345,7 @@ Next steps for the Space Junk game:
 
 - Include collision detection using the frame bounding box technique.
 - Detect when the ship collides with either meteors or debris.
-- (If `removefromparent` has been covered) once the ship collides with objects, make the object disappear from the scene.
+- Once the ship collides with objects, make the object disappear from the scene.
 Debug the frame of the objects to make the collision as realistic as possible.
 
 <!-- > -->
@@ -407,6 +409,8 @@ Create a method to check the bounds of the game.
 func boundsCheckSpaceship() {
 }
 ```
+
+<!-- v -->
 
 Then grab the value of the limit that corresponds to the bottom left and bottom right of the screen.
 
