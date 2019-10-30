@@ -2,3 +2,4 @@
 - **[Day 1](Lessons/Game-Design/Readme.md)**
 - **[Day 2](Lessons/01-Intro-iOS-Game-Development/Lesson1.md)**
 - **[Day 3](Lessons/02-Actions/Lesson2.md)**
+- **[Day 4](Lessons/04-Working-with-Scenes/Lesson4.md)**
