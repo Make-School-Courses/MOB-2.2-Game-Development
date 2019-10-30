@@ -355,7 +355,7 @@ Keep working in your game adding:
 - game mechanics
 - other scenes
 
-[Instructions](https://make-school-courses.github.io/MOB-2.2-Game-Development/Slides/04-Working-with-Scenes/assignments/activity.md)
+[Instructions](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/blob/master/Lessons/04-Working-with-Scenes/assignments/activity.md)
 
 <!-- INSTRUCTOR NOTE: The `touchesBegan(_:with:)` function might be the best place for this (but not the only appropriate function) -->
 
@@ -437,7 +437,7 @@ https://www.makeschool.com/academy/track/build-ios-games/clone-angry-birds-with-
 
 ## Additional Resources
 
-2. [Game mechanics - wikipedia](https://en.wikipedia.org/wiki/Game_mechanics) 
+2. [Game mechanics - wikipedia](https://en.wikipedia.org/wiki/Game_mechanics)
 3. [SKView - Apple Docs](https://developer.apple.com/documentation/spritekit/skview)
 4. [SKTransition - Apple Docs](https://developer.apple.com/documentation/spritekit/sktransition)
 5. [Drawing SpriteKit Content in a View - Apple Docs](https://developer.apple.com/documentation/spritekit/drawing_spritekit_content_in_a_view)
