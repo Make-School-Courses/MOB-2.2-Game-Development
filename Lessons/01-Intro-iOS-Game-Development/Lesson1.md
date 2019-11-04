@@ -508,7 +508,7 @@ To create a SpriteKit action, call one of the many built-in static constructors 
 In this example, we use the `moveBy(x:y:duration:)` function built-in to `SKAction` to create an action which will make a sprite move `2` units along the x-axis and `3` units along the y axis in `1` second:
 
 ```Swift  
-  let simpleTwoByThreeAction = SKAction.moveByX(2, y: 3, duration: 1)
+let simpleMoveAction = SKAction.moveBy(x: 20, y: 300, duration: 1)
 ```
 
 <aside class="notes">
@@ -523,7 +523,7 @@ __*Running Actions*__
 Once you've created your desired action, you can run it on *any* `SKNode` object by invoking one of the node object's various `run(_:)` functions:
 
 ```Swift  
-  myNode.run(simpleTwoByThreeAction)
+  myNode.run(simpleMoveAction)
 ```
 
 And, if you want to apply the same action to multiple nodes, you can create your `SKAction` once, then call a `run(_:)` method on each of the several nodes for which you would like to perform the same action.
