@@ -184,7 +184,7 @@ In game apps, background music servers a similar purpose.And adding background m
 1. `AVAudioPlayer` provides more power and control.
 2. `SKAudioNode` is easier to implement
 
-[Link to example implementations in repo]()
+[Link to example implementations in repo](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/blob/master/Lessons/05-Juice/Sound.md)
 
 <!-- > -->
 
@@ -312,7 +312,7 @@ addChild(fireEmitter)
 
 ```
 
-You can check what all the properties do [here](particleProperties.md).
+You can check what all the properties do [here](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/blob/master/Lessons/05-Juice/particleProperties.md).
 
 <!-- > -->
 
