@@ -41,6 +41,7 @@ By the end of the course, students will be able to ...
 [Actions, Touch events, Collisions]: Lessons/02-Actions/Lesson2.md
 [Choosing an Architecture]: Lessons/Lesson3.md
 [Scenes]: Lessons/04-Working-with-Scenes/Lesson4.md
+[Adding Juice]: Lessons/05-Juice/Lesson5.md
 
 
 ## Class Assignments
