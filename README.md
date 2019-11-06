@@ -24,8 +24,8 @@ By the end of the course, students will be able to ...
 |  3 |   Mon, Oct 28             | [Actions, Touch events, Collisions]  |
 |  4 |   Wed, Oct 30             | [Scenes]                             |
 |  5 |   Mon, Nov 4              | [Adding Juice]                       |
-|  6 |   Wed, Nov 6              | [Cameras]                            |
-|  7 |   Mon, Nov 11             | [Physics]                            |
+|  6 |   Wed, Nov 6              | [Physics]                            |
+|  7 |   Mon, Nov 11             | [Cameras]                            |
 |  8 |   Wed, Nov 13             | [Choosing an architecture]           |
 |  9 |   Mon, Nov 18             | [SceneKit - a preview]               |
 | 10 |   Wed, Nov 20             | Lab - Custom game                    |  
@@ -42,6 +42,7 @@ By the end of the course, students will be able to ...
 [Choosing an Architecture]: Lessons/Lesson3.md
 [Scenes]: Lessons/04-Working-with-Scenes/Lesson4.md
 [Adding Juice]: Lessons/05-Juice/Lesson5.md
+[Physics]: Lessons/06-Physics/Lesson.md
 
 
 ## Class Assignments
