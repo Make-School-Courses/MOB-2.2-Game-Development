@@ -260,6 +260,7 @@ In case you already have it like this:
 
 ## Sources & additional resources
 
+- [Custom Physics body](https://github.com/WesleyEspinoza/skphysicsbody-path-generator)
 - [Physics bodies](https://developer.apple.com/documentation/spritekit/sknode/getting_started_with_physics_bodies)
 - [Collisions and contacts](https://developer.apple.com/documentation/spritekit/skphysicsbody/about_collisions_and_contacts)
 - [Collision bit mask](https://developer.apple.com/documentation/spritekit/skphysicsbody/1520003-collisionbitmask)
