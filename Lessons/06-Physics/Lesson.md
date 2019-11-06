@@ -125,7 +125,7 @@ Physics bodies created from the alpha channel of a texture offer the best fideli
 
 ## Physics playground
 
-[Starter playground]()
+[Starter playground](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/blob/master/Lessons/06-Physics/assets/PhysicsPlayground.playground.zip)
 
 <!-- > -->
 
