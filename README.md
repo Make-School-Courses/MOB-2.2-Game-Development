@@ -43,6 +43,7 @@ By the end of the course, students will be able to ...
 [Scenes]: Lessons/04-Working-with-Scenes/Lesson4.md
 [Adding Juice]: Lessons/05-Juice/Lesson5.md
 [Physics]: Lessons/06-Physics/Lesson.md
+[Cameras]: Lessons/07-Cameras/Lesson.md
 
 
 ## Class Assignments

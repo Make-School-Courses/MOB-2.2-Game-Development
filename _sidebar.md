@@ -3,5 +3,6 @@
 - **[Day 2](Lessons/01-Intro-iOS-Game-Development/Lesson1.md)**
 - **[Day 3](Lessons/02-Actions/Lesson2.md)**
 - **[Day 4](Lessons/04-Working-with-Scenes/Lesson4.md)**
-- **[Day 5](Lessons/05-Juice/Lesson6.md)**
+- **[Day 5](Lessons/05-Juice/Lesson5.md)**
 - **[Day 6](Lessons/06-Physics/Lesson.md)**
+- **[Day 7](Lessons/07-Cameras/Lesson.md)**
