@@ -33,8 +33,6 @@
 
 ## Initial Exercise
 
-### As a class
-
 In preparation for today's activities...
 
 1. Let's review progress of the assignment from end of last class
@@ -85,7 +83,8 @@ The following three classes together illustrate a simple example of using an inh
 class GameObject: SKSpriteNode {
     func update(deltaTime : Float) {
        // 'deltaTime' is the number of seconds since update() was called last
-      // Override this function in subclasses to update the object state (i.e., changes in position, direction, etc.)
+      // Override this function in subclasses to update the object state
+      //(i.e., changes in position, direction, etc.)
     }
 }
 ```
@@ -94,8 +93,10 @@ class GameObject: SKSpriteNode {
 
 ```swift  
 class Princess: GameObject {
-    var magicPowersRemaining : Int = 20 // Set initial amt of spells and magic powers
-    var target : GameObject? // some other game object this object is interacting with
+    // Set initial amt of spells and magic powers
+    var magicPowersRemaining : Int = 20
+    // some other game object this object is interacting with
+    var target : GameObject?
 
     override func update(deltaTime: Float) {
         super.update(deltaTime: deltaTime)
@@ -108,8 +109,10 @@ class Princess: GameObject {
 
 ```swift
 class Dragon: GameObject {
-    var firePowerRemaining : Int = 40 // Set initial amt of fire units
-    var target : GameObject? // some other game object this object is interacting with
+    // Set initial amt of fire units
+    var firePowerRemaining : Int = 40
+    // some other game object this object is interacting with
+    var target : GameObject?
 
     override func update(deltaTime: Float) {
         super.update(deltaTime: deltaTime)
@@ -192,12 +195,13 @@ Next, create a base class for game objects which holds a collection of all compo
 class GameObject {
     // The list of Component objects belonging to this object
     var components : [Component] = []
-        func update(deltaTime : Float) { // Update this object by updating all of its components
+        func update(deltaTime : Float) {
+          // Update this object by updating all of its components
             for component in self.components {
                 component.update(deltaTime: deltaTime)
             }
         }
-        // And other functions, including functions to add and remove components...
+        // And other functions,  to add and remove components...
   }
 ```
 
@@ -305,9 +309,7 @@ This boolean enables us to track two states.
 
 ```swift
 class somebutton:UIButton{
-
   let isPressed = false
-
     if(isPressed){
       //the button has been pressed, do something
     }else{
