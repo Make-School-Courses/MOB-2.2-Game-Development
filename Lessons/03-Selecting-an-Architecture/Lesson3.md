@@ -429,3 +429,4 @@ Diagram a state machine for your game (SpaceJunk). Then as a stretch challenge i
 9. [Basic Parent-Child Concepts in Sprite Kit](http://spritekitlessons.com/child-basics-in-sprite-kit-adding-removing-finding/)
 10. [FSM](https://gamedevelopertips.com/finite-state-machine-game-developers/)
 11. [FSM](https://gameprogrammingpatterns.com/state.html)
+12. [Component based arch](https://www.oreilly.com/library/view/ios-swift-game/9781491920794/ch01.html)
