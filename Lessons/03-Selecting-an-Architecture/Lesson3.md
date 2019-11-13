@@ -10,10 +10,10 @@
 
 ## Agenda
 
--
--
--
-
+- Overview of your current architecture
+- Inheritance-Based Architecture
+- Component-Based Architecture
+- State Machines
 
 <!-- > -->
 
@@ -199,10 +199,10 @@ class GameObject {
           // Update this object by updating all of its components
             for component in self.components {
                 component.update(deltaTime: deltaTime)
-            }
-        }
+          }
+      }
         // And other functions,  to add and remove components...
-  }
+}
 ```
 
 <!-- v -->
@@ -271,6 +271,10 @@ Note that Apple’s GameplayKit framework provides a set of classes that allows 
 <!-- > -->
 
 ## In Class Activity
+
+Implementing a component based architecture.
+
+Starter code will be given.
 
 <!--
 So far, we've applied very little thought to the architectural design of the game objects in your AstroJunk app. We could say that we've only applied some generic OOP concepts to it &mdash; or maybe just the very basic tenets of MVC.
@@ -373,6 +377,17 @@ The game simulates a water dispenser that can only be in one state at a time out
 
 <!-- > -->
 
+Analyze:
+- What are all the possible states?
+- What happens in each state?
+- How are transitions between states handled?
+- Does it matter what the previous state was before entering a new one?
+- How is is possible that we can't get multiple glasses of water on screen?
+- Why can't we request a glass when the dispenser is empty?
+- What something you would add to the simulation?
+
+<!-- v -->
+
 ## In Class Activity
 
 Diagram a state machine for your game (SpaceJunk). Then as a stretch challenge implement in in code.
@@ -399,7 +414,7 @@ Diagram a state machine for your game (SpaceJunk). Then as a stretch challenge i
 
 ## Additional Resources
 
-1 . [State machines with GameplayKit](https://developer.apple.com/library/archive/documentation/General/Conceptual/GameplayKit_Guide/StateMachine.html)
+1. [State machines with GameplayKit](https://developer.apple.com/library/archive/documentation/General/Conceptual/GameplayKit_Guide/StateMachine.html)
 2. [Entity component system - wikipedia](https://en.wikipedia.org/wiki/Entity_component_system)
 3. [GameplayKit - from Apple docs](https://developer.apple.com/documentation/gameplaykit)
 4. [Entity Component System - an article](http://www.roguebasin.com/index.php?title=Entity_Component_System)
