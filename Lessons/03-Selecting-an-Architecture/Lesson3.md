@@ -23,11 +23,9 @@
   - Inheritance-Based
   - Component-Based
   - State Machine
-2. Identify and describe how to implement GameplayKit components
-3. Refactor (implement) an existing code base into:
-  - Inheritance-Based architecture
-  - Component-Based architecture using GameplayKit
-4. Implement a simple State Machine using GameplayKit
+2. Refactor (implement) an existing code base into:
+  - Component-Based architecture
+3. Examine a simple State Machine using GameplayKit
 
 <!-- > -->
 
