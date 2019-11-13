@@ -26,7 +26,7 @@ By the end of the course, students will be able to ...
 |  5 |   Mon, Nov 4              | [Adding Juice]                       |
 |  6 |   Wed, Nov 6              | [Physics]                            |
 |  7 |   Mon, Nov 11             | [Cameras]                            |
-|  8 |   Wed, Nov 13             | [Choosing an architecture]           |
+|  8 |   Wed, Nov 13             | [Choosing an Architecture]           |
 |  9 |   Mon, Nov 18             | [SceneKit - a preview]               |
 | 10 |   Wed, Nov 20             | Lab - Custom game                    |  
 | 11 |   Mon, Nov 25             | Lab - Custom game                    |
