@@ -26,7 +26,7 @@ By the end of the course, students will be able to ...
 |  5 |   Mon, Nov 4              | [Adding Juice]                       |
 |  6 |   Wed, Nov 6              | [Physics]                            |
 |  7 |   Mon, Nov 11             | [Cameras]                            |
-|  8 |   Wed, Nov 13             | [Choosing an Architecture]           |
+|  8 |   Wed, Nov 13             | [Selecting an Architecture]           |
 |  9 |   Mon, Nov 18             | [SceneKit - a preview]               |
 | 10 |   Wed, Nov 20             | Lab - Custom game                    |  
 | 11 |   Mon, Nov 25             | Lab - Custom game                    |
@@ -39,7 +39,7 @@ By the end of the course, students will be able to ...
 [Game Design]: Lessons/Game-Design/Readme.md
 [Intro to iOS Game Development]: Lessons/01-Intro-iOS-Game-Development/Lesson1.md
 [Actions, Touch events, Collisions]: Lessons/02-Actions/Lesson2.md
-[Choosing an Architecture]: Lessons/03-Selectin-an-Architecture/Lesson3.md
+[Choosing an Architecture]: Lessons/03-Selecting-an-Architecture/Lesson3.md
 [Scenes]: Lessons/04-Working-with-Scenes/Lesson4.md
 [Adding Juice]: Lessons/05-Juice/Lesson5.md
 [Physics]: Lessons/06-Physics/Lesson.md
