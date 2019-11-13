@@ -6,3 +6,4 @@
 - **[Day 5](Lessons/05-Juice/Lesson5.md)**
 - **[Day 6](Lessons/06-Physics/Lesson.md)**
 - **[Day 7](Lessons/07-Cameras/Lesson.md)**
+- **[Day 8](Lessons/03-Selecting-an-Architecture/Lesson3.md)**
