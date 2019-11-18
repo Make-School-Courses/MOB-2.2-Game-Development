@@ -7,3 +7,4 @@
 - **[Day 6](Lessons/06-Physics/Lesson.md)**
 - **[Day 7](Lessons/07-Cameras/Lesson.md)**
 - **[Day 8](Lessons/03-Selecting-an-Architecture/Lesson3.md)**
+- **[Day 9](Lessons/08-SceneKit/Lesson.md)**

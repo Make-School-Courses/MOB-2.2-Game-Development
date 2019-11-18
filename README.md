@@ -44,7 +44,7 @@ By the end of the course, students will be able to ...
 [Adding Juice]: Lessons/05-Juice/Lesson5.md
 [Physics]: Lessons/06-Physics/Lesson.md
 [Cameras]: Lessons/07-Cameras/Lesson.md
-
+[SceneKit - a preview]: Lessons/08-SceneKit/Lesson.md
 
 ## Class Assignments
 
