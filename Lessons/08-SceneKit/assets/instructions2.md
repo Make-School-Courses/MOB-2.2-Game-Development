@@ -47,7 +47,7 @@ var spawnTime: TimeInterval = 0
 ...
 if time > spawnTime { //Where do you think this goes?
   spawnShape()
-  spawnTime = time + TimeInterval(Float.random(min: 0.2, max: 1.5)) //What is this doing?
+  spawnTime = time + TimeInterval(Float.random(in:0.2...1.5)) //What is this doing?
 }
 ```
 

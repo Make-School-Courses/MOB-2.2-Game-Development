@@ -101,12 +101,12 @@ class GameViewController: UIViewController {
 
 <!-- v -->
 
-3. Add a property for the view. `var view: SCNView!`
+3. Add a property for the view. `var scnView: SCNView!`
 4. Add a method to set it up.
 
 ```swift
 func setupView() {
-  view = self.view as! SCNView
+  scnView = self.view as! SCNView
 }
 ```
 
@@ -117,7 +117,7 @@ func setupView() {
 ```swift
 func setupScene() {
   scene = SCNScene()
-  view.scene = scene
+  scnView.scene = scene
 }
 ```
 
@@ -145,7 +145,7 @@ Follow the instructions [here](https://github.com/Make-School-Courses/MOB-2.2-Ga
 
 - **◆**: Total draw calls per frame. The total amount of visible objects drawn per single frame. Lights affecting objects can increase this number.
 
-- **(square)**: Total polygons per frame. Total amount of polygons used to draw a single frame for all the visible geometry.
+- **(triangle)**: Total polygons per frame. Total amount of polygons used to draw a single frame for all the visible geometry.
 
 - **✸**: Total visible light sources. It's recommended to not use more than 3 light sources at a time.
 
@@ -232,13 +232,13 @@ Build and run
 
 Follow the instructions [here](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/blob/master/Lessons/08-SceneKit/assets/instructions2.md). You'll need the project have been using so far.
 
-<!-- v -->
+<!-- > -->
 
 ## After Class
 
 1. Find out about the other force that can be applied to shapes: **Torque**. What's a good use case for it?
 
-<!-- v -->
+<!-- > -->
 
 ## Additional Resources
 
