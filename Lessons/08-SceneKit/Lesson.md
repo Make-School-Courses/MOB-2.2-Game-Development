@@ -135,7 +135,7 @@ We are done setting up the clean project. Now the rest will be done in pairs :)
 
 ## An Exercise
 
-Follow the instructions [here](). You'll need the project we prepared before to start with a blank game.
+Follow the instructions [here](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/blob/master/Lessons/08-SceneKit/assets/instructions.md). You'll need the project we prepared before to start with a blank game.
 
 <!-- > -->
 
@@ -230,7 +230,7 @@ Build and run
 
 ## An Exercise
 
-Follow the instructions [here](). You'll need the project have been using so far.
+Follow the instructions [here](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/blob/master/Lessons/08-SceneKit/assets/instructions2.md). You'll need the project have been using so far.
 
 <!-- v -->
 

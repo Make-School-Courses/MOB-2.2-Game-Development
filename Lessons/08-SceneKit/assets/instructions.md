@@ -4,7 +4,7 @@ Let's start by adding an asset catalog (you can call it Assets) The SceneKit ass
 
 To keep things organized make a subfolder and call it `Textures`. Then add your first asset. This background:
 
-![background](background.png)
+![background](background.jpg)
 
 Add the background to the scene.
 
@@ -87,5 +87,3 @@ Build and run now. Try the following:
 - Two finger swipe
 - Two finger pinch
 - Double-tap
-
-Here's
