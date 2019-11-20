@@ -26,9 +26,9 @@ By the end of the course, students will be able to ...
 |  5 |   Mon, Nov 4              | [Adding Juice]                       |
 |  6 |   Wed, Nov 6              | [Physics]                            |
 |  7 |   Mon, Nov 11             | [Cameras]                            |
-|  8 |   Wed, Nov 13             | [Selecting an Architecture]           |
+|  8 |   Wed, Nov 13             | [Selecting an Architecture]          |
 |  9 |   Mon, Nov 18             | [SceneKit - a preview]               |
-| 10 |   Wed, Nov 20             | Lab - Custom game                    |  
+| 10 |   Wed, Nov 20             | [Project Specs]                      |  
 | 11 |   Mon, Nov 25             | Lab - Custom game                    |
 | -  |   Wed, Nov 27             | **NO CLASS** - Thanksgiving          |
 | 12 |   Mon, Dec 2              | Lab - Custom game or Bonus topic     |
@@ -45,6 +45,7 @@ By the end of the course, students will be able to ...
 [Physics]: Lessons/06-Physics/Lesson.md
 [Cameras]: Lessons/07-Cameras/Lesson.md
 [SceneKit - a preview]: Lessons/08-SceneKit/Lesson.md
+[Project Specs]: Assignments/Project.md
 
 ## Class Assignments
 
@@ -54,7 +55,7 @@ By the end of the course, students will be able to ...
 
 ### Projects
 
-- [Custom game]()
+- [Custom game](Assignments/Project.md)
 
 ## Evaluation
 To pass this course you must meet the following requirements:
