@@ -31,7 +31,7 @@ By the end of the course, students will be able to ...
 | 10 |   Wed, Nov 20             | [Project Specs]                      |  
 | 11 |   Mon, Nov 25             | Lab - Custom game                    |
 | -  |   Wed, Nov 27             | **NO CLASS** - Thanksgiving          |
-| 12 |   Mon, Dec 2              | Lab - Custom game or Bonus topic     |
+| 12 |   Mon, Dec 2              | [GameKit + Lab]                      |
 | 13 |   Wed, Dec 4              | Lab - Review before publishing game  |
 | 14 |   Mon, Dec 9              | Final Exam                           |
 | 15 |   Wed, Dec 11             | Presentations                        |
@@ -46,6 +46,7 @@ By the end of the course, students will be able to ...
 [Cameras]: Lessons/07-Cameras/Lesson.md
 [SceneKit - a preview]: Lessons/08-SceneKit/Lesson.md
 [Project Specs]: Assignments/Project.md
+[GameKit + Lab]: Lessons/09-GameKit/Lesson.md
 
 ## Class Assignments
 
