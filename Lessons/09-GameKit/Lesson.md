@@ -2,7 +2,7 @@
 
 # GameKit
 
-## [Slides](https://make-school-courses.github.io/MOB-2.2-Game-Development/Slides/08-SceneKit/Lesson.html ':ignore')
+## [Slides](https://make-school-courses.github.io/MOB-2.2-Game-Development/Slides/09-GameKit/Lesson.html ':ignore')
 
 <!-- > -->
 
