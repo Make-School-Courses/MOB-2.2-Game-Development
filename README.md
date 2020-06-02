@@ -13,28 +13,26 @@ By the end of the course, students will be able to ...
 3. Execute testing and debugging strategies specific to iOS games.
 4. Integrate native game engines into an iOS project.
 
-**Course Dates:** Monday, October 21 – Wednesday, December 11, 2019 (8 weeks)
+**Course Dates:** Tuesday, June 2 – Thursday, July 16, 2020 (7 weeks)
 
-**Class Times:** Monday and Wednesday at 3:30–5:20pm (14 class sessions)
+**Class Times:** Tuesday and Thursday at 2:30–5:20pm (14 class sessions)
 
 | Class |          Date          |                 Topics                  |
 |:-----:|:----------------------:|:---------------------------------------:|
-|  1 |   Mon, Oct 21             | [Game Design]                        |
-|  2 |   Wed, Oct 23             | [Intro to iOS Game Development]:     |
-|  3 |   Mon, Oct 28             | [Actions, Touch events, Collisions]  |
-|  4 |   Wed, Oct 30             | [Scenes]                             |
-|  5 |   Mon, Nov 4              | [Adding Juice]                       |
-|  6 |   Wed, Nov 6              | [Physics]                            |
-|  7 |   Mon, Nov 11             | [Cameras]                            |
-|  8 |   Wed, Nov 13             | [Selecting an Architecture]          |
-|  9 |   Mon, Nov 18             | [SceneKit - a preview]               |
-| 10 |   Wed, Nov 20             | [Project Specs]                      |  
-| 11 |   Mon, Nov 25             | Lab - Custom game                    |
-| -  |   Wed, Nov 27             | **NO CLASS** - Thanksgiving          |
-| 12 |   Mon, Dec 2              | [GameKit + Lab]                      |
-| 13 |   Wed, Dec 4              | Lab - Review before publishing game  |
-| 14 |   Mon, Dec 9              | Final Exam                           |
-| 15 |   Wed, Dec 11             | Presentations                        |
+|  1 |   Tue, June 2              | [Game Design]                        |
+|  2 |   Thu, June 4              | [Intro to iOS Game Development]:     |
+|  3 |   Tue, June 9              | [Actions, Touch events, Collisions]  |
+|  4 |   Thu, June 11             | [Scenes]                             |
+|  5 |   Tue, June 16             | [Adding Juice]                       |
+|  6 |   Thu, June 18             | [Physics]                            |
+|  7 |   Tue, June 23             | [Cameras]                            |
+|  8 |   Thu, June 25             | [Selecting an Architecture]          |
+|  9 |   Tue, June 30             | [SceneKit - a preview]               |
+| 10 |   Thu, July 2              | [Project Specs]                      |  
+| 11 |   Tue, July 7              | Lab - Custom game                    |
+| 12 |   Thu, July 9              | [GameKit + Lab]                      |
+| 14 |   Tue, July 14             | Final Exam                           |
+| 15 |   Thu, July 16             | Presentations                        |
 
 [Game Design]: Lessons/Game-Design/Readme.md
 [Intro to iOS Game Development]: Lessons/01-Intro-iOS-Game-Development/Lesson1.md

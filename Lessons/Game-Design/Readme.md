@@ -31,11 +31,12 @@
 
 Take out your phone and for the next 5 minutes play your favorite game.
 
+*Share what you were playing* 👾
+
 <!-- v -->
 
 - What makes the game entertaining?
 - Why is it your favorite?
-- Can you go hours playing it?
 - What's the genre of the game?
 
 <!-- > -->
@@ -60,7 +61,7 @@ It's what needs to happen before you start coding your game.
 
 <!-- v -->
 
-Was your defined genre of your favorite game correct?
+Was the genre of your favorite game correct? 😬
 
 <!-- > -->
 
@@ -164,9 +165,9 @@ It's important to define the purpose of the game first, and all of the other com
 
 ## Game design basics
 
-- Setup
+- ⚒ Setup
  - Board setup, arranging pieces, starting values for player
-- Game Loop
+- 🔁Game Loop
   - Player turn
     - Choose from and perform available actions
   - Computer turn
@@ -176,26 +177,27 @@ It's important to define the purpose of the game first, and all of the other com
 
 <!-- v -->
 
-- World / Environment
+- 🌎 World / Environment
   - Board size and layout, barriers, tile stats, starting point, time limits
-- Objects
+- ✨ Objects
   - Location, abilities, value
-- Non-player Characters (NPCs)
+- 💕 Non-player Characters (NPCs)
   - Movement, abilities, health, objects
-- Player
-  - Movement, abilities, health, objects
+- 🧙🏻‍♀️Player
+
 
 <!-- > -->
 
 ## Game prototype workshop
 
-Goal: Learn how people react to things you have created, how they interact with those things, and how it never is exactly how you expect.
+Goal: Learn how people react to things you have created, how they interact with those things, and how it never is exactly how you expect. 😅
 
 Divide into **even** number of groups of 2 or 3 people.
 
 <!-- v -->
 
 - You will design a game using pen, paper, other materials.
+  (alternative for online is using [Jamboard](jamboard.com))
 - The game must be grid based,  turn based, and 1 or 2 players.
 - The players can play against the game (the team that designed the game can play as the computer) or versus each other.
 
@@ -225,7 +227,7 @@ Pick and idea and build the game.
   - Does the world or do NPCs react to any player actions?
   - How do you know if the player has won, lost, or tied?
 
-20 min
+25 min
 
 <aside class="notes">
 Once you swap with another team, you will not be allowed to talk.
@@ -267,7 +269,7 @@ Things to check:
 ## Wrap Up
 
 - Make sure you are in the slack channel for this class.
-- Stay tuned for project specifications. Spoiler: it will be a team project.
+- Stay tuned for project specifications. Spoiler: you will need a pair. 😀😀
 
 <!-- > -->
 
