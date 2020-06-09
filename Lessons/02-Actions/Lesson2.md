@@ -10,7 +10,6 @@
 
 ## Agenda
 
-- Review Activity
 - Actions
 - Space Junk: more actions
 - Break
@@ -42,6 +41,8 @@ To give your game life, you'll want your nodes to move in various ways, to respo
 
 <!-- > -->
 
+<!--
+
 ## Review Exercise
 
 To help you reinforce your learning and to confirm your understanding of the concepts presented so far...
@@ -62,8 +63,6 @@ Answers to quiz:
 - C
 
 -->
-
-<!-- > -->
 
 ## Group Actions
 
@@ -332,10 +331,12 @@ There are several ways to handle collision detection. One of them is using the b
 
 Playground demo + explanation
 
+<!--
 **Debugging**
 
 - The problem with the update method.
 - Bounding box bigger than sprite. Shrink the box using `insetBy(dx:dy:)`
+-->
 
 <!-- > -->
 
