@@ -25,7 +25,7 @@ By the end of the course, students will be able to ...
 |  4 |   Thu, June 11             | [Scenes]                             |
 |  5 |   Tue, June 16             | [Adding Juice]                       |
 |  6 |   Thu, June 18             | [Physics]                            |
-|  7 |   Tue, June 23             | [Cameras]                            |
+|  7 |   Tue, June 23             | [Stacks game]                            |
 |  8 |   Thu, June 25             | [Selecting an Architecture]          |
 |  9 |   Tue, June 30             | [SceneKit - a preview]               |
 | 10 |   Thu, July 2              | [Project Specs]                      |  
@@ -45,6 +45,7 @@ By the end of the course, students will be able to ...
 [SceneKit - a preview]: Lessons/08-SceneKit/Lesson.md
 [Project Specs]: Assignments/Project.md
 [GameKit + Lab]: Lessons/09-GameKit/Lesson.md
+[Stacks game]: https://www.makeschool.com/academy/track/stacks-ios-tutorial-ikq
 
 ## Class Assignments
 
