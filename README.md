@@ -20,15 +20,15 @@ By the end of the course, students will be able to ...
 | Class |          Date          |                 Topics                  |
 |:-----:|:----------------------:|:---------------------------------------:|
 |  1 |   Tue, June 2              | [Game Design]                        |
-|  2 |   Thu, June 4              | [Intro to iOS Game Development]:     |
+|  2 |   Thu, June 4              | [Intro to iOS Game Development]      |
 |  3 |   Tue, June 9              | [Actions, Touch events, Collisions]  |
 |  4 |   Thu, June 11             | [Scenes]                             |
 |  5 |   Tue, June 16             | [Adding Juice]                       |
 |  6 |   Thu, June 18             | [Physics]                            |
-|  7 |   Tue, June 23             | [Stacks game]                            |
+|  7 |   Tue, June 23             | [Stacks game]                        |
 |  8 |   Thu, June 25             | [Selecting an Architecture]          |
-|  9 |   Tue, June 30             | [SceneKit - a preview]               |
-| 10 |   Thu, July 2              | [Project Specs]                      |  
+|  9 |   Tue, June 30             | [Project Specs]                      |
+| 10 |   Thu, July 2              | [SceneKit - a preview]               |  
 | 11 |   Tue, July 7              | Lab - Custom game                    |
 | 12 |   Thu, July 9              | [GameKit + Lab]                      |
 | 14 |   Tue, July 14             | Final Exam                           |

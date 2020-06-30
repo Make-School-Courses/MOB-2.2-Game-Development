@@ -27,7 +27,7 @@
   - Component-Based architecture
 3. Examine a simple State Machine using GameplayKit
 
-<!-- > -->
+<!--
 
 ## Initial Exercise
 
@@ -39,7 +39,7 @@ In preparation for today's activities...
 
 2. Volunteers to showcase their work on AstroJunk so far, especially their organization of class files listed above...
 
-<!-- > -->
+-->
 
 ## Common iOS Game Architectures
 
@@ -74,7 +74,7 @@ Note that though your `GameObject` is not required to extend either `SKNode` or 
 ### Example
 
 <aside class="notes">
-The following three classes together illustrate a simple example of using an inhertiance-based game architecture. In this example, the `Princess` and `Dragon` subclasses each inherit and override the `update(deltaTime:)` function from the base class (`GameObject`), along with whatever custom behaviors and properties the `Princess` and `Dragon` subclasses need themselves.
+The following three classes together illustrate a simple example of using an inheritance-based game architecture. In this example, the `Princess` and `Dragon` subclasses each inherit and override the `update(deltaTime:)` function from the base class (`GameObject`), along with whatever custom behaviors and properties the `Princess` and `Dragon` subclasses need themselves.
 </aside>
 
 ```swift
@@ -143,12 +143,14 @@ An inheritance-based layout works fine and is easy to implement for simple games
 
 But in practice, as your game grows in complexity, an inheritance hierarchy begins to create its own set of challenges.
 
+<!-- v -->
+
 - Ending up with a hierarchy of different game object subclass types that are multiple levels deep, which can be difficult to keep track of as you expand your code base.
 - Your initial `GameObject` base class evolves as you add elements, but moving more and more code to the base class makes it long and difficult to work with.
 
 <!-- v -->
 
-- You might find that not all game elements should derive from the same generic base class &mdash; i.e., should weapons really derive from the same base class as creatures?
+- You might find that not all game elements should derive from the same generic base class &mdash; *i.e., should weapons really derive from the same base class as creatures?*
 - Code for various game "systems" &mdash; such as a drawing function or collision detection &mdash; is all mixed together in the same object hierarchy.
 
 <!-- > -->
@@ -233,7 +235,7 @@ And new types of entities can be created on-the-fly (programmatically) without d
 
 Rather than re-using code in super-classes, you re-use code by giving similar entities similar components.
 
-Since components are self-contained, they can be interchanged to create fantastic new entities.
+Since components are self-contained, they can be interchanged to create new entities.
 
 You can also take components from one game and put them into another extremely easily.
 
@@ -249,7 +251,7 @@ It also lends itself well to different kinds of games and different strategies o
 
 **Consistency**
 
-When all your game entities are instances of the same class, and all of your functionality has a standardized interface, you can avoid all of the hassle of cumbersone inheritance trees and dependency diagrams and focus on your core game functionality.
+When all your game entities are instances of the same class, and all of your functionality has a standardized interface, you can avoid all of the hassle of inheritance trees and dependency diagrams and focus on your core game functionality.
 
 [Source](https://www.raywenderlich.com/2806-introduction-to-component-based-architecture-in-games)
 
@@ -257,7 +259,7 @@ When all your game entities are instances of the same class, and all of your fun
 
 **Drawbacks**
 
-The chief drawback of component-based architecture is the increase in Level Of Effort (LOE) required:
+The drawback of component-based architecture is the increase in Level Of Effort required:
 
 - Initially &mdash; At the start of development, you will need to create more base classes than you likely would for inheritance-based.
 - As your game grows &mdash; It takes more effort to create multiple copies of an object because you need to create and add the same set of components each time you want a new copy.
