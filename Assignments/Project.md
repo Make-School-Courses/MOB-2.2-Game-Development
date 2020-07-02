@@ -2,7 +2,7 @@
 
 ## Description
 
-This term we covered topics that gave you the tools needed to build a mobile game. Wether you do it with SpriteKit or take the challenge with SceneKit, by the end of the term you'll have a working version of a game that not only is visually attractive but is also fun and engages users.
+This term we covered topics that gave you the tools needed to build a mobile game. By the end of the term you'll have a working version of a game that not only is visually attractive but is also fun and engages users.
 
 ## Learning Outcomes
 By completing this project, you should be able to:
@@ -10,23 +10,19 @@ By completing this project, you should be able to:
 1. Implement topics from the course into a mobile game.
 1. Conduct user tests with early versions of the game
 1. Elaborate a Game Design Document to back all of the choices behind the game.
-1. Practice the process of publishing an app to Testflight
+1. Practice the process of publishing an app to TestFlight (optional)
 
 ## Schedule
 
 **INSTRUCTOR NOTE:**
 
-From the day this project is assigned, you will have **3 weeks** to complete this project. A sample weekly outline is provided to assist you in planning your project.
+From the day this project is assigned, you will have **2 weeks** to complete this project.
 
-**Important note:** Week 01 refers to the first calendar day of the project being assigned, and subsequent days will follow this reference:
-
-- Week 01:
-  - Project assigned, read the project spec, ask any clarifying questions you may have, finish the game design document. Create a kanban board to assist with tasks and start the development.
+**Sample project plan:**
+  - Project assigned, read the project spec, ask any clarifying questions you may have, finish the game design document.
   - Main architecture of the game is done. Starting to add some nodes and core mechanics.
-- Week 02:
-  - Already conducted at least one user testing. Adjust the game with feedback.
-  - Game is functional and has some juice.
-- Week 03:
+  - Conduct at least one user testing. Adjust the game with feedback.
+  - When the game is functional add some juice.
   - Fix any remaining bugs, upload to Testflight and prepare presentation.
   - Presentation Day, submit links to tracker.
 
