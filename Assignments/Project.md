@@ -29,7 +29,7 @@ From the day this project is assigned, you will have **2 weeks** to complete thi
 ## Requirements
 List out requirements for the project here
 
-1. Make a copy of [this Game Design Document](https://docs.google.com/document/d/1-I08qX76DgSFyN1ByIGtPuqXh7bVKraHcNIA25tpAzE/edit) and fill it our with the content of your game (skip the Assets section).
+1. Make a copy of [this Game Design Document](https://docs.google.com/document/d/1UFk13rphKvorY6J1cHzjtYbisrTTfFXBCSwxV3BR1nA/edit?usp=sharing) and fill it our with the content of your game (skip the Assets section).
 1. Evidence of at least one user testing session to get feedback (can be notes, video, before and after screenshots). Add this to the Game Design document.
 1. Functional Game with SpriteKit or SceneKit that includes at least 6 of the following:
   - Core mechanics (not optional)
