@@ -1,6 +1,6 @@
 ## Bouncing Shapes - An exercise using a blank SceneKit project.
 
-Let's start by adding an asset catalog (New->File->Asset Catalog) and call it Assets. The SceneKit asset catalog lets you manage game assets separately from the code. This is useful when game artists need to easily add or modify assets from the game.
+Let's start by adding an asset catalog (New->File->Asset Catalog) and call it Resources. The SceneKit asset catalog lets you manage game assets separately from the code. This is useful when game artists need to easily add or modify assets from the game.
 
 To keep things organized make a subfolder and call it `Textures`. Then add your first asset. This background:
 
