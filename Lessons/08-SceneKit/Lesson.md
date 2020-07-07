@@ -9,7 +9,6 @@
 ## Agenda
 
 - SceneKit
-- New Project
 - Main elements
 - Physics
 - Render Loop
@@ -19,8 +18,8 @@
 ## Learning Objectives
 
 - The role of SceneKit in game development
-- Create a new project.
-- Make use of the build in functions and available geometry
+- Create a new project with SceneKit
+- Make use of the built-in functions and available geometry
 - Apply physics
 - Make use of materials
 - Understand how the rendering loop works and use it correctly
@@ -29,15 +28,23 @@
 
 ## SceneKit
 
-"SceneKit combines a high-performance rendering engine with a descriptive API for import, manipulation, and rendering of 3D assets."
+"SceneKit combines a high-performance rendering engine with a descriptive API for import, manipulation, and rendering of **3D assets**."
 
 <!-- v -->
 
 ## Everything is a node
 
-SceneKit implements content as a hierarchical tree structure of nodes, also known as a scene graph. A scene consists of a root node, which defines a coordinate space for the world of the scene, and other nodes that populate the world with visible content.
+SceneKit implements content as a **hierarchical tree structure of nodes**, also known as a **scene graph**.
 
-These other nodes are the basic building blocks for the scene: lights, cameras, geometry and particle emitters.
+A scene consists of a root node, which defines a coordinate space for the world of the scene, and other nodes that populate the world with visible content.
+
+<!-- v -->
+
+These other nodes are the basic building blocks for the scene:
+- 💡lights
+- 🎥 cameras
+- 🔺geometry
+- particle emitters.
 
 <!-- v -->
 
@@ -55,10 +62,13 @@ These other nodes are the basic building blocks for the scene: lights, cameras, 
 
 A container for the node hierarchy and global properties that together form a displayable 3D scene.
 
+<!-- v -->
+
 **ClassSCNView**
 
 A view for displaying 3D SceneKit content. This one is a subclass of UIView for iOS.
 
+<!-- v -->
 
 The `SCNScene` class represents a scene. We display the scene onscreen inside an instance of `SCNView`.
 
@@ -66,7 +76,7 @@ The `SCNScene` class represents a scene. We display the scene onscreen inside an
 
 ## Getting started
 
-1. Create a new SceneKit project.
+1. Create a new SceneKit project. Call it "Shapes".
 1. Build & run. See what appears on screen.
 1. Try dragging around.
 
@@ -74,7 +84,7 @@ The `SCNScene` class represents a scene. We display the scene onscreen inside an
 
 ### Exploring the example
 
-1. What's going on on GameViewController.swift?
+1. What's going on in GameViewController.swift?
 1. What is art.scnassets?
 1. What is ship.scn?
 
@@ -106,7 +116,7 @@ class GameViewController: UIViewController {
 
 ```swift
 func setupView() {
-  scnView = self.view as! SCNView
+  scnView = self.view as? SCNView
 }
 ```
 
@@ -129,13 +139,13 @@ This code creates an instance of SCNScene and stores it in scene. Then sets it a
 
 <!-- v -->
 
-We are done setting up the clean project. Now the rest will be done in pairs :)
+We are done setting up the clean project. Now the rest will be done by you :)
 
 <!-- > -->
 
 ## An Exercise
 
-Follow the instructions [here](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/blob/master/Lessons/08-SceneKit/assets/instructions.md). You'll need the project we prepared before to start with a blank game.
+Follow the instructions [here](https://github.com/Make-School-Courses/MOB-2.2-Game-Development/blob/master/Lessons/08-SceneKit/assets/instructions.md). You'll need the project we prepared before to start with an empty scene.
 
 <!-- > -->
 
@@ -176,7 +186,7 @@ You'll need to know what are the parameters needed to initialize all the geometr
 
 We use physics bodies like in SpriteKit.
 
-A physics body describes all the physical properties of a node: shape, mass, friction, damping and restitution.
+A physics body describes all the physical properties of a node: **shape, mass, friction, damping and restitution.**
 
 The physics engine takes all this information into account when it simulates the real- world physics interactions of the objects. This includes things like gravity, friction and collisions with other bodies.
 
@@ -184,9 +194,9 @@ The physics engine takes all this information into account when it simulates the
 
 ### Body types
 
-- Static: Don't move, unaffected by forces.
-- Dynamic: Moved by the physics engine in response to forces/collisions.
-- Kinematic: Not automatically moved by the physics engine in response to forces/collisions.
+- **Static**: Don't move, unaffected by forces.
+- **Dynamic**: Moved by the physics engine in response to forces/collisions.
+- **Kinematic**: Not automatically moved by the physics engine in response to forces/collisions.
 
 <!-- v -->
 

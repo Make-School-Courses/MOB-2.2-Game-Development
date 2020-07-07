@@ -28,8 +28,8 @@ By the end of the course, students will be able to ...
 |  7 |   Tue, June 23             | [Stacks game]                        |
 |  8 |   Thu, June 25             | [Selecting an Architecture]          |
 |  9 |   Tue, June 30             | [Project Specs]                      |
-| 10 |   Thu, July 2              | [SceneKit - a preview]               |  
-| 11 |   Tue, July 7              | Lab - Custom game                    |
+| 10 |   Thu, July 2              | [Project Lab]                        |  
+| 11 |   Tue, July 7              | [SceneKit - a preview]               |
 | 12 |   Thu, July 9              | [GameKit + Lab]                      |
 | 14 |   Tue, July 14             | Final Exam                           |
 | 15 |   Thu, July 16             | Presentations                        |
@@ -52,6 +52,7 @@ By the end of the course, students will be able to ...
 ### Tutorials
 
 - [Hoppy Bunny](https://www.makeschool.com/academy/track/build-hoppy-bunny-with-spritekit-in-swift)
+- [Stacks](https://www.makeschool.com/academy/track/stacks-ios-tutorial-ikq)
 
 ### Projects
 
